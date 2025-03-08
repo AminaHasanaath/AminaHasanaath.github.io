@@ -1,6 +1,7 @@
-![Thumbnail](https://your-image-link.com/your-thumbnail.png)  
+![Screenshot 2025-03-08 223030](https://github.com/user-attachments/assets/61295f2a-ff74-4f06-b9ab-9ceb4a459092)
 
-# 🌟 **Your Awesome Website** 🌟  
+
+# 🌟 **Website Cum Portfolio** 🌟  
 ### _"Always ready for the next big challenge!"_ 🚀🔥  
 
 ## 🎯 **Live Demo**  
@@ -71,4 +72,4 @@ _Wanna play around with the code? Here’s how you do it:_ 😎
 
 ---  
 
-🚀 _Never give up, keep building!_ 💡✨
+🚀 _Never give up; keep building!_ 💡✨
