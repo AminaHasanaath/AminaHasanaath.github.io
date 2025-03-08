@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amina Hasanaath | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+    <!-- ✅ Navbar -->
+    <nav class="bg-gray-800 p-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-white text-xl font-bold"
+          >My Portfolio</a
+        >
+        <div class="space-x-6">
+          <a href="AboutMePage.html" class="text-gray-300 hover:text-white"
+            >More About Me</a
+          >
+          <a href="contact.html" class="text-gray-300 hover:text-white"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- ✅ Hero Section -->
+    <section
+      class="h-screen flex flex-col justify-center items-center text-center px-4"
+    >
+      <img
+        src="C:\Users\Dell\OneDrive\Documents\Pictures\1728804551219.jpeg"
+        alt="Profile Picture"
+        class="w-40 h-40 rounded-lg shadow-lg"
+      />
+      <h1 class="text-4xl font-bold mt-4">Amina Hasanaath</h1>
+      <p class="text-xl text-gray-400 mt-2">
+        Aspiring System Architect | Java & DSA Enthusiast
+      </p>
+      <div class="mt-6">
+        <a
+          href="resume.pdf"
+          class="bg-blue-600 px-6 py-2 rounded-lg shadow text-white hover:bg-blue-700"
+          >Download Resume</a
+        >
+      </div>
+    </section>
+
+    <!-- ✅ About Me Section -->
+    <section class="py-20 bg-black text-center px-6">
+      <h2 class="text-3xl font-bold">About Me</h2>
+      <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+        I'm a passionate **System Architect aspirant**, skilled in **Java, DSA,
+        and System Design**. Focused on designing scalable, high-performance
+        systems.
+      </p>
+    </section>
+
+    <!-- ✅ Tech Stack with Donut Charts -->
+    <section class="py-20 bg-black px-6 text-center">
+      <h2 class="text-3xl font-bold">Tech Stack</h2>
+      <div class="max-w-4xl mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#dc2626"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="25.12"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p class="text-gray-300 mt-2">Java</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#ffffff"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="37.68"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p class="text-gray-300 mt-2">DSA</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#2563eb"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="50.24"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p class="text-gray-300 mt-2">System Design</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#ca8a04"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="62.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p class="text-gray-300 mt-2">AWS</p>
+        </div>
+      </div>
+    </section>
+    <!-- ✅ Projects Section -->
+    <section class="py-20 text-center px-6">
+      <h2 class="text-3xl font-bold">My Projects</h2>
+      <p class="text-gray-400 mt-2">Click to explore my work.</p>
+      <a
+        href="projects.html"
+        class="text-blue-500 font-semibold mt-4 inline-block"
+        >View All Projects →</a
+      >
+    </section>
+
+    <!-- ✅ Blog Section -->
+    <section class="py-20 text-center px-6">
+      <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
+      <p class="text-gray-400 mt-2">
+        I write about **System Design, Java, and DSA concepts**.
+      </p>
+      <a href="blog.html" class="text-blue-500 font-semibold mt-4 inline-block"
+        >Read My Blogs →</a
+      >
+    </section>
+
+    <!-- ✅ Achievements & LeetCode Stats -->
+    <section class="py-20 text-center px-6">
+      <h2 class="text-3xl font-bold">Achievements & LeetCode</h2>
+      <p class="text-gray-400 mt-2">
+        Check out my **LeetCode Profile and Achievements**.
+      </p>
+      <a
+        href="achievements.html"
+        class="text-blue-500 font-semibold mt-4 inline-block"
+        >View My Achievements →</a
+      >
+    </section>
+
+    <!-- ✅ Contact & Footer -->
+    <footer class="py-10 bg-black text-center text-gray-400">
+      <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+      <p>Email: your-email@example.com</p>
+      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <p>GitHub: github.com/yourgithub</p>
+      <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
