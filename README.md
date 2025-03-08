@@ -3,12 +3,8 @@
 # 🌟 **Your Awesome Website** 🌟  
 ### _"Always ready for the next big challenge!"_ 🚀🔥  
 
-![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/reponame?color=blue&label=Repo%20Size)  
-![GitHub stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)  
-![GitHub forks](https://img.shields.io/github/forks/yourusername/reponame?style=social)  
-
 ## 🎯 **Live Demo**  
-👀 Check it out **[HERE](your-live-link)** 🌎  
+👀 Check it out **[HERE](https://aminahasanaath.github.io/)]** 🌎  
 
 ## 🎨 **What’s Cookin’?**  
 🔥Modern and interactive website designed to make waves! 
@@ -40,15 +36,15 @@ This project was all about constructing a separate room for my Progress and Stam
 ## 📸 *BackStory*
 Website making is not my cup of tea, but I needed a portfolio to represent my skillset
 and glance of my work and passion, That website cum portfolio is a definition that, If i can 
-make it without being an expert front-end Developer, and so you can too!
+Make it without being an expert front-end developer, and you can do it too!
 
 The main idea was to have it in just a week, and the best clicks where
 
 -**It was made without learning HTML, CSS**_
--**The style was a built-in in making it clean and professional**_
--**Using AI for time management and out-of-the-box thinking**_
--**Easy changes by collab of github and VScode**_
-_**Very useful for Backend dev who don't want to invest their time making website from scratch**_
+-**The style was built-in in making it clean and professional**_ |
+-**Using AI for time management and out-of-the-box thinking**_ |
+-**Easy changes by collab of github and VScode**_ |
+| _**Very useful for Backend dev who don't want to invest their time making a website from scratch**_
 
 ## 🔥 **How to Get It Running Locally**  
 _Wanna mess around with the code? Here's how you do it: It's so simple_  
@@ -73,7 +69,7 @@ _Wanna mess around with the code? Here's how you do it: It's so simple_
 
 ## 📬 **Let’s Connect!**  
 💌 Drop a hi at **hasanaath@gmail.com**  
-🔗 [GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourprofile)  
+🔗 [GitHub](https://github.com/yourusername) | [LinkedIn](www.linkedin.com/in/amina-hasanaath-7033a1309)]
 
 ---  
 
