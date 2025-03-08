@@ -17,6 +17,7 @@ This project was all about constructing a separate room for my Progress and Stam
 ---
 
 ✨ **Key Highlights** 
+
 ✅ _Super smooth UI   
 ✅ _Mobile-responsive like a pro_ 📱  
 ✅ _ fresh & fully functional_ 🎶  
@@ -40,13 +41,14 @@ This project was all about constructing a separate room for my Progress and Stam
 Website making is not my cup of tea, but I needed a portfolio to represent my skillset
 and glance of my work and passion, That website cum portfolio is a definition that, If i can 
 make it without being an expert front-end Developer, and so you can too!
+
 The main idea was to have it in just a week, and the best clicks where
--**It was made without learning HTML, CSS**
--**The style was a built-in in making it clean and professional**
--**Using AI for time management and out-of-the-box thinking**
--**Easy changes by collab of github and VScode**
-_**Very useful for Backend dev who don't want to invest
-their time making website from scratch**
+
+-**It was made without learning HTML, CSS**_
+-**The style was a built-in in making it clean and professional**_
+-**Using AI for time management and out-of-the-box thinking**_
+-**Easy changes by collab of github and VScode**_
+_**Very useful for Backend dev who don't want to invest their time making website from scratch**_
 
 ## 🔥 **How to Get It Running Locally**  
 _Wanna mess around with the code? Here's how you do it: It's so simple_  
@@ -54,7 +56,9 @@ _Wanna mess around with the code? Here's how you do it: It's so simple_
 1️⃣ **Create a new Repo**  
 1. Your name must end with- .github.io_
 2. Make sure the branch is "Main"_
+
 2️⃣ **Fork the repo**  
+
 3️⃣ **Launch it**  
 - _Open `index.html` in your browser_
 - _Or use Live Server in VS Code_
