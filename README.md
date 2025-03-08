@@ -24,7 +24,7 @@
 ---  
 
 ## 🛠 **Built With**  
-🎨 **Tech Stack:**  
+🎨 **Tech Stack**  
 - 🔥 HTML & CSS  
 - 🎭 TailwindCSS template (because why not?)  
 
@@ -68,7 +68,7 @@ _Wanna play around with the code? Here’s how you do it:_ 😎
 
 ## 📬 **Let’s Connect!**  
 💌 Drop a hi at **hasanaath@gmail.com**  
-🔗 [GitHub](https://github.com/yourusername) | [LinkedIn](https://www.linkedin.com/in/amina-hasanaath-7033a1309)  
+🔗 [GitHub][(https://github.com/AminaHasanaath)]| [LinkedIn](https://www.linkedin.com/in/amina-hasanaath-7033a1309)  
 
 ---  
 
