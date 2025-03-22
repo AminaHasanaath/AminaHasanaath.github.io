@@ -79,5 +79,35 @@
         });
       });
     </script>
+        <!-- ✅ Footer -->
+    <footer class="py-10 bg-black text-center text-gray-400">
+      <p>© 2025 Amina Hasanaath. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ✅ JavaScript Code -->
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Form ko reload hone se rokta hai
+
+        fetch(this.action, {
+          method: this.method,
+          body: new FormData(this),
+          headers: { "Accept": "application/json" },
+        })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("successMessage").classList.remove("hidden"); // Success message dikhana
+              this.reset(); // Form ko reset karna
+            } else {
+              alert("❌ Something went wrong! Please try again.");
+            }
+          })
+          .catch(() => alert("❌ Network error! Please try again."));
+      });
+    </script>
+
+  </body>
+</html>
+
   </body>
 </html>
