@@ -56,7 +56,6 @@
         <button type="submit" class="bg-blue-600 px-6 py-2 rounded-lg text-white hover:bg-blue-700">Send Message</button>
         <p id="successMessage" class="text-green-500 mt-2 hidden">✅ Message Sent Successfully!</p>
       </form>
-
     </section>
 
     <!-- ✅ Footer -->
@@ -67,7 +66,7 @@
     <!-- ✅ JavaScript Code -->
     <script>
       document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Form ko reload hone se rokta hai
+        event.preventDefault(); // Prevent the form from submitting the default way
 
         fetch(this.action, {
           method: this.method,
@@ -76,8 +75,8 @@
         })
           .then((response) => {
             if (response.ok) {
-              document.getElementById("successMessage").classList.remove("hidden"); // Success message dikhana
-              this.reset(); // Form ko reset karna
+              document.getElementById("successMessage").classList.remove("hidden"); // Show success message
+              this.reset(); // Reset the form
             } else {
               alert("❌ Something went wrong! Please try again.");
             }
