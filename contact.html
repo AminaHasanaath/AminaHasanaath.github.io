@@ -24,66 +24,29 @@
       <p class="text-gray-400 mt-2">Feel free to reach out.</p>
 
       <div class="mt-6 space-y-4">
-        <p>Email:
-          <a href="mailto:amina.hasanaath@gmail.com" class="text-blue-500">amina.hasanaath@gmail.com</a>
+        <p>📧 Email:  
+          <a href="mailto:amina.hasanaath@gmail.com" class="text-blue-500 hover:underline">
+            amina.hasanaath@gmail.com
+          </a>
         </p>
-        <p>
-          LinkedIn:
-          <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309" class="text-blue-500">
-            <i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+
+        <p>📞 Phone:  
+          <a href="tel:+919876543210" class="text-blue-500 hover:underline">
+            9391201739
+          </a>
         </p>
-        <p>
-          GitHub:
-          <a href="https://github.com/AminaHasanaath" class="text-blue-500">
-            <i class="fab fa-github"></i> GitHub Profile</a>
+
+        <p>🔗 LinkedIn:  
+          <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309" class="text-blue-500 hover:underline">
+            linkedin.com/in/amina-hasanaath
+          </a>
         </p>
       </div>
-
-      <!-- ✅ Contact Form with Success Message -->
-      <form id="contactForm" action="https://script.google.com/macros/s/AKfycbwltfc3663CFpYaxtjgFs21ImgFrKihKu0j8BbQJIabO_iXT2FX0d9O0U4wMbBEtnB5/exec" method="POST" class="mt-8 w-full max-w-lg bg-gray-800 p-6 rounded-lg">
-        <div class="mb-4">
-          <label class="block text-gray-300">Name</label>
-          <input type="text" name="name" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Your Name" required />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-300">Email</label>
-          <input type="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Your Email" required />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-300">Message</label>
-          <textarea name="message" class="w-full p-2 rounded bg-gray-700 text-white" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="bg-blue-600 px-6 py-2 rounded-lg text-white hover:bg-blue-700">Send Message</button>
-        <p id="successMessage" class="text-green-500 mt-2 hidden">✅ Message Sent Successfully!</p>
-      </form>
     </section>
 
     <!-- ✅ Footer -->
     <footer class="py-10 bg-black text-center text-gray-400">
       <p>© 2025 Amina Hasanaath. All Rights Reserved.</p>
     </footer>
-
-    <!-- ✅ JavaScript Code -->
-    <script>
-      document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting the default way
-
-        fetch(this.action, {
-          method: this.method,
-          body: new FormData(this),
-          headers: { "Accept": "application/json" },
-        })
-          .then((response) => {
-            if (response.ok) {
-              document.getElementById("successMessage").classList.remove("hidden"); // Show success message
-              this.reset(); // Reset the form
-            } else {
-              alert("❌ Something went wrong! Please try again.");
-            }
-          })
-          .catch(() => alert("❌ Network error! Please try again."));
-      });
-    </script>
-
   </body>
 </html>
