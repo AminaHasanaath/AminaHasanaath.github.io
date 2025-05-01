@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Amina Hasanaath</title>
+  <title>Amina Hasanaath</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
@@ -24,7 +24,7 @@
     h2 {
       font-family: 'Merriweather', serif;
       font-size: 1.8rem;
-      color: #4A90E2;
+      color: #6366f1; /* Indigo Color */
       font-weight: bold;
     }
 
@@ -38,9 +38,33 @@
       font-weight: 600;
       color: white;
     }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: bold;
+      color: #6366f1;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #6366f1;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #4f46e5;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
+
   <!-- ✅ Navbar -->
   <nav class="bg-gray-900 p-5 shadow-lg">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -51,7 +75,7 @@
   </nav>
 
   <!-- ✅ More About Me Section -->
- <section class="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-12 max-w-6xl mx-auto">
+  <section class="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-12 max-w-6xl mx-auto">
 
     <!-- Left Section -->
     <div>
@@ -88,6 +112,11 @@
         <li>Work on AI-integrated scalable systems</li>
         <li>Build & grow a tech and knowledge-sharing community</li>
       </ul>
+
+      <!-- Call to Action Button -->
+      <a href="#contact" class="btn">
+        Get in Touch
+      </a>
     </div>
   </section>
 
@@ -95,7 +124,6 @@
   <footer class="py-10 bg-gray-900 text-center text-gray-400 text-lg">
     <p>© 2025 Amina Hasanaath. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
-
-
