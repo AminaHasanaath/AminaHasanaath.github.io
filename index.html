@@ -5,111 +5,209 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amina Hasanaath | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      body { font-family: 'Inter', sans-serif; }
-    </style>
+    <!-- Google Fonts for Poppins and Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-black text-white">
-    <!-- ✅ Navbar -->
-    <nav class="bg-gray-800 p-4">
+  <body class="bg-black text-white font-poppins">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 p-4 fixed top-0 w-full z-10">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-white text-xl font-bold font-mono">My Portfolio</a>
+        <a href="index.html" class="text-white text-xl font-bold font-dancing-script">
+          My Portfolio
+        </a>
         <div class="space-x-6">
-          <a href="AboutMePage.html" class="text-gray-300 hover:text-white font-mono">More About Me</a>
-          <a href="contact.html" class="text-gray-300 hover:text-white font-mono">Contact</a>
+          <a href="AboutMePage.html" class="text-gray-300 hover:text-teal-400 font-poppins">
+            More About Me
+          </a>
+          <a href="contact.html" class="text-gray-300 hover:text-teal-400 font-poppins">
+            Contact
+          </a>
         </div>
       </div>
     </nav>
 
-    <!-- ✅ Hero Section -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
-      <img src="https://i.imgur.com/pK9cRJP.jpeg" alt="Profile Picture" class="w-40 h-40 rounded-lg shadow-lg object-cover" />
-      <h1 class="text-4xl font-bold mt-4">Amina Hasanaath</h1>
-      <p class="text-xl text-gray-400 mt-2">Aspiring Engineer | Java & DSA Enthusiast</p>
-      <p class="text-sm text-gray-500 mt-1 italic">Never. Give. Up.</p>
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 mt-20">
+      <img 
+        src="https://i.imgur.com/pK9cRJP.jpeg"
+        alt="Profile Picture"
+        class="w-40 h-40 rounded-lg shadow-lg object-cover"
+      />
+      <h1 class="text-4xl font-bold mt-4 text-teal-400">Amina Hasanaath</h1>
+      <p class="text-xl text-gray-400 mt-2">
+        Aspiring Engineering | Java & DSA Enthusiast
+      </p>
       <div class="mt-6">
-        <a href="resume.pdf" target="_blank" class="bg-blue-600 px-6 py-2 rounded-lg shadow text-white hover:bg-blue-700">My Resume</a>
+        <a href="resume.pdf" target="_blank" class="bg-teal-600 px-6 py-2 rounded-lg shadow text-white hover:bg-teal-700">
+          My Resume
+        </a>
       </div>
     </section>
 
-    <!-- ✅ About Me Section -->
+    <!-- About Me Section -->
     <section class="py-20 bg-black text-center px-6">
-      <h2 class="text-3xl font-bold">About Me</h2>
+      <h2 class="text-3xl font-bold text-teal-400">About Me</h2>
       <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
-        <em>“Be the System | Not the User”</em><br />
-        A passionate tech enthusiast who enjoys solving problems and building solutions. <br />
-        I love working with Java, especially in backend development and DSA. <br />
-        Currently exploring AI engineering, striving to blend intelligence into systems.
+        <br>Be the System | Not the User</br> 
+        A passionate tech enthusiast.  
+        I prefer Java, with an interest in the backend and DSA.
+        <br> Aspiring AI engineering, eager to integrate intelligence with Systems.
       </p>
     </section>
 
-    <!-- ✅ Tech Stack -->
+    <!-- Tech Stack with Donut Charts -->
     <section class="py-20 bg-black px-6 text-center">
-      <h2 class="text-3xl font-bold">Tech Stack</h2>
+      <h2 class="text-3xl font-bold text-teal-400">Tech Stack</h2>
       <div class="max-w-4xl mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-        <!-- C -->
         <div class="flex flex-col items-center">
           <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#dc2626" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#dc2626"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="62.8"
+              stroke-linecap="round"
+            />
           </svg>
           <p class="text-gray-300 mt-2">C</p>
         </div>
-        <!-- AI -->
         <div class="flex flex-col items-center">
           <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#ffffff" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="247" stroke-linecap="round" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#ffffff"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="247"
+              stroke-linecap="round"
+            />
           </svg>
           <p class="text-gray-300 mt-2">AI</p>
         </div>
-        <!-- Java -->
         <div class="flex flex-col items-center">
           <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#2563eb" stroke-width="10" fill="none" stroke-dasharray="150.72" stroke-dashoffset="226.88" stroke-linecap="round" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#2563eb"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="150.72"
+              stroke-dashoffset="226.88"
+              stroke-linecap="round"
+            />
           </svg>
           <p class="text-gray-300 mt-2">Java</p>
         </div>
-        <!-- DSA -->
         <div class="flex flex-col items-center">
           <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#ca8a04" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="241.15" stroke-linecap="round" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#374151"
+              stroke-width="10"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="#ca8a04"
+              stroke-width="10"
+              fill="none"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="241.15"
+              stroke-linecap="round"
+            />
           </svg>
           <p class="text-gray-300 mt-2">DSA</p>
         </div>
       </div>
     </section>
 
-    <!-- ✅ Projects Section -->
+    <!-- Projects Section -->
     <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold">Projects</h2>
+      <h2 class="text-3xl font-bold text-teal-400">Projects</h2>
       <p class="text-gray-400 mt-2">Wanna see My Work.</p>
-      <a href="projects.html" class="text-blue-500 font-semibold mt-4 inline-block">View Projects →</a>
+      <a href="projects.html" class="text-teal-500 font-semibold mt-4 inline-block">
+        View Projects →
+      </a>
     </section>
 
-    <!-- ✅ Articles and Youtube Section -->
+    <!-- Articles Section -->
     <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold">Articles </h2>
-      <p class="text-gray-400 mt-2">My writings flow around myths, tips, and tricks related to growth and tech!</p>
-      <a href="https://medium.com/@amina.hasanaath" class="text-blue-500 font-semibold mt-4 inline-block">Read My Articles →</a>
+      <h2 class="text-3xl font-bold text-teal-400">Articles</h2>
+      <p class="text-gray-400 mt-2">
+        My Writings flow around, Myths, Tips to tricks related to Growth and Tech! 
+      </p>
+      <a href="https://medium.com/@amina.hasanaath" class="text-teal-500 font-semibold mt-4 inline-block">
+        Read My Articles →
+      </a>
     </section>
 
-    <!-- ✅ Achievements & LeetCode Stats -->
+    <!-- Achievements Section -->
     <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold">Achievements & LeetCode</h2>
-      <p class="text-gray-400 mt-2">Check out my LeetCode / GFG profile and achievements.</p>
-      <a href="achievements.html" class="text-blue-500 font-semibold mt-4 inline-block">View My Achievements →</a>
+      <h2 class="text-3xl font-bold text-teal-400">Achievements & LeetCode</h2>
+      <p class="text-gray-400 mt-2">
+        Check out my *LeetCode/(GFG) Profile and Achievements*.
+      </p>
+      <a href="achievements.html" class="text-teal-500 font-semibold mt-4 inline-block">
+        View My Achievements →
+      </a>
     </section>
 
-    <!-- ✅ Contact & Footer -->
-    <footer class="py-10 bg-black text-center text-gray-400">
+    <!-- Footer -->
+    <footer class="py-10 bg-blue-900 text-center text-gray-400">
       <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
-      <p>Email: <a href="mailto:amina.hasanaath@gmail.com" class="text-blue-400 hover:underline">amina.hasanaath@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/amina-hasanaath-79253235a" target="_blank" class="text-blue-400 hover:underline">LinkedIn Profile</a></p>
-      <p>GitHub: <a href="https://github.com/AminaHasanaath" target="_blank" class="text-blue-400 hover:underline">Github</a></p>
+      <p>Email: 
+        <a href="mailto:amina.hasanaath@gmail.com" class="text-teal-400 hover:underline">
+          amina.hasanaath@gmail.com
+        </a>
+      </p>
+      <p>LinkedIn: 
+        <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank" class="text-teal-400 hover:underline">
+          LinkedIn Profile
+        </a>
+      </p>
+      <p>GitHub: 
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="text-teal-400 hover:underline">
+          Github
+        </a>
+      </p>
       <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
     </footer>
 
