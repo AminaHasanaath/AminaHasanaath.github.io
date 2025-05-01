@@ -1,46 +1,24 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amina Hasanaath | About Me</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
+    h1, h2 {
+      font-weight: bold;
+    }
     h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 4rem; /* Adjusted size for better readability */
-      font-weight: bold;
-      color: #9b59b6; /* Electric purple color */
-      text-transform: uppercase; /* Capitalized text */
-      text-align: center; /* Centering the heading */
-      padding: 20px 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
-      color: #9b59b6; /* Electric purple color */
-      font-weight: bold;
-      text-align: center; /* Centered headings */
-      padding-top: 10px;
-    }
-    p, li {
-      font-size: 1.125rem; /* Slightly larger font size for better readability */
-      line-height: 1.8; /* Improved line height */
-      color: white;
-      text-align: center; /* Centered text */
-      margin-top: 15px;
-      padding: 0 20px; /* Added padding for readability */
-    }
-    strong {
-      font-weight: 600;
-      color: white;
-    }
-    section {
-      margin-bottom: 40px; /* Added space between sections */
+    ul li::marker {
+      content: "▹ ";
+      color: #818cf8;
     }
   </style>
 </head>
@@ -49,51 +27,60 @@
   <!-- Navbar -->
   <nav class="bg-slate-800 p-4 fixed top-0 w-full z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-white text-xl font-bold font-dancing-script">
+      <a href="index.html" class="text-white text-xl font-bold">
         My Portfolio
       </a>
       <div class="space-x-6">
-        <a href="AboutMePage.html" class="text-white text-xl font-bold font-dancing-script">
+        <a href="AboutMePage.html" class="text-white text-xl font-bold">
           More About Me
         </a>
-        <a href="contact.html" class="text-white text-xl font-bold font-dancing-script">
+        <a href="contact.html" class="text-white text-xl font-bold">
           Contact
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- About Me Section -->
-  <section class="max-w-6xl mx-auto pt-20 px-6 py-12">
-    <!-- Be The System Not The User Section -->
-    <h1>BE THE SYSTEM, NOT THE USER</h1>
+  <!-- Content Section -->
+  <main class="pt-28 pb-10 max-w-5xl mx-auto">
+
+    <!-- Tagline -->
+    <h1 class="text-4xl font-bold text-indigo-400 uppercase text-right pr-4 tracking-wide underline">
+      BE THE SYSTEM, NOT THE USER
+    </h1>
 
     <!-- Journey Section -->
-    <h2 class="border-b-2 border-gray-700 pb-2 text-indigo-400 font-bold">🚀 My Journey</h2>
-    <p class="text-gray-300 mt-4 leading-relaxed">
-      My journey started with a Java book, and from that moment, problem-solving and innovation became my world. 
-      I believe technology is incomplete without coding, and that’s why I love <strong>system design, AI, and machine models</strong>. 
-      <strong>DSA is my battlefield</strong>, and I thrive on challenges. Outside of tech, I find joy in content creation, storytelling, and inspiring others.
-    </p>
+    <section class="mt-6">
+      <h2 class="text-indigo-400 text-2xl text-center">🚀 My Journey</h2>
+      <p class="text-gray-300 mt-2 text-center px-4 leading-snug">
+        My journey started with a Java book, and from that moment, problem-solving and innovation became my world.
+        I believe technology is incomplete without coding, and that’s why I love <strong>system design, AI, and machine models</strong>.
+        <strong>DSA is my battlefield</strong>, and I thrive on challenges. Outside of tech, I find joy in content creation, storytelling, and inspiring others.
+      </p>
+    </section>
 
     <!-- Interests Section -->
-    <h2 class="border-b-2 border-gray-700 pb-2 mt-10 text-indigo-400 font-bold">✨ My Interests</h2>
-    <ul class="list-disc list-inside text-gray-400 mt-4 leading-relaxed">
-      <li><strong>Backend Development</strong> (Java & Spring Boot)</li>
-      <li><strong>Scalable System Design</strong></li>
-      <li><strong>Programming & Problem-Solving</strong></li>
-      <li><strong>Reading, Writing & Knowledge Sharing</strong></li>
-      <li><strong>Content Creation & Storytelling</strong></li>
-    </ul>
+    <section class="mt-6">
+      <h2 class="text-indigo-400 text-2xl text-center">✨ My Interests</h2>
+      <ul class="mt-2 text-left px-8 text-gray-300 leading-snug">
+        <li><strong>Backend Development</strong> (Java & Spring Boot)</li>
+        <li><strong>Scalable System Design</strong></li>
+        <li><strong>Programming & Problem-Solving</strong></li>
+        <li><strong>Reading, Writing & Knowledge Sharing</strong></li>
+        <li><strong>Content Creation & Storytelling</strong></li>
+      </ul>
+    </section>
 
-    <!-- Future Goals Section -->
-    <h2 class="border-b-2 border-gray-700 pb-2 mt-10 text-indigo-400 font-bold">🎯 Future Goals</h2>
-    <ul class="list-disc list-inside text-gray-400 mt-4 leading-relaxed">
-      <li>Become a Productive System Architect</li>
-      <li>Work on AI-integrated scalable systems</li>
-      <li>Build & grow a tech and knowledge-sharing community</li>
-    </ul>
-  </section>
+    <!-- Goals Section -->
+    <section class="mt-6">
+      <h2 class="text-indigo-400 text-2xl text-center">🎯 Future Goals</h2>
+      <ul class="mt-2 text-left px-8 text-gray-300 leading-snug">
+        <li>Become a Productive System Architect</li>
+        <li>Work on AI-integrated scalable systems</li>
+        <li>Build & grow a tech and knowledge-sharing community</li>
+      </ul>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-slate-800 text-center text-gray-400 py-6">
@@ -110,7 +97,7 @@
     </p>
     <p>GitHub: 
       <a href="https://github.com/AminaHasanaath" target="_blank" class="text-indigo-400 hover:underline hover:text-white">
-        Github
+        GitHub
       </a>
     </p>
     <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
