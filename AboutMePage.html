@@ -11,18 +11,19 @@
       font-family: 'Poppins', sans-serif;
     }
     h1 {
-      font-family: 'Dancing Script', serif;
+      font-family: 'Poppins', sans-serif; /* Changed to a more professional font */
       font-size: 4rem; /* Adjusted size for better readability */
       font-weight: bold;
       color: #9b59b6; /* Electric purple color */
-      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Darker shadow for contrast */
-      font-style: italic;
       text-transform: uppercase; /* Capitalized text */
       padding: 0 20px; /* Added padding for better positioning */
-      text-align: center; /* Centered the title */
+      text-align: right; /* Positioned at the top-right */
+      position: absolute;
+      top: 10px;
+      right: 20px;
     }
     h2 {
-      font-family: 'Poppins', sans-serif; /* Changed font to Poppins for professionalism */
+      font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       color: #9b59b6; /* Electric purple color */
       font-weight: bold;
@@ -60,7 +61,7 @@
   </nav>
 
   <!-- About Me Section -->
-  <section class="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-12 max-w-6xl mx-auto">
+  <section class="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-12 max-w-6xl mx-auto pt-20"> <!-- Added pt-20 for spacing from top -->
     <!-- Left Section -->
     <div>
       <h2 class="border-b-2 border-gray-700 pb-2 text-indigo-400 font-bold">✨ My Interests</h2>
@@ -87,11 +88,8 @@
       </ul>
     </div>
 
-    <!-- Right Section (Be The System, Not The User) -->
-    <div class="flex justify-center">
-      <h1 class="text-indigo-400 font-bold">
-        BE THE SYSTEM, NOT THE USER
-      </h1>
+    <!-- Right Section (Content Below the Heading) -->
+    <div>
       <p class="text-gray-300 leading-relaxed mt-6 text-left">
         I am pursuing <strong>Computer Science Engineering</strong> with AI as my specialization—the perfect fusion of my curiosity and passion. 
         I have a love-hate relationship with <strong>Java and DSA</strong>, but I keep returning to them because there’s no end to learning.
