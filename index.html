@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amina Hasanaath | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Poppins and Dancing Script -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-black text-white font-poppins">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amina Hasanaath | Aspiring Engineering, Java & DSA Enthusiast, Portfolio and Projects">
+    <meta name="keywords" content="Portfolio, Java, DSA, Engineering, AI">
+    <meta name="author" content="Amina Hasanaath">
+    <title>Amina Hasanaath Portfolio</title>
 
-    <!-- Navbar -->
-    <nav class="bg-slate-800 p-4 fixed top-0 w-full z-10">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-white text-xl font-bold font-dancing-script">
-          My Portfolio
-        </a>
-        <div class="space-x-6">
-          <a href="AboutMePage.html" class="text-white text-xl font-bold font-dancing-script">
-            More About Me
-          </a>
-          <a href="contact.html" class="text-white text-xl font-bold font-dancing-script">
-            Contact
-          </a>
-        </div>
-      </div>
-    </nav>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Dark Mode Styles */
+        .dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Hover Effect for Project Images */
+        .project-card img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="py-6 px-4 bg-black text-white flex items-center justify-between">
+        <img src="logo.png" alt="My Logo" class="w-16 h-16">
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="text-indigo-400 hover:text-indigo-500">About Me</a></li>
+                <li><a href="#projects" class="text-indigo-400 hover:text-indigo-500">Projects</a></li>
+                <li><a href="#contact" class="text-indigo-400 hover:text-indigo-500">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="bg-gray-800 text-white p-2 rounded-md">
+            Toggle Theme
+        </button>
+    </header>
 
     <!-- Hero Section -->
     <section class="h-screen flex flex-col justify-center items-center text-center px-4 mt-20">
@@ -49,11 +72,10 @@
     <section class="py-20 bg-black text-center px-6">
       <h2 class="text-3xl font-bold text-indigo-400">About Me</h2>
      <p class="text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
-  <span class="block">Be the System | Not the User</span>
-  A passionate tech enthusiast. I prefer Java, with an interest in the backend and DSA.
-  <span class="block">Aspiring AI engineer, eager to integrate intelligence with systems.</span>
-</p>
-
+        <span class="block">Be the System | Not the User</span>
+        A passionate tech enthusiast. I prefer Java, with an interest in the backend and DSA.
+        <span class="block">Aspiring AI engineer, eager to integrate intelligence with systems.</span>
+    </p>
     </section>
 
     <!-- Tech Stack with Donut Charts -->
@@ -144,6 +166,19 @@
       <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js" defer></script>
-  </body>
+    <!-- Theme Toggle Script -->
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
+
+    <!-- AOS Animations Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+</body>
 </html>
