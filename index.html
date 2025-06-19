@@ -25,32 +25,34 @@
     </nav>
 
     <!-- Hero Section -->
-<section class="py-16 flex flex-col md:flex-row justify-center items-center text-left px-8 gap-12 max-w-6xl mx-auto">
+<section class="py-16 flex flex-col md:flex-row justify-center items-center text-left px-8 gap-20 max-w-6xl mx-auto">
 
-    <!-- Left: Profile Image -->
-<div class="flex-shrink-0">
-  <img 
-    src="https://i.imgur.com/pK9cRJP.jpeg"
-    alt="Profile Picture"
-    class="w-48 h-48 rounded-lg shadow-lg object-cover"
-  />
-</div>
-
-<!-- Right: Name + Intro -->
-<div>
-  <h1 class="text-4xl font-bold text-white">Amina Hasanaath</h1>
-  <p class="text-xl text-gray-400 mt-2">Aspiring Engineer | Java & DSA Enthusiast</p>
-  <p class="text-gray-400 mt-4 max-w-lg">
-    A passionate tech enthusiast, I am Java enthusiast, learning Backend Spring Boot in Java <br />
-    Aspiring AI engineer, eager to integrate Intelligence with systems.
-  </p>
-  <div class="mt-6">
-    <a href="resume.pdf" target="_blank" class="bg-indigo-600 px-6 py-2 rounded-lg shadow text-white hover:bg-indigo-700">
-      Resume
-    </a>
+  <!-- Left: Profile Image -->
+  <div class="flex-shrink-0 md:w-1/2 flex justify-center">
+    <img 
+      src="https://i.imgur.com/pK9cRJP.jpeg"
+      alt="Profile Picture"
+      class="w-48 h-48 md:w-56 md:h-56 rounded-lg shadow-lg object-cover"
+      loading="lazy"
+    />
   </div>
-</div>
-    </section>
+
+  <!-- Right: Name + Intro + Resume -->
+  <div class="md:w-1/2">
+    <h1 class="text-4xl font-bold text-white">Amina Hasanaath</h1>
+    <p class="text-xl text-gray-400 mt-2">Aspiring Engineer | Java & DSA Enthusiast</p>
+    <p class="text-gray-400 mt-4 max-w-lg">
+      A passionate tech enthusiast, currently learning Spring Boot with a strong Java background.<br />
+      Aspiring AI engineer — eager to integrate intelligence with real-world systems.
+    </p>
+    <div class="mt-6">
+      <a href="resume.pdf" target="_blank" class="bg-indigo-600 px-6 py-2 rounded-lg shadow text-white hover:bg-indigo-700">
+        Resume
+      </a>
+    </div>
+  </div>
+
+</section>
 <!-- Tech Stack + Projects Side-by-Side -->
 <section class="py-20 bg-black px-6">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
