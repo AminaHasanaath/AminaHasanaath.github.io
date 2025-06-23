@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Amina Hasanaath</title>
 
-    <!-- Tailwind CSS + Michroma Font -->
+    <!-- Tailwind + Michroma -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -20,10 +20,46 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      .underline-animate {
+        position: relative;
+      }
+
+      .underline-animate::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #6366f1; /* indigo-500 */
+        transition: width 0.3s ease-in-out;
+      }
+
+      .underline-animate:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
 
   <body class="bg-black text-white font-michroma">
-    <!-- ✅ Navbar -->
+    <!-- Navbar -->
     <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-10">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
         <a href="index.html" class="text-white text-xl font-bold font-michroma">Portfolio</a>
@@ -33,37 +69,36 @@
       </div>
     </nav>
 
-    <!-- ✅ Contact Section -->
-    <section class="py-24 px-6 text-center max-w-4xl mx-auto">
+    <!-- Contact Section -->
+    <section class="py-24 px-6 text-center max-w-4xl mx-auto animate-fade-in">
       <h1 class="text-3xl md:text-4xl font-bold text-indigo-400">Contact Info</h1>
       <p class="text-gray-400 mt-2">Feel free to reach out.</p>
 
-      <div class="mt-6 space-y-3 text-base">
-
-        <p>
-          <i class="fas fa-envelope mr-2 text-indigo-400"></i>
-          <a href="mailto:amina.hasanaath@gmail.com" class="text-blue-500 hover:underline">
+      <div class="mt-6 space-y-3 text-base text-left md:text-center max-w-md mx-auto">
+        <div class="flex items-center gap-3 justify-center hover:border-b-2 hover:border-indigo-500 transition duration-300 pb-1">
+          <i class="fas fa-envelope text-indigo-400"></i>
+          <a href="mailto:amina.hasanaath@gmail.com" class="text-blue-500 underline-animate">
             amina.hasanaath@gmail.com
           </a>
-        </p>
+        </div>
 
-        <p>
-          <i class="fas fa-phone-alt mr-2 text-indigo-400"></i>
-          <a href="tel:+919391201739" class="text-blue-500 hover:underline">
+        <div class="flex items-center gap-3 justify-center hover:border-b-2 hover:border-indigo-500 transition duration-300 pb-1">
+          <i class="fas fa-phone-alt text-indigo-400"></i>
+          <a href="tel:+919391201739" class="text-blue-500 underline-animate">
             9391201739
           </a>
-        </p>
+        </div>
 
-        <p>
-          <i class="fab fa-linkedin mr-2 text-indigo-400"></i>
-          <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank" class="text-blue-500 hover:underline">
+        <div class="flex items-center gap-3 justify-center hover:border-b-2 hover:border-indigo-500 transition duration-300 pb-1">
+          <i class="fab fa-linkedin text-indigo-400"></i>
+          <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank" class="text-blue-500 underline-animate">
             Click here!
           </a>
-        </p>
+        </div>
       </div>
     </section>
 
-    <!-- ✅ Footer -->
+    <!-- Footer -->
     <footer class="py-10 bg-black text-center text-gray-400 font-michroma">
       <p>© 2025 Amina Hasanaath. All Rights Reserved.</p>
     </footer>
