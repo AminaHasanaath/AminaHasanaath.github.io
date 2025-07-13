@@ -11,27 +11,32 @@
     tailwind.config = {
       theme: {
         extend: {
-         fontFamily: {
-                inter: ['Space Grotesk', 'sans-serif']
-          }
+        fontFamily: {
+  inter: ['General Sans', 'sans-serif']
+}
+
         }
       }
     }
   </script>
 
   <!-- Google Font -->
- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
 
-  <!-- Particles.js -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+ 
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+<!-- Three.js for Vanta -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+
+<!-- Vanta Waves -->
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 <script>
-  VANTA.NET({
+  VANTA.WAVES({
     el: "#particles-js",
     mouseControls: true,
     touchControls: true,
@@ -39,10 +44,11 @@
     minWidth: 200.00,
     scale: 1.0,
     scaleMobile: 1.0,
-    color: 0xffffff,
     backgroundColor: 0x0f0f0f,
-    points: 12.00,
-    maxDistance: 20.00
+    shininess: 50.00,
+    waveHeight: 15.00,
+    waveSpeed: 0.8,
+    color: 0x1e90ff
   });
 </script>
 
@@ -50,12 +56,13 @@
   <!-- Styles -->
   <style>
     body {
-      margin: 0;
-      font-family: 'Sora', sans-serif;
-      background-color: #0f0f0f;
-      color: white;
-      scroll-behavior: smooth;
-    }
+  margin: 0;
+  font-family: 'General Sans', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  scroll-behavior: smooth;
+}
+
     #particles-js {
       position: fixed;
       width: 100%;
@@ -122,13 +129,14 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 section">
-<img 
+<section class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-10 section">
+  <div class="flex justify-center md:justify-start w-full md:w-auto">
+  <img 
   src="https://i.imgur.com/pK9cRJP.jpeg"
   alt="Profile Picture"
   class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-indigo-600 shadow-lg object-cover hover:scale-105 transition duration-300"
-  loading="lazy"
-/>
+  loading="lazy"/>
+  </div>
 
 
   <div>
