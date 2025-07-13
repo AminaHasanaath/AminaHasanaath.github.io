@@ -226,58 +226,62 @@
   });
 </script>!-->
   <!-- ✅ PARTICLES.JS SCRIPT -->
+<!-- ✅ Load particles.js -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<!-- ✅ Initialize Particles -->
 <script>
-  particlesJS("particles-js", {
-    particles: {
-      number: {
-        value: 60,
-        density: { enable: true, value_area: 900 }
+  window.addEventListener('DOMContentLoaded', () => {
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 60,
+          density: { enable: true, value_area: 900 }
+        },
+        color: { value: "#6366f1" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000" }
+        },
+        opacity: {
+          value: 0.2,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#6366f1",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          out_mode: "out"
+        }
       },
-      color: { value: "#6366f1" },
-      shape: {
-        type: "circle",
-        stroke: { width: 0, color: "#000" }
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
       },
-      opacity: {
-        value: 0.2,
-        random: true,
-        anim: { enable: false }
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: { enable: false }
-      },
-      line_linked: {
-        enable: true,
-        distance: 120,
-        color: "#6366f1",
-        opacity: 0.2,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 1.2,
-        direction: "none",
-        out_mode: "out"
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: { enable: true, mode: "repulse" },
-        onclick: { enable: true, mode: "push" },
-        resize: true
-      },
-      modes: {
-        repulse: { distance: 100 },
-        push: { particles_nb: 4 }
-      }
-    },
-    retina_detect: true
+      retina_detect: true
+    });
   });
 </script>
+
 
 
 </body>
