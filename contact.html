@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Amina Hasanaath</title>
 
-  <!-- Tailwind CSS + Google Font -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,14 +22,26 @@
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       font-family: 'Space Grotesk', sans-serif;
+      scroll-behavior: smooth;
       background-color: #000;
       color: white;
-      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 8px;
     }
 
     .gradient-text {
@@ -38,10 +50,42 @@
       -webkit-text-fill-color: transparent;
     }
 
-    ::-webkit-scrollbar-thumb {
-      background: #6366f1;
-      border-radius: 8px;
+    .contact-card {
+      backdrop-blur: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(99,102,241,0.3);
+      transition: transform 0.3s ease;
     }
+
+    .contact-card:hover {
+      transform: scale(1.05);
+    }
+
+    .underline-animate {
+      position: relative;
+      display: inline-block;
+    }
+
+    .underline-animate::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #6366f1, #00f0ff);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .underline-animate:hover::after {
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -51,35 +95,57 @@
   <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="index.html" class="text-white text-xl font-bold">Portfolio</a>
-      <a href="contact.html" class="text-white hover:text-indigo-400 transition">Contact</a>
+      <a href="contact.html" class="text-white text-xl font-bold">Contact</a>
     </div>
   </nav>
 
-  <!-- Contact Section -->
-  <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto flex flex-col items-center gap-6">
-  <h1 class="text-4xl font-bold gradient-text mb-2">Contact Info</h1>
-  <p class="text-gray-400 text-center italic mb-6">“Connection builds direction.”</p>
+  <!-- Hero / Contact Section -->
+  <section class="pt-32 pb-16 px-6 text-center max-w-4xl mx-auto" data-aos="fade-up">
+    <h1 class="text-4xl font-bold gradient-text mb-2">Contact Me</h1>
+    <p class="text-gray-300 mb-10">“Connection builds direction.”</p>
 
-  <div class="grid gap-6 w-full md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-8">
+      <!-- Email -->
+      <div class="contact-card flex flex-col items-center">
+        <i class="fas fa-envelope text-indigo-400 text-2xl mb-2"></i>
+        <a href="mailto:amina.hasanaath@gmail.com" class="text-white underline-animate hover:text-indigo-400 text-lg">
+          amina.hasanaath@gmail.com
+        </a>
+      </div>
 
-    <!-- Email Card -->
-    <a href="mailto:amina.hasanaath@gmail.com" class="group bg-[#111111] border border-gray-700 rounded-xl p-6 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
-      <i class="fas fa-envelope text-4xl text-indigo-400 mb-3 group-hover:text-primary transition"></i>
-      <p class="text-white text-lg font-semibold group-hover:text-primary transition">amina.hasanaath@gmail.com</p>
-    </a>
+      <!-- Phone -->
+      <div class="contact-card flex flex-col items-center">
+        <i class="fas fa-phone-alt text-indigo-400 text-2xl mb-2"></i>
+        <a href="tel:+919391201739" class="text-white underline-animate hover:text-indigo-400 text-lg">
+          +91 9391201739
+        </a>
+      </div>
 
-    <!-- Phone Card -->
-    <a href="tel:+919391201739" class="group bg-[#111111] border border-gray-700 rounded-xl p-6 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
-      <i class="fas fa-phone-alt text-4xl text-indigo-400 mb-3 group-hover:text-primary transition"></i>
-      <p class="text-white text-lg font-semibold group-hover:text-primary transition">+91 9391201739</p>
-    </a>
+      <!-- Button -->
+      <div class="contact-card">
+        <a href="mailto:amina.hasanaath@gmail.com" class="inline-block bg-indigo-600 px-6 py-2 rounded hover:bg-indigo-700 transition font-semibold">
+          Let’s Talk →
+        </a>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- Footer -->
+  <footer class="text-center text-gray-400 py-10">
+    <p>Email: <a href="mailto:amina.hasanaath@gmail.com" class="text-white hover:text-indigo-400">amina.hasanaath@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank" class="text-white hover:text-indigo-400">LinkedIn Profile</a></p>
+    <p>GitHub: <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white hover:text-indigo-400">GitHub</a></p>
+    <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
+  </footer>
 
-  <!-- CTA Button -->
-  <a href="mailto:amina.hasanaath@gmail.com" class="mt-8 inline-block bg-indigo-600 px-8 py-3 rounded-full text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
-    Let’s Talk →
-  </a>
-</section>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 </html>
