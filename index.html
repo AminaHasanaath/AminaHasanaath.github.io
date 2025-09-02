@@ -200,14 +200,22 @@
 
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    new Typed("#typed-name", {
-      strings: ["Amina Hasanaath", "Backend Developer & AI Integrator", "There's no right way to do the right thing"],
-      typeSpeed: 80,
-      backSpeed: 40,
-      loop: true
-    });
-  </script>
+<script>
+  new Typed("#typed-name", {
+    strings: [
+      "Amina Hasanaath",
+      "Backend Developer & AI Integrator",
+      "There's no right way to do the right thing"
+    ],
+    typeSpeed: 60,       // slower typing
+    backSpeed: 30,       // smoother backspacing
+    backDelay: 1500,     // pause before deleting
+    startDelay: 500,     // small delay before starting
+    loop: true,
+    showCursor: true,
+    cursorChar: "|"
+  });
+</script>
 
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -236,6 +244,7 @@
 
 </body>
 </html>
+
 
 
 
