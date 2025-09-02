@@ -1,103 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Amina Hasanaath</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Amina Hasanaath</title>
 
-    <!-- Tailwind + Michroma -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              michroma: ['Michroma', 'sans-serif']
-            }
+  <!-- Tailwind CSS + Google Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            grotesk: ['Space Grotesk', 'sans-serif']
+          },
+          colors: {
+            primary: '#00f0ff',
+            dark: '#0f0f0f'
           }
         }
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
 
-    <style>
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #000;
+      color: white;
+      scroll-behavior: smooth;
+    }
 
-      .animate-fade-in {
-        animation: fadeIn 0.8s ease-in-out;
-      }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #00f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      .underline-animate {
-        position: relative;
-      }
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 8px;
+    }
+  </style>
+</head>
 
-      .underline-animate::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background: linear-gradient(90deg, #6366f1, #9333ea);
-        transition: width 0.3s ease-in-out;
-      }
+<body class="font-grotesk">
 
-      .underline-animate:hover::after {
-        width: 100%;
-      }
-    </style>
-  </head>
+  <!-- Navbar -->
+  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-10">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-white text-xl font-bold">Portfolio</a>
+      <a href="contact.html" class="text-white hover:text-indigo-400 transition">Contact</a>
+    </div>
+  </nav>
 
-  <body class="bg-gradient-to-b from-black via-[#0a0a2a] to-black text-white font-michroma">
-    <!-- Navbar -->
-    <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-10">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-white text-xl font-bold font-michroma">Portfolio</a>
-        <div class="space-x-6">
-          <a href="contact.html" class="text-white text-xl font-bold font-michroma">Contact</a>
-        </div>
-      </div>
-    </nav>
-<!-- Contact Section -->
-<section class="py-24 px-6 text-center max-w-4xl mx-auto animate-fade-in">
-  <h1 class="text-3xl md:text-4xl font-bold text-white">Contact Info</h1>
-  <p class="text-gray-400 mt-1 italic text-sm">“Connection builds direction.”</p>
+  <!-- Contact Section -->
+  <section class="pt-32 pb-24 px-6 max-w-4xl mx-auto flex flex-col items-center gap-10">
+    <h1 class="text-4xl font-bold gradient-text mb-2">Contact Info</h1>
+    <p class="text-gray-400 text-center italic mb-10">“Connection builds direction.”</p>
 
-  <div class="backdrop-blur-md bg-white/5 border border-indigo-500/20 rounded-xl p-8 mt-10 space-y-2 shadow-xl max-w-md mx-auto hover:shadow-[0_0_20px_rgba(99,102,241,0.6)] transition duration-300">
-    
-    <!-- Email -->
-    <div class="flex items-center gap-3 justify-center hover:scale-105 transition duration-300">
-      <i class="fas fa-envelope text-indigo-400 text-lg hover:text-indigo-300 hover:scale-110 hover:animate-pulse"></i>
-      <a href="mailto:amina.hasanaath@gmail.com" class="text-white underline-animate hover:text-indigo-400">
-        amina.hasanaath@gmail.com
+    <div class="grid gap-8 w-full md:grid-cols-2">
+
+      <!-- Email Card -->
+      <a href="mailto:amina.hasanaath@gmail.com" class="group bg-[#111111] border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
+        <i class="fas fa-envelope text-4xl text-indigo-400 mb-4 group-hover:text-primary transition"></i>
+        <p class="text-white text-lg font-semibold group-hover:text-primary transition">amina.hasanaath@gmail.com</p>
       </a>
+
+      <!-- Phone Card -->
+      <a href="tel:+919391201739" class="group bg-[#111111] border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
+        <i class="fas fa-phone-alt text-4xl text-indigo-400 mb-4 group-hover:text-primary transition"></i>
+        <p class="text-white text-lg font-semibold group-hover:text-primary transition">+91 9391201739</p>
+      </a>
+
     </div>
 
-    <!-- Phone -->
-    <div class="flex items-center gap-3 justify-center hover:scale-105 transition duration-300">
-      <i class="fas fa-phone-alt text-indigo-400 text-lg hover:text-indigo-300 hover:scale-110 hover:animate-pulse"></i>
-      <a href="tel:+919391201739" class="text-white underline-animate hover:text-indigo-400">
-        9391201739
-      </a>
-    </div>
+    <!-- CTA Button -->
+    <a href="mailto:amina.hasanaath@gmail.com" class="mt-12 inline-block bg-indigo-600 px-8 py-3 rounded-full text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
+      Let’s Talk →
+    </a>
+  </section>
 
-    <!-- Button -->
-    <div class="pt-4">
-      <a href="mailto:amina.hasanaath@gmail.com" class="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
-        Let’s Talk →
-      </a>
-    </div>
-  </div>
-</section>
-
-  
+</body>
+</html>
