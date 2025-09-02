@@ -44,23 +44,6 @@
       border-radius: 8px;
     }
 
-    .contact-card {
-      backdrop-blur: blur(8px);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(99,102,241,0.3);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.2);
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
     .contact-link {
       color: #d1d5db;
       transition: color 0.3s;
@@ -69,6 +52,31 @@
     .contact-link:hover {
       color: #6366f1;
       text-decoration: underline;
+    }
+
+    .contact-button {
+      background-color: #6366f1;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #4f46e5;
+    }
+
+    .contact-number {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d1d5db;
+      margin-top: 0.75rem;
+    }
+
+    .contact-number:hover {
+      color: #6366f1;
     }
   </style>
 </head>
@@ -83,25 +91,24 @@
     </div>
   </nav>
 
-  <!-- Contact Hero Section -->
-  <section class="pt-32 pb-16 px-6 text-center max-w-3xl mx-auto" data-aos="fade-up">
+  <!-- Contact Section -->
+  <section class="pt-32 pb-16 px-6 text-center max-w-md mx-auto" data-aos="fade-up">
     <h1 class="text-4xl md:text-5xl font-grotesk text-[#6366f1] mb-4">Get in Touch</h1>
-    <p class="text-gray-400 mb-12">I’m open to collaborations, projects, or just a friendly hello. Reach me via phone or LinkedIn below.</p>
+    <p class="text-gray-400 mb-12">Reach out via email, LinkedIn, or phone below.</p>
 
-    <div class="grid grid-cols-1 gap-8">
-      <div class="contact-card flex flex-col items-center space-y-4">
-        <!-- Call -->
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-phone text-[#6366f1] text-2xl"></i>
-          <a href="tel:+919391201739" class="contact-link text-lg">+91 9391201739</a>
-        </div>
+    <!-- Email -->
+    <a href="mailto:amina.hasanaath@gmail.com" class="block contact-link text-lg mb-4">Email</a>
 
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309/detail/contact-info/" target="_blank" class="inline-block bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700 transition font-medium">
-          Let’s Talk
-        </a>
-      </div>
-    </div>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309/detail/contact-info/" target="_blank" class="contact-button mb-4 inline-block">
+      Let’s Talk
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+919391201739" class="contact-number">
+      <i class="fas fa-phone text-[#6366f1]"></i>
+      +91 9391201739
+    </a>
   </section>
 
   <!-- Footer -->
