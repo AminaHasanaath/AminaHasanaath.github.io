@@ -1,86 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Amina Hasanaath</title>
+<section class="pt-32 pb-20 px-6 max-w-4xl mx-auto flex flex-col items-center gap-6">
+  <h1 class="text-4xl font-bold gradient-text mb-2">Contact Info</h1>
+  <p class="text-gray-400 text-center italic mb-6">“Connection builds direction.”</p>
 
-  <!-- Tailwind CSS + Google Font -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            grotesk: ['Space Grotesk', 'sans-serif']
-          },
-          colors: {
-            primary: '#00f0ff',
-            dark: '#0f0f0f'
-          }
-        }
-      }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet"/>
+  <div class="grid gap-6 w-full md:grid-cols-2">
 
-  <style>
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-color: #000;
-      color: white;
-      scroll-behavior: smooth;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #6366f1, #00f0ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #6366f1;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-
-<body class="font-grotesk">
-
-  <!-- Navbar -->
-  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-10">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-white text-xl font-bold">Portfolio</a>
-      <a href="contact.html" class="text-white hover:text-indigo-400 transition">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Contact Section -->
-  <section class="pt-32 pb-24 px-6 max-w-4xl mx-auto flex flex-col items-center gap-10">
-    <h1 class="text-4xl font-bold gradient-text mb-2">Contact Info</h1>
-    <p class="text-gray-400 text-center italic mb-10">“Connection builds direction.”</p>
-
-    <div class="grid gap-8 w-full md:grid-cols-2">
-
-      <!-- Email Card -->
-      <a href="mailto:amina.hasanaath@gmail.com" class="group bg-[#111111] border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
-        <i class="fas fa-envelope text-4xl text-indigo-400 mb-4 group-hover:text-primary transition"></i>
-        <p class="text-white text-lg font-semibold group-hover:text-primary transition">amina.hasanaath@gmail.com</p>
-      </a>
-
-      <!-- Phone Card -->
-      <a href="tel:+919391201739" class="group bg-[#111111] border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
-        <i class="fas fa-phone-alt text-4xl text-indigo-400 mb-4 group-hover:text-primary transition"></i>
-        <p class="text-white text-lg font-semibold group-hover:text-primary transition">+91 9391201739</p>
-      </a>
-
-    </div>
-
-    <!-- CTA Button -->
-    <a href="mailto:amina.hasanaath@gmail.com" class="mt-12 inline-block bg-indigo-600 px-8 py-3 rounded-full text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
-      Let’s Talk →
+    <!-- Email Card -->
+    <a href="mailto:amina.hasanaath@gmail.com" class="group bg-[#111111] border border-gray-700 rounded-xl p-6 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
+      <i class="fas fa-envelope text-4xl text-indigo-400 mb-3 group-hover:text-primary transition"></i>
+      <p class="text-white text-lg font-semibold group-hover:text-primary transition">amina.hasanaath@gmail.com</p>
     </a>
-  </section>
 
-</body>
-</html>
+    <!-- Phone Card -->
+    <a href="tel:+919391201739" class="group bg-[#111111] border border-gray-700 rounded-xl p-6 flex flex-col items-center hover:scale-105 transition duration-300 shadow-lg">
+      <i class="fas fa-phone-alt text-4xl text-indigo-400 mb-3 group-hover:text-primary transition"></i>
+      <p class="text-white text-lg font-semibold group-hover:text-primary transition">+91 9391201739</p>
+    </a>
+
+  </div>
+
+  <!-- CTA Button -->
+  <a href="mailto:amina.hasanaath@gmail.com" class="mt-8 inline-block bg-indigo-600 px-8 py-3 rounded-full text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
+    Let’s Talk →
+  </a>
+</section>
