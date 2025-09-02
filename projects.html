@@ -3,104 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects</title>
+  <title>Projects | Amina Hasanaath</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .fade-in {
-      animation: fadeIn 1s ease-in-out both;
+    html, body {
+      margin:0; padding:0;
+      font-family:'Space Grotesk', sans-serif;
+      scroll-behavior:smooth;
+      background-color:#000;
+      color:white;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    ::-webkit-scrollbar-thumb { background:#6366f1; border-radius:8px; }
+
+    .fade-in { animation: fadeIn 1s ease-in-out both; }
+    @keyframes fadeIn { 0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
 
     /* Gradient pulsing buttons */
     .pulse-btn {
-      background: linear-gradient(90deg, #6366f1, #4f46e5, #6366f1);
-      background-size: 200% 200%;
-      animation: pulseGradient 2s ease infinite;
-      color: white;
+      background: linear-gradient(90deg,#6366f1,#4f46e5,#6366f1);
+      background-size:200% 200%;
+      animation:pulseGradient 2s ease infinite;
+      color:white;
     }
-    @keyframes pulseGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    @keyframes pulseGradient { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
 
-    /* Tech badge gradient animation */
+    /* Tech badge animation */
     .tech-badge {
-      background: linear-gradient(90deg, #4f46e5, #6366f1, #4f46e5);
-      background-size: 200% 200%;
-      animation: pulseGradient 2s ease infinite;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
+      background: linear-gradient(90deg,#4f46e5,#6366f1,#4f46e5);
+      background-size:200% 200%;
+      animation:pulseGradient 2s ease infinite;
+      color:white; padding:0.25rem 0.75rem; border-radius:9999px; font-size:0.75rem; font-weight:500;
     }
-  </style>
-</head>
-<body class="bg-black text-white">
 
-  <!-- Hero Section -->
+    /* Project card style */
+    .card { background:#111; border:1px solid #333; border-radius:1rem; overflow:hidden; transition:transform 0.3s; }
+    .card:hover { transform:scale(1.03); }
+
+    /* Image hover */
+    .card img { transition: transform 0.3s ease; }
+    .card img:hover { transform:scale(1.05); }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="font-grotesk">
+
+  <!-- Hero -->
   <section class="text-center py-16 fade-in">
-    <p class="text-gray-400 mt-2">
-      Showcasing my work—built brick by brick with hard work and passion.
-    </p>
+    <h1 class="text-4xl font-bold text-[#6366f1]">Projects</h1>
+    <p class="text-gray-400 mt-2">Showcasing my work—built brick by brick with hard work and passion.</p>
   </section>
 
   <!-- Projects Feed -->
-  <section class="max-w-5xl mx-auto space-y-12 px-5 py-10">
-    
-    <!-- Project Card 1 -->
-    <div class="flex flex-col md:flex-row items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in hover:scale-105 transition-transform duration-300">
-      <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1" class="w-full md:w-1/2 h-64 object-cover"/>
+  <section class="max-w-6xl mx-auto space-y-12 px-6 py-10">
+
+    <!-- Project Card Example -->
+    <div class="flex flex-col md:flex-row items-center card fade-in" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x250?text=Project+1" alt="C Project" class="w-full md:w-1/2 h-64 object-cover"/>
       <div class="p-6 md:w-1/2">
         <h2 class="text-2xl font-semibold mb-2">C - CodeVault Mini Project</h2>
-        <p class="text-gray-400 mb-3">
-          Command-Line Simulations using C programming Language
-        </p>
+        <p class="text-gray-400 mb-3">Command-Line Simulations using C programming Language</p>
         <div class="flex flex-wrap gap-2 mb-3">
           <span class="tech-badge">C</span>
           <span class="tech-badge">CLI</span>
         </div>
-        <a href="https://github.com/AminaHasanaath/C---CodeVault.git" target="_blank" class="pulse-btn px-4 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
+        <a href="https://github.com/AminaHasanaath/C---CodeVault.git" target="_blank"
+           class="pulse-btn px-5 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
           View on GitHub
         </a>
       </div>
     </div>
 
-    <!-- Project Card 2 -->
-    <div class="flex flex-col md:flex-row-reverse items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in hover:scale-105 transition-transform duration-300">
-      <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2" class="w-full md:w-1/2 h-64 object-cover"/>
+    <div class="flex flex-col md:flex-row-reverse items-center card fade-in" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Reflectra 365" class="w-full md:w-1/2 h-64 object-cover"/>
       <div class="p-6 md:w-1/2">
         <h2 class="text-2xl font-semibold mb-2">Reflectra 365</h2>
-        <p class="text-gray-400 mb-3">
-          A daily task + analysis tracker for productivity and habit tracking.
-        </p>
+        <p class="text-gray-400 mb-3">A daily task + analysis tracker for productivity and habit tracking.</p>
         <div class="flex flex-wrap gap-2 mb-3">
           <span class="tech-badge">App Script</span>
           <span class="tech-badge">Excel DB</span>
         </div>
-        <a href="projects.html" class="pulse-btn px-4 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
-         Coming Soon!
+        <a href="projects.html" class="pulse-btn px-5 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
+          Coming Soon!
         </a>
       </div>
     </div>
 
-    <!-- Project Card 3 -->
-    <div class="flex flex-col md:flex-row items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in hover:scale-105 transition-transform duration-300">
-      <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3" class="w-full md:w-1/2 h-64 object-cover"/>
+    <div class="flex flex-col md:flex-row items-center card fade-in" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Auto Notify" class="w-full md:w-1/2 h-64 object-cover"/>
       <div class="p-6 md:w-1/2">
         <h2 class="text-2xl font-semibold mb-2">Auto Notify 1.0</h2>
-        <p class="text-gray-400 mb-3">
-         Auto Typing Messaging App - Emergency App
-        </p>
+        <p class="text-gray-400 mb-3">Auto Typing Messaging App - Emergency App</p>
         <div class="flex flex-wrap gap-2 mb-3">
           <span class="tech-badge">Kotlin</span>
           <span class="tech-badge">Local DB</span>
         </div>
-        <a href="#" class="pulse-btn px-4 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
+        <a href="#" class="pulse-btn px-5 py-2 rounded inline-block transition-transform duration-300 hover:scale-105">
           Coming Soon
         </a>
       </div>
@@ -109,19 +107,16 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="text-center py-10 fade-in">
-    <h2 class="text-3xl font-bold">Let's Connect</h2>
+  <section class="text-center py-10 fade-in" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-[#6366f1]">Let's Connect</h2>
     <p class="text-gray-400 mt-2">Find me on LinkedIn or GitHub.</p>
     <div class="flex justify-center gap-4 mt-4">
-      <a href="https://github.com/AminaHasanaath" class="pulse-btn px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300">
-        GitHub
-      </a>
-      <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" class="pulse-btn px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300">
-        LinkedIn
-      </a>
+      <a href="https://github.com/AminaHasanaath" class="pulse-btn px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300">GitHub</a>
+      <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" class="pulse-btn px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300">LinkedIn</a>
     </div>
   </section>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script> AOS.init(); </script>
 </body>
 </html>
-
