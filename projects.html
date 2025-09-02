@@ -1,82 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .fade-in {
-        animation: fadeIn 1s ease-in-out both;
-      }
-      @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-    </style>
-  </head>
-  <body class="bg-black text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
 
-    <!-- Hero Section -->
-    <section class="text-center py-16 bg-black fade-in">
-      <h1 class="text-4xl font-bold">My Projects</h1>
-      <p class="text-gray-400 mt-2">
-        Showcasing my work—built brick by brick with hard work and passion.
-      </p>
-    </section>
+  <!-- Hero Section -->
+  <section class="text-center py-16 fade-in">
+    <h1 class="text-4xl font-bold">My Projects</h1>
+    <p class="text-gray-400 mt-2">
+      Showcasing my work—built brick by brick with hard work and passion.
+    </p>
+  </section>
 
-    <!-- Projects Grid -->
-    <section class="max-w-6xl mx-auto py-10 px-5">
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project Card Template -->
-        <!-- Copy & replace this div to add more projects -->
-        <div class="bg-black rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 fade-in">
-          <img
-            src="https://via.placeholder.com/400x200?text=Project+Image"
-            alt="Project Name"
-            class="w-full h-48 object-cover rounded-t-lg"
-          />
-          <div class="p-6">
-            <h2 class="text-2xl font-semibold">Project Title</h2>
-            <p class="text-gray-400 text-sm mt-2">
-              Brief description about the project goes here.
-            </p>
-            <!-- Tech Stack Badges -->
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Tech 1</span>
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Tech 2</span>
-            </div>
-            <!-- View Button -->
-            <a href="#" class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full transition duration-300">
-              View Project
-            </a>
-          </div>
+  <!-- Projects Feed -->
+  <section class="max-w-5xl mx-auto space-y-12 px-5 py-10">
+    
+    <!-- Project Card 1 -->
+    <div class="flex flex-col md:flex-row items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in">
+      <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project 1" class="w-full md:w-1/2 h-64 object-cover"/>
+      <div class="p-6 md:w-1/2">
+        <h2 class="text-2xl font-semibold mb-2">C - CodeVault Mini Project</h2>
+        <p class="text-gray-400 mb-3">
+          Collection of foundational level projects proving my C programming command!
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="bg-yellow-500 text-black text-xs px-3 py-1 rounded-full">C</span>
+          <span class="bg-yellow-500 text-black text-xs px-3 py-1 rounded-full">CLI</span>
         </div>
-        <!-- End Project Card Template -->
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="text-center py-10 fade-in">
-      <h2 class="text-3xl font-bold">Let's Connect</h2>
-      <p class="text-gray-400 mt-2">
-        Find me on LinkedIn or GitHub.
-      </p>
-      <div class="flex justify-center gap-4 mt-4">
-        <a
-          href="https://github.com/AminaHasanaath"
-          class="bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300"
-        >
-          GitHub
-        </a>
-        <a
-          href="http://www.linkedin.com/in/amina-hasanaath-7033a1309"
-          class="bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300"
-        >
-          LinkedIn
+        <a href="https://github.com/AminaHasanaath/C---CodeVault.git" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition duration-300 inline-block">
+          View on GitHub
         </a>
       </div>
-    </section>
+    </div>
 
-  </body>
+    <!-- Project Card 2 (alternate layout) -->
+    <div class="flex flex-col md:flex-row-reverse items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in">
+      <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2" class="w-full md:w-1/2 h-64 object-cover"/>
+      <div class="p-6 md:w-1/2">
+        <h2 class="text-2xl font-semibold mb-2">Reflectra 365</h2>
+        <p class="text-gray-400 mb-3">
+          A daily task + analysis tracker for productivity and habit tracking.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">React</span>
+          <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">JavaScript</span>
+        </div>
+        <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition duration-300 inline-block">
+          View Details
+        </a>
+      </div>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="flex flex-col md:flex-row items-center bg-gray-900 rounded-lg shadow-lg overflow-hidden fade-in">
+      <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3" class="w-full md:w-1/2 h-64 object-cover"/>
+      <div class="p-6 md:w-1/2">
+        <h2 class="text-2xl font-semibold mb-2">AI Integrator</h2>
+        <p class="text-gray-400 mb-3">
+          Integrating AI modules into real-time systems for smarter automation.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full">Python</span>
+          <span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full">AI</span>
+        </div>
+        <a href="#" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition duration-300 inline-block">
+          Coming Soon
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Call to Action -->
+  <section class="text-center py-10 fade-in">
+    <h2 class="text-3xl font-bold">Let's Connect</h2>
+    <p class="text-gray-400 mt-2">Find me on LinkedIn or GitHub.</p>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="https://github.com/AminaHasanaath" class="bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+        GitHub
+      </a>
+      <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" class="bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+</body>
 </html>
+
