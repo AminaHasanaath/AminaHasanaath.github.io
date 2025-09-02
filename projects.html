@@ -6,95 +6,55 @@
     <title>My Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Simple fade-in animation */
       .fade-in {
         animation: fadeIn 1s ease-in-out both;
       }
-
       @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
   <body class="bg-black text-white">
+
     <!-- Hero Section -->
     <section class="text-center py-16 bg-black fade-in">
       <h1 class="text-4xl font-bold">My Projects</h1>
       <p class="text-gray-400 mt-2">
-       Showcasing my best work, built brick by brick with hard work and passion.
+        Showcasing my work—built brick by brick with hard work and passion.
       </p>
     </section>
 
     <!-- Projects Grid -->
     <section class="max-w-6xl mx-auto py-10 px-5">
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project Card -->
-        <div
-          class="bg-black rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 fade-in"
-        >
+        <!-- Project Card Template -->
+        <!-- Copy & replace this div to add more projects -->
+        <div class="bg-black rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 fade-in">
           <img
-            src="https://github.com/AminaHasanaath/AminaHasanaath.github.io/blob/main/ImageProj.jpg?raw=true"
-            alt="C CodeVault Project"
+            src="https://via.placeholder.com/400x200?text=Project+Image"
+            alt="Project Name"
             class="w-full h-48 object-cover rounded-t-lg"
           />
-
           <div class="p-6">
-            <h2 class="text-2xl font-semibold">C - CodeVault Mini Project</h2>
+            <h2 class="text-2xl font-semibold">Project Title</h2>
             <p class="text-gray-400 text-sm mt-2">
-              Collection of foundational level projects proving my C programming command!
+              Brief description about the project goes here.
             </p>
-
             <!-- Tech Stack Badges -->
             <div class="flex flex-wrap gap-2 mt-3">
-              <span class="bg-yellow-500 text-black text-xs px-3 py-1 rounded-full">C</span>
-              <span class="bg-yellow-500 text-black text-xs px-3 py-1 rounded-full">CLI</span>
+              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Tech 1</span>
+              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Tech 2</span>
             </div>
-
-            <!-- View More Button -->
-            <button
-              onclick="openModal()"
-              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full transition duration-300"
-            >
-              View More
-            </button>
+            <!-- View Button -->
+            <a href="#" class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full transition duration-300">
+              View Project
+            </a>
           </div>
         </div>
-        <!-- Add more project cards below if needed -->
+        <!-- End Project Card Template -->
       </div>
     </section>
-
-    <!-- Modal Popup -->
-    <div
-      id="modal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden fade-in"
-    >
-      <div class="bg-black p-6 rounded-lg max-w-md text-center">
-        <h2 class="text-2xl font-semibold">C - Mini Project</h2>
-        <p class="text-gray-400 mt-2">
-          From Library Management, ATM Simulator to Password Validator!
-        </p>
-        <a
-          href="https://github.com/AminaHasanaath/C---CodeVault.git"
-          target="_blank"
-          class="block mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300"
-        >
-          View on GitHub
-        </a>
-        <button
-          onclick="closeModal()"
-          class="mt-3 text-blue-400 hover:text-gray-200 cursor-pointer transition duration-300"
-        >
-          Close
-        </button>
-      </div>
-    </div>
 
     <!-- Call to Action -->
     <section class="text-center py-10 fade-in">
@@ -118,14 +78,5 @@
       </div>
     </section>
 
-    <!-- Scripts -->
-    <script>
-      function openModal() {
-        document.getElementById("modal").classList.remove("hidden");
-      }
-      function closeModal() {
-        document.getElementById("modal").classList.add("hidden");
-      }
-    </script>
   </body>
 </html>
