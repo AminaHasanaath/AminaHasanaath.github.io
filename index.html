@@ -205,83 +205,11 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init(); // Trigger scroll-based animations
-
+  background: linear-gradient(135deg, #0f0f0f, #1f1f2f);
 </script>
-  <!-- ✅ Vanta.js Animated Wave Background --
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-<script>
-  VANTA.WAVES({
-    el: "#vanta-bg",            // target div
-    color: 0x6366f1,            // main wave color (your indigo)
-    shininess: 50,              // light bounce
-    waveHeight: 20,             // wave size
-    waveSpeed: 1.2,             // speed of wave motion
-    zoom: 1.2,                  // zoom into the waves
-    backgroundColor: 0x000000   // pure black bg
-  });
-</script>!-->
-  <!-- ✅ PARTICLES.JS SCRIPT -->
-<!-- ✅ Load particles.js -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<!-- ✅ Initialize Particles Background -->
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 60,
-          density: { enable: true, value_area: 800 }
-        },
-        color: { value: "#6366f1" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000" }
-        },
-        opacity: {
-          value: 0.3,
-          random: true
-        },
-        size: {
-          value: 3,
-          random: true
-        },
-        line_linked: {
-          enable: true,
-          distance: 120,
-          color: "#6366f1",
-          opacity: 0.2,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.5,
-          direction: "none",
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
-          resize: true
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
-        }
-      },
-      retina_detect: true
-    });
-  });
-</script>
-
-
-
 </body>
 </html>
+
 
 
 
