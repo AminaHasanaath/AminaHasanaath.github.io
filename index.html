@@ -452,7 +452,7 @@
       <p class="mt-4">© 2025 Amina Hasanaath. Mind your own Business.</p>
     </footer>
     
- <!-- Typed.js -->
+ <!-- <!-- Typed.js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   var typed = new Typed("#typed-name", {
@@ -468,27 +468,27 @@
     showCursor: true,
     cursorChar: '|'
   });
+
+  // Donut animation
+  document.querySelectorAll("circle.animate-fill").forEach((circle) => {
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    const percent = circle.nextElementSibling
+      ? parseInt(
+          circle.parentElement.nextElementSibling?.innerText.replace("%", "")
+        )
+      : 90;
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset =
+      circumference - (percent / 100) * circumference;
+  });
 </script>
 
-      // Donut animation
-      document.querySelectorAll("circle.animate-fill").forEach((circle) => {
-        const radius = circle.r.baseVal.value;
-        const circumference = 2 * Math.PI * radius;
-        const percent = circle.nextElementSibling
-          ? parseInt(
-              circle.parentElement.nextElementSibling?.innerText.replace("%", "")
-            )
-          : 90;
-        circle.style.strokeDasharray = circumference;
-        circle.style.strokeDashoffset =
-          circumference - (percent / 100) * circumference;
-      });
-    </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true });
-    </script>
-  </body>
-</html>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
 
 
