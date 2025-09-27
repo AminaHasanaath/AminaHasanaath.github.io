@@ -450,7 +450,7 @@
       </div>
     </section>
 
-   <!-- LeetCode Stats -->
+<!-- LeetCode Stats -->
 <section id="leetcode" class="py-20 px-6 bg-gray-900">
   <h2
     class="text-3xl font-bold text-primary mb-10 text-center"
@@ -458,14 +458,50 @@
   >
     LeetCode Stats
   </h2>
-  <div class="flex justify-center" data-aos="fade-up">
-    <img
-      src="https://leetcard.jacoblin.cool/leetyamina?theme=nord&font=David%20Libre&ext=contest"
-      alt="LeetCode Stats"
-      class="rounded-lg shadow-lg max-w-full"
-    />
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left: Counts -->
+    <div class="grid grid-cols-2 gap-6 text-center" data-aos="fade-up">
+      <div class="p-4 rounded bg-gray-800">
+        Streaks: <span id="lc-streak">0</span>
+      </div>
+      <div class="p-4 rounded bg-gray-800">
+        Solved: <span id="lc-solved">0</span>
+      </div>
+      <div class="p-4 rounded bg-gray-800">
+        Badges: <span id="lc-badges">0</span>
+      </div>
+      <div class="p-4 rounded bg-gray-800">
+        Rank: <span id="lc-rank">0</span>
+      </div>
+    </div>
+
+    <!-- Right: SVG Card -->
+    <div class="flex justify-center" data-aos="fade-up">
+      <img
+        src="https://leetcard.jacoblin.cool/leetyamina?theme=nord&font=David%20Libre&ext=contest"
+        alt="LeetCode Stats"
+        class="rounded-lg shadow-lg max-w-full"
+      />
+    </div>
   </div>
 </section>
+
+<script>
+  const leetcodeUsername = "leetyamina"; // replace with your username
+
+  fetch(`https://leetcode-stats-api.herokuapp.com/${leetcodeUsername}`)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("lc-streak").innerText =
+        data.streak ? data.streak.current_streak : 0;
+      document.getElementById("lc-solved").innerText = data.totalSolved || 0;
+      document.getElementById("lc-badges").innerText = data.badges || 0;
+      document.getElementById("lc-rank").innerText = data.ranking || 0;
+    })
+    .catch((err) => console.error("LeetCode fetch error:", err));
+</script>
+
 
    
 <script>
@@ -566,6 +602,7 @@
     </script>
   </body>
 </html>
+
 
 
 
