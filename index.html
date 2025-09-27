@@ -450,35 +450,48 @@
       </div>
     </section>
 
-    <!-- LeetCode Placeholder -->
-    <section id="leetcode" class="py-20 px-6 bg-gray-900">
-      <h2
-        class="text-3xl font-bold text-primary mb-10 text-center"
-        data-aos="fade-up"
-      >
-        LeetCode Stats : In Progress
-      </h2>
-      <div
-        class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
-      >
-        <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
-          Streaks: 0 <br />
-          🔹
-        </div>
-        <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
-          Solved: 0 <br />
-          🔹
-        </div>
-        <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
-          Badges: 0 <br />
-          🔹
-        </div>
-        <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
-          Rank: 0 <br />
-          🔹
-        </div>
-      </div>
-    </section>
+   
+    <!-- LeetCode Stats -->
+<section id="leetcode" class="py-20 px-6 bg-gray-900">
+  <h2
+    class="text-3xl font-bold text-primary mb-10 text-center"
+    data-aos="fade-up"
+  >
+    LeetCode Stats
+  </h2>
+  <div
+    id="leetcode-stats"
+    class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+  >
+    <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
+      Streaks: <span id="lc-streak">0</span>
+    </div>
+    <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
+      Solved: <span id="lc-solved">0</span>
+    </div>
+    <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
+      Badges: <span id="lc-badges">0</span>
+    </div>
+    <div data-aos="fade-up" class="p-4 rounded bg-gray-800">
+      Rank: <span id="lc-rank">0</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const leetcodeUsername = "YourLeetCodeUsername"; // replace with your username
+
+  fetch(`https://leetcode-stats-api.herokuapp.com/${leetcodeUsername}`)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("lc-streak").innerText =
+        data.streak ? data.streak.current_streak : 0;
+      document.getElementById("lc-solved").innerText = data.totalSolved || 0;
+      document.getElementById("lc-badges").innerText = data.badges || 0;
+      document.getElementById("lc-rank").innerText = data.ranking || 0;
+    })
+    .catch((err) => console.error("LeetCode fetch error:", err));
+</script>
 
     <!-- Achievements -->
     <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto">
@@ -563,5 +576,6 @@
     </script>
   </body>
 </html>
+
 
 
