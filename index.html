@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,26 +94,26 @@
         height: 100%;
         background: linear-gradient(#6ee7b7, #3b82f6 60%, #0f172a 90%);
         background-image: 
-          url('https://i.imgur.com/ajxJjF5.png'),
-          url('https://i.imgur.com/2jPZLwD.png');
+          url('https://i.imgur.com/ajxJjF5.png'),  /* clouds */
+          url('https://i.imgur.com/2jPZLwD.png'); /* ground */
         background-repeat: repeat-x, repeat-x;
-        background-position: bottom, top;
-        background-size: 400px, 800px;
+        background-position: 0px top, 0px bottom;
+        background-size: 800px, 400px;
         animation: moveClouds 60s linear infinite, moveGround 20s linear infinite;
-        z-index: -10; /* fix layering */
+        z-index: -10;
       }
 
       @keyframes moveClouds {
-        from { background-position: bottom, 0 0; }
-        to { background-position: bottom, 1000px 0; }
+        from { background-position: 0px top, 0px bottom; }
+        to   { background-position: 1000px top, 0px bottom; }
       }
 
       @keyframes moveGround {
-        from { background-position: 0 bottom; }
-        to { background-position: 1000px bottom; }
+        from { background-position: 0px top, 0px bottom; }
+        to   { background-position: 0px top, 1000px bottom; }
       }
 
-      /* Make all sections transparent so bg shows */
+      /* Transparent sections so bg is visible */
       section {
         background-color: transparent !important;
       }
@@ -124,6 +123,7 @@
   <body class="font-grotesk">
     <!-- Background -->
     <div class="minecraft-bg"></div>
+
 
     <!-- Navbar -->
     <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
@@ -557,6 +557,7 @@
     </script>
   </body>
 </html>
+
 
 
 
