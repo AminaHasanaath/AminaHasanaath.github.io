@@ -1,130 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amina Hasanaath | Portfolio</title>
+        <title>Amina Hasanaath | Portfolio</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
+        tailwind.config = {
         theme: {
-          extend: {
-            fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
-            colors: {
-              primary: "#6366f1",
-              accent: "#00f0ff",
-              dark: "#0f0f0f",
-            },
-          },
+        extend: {
+        fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+        colors: {
+        primary: "#6366f1",
+        accent: "#00f0ff",
+        dark: "#0f0f0f",
         },
-      };
+        },
+        },
+        };
     </script>
 
     <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+        rel="stylesheet"
+        />
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        font-family: "Space Grotesk", sans-serif;
-        scroll-behavior: smooth;
-        background-color: #000;
-        color: white;
-      }
+        html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+    scroll-behavior: smooth;
+    background-color: #000;
+    color: white;
+}
 
-      /* Scrollbar */
       ::-webkit-scrollbar-thumb {
-        background: #6366f1;
-        border-radius: 8px;
-      }
+    background: #6366f1;
+    border-radius: 8px;
+}
 
-      /* Gradient text */
       .gradient-text {
-        background: linear-gradient(90deg, #6366f1, #00f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    background: linear-gradient(90deg, #6366f1, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-      /* Navbar link hover */
       .nav-link:hover {
-        text-decoration: underline;
-        text-decoration-color: #6366f1;
-        text-underline-offset: 4px;
-      }
+    text-decoration: underline;
+    text-decoration-color: #6366f1;
+    text-underline-offset: 4px;
+}
 
-      /* Dino card hover */
       .dino-card {
-        transition: transform 0.3s;
-      }
+    transition: transform 0.3s;
+}
       .dino-card:hover {
-        transform: translateY(-5px);
-      }
+    transform: translateY(-5px);
+}
 
-      /* Timeline dots */
       .timeline-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #6366f1;
-      }
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6366f1;
+}
 
-      /* Floating animation */
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-      }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
       .floating { animation: float 3s ease-in-out infinite; }
-
-      /* Minecraft background */
       .minecraft-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(#6ee7b7, #3b82f6 60%, #0f172a 90%);
-        background-image: 
-          url('https://i.imgur.com/ajxJjF5.png'),  /* clouds */
-          url('https://i.imgur.com/2jPZLwD.png'); /* ground */
-        background-repeat: repeat-x, repeat-x;
-        background-position: 0px top, 0px bottom;
-        background-size: 800px, 400px;
-        animation: moveClouds 60s linear infinite, moveGround 20s linear infinite;
-        z-index: -10;
-      }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#6ee7b7, #3b82f6 60%, #0f172a 90%);
+    background-image:
+    url('https://i.imgur.com/ajxJjF5.png'),
+            url('https://i.imgur.com/2jPZLwD.png');
+    background-repeat: repeat-x, repeat-x;
+    background-position: bottom, top;
+    background-size: 400px, 800px;
+    animation: moveClouds 60s linear infinite, moveGround 20s linear infinite;
+    z-index: -1;
+}
 
-      @keyframes moveClouds {
-        from { background-position: 0px top, 0px bottom; }
-        to   { background-position: 1000px top, 0px bottom; }
-      }
+        /* moving sky clouds */
+        @keyframes moveClouds {
+            from { background-position: bottom, 0 0; }
+            to { background-position: bottom, 1000px 0; }
+        }
 
-      @keyframes moveGround {
-        from { background-position: 0px top, 0px bottom; }
-        to   { background-position: 0px top, 1000px bottom; }
-      }
-
-      /* Transparent sections so bg is visible */
-      section {
-        background-color: transparent !important;
-      }
+        /* ground movement for depth */
+        @keyframes moveGround {
+            from { background-position: 0 bottom; }
+            to { background-position: 1000px bottom; }
+        }
     </style>
   </head>
 
   <body class="font-grotesk">
-    <!-- Background -->
     <div class="minecraft-bg"></div>
-
-
     <!-- Navbar -->
     <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -143,7 +128,7 @@
       <img src="https://i.imgur.com/pK9cRJP.jpeg" alt="Profile"
         class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover hover:scale-105 transition duration-300"
         loading="lazy"
-      />
+        />
       <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
         <h1 class="text-4xl md:text-5xl font-grotesk gradient-text mb-2">
           <span id="typed-name"></span>
@@ -557,6 +542,7 @@
     </script>
   </body>
 </html>
+
 
 
 
