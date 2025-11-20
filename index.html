@@ -38,24 +38,12 @@
         font-family: "Space Grotesk", sans-serif;
         scroll-behavior: smooth;
 
-        /* Background image stays the same */
+        /* 🔥 New Background (clean, modern, premium look) */
         background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1950&q=80')
           no-repeat center center fixed;
         background-size: cover;
 
         color: white;
-      }
-
-      /* ⭐ New overlay so text is readable */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.55); /* You can tune this */
-        z-index: -1;
       }
 
       ::-webkit-scrollbar-thumb {
@@ -96,6 +84,8 @@
       }
 
       .floating { animation: float 3s ease-in-out infinite; }
+
+      /* ❌ Removed animated Minecraft background */
     </style>
   </head>
 
@@ -169,355 +159,231 @@
             <a href="https://chromedino.com/" target="_blank" class="text-indigo-400 hover:underline">Wanna try?</a>
           </div>
         </div>
-        <div class="space-y-10" data-aos="fade-left">
+        <div class="space-y-8" data-aos="fade-left">
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-6">Skills</h2>
 
-          <div class="grid grid-cols-2 gap-6">
-            <div class="bg-gray-900 p-6 rounded shadow hover:scale-105 transition">
-              <h3 class="text-2xl font-semibold text-white">2+</h3>
-              <p class="text-gray-400 text-sm">Projects Completed</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded shadow hover:scale-105 transition">
-              <h3 class="text-2xl font-semibold text-white">150+</h3>
-              <p class="text-gray-400 text-sm">Coding Questions</p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Programming</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Java (OOP, DSA)</li>
+                  <li>SQL</li>
+                  <li>C (intermediate)</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Web Development</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>HTML, CSS, JS</li>
+                  <li>Tailwind CSS</li>
+                  <li>Backend (learning)</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Tools & Tech</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Git & GitHub</li>
+                  <li>Canva Editing</li>
+                  <li>VS Code</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Soft Skills</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Communication</li>
+                  <li>Teamwork</li>
+                  <li>Creativity</li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div>
-            <h3 class="text-xl font-bold text-primary mb-5">Skills</h3>
+            <h2 id="techstack" class="text-3xl font-bold text-primary mt-10 mb-6">Tech Stack</h2>
 
-            <div class="space-y-4">
-              <div>
-                <p class="text-gray-300 text-sm mb-1">Prompting AI assistants</p>
-                <div class="w-full bg-gray-800 h-3 rounded">
-                  <div class="bg-indigo-500 h-3 rounded w-[90%]"></div>
-                </div>
-              </div>
-
-              <div>
-                <p class="text-gray-300 text-sm mb-1">Working with Editors</p>
-                <div class="w-full bg-gray-800 h-3 rounded">
-                  <div class="bg-yellow-500 h-3 rounded w-[30%]"></div>
-                </div>
-              </div>
-
-              <div>
-                <p class="text-gray-300 text-sm mb-1">Java Spring Boot & DB</p>
-                <div class="w-full bg-gray-800 h-3 rounded">
-                  <div class="bg-red-500 h-3 rounded w-[20%]"></div>
-                </div>
-              </div>
-
-              <div>
-                <p class="text-gray-300 text-sm mb-1">LLM Working</p>
-                <div class="w-full bg-gray-800 h-3 rounded">
-                  <div class="bg-blue-400 h-3 rounded w-[10%]"></div>
-                </div>
-              </div>
+            <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
+              <img src="https://skillicons.dev/icons?i=java" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=python" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=html" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=css" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=js" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=tailwind" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=git" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=github" class="w-14 hover:scale-110 transition" />
             </div>
           </div>
 
         </div>
       </div>
     </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">Projects</h2>
 
-    <!-- Research Paper Showcase -->
-    <section id="research" class="py-20 px-6 max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
+      <div class="grid md:grid-cols-2 gap-12">
 
-        <!-- Text Content -->
-        <div class="md:w-1/2 space-y-4">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 gradient-text">
-            My Research Paper
-          </h3>
-          <p class="text-gray-300 leading-relaxed">
-            <span class="font-semibold">
-              A Historical Survey of Computing and Artificial Intelligence:
-            </span>
-            From Pre-1950s to 2025. Explore the evolution of computing and AI through decades of technological breakthroughs.
+        <!-- Project 1 -->
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700 hover:scale-[1.02] transition"
+             data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-white mb-3">Autonotify</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            A smart notification & automation tool that integrates reminders,
+            schedules, and smart task triggers to simplify everyday activities.
           </p>
-          <a 
-            href="https://www.researchgate.net/publication/396132556_A_Historical_Survey_of_Computing_and_Artificial_Intelligence_From_Pre-1950s_to_2025" 
-            target="_blank"
-            class="inline-block mt-2 bg-indigo-600 text-white px-5 py-2 rounded shadow 
-            hover:bg-indigo-700 hover:scale-105 transition transform duration-300"
-          >
-            View Paper
-          </a>
+          <a href="#" class="text-indigo-400 hover:underline">View Project →</a>
         </div>
 
-        <!-- Thumbnail -->
-        <div class="md:w-1/2 flex justify-center">
-          <img  
-            src="https://www.imghost.online/ib/BwWNbFF7uKSIIAi_1759603975.jpg" 
-            alt="Thumbnail.jpg"
-            class="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500 transform hover:-translate-y-2 animate-float"
-          />
+        <!-- Project 2 -->
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700 hover:scale-[1.02] transition"
+             data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-xl font-semibold text-white mb-3">CLS (C Language Studio)</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            A simplified environment built in C for performing core operations,
+            understanding algorithms, and experimenting with structured programming.
+          </p>
+          <a href="#" class="text-indigo-400 hover:underline">View Project →</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700 hover:scale-[1.02] transition"
+             data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold text-white mb-3">Reflectra365</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            An AI-powered reflection assistant designed to help users track goals,
+            analyze habits, and build a growth mindset through daily micro-reflections.
+          </p>
+          <a href="#" class="text-indigo-400 hover:underline">View Project →</a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700 hover:scale-[1.02] transition"
+             data-aos="fade-up" data-aos-delay="450">
+          <h3 class="text-xl font-semibold text-white mb-3">Java DSA Playground</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            A Java-based learning zone where I solve Data Structures & Algorithm
+            problems, build utilities, and document patterns for fast recall.
+          </p>
+          <a href="#" class="text-indigo-400 hover:underline">View Project →</a>
+        </div>
+
+      </div>
+    </section>
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">My Journey</h2>
+
+      <div class="relative border-l border-gray-700 ml-4 space-y-12">
+
+        <!-- Timeline Item 1 -->
+        <div class="relative pl-10" data-aos="fade-right">
+          <div class="timeline-dot absolute -left-[6px] top-1"></div>
+          <h3 class="text-xl text-white font-semibold">2022 — Started Coding</h3>
+          <p class="text-gray-300 mt-2">Began learning the basics of Java, HTML & CSS.</p>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="relative pl-10" data-aos="fade-right" data-aos-delay="150">
+          <div class="timeline-dot absolute -left-[6px] top-1"></div>
+          <h3 class="text-xl text-white font-semibold">2023 — Web Dev & Projects</h3>
+          <p class="text-gray-300 mt-2">Completed multiple web mini-projects and honed frontend skills.</p>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="relative pl-10" data-aos="fade-right" data-aos-delay="300">
+          <div class="timeline-dot absolute -left-[6px] top-1"></div>
+          <h3 class="text-xl text-white font-semibold">2024 — AI Engineering Path</h3>
+          <p class="text-gray-300 mt-2">Selected AI Engineering specialization and started serious backend development.</p>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="relative pl-10" data-aos="fade-right" data-aos-delay="450">
+          <div class="timeline-dot absolute -left-[6px] top-1"></div>
+          <h3 class="text-xl text-white font-semibold">2025 — Building Real Solutions</h3>
+          <p class="text-gray-300 mt-2">Working on Autonotify, Reflectra365, and mastering Java + AI integration.</p>
         </div>
 
       </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="techstack" class="py-20 px-6 bg-gray-900">
-      <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">Certificates</h2>
 
-        <h2 class="text-3xl font-bold text-primary mb-10">Tech Stack</h2>
+      <div class="grid md:grid-cols-3 gap-10">
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
-
-          <!-- Donut Example -->
-          <div class="flex flex-col items-center transform hover:scale-105 transition duration-300">
-            <svg width="100" height="100">
-              <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-              <circle cx="50" cy="50" r="40" stroke="#FFFFFF" stroke-width="10" fill="none"
-                stroke-dasharray="251.2" stroke-dashoffset="25.12" stroke-linecap="round" />
-            </svg>
-            <p class="text-sm text-green-400 mt-2">90%</p>
-            <p class="text-gray-300 mt-1 text-sm">C-Programming</p>
-          </div>
-
-          <div class="flex flex-col items-center transform hover:scale-105 transition duration-300">
-            <svg width="100" height="100">
-              <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-              <circle cx="50" cy="50" r="40" stroke="#f59e0b" stroke-width="10" fill="none"
-                stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-linecap="round" />
-            </svg>
-            <p class="text-sm text-green-400 mt-2">10%</p>
-            <p class="text-gray-300 mt-1 text-sm">AI Integration</p>
-          </div>
-
-          <div class="flex flex-col items-center transform hover:scale-105 transition duration-300">
-            <svg width="100" height="100">
-              <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-              <circle cx="50" cy="50" r="40" stroke="#ef4444" stroke-width="10" fill="none"
-                stroke-dasharray="251.2" stroke-dashoffset="200.96" stroke-linecap="round" />
-            </svg>
-            <p class="text-sm text-green-400 mt-2">20%</p>
-            <p class="text-gray-300 mt-1 text-sm">Java Spring Boot</p>
-          </div>
-
-          <div class="flex flex-col items-center transform hover:scale-105 transition duration-300">
-            <svg width="100" height="100">
-              <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-              <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="10" fill="none"
-                stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-linecap="round" />
-            </svg>
-            <p class="text-sm text-green-400 mt-2">30%</p>
-            <p class="text-gray-300 mt-1 text-sm">DSA</p>
-          </div>
-
+        <div class="bg-gray-900 p-5 rounded-xl shadow-md hover:scale-105 transition border border-gray-700"
+             data-aos="zoom-in">
+          <h4 class="text-white font-semibold text-lg mb-2">Java Fundamentals</h4>
+          <p class="text-gray-300 text-sm">Completed a comprehensive Java course covering OOP & DSA basics.</p>
         </div>
+
+        <div class="bg-gray-900 p-5 rounded-xl shadow-md hover:scale-105 transition border border-gray-700"
+             data-aos="zoom-in" data-aos-delay="150">
+          <h4 class="text-white font-semibold text-lg mb-2">Frontend Web Development</h4>
+          <p class="text-gray-300 text-sm">Trained in building responsive UIs using HTML, CSS & Tailwind.</p>
+        </div>
+
+        <div class="bg-gray-900 p-5 rounded-xl shadow-md hover:scale-105 transition border border-gray-700"
+             data-aos="zoom-in" data-aos-delay="300">
+          <h4 class="text-white font-semibold text-lg mb-2">Python & AI Basics</h4>
+          <p class="text-gray-300 text-sm">Completed hands-on projects in Python fundamentals & ML concepts.</p>
+        </div>
+
       </div>
     </section>
-<!-- PROJECTS -->
-<section id="projects" class="py-20 bg-black px-6">
-  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <!-- Contact Section -->
+    <section id="connect" class="py-24 px-6 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">Let’s Connect</h2>
 
-    <h2 class="text-3xl font-bold text-primary mb-12">Projects</h2>
+      <form class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 space-y-6"
+            data-aos="fade-up">
 
-    <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <label class="block text-gray-300 mb-2">Full Name</label>
+          <input type="text" placeholder="Enter your name"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none" />
+        </div>
 
-      <!-- Project 1 -->
-      <div 
-        class="bg-gray-900 p-6 rounded-xl shadow-md hover:scale-[1.02] transition duration-300 hover:shadow-xl"
-        data-aos="zoom-in"
-      >
-        <img 
-          src="https://www.imghost.online/ib/Project1_Thumbnail.jpg" 
-          alt="Project 1" 
-          class="rounded-lg mb-4"
-        >
-        <h3 class="text-xl font-bold text-white mb-2">AI-Powered Resume Analyzer</h3>
-        <p class="text-gray-400 text-sm mb-4">
-          A smart resume analyzer using LLM prompting that evaluates skills, ATS score, and keyword density.
-        </p>
-        <a 
-          href="#" 
-          class="text-indigo-400 hover:text-indigo-300 underline text-sm"
-          target="_blank"
-        >View Project</a>
-      </div>
+        <div>
+          <label class="block text-gray-300 mb-2">Email Address</label>
+          <input type="email" placeholder="Enter your email"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none" />
+        </div>
 
-      <!-- Project 2 -->
-      <div 
-        class="bg-gray-900 p-6 rounded-xl shadow-md hover:scale-[1.02] transition duration-300 hover:shadow-xl"
-        data-aos="zoom-in"
-      >
-        <img 
-          src="https://www.imghost.online/ib/Project2_Thumbnail.jpg" 
-          alt="Project 2" 
-          class="rounded-lg mb-4"
-        >
-        <h3 class="text-xl font-bold text-white mb-2">Java Spring Boot CRUD App</h3>
-        <p class="text-gray-400 text-sm mb-4">
-          A CRUD-based web app connected to a relational database with clean API endpoints.
-        </p>
-        <a 
-          href="#" 
-          class="text-indigo-400 hover:text-indigo-300 underline text-sm"
-          target="_blank"
-        >View Project</a>
-      </div>
+        <div>
+          <label class="block text-gray-300 mb-2">Message</label>
+          <textarea rows="4" placeholder="Write your message"
+                    class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none"></textarea>
+        </div>
 
-    </div>
+        <button class="w-full bg-primary py-3 rounded text-white hover:bg-indigo-700 transition">
+          Send Message
+        </button>
+      </form>
+    </section>
 
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+      © 2025 Amina Hasanaath — All rights reserved.
+    </footer>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
 
-<!-- LEETCODE SECTION -->
-<section id="leetcode" class="py-20 px-6 bg-gray-900">
-  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <!-- Typed.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+    <script>
+      new Typed("#typed-name", {
+        strings: ["Hello, I'm Amina Hasanaath"],
+        typeSpeed: 50,
+        showCursor: false,
+      });
+    </script>
 
-    <h2 class="text-3xl font-bold text-primary mb-10">LeetCode Progress</h2>
-
-    <div class="grid md:grid-cols-3 gap-10 justify-items-center">
-
-      <!-- Easy -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
-        <h3 class="text-xl text-green-400 font-bold">Easy</h3>
-        <p class="text-white text-4xl font-bold mt-2">82</p>
-      </div>
-
-      <!-- Medium -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
-        <h3 class="text-xl text-yellow-400 font-bold">Medium</h3>
-        <p class="text-white text-4xl font-bold mt-2">52</p>
-      </div>
-
-      <!-- Hard -->
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
-        <h3 class="text-xl text-red-400 font-bold">Hard</h3>
-        <p class="text-white text-4xl font-bold mt-2">10</p>
-      </div>
-
-    </div>
-
-    <a 
-      href="https://leetcode.com/u/saravana_s_/" 
-      target="_blank"
-      class="inline-block mt-8 bg-indigo-600 px-6 py-2 rounded-lg text-white hover:bg-indigo-700 hover:scale-105 transition"
-    >
-      View Profile
-    </a>
-
-  </div>
-</section>
-<!-- CERTIFICATES -->
-<section id="certificates" class="py-20 bg-black px-6">
-  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
-
-    <h2 class="text-3xl font-bold text-primary mb-12">Certificates</h2>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <div 
-        class="bg-gray-900 p-6 rounded-xl shadow hover:scale-105 transition text-center"
-        data-aos="zoom-in"
-      >
-        <img 
-          src="https://www.imghost.online/ib/Cert1.jpg"
-          alt="Cert 1"
-          class="rounded-lg mb-3"
-        >
-        <p class="text-gray-300 text-sm">C Programming Certificate</p>
-      </div>
-
-      <div 
-        class="bg-gray-900 p-6 rounded-xl shadow hover:scale-105 transition text-center"
-        data-aos="zoom-in"
-      >
-        <img 
-          src="https://www.imghost.online/ib/Cert2.jpg"
-          alt="Cert 2"
-          class="rounded-lg mb-3"
-        >
-        <p class="text-gray-300 text-sm">Java Foundation Certificate</p>
-      </div>
-
-      <div 
-        class="bg-gray-900 p-6 rounded-xl shadow hover:scale-105 transition text-center"
-        data-aos="zoom-in"
-      >
-        <img 
-          src="https://www.imghost.online/ib/Cert3.jpg"
-          alt="Cert 3"
-          class="rounded-lg mb-3"
-        >
-        <p class="text-gray-300 text-sm">AI Prompt Engineering</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="py-20 px-6 bg-gray-900">
-  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-
-    <h2 class="text-3xl font-bold text-primary mb-8">Contact Me</h2>
-
-    <p class="text-gray-300 max-w-xl mx-auto mb-6">
-      Feel free to reach out for collaborations, opportunities, or questions!
-    </p>
-
-    <div class="space-y-4">
-
-      <p class="text-gray-300">
-        📧 Email: 
-        <a 
-          href="mailto:saravanaofficial941@gmail.com" 
-          class="text-indigo-400 hover:text-indigo-300"
-        >
-          saravanaofficial941@gmail.com
-        </a>
-      </p>
-
-      <p class="text-gray-300">
-        🔗 LinkedIn: 
-        <a 
-          href="https://www.linkedin.com/in/saravana-sivagami-brindu-4960092b9/" 
-          target="_blank"
-          class="text-indigo-400 hover:text-indigo-300"
-        >
-          saravana_s
-        </a>
-      </p>
-
-      <p class="text-gray-300">
-        🟧 GitHub: 
-        <a 
-          href="https://github.com/Saravana556" 
-          target="_blank"
-          class="text-indigo-400 hover:text-indigo-300"
-        >
-          Saravana556
-        </a>
-      </p>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer class="bg-black py-6 text-center">
-  <p class="text-gray-500 text-sm">
-    © 2025 Saravana S — All Rights Reserved.
-  </p>
-</footer>
-
-
-<!-- AOS Script -->
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-
-</body>
+  </body>
 </html>
