@@ -1,82 +1,127 @@
-<!-- Cleaned portfolio code with black background; minecraft-bg removed -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Amina Hasanaath | Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Amina Hasanaath | Portfolio</title>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+        extend: {
+        fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+        colors: {
+        primary: "#6366f1",
+        accent: "#00f0ff",
+        dark: "#0f0f0f",
+        },
+        },
+        },
+        };
+    </script>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-theme: {
-extend: {
-fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
-colors: {
-primary: "#6366f1",
-accent: "#00f0ff",
-dark: "#0f0f0f",
-},
-},
-},
-};
-</script>
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+        rel="stylesheet"
+        />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<!-- Google Font -->
-<link
-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-rel="stylesheet"
-/>
-
-
-<!-- AOS -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-<style>
-html, body {
-margin: 0;
-padding: 0;
-font-family: "Space Grotesk", sans-serif;
-scroll-behavior: smooth;
-background-color: #000;
-color: white;
+    <style>
+        html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+    scroll-behavior: smooth;
+    background-color: #000;
+    color: white;
 }
 
-
-::-webkit-scrollbar-thumb {
-background: #6366f1;
-border-radius: 8px;
+      ::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 8px;
 }
 
-
-.gradient-text {
-background: linear-gradient(90deg, #6366f1, #00f0ff);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+      .gradient-text {
+    background: linear-gradient(90deg, #6366f1, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-
-.nav-link:hover {
-text-decoration: underline;
-text-decoration-color: #6366f1;
-text-underline-offset: 4px;
+      .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #6366f1;
+    text-underline-offset: 4px;
 }
 
-
-.dino-card {
-transition: transform 0.3s;
+      .dino-card {
+    transition: transform 0.3s;
 }
-.dino-card:hover {
-transform: translateY(-5px);
+      .dino-card:hover {
+    transform: translateY(-5px);
 }
 
+      .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6366f1;
+}
 
-.timeline-dot {
-</nav>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+      .floating { animation: float 3s ease-in-out infinite; }
+      .minecraft-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#6ee7b7, #3b82f6 60%, #0f172a 90%);
+    background-image:
+    url('https://i.imgur.com/ajxJjF5.png'),
+            url('https://i.imgur.com/2jPZLwD.png');
+    background-repeat: repeat-x, repeat-x;
+    background-position: bottom, top;
+    background-size: 400px, 800px;
+    animation: moveClouds 60s linear infinite, moveGround 20s linear infinite;
+    z-index: -1;
+}
+
+        /* moving sky clouds */
+        @keyframes moveClouds {
+            from { background-position: bottom, 0 0; }
+            to { background-position: bottom, 1000px 0; }
+        }
+
+        /* ground movement for depth */
+        @keyframes moveGround {
+            from { background-position: 0 bottom; }
+            to { background-position: 1000px bottom; }
+        }
+    </style>
+  </head>
+
+  <body class="font-grotesk">
+    <div class="minecraft-bg"></div>
+    <!-- Navbar -->
+    <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-sm md:text-base">
+          <a href="#techstack" class="nav-link">Tech Stack</a>
+        </div>
+        <div class="flex items-center space-x-6">
+          <a href="tel:+919391201739" class="hover:text-accent transition">📞 +91-9391201739</a>
+          <a href="#connect" class="hover:text-accent transition">Let’s Connect</a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
@@ -497,13 +542,3 @@ transform: translateY(-5px);
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
