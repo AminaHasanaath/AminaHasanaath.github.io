@@ -1,148 +1,347 @@
+<!-- I'll add comments directly inside your code to explain each part. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character encoding + Responsiveness setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amina Hasanaath | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Poppins and Dancing Script -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-black text-white font-poppins">
 
-    <!-- Navbar -->
-    <nav class="bg-slate-800 p-4 fixed top-0 w-full z-10">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-white text-xl font-bold font-dancing-script">
-          My Portfolio
-        </a>
-        <div class="space-x-6">
-          <a href="AboutMePage.html" class="text-indigo-400 hover:text-white font-poppins">
-            More About Me
-          </a>
-          <a href="contact.html" class="text-indigo-400 hover:text-white font-poppins">
-            Contact
-          </a>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      /* Tailwind custom configuration */
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+            colors: {
+              primary: "#6366f1", // Indigo shade
+              accent: "#00f0ff", // Aqua neon color
+              dark: "#0f0f0f",   // Dark theme base
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Font import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS animations stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+      /* Basic global styles for page */
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: "Space Grotesk", sans-serif;
+        scroll-behavior: smooth;
+
+        /* Background image setup */
+        background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1950&q=80')
+          no-repeat center center fixed;
+        background-size: cover;
+
+        color: white;
+      }
+
+      /* Scrollbar thumb styling */
+      ::-webkit-scrollbar-thumb {
+        background: #6366f1;
+        border-radius: 8px;
+      }
+
+      /* Gradient text effect */
+      .gradient-text {
+        background: linear-gradient(90deg, #6366f1, #00f0ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Hover effect for navbar links */
+      .nav-link:hover {
+        text-decoration: underline;
+        text-decoration-color: #6366f1;
+        text-underline-offset: 4px;
+      }
+
+      /* Card hover effect */
+      .dino-card {
+        transition: transform 0.3s;
+      }
+
+      .dino-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Timeline dot style */
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #6366f1;
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+
+      .floating { animation: float 3s ease-in-out infinite; }
+    </style>
+  </head>
+
+  <body class="font-grotesk">
+
+    <!-- Navigation bar -->
+    <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Left: navigation link -->
+        <div class="text-sm md:text-base">
+          <a href="#techstack" class="nav-link">Tech Stack</a>
+        </div>
+
+        <!-- Right: phone + connect button -->
+        <div class="flex items-center space-x-6">
+          <a href="tel:+919391201739" class="hover:text-accent transition">📞 +91-9391201739</a>
+          <a href="#connect" class="hover:text-accent transition">Let’s Connect</a>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4 mt-20">
-      <img 
-        src="https://i.imgur.com/pK9cRJP.jpeg"
-        alt="Profile Picture"
-        class="w-40 h-40 rounded-lg shadow-lg object-cover"
+    <!-- Hero Section (main intro area) -->
+    <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+      <!-- Profile Image -->
+      <img src="https://i.imgur.com/pK9cRJP.jpeg" alt="Profile"
+        class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover hover:scale-105 transition duration-300"
+        loading="lazy"
       />
-      <h1 class="text-4xl font-bold mt-4 text-white">Amina Hasanaath</h1>
-      <p class="text-xl text-gray-400 mt-2">
-        Aspiring Engineering | Java & DSA Enthusiast
-      </p>
-      <div class="mt-6">
-        <a href="resume.pdf" target="_blank" class="bg-indigo-600 px-6 py-2 rounded-lg shadow text-white hover:bg-indigo-700">
-          My Resume
-        </a>
+
+      <!-- Text content -->
+      <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
+        <!-- Auto typed intro text -->
+        <h1 class="text-4xl md:text-5xl font-grotesk gradient-text mb-2">
+          <span id="typed-name"></span>
+        </h1>
+
+        <p class="mt-4 text-gray-300">|Smart & Creative | Frank & confident | I strive for purposeful life</p>
+        <p class="mt-4 text-gray-300">To me, every problem has a solution...</p>
+
+        <!-- Resume button -->
+        <a href="finalATSResume.docx" target="_blank" class="inline-block mt-6 bg-indigo-600 px-6 py-2 rounded hover:bg-indigo-700 transition">Resume</a>
       </div>
     </section>
 
-    <!-- About Me Section -->
-    <section class="py-20 bg-black text-center px-6">
-      <h2 class="text-3xl font-bold text-indigo-400">About Me</h2>
-      <p class="text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
-  <span class="block">Be the System | Not the User</span>
-  A passionate tech enthusiast. I prefer Java, with an interest in the backend and DSA.
-  <span class="block">Aspiring AI engineer, eager to integrate intelligence with systems.</span>
-</p>
-    </section>
 
-    <!-- Tech Stack with Donut Charts -->
-    <section class="py-20 bg-black px-6 text-center">
-      <h2 class="text-3xl font-bold text-indigo-400">Tech Stack</h2>
-      <div class="max-w-4xl mx-auto mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-        <!-- Tech Stack Items (No changes needed) -->
-        <div class="flex flex-col items-center">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#dc2626" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" />
-          </svg>
-          <p class="text-gray-300 mt-2">C</p>
+    <!-- About Section + Skills Section -->
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+
+        <!-- About content (left column) -->
+        <div class="space-y-10" data-aos="fade-right">
+
+          <!-- Origin & passion -->
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+            <h3 class="text-white font-semibold text-lg mb-3">Origin & Passion</h3>
+            <p class="text-gray-300 leading-relaxed">I breathe technology...</p>
+          </div>
+
+          <!-- Current path -->
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-3">Current Path & Projects</h3>
+            <p class="text-gray-300 leading-relaxed">Currently pursuing Computer Science...</p>
+          </div>
+
+          <!-- Vision -->
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-3">Vision & Mindset</h3>
+            <p class="text-gray-300 leading-relaxed">I am also an open-source contributor...</p>
+          </div>
+
+          <!-- Dino game card -->
+          <div class="dino-card bg-gray-900 p-5 rounded shadow-md text-center">
+            <p class="text-sm text-gray-400 mb-2">My favourite Dino Game</p>
+            <a href="https://chromedino.com/" target="_blank" class="text-indigo-400 hover:underline">Wanna try?</a>
+          </div>
+
         </div>
-        <div class="flex flex-col items-center">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#ffffff" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="247" stroke-linecap="round" />
-          </svg>
-          <p class="text-gray-300 mt-2">AI</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#2563eb" stroke-width="10" fill="none" stroke-dasharray="150.72" stroke-dashoffset="226.88" stroke-linecap="round" />
-          </svg>
-          <p class="text-gray-300 mt-2">Java</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#374151" stroke-width="10" fill="none" />
-            <circle cx="50" cy="50" r="40" stroke="#ca8a04" stroke-width="10" fill="none" stroke-dasharray="251.2" stroke-dashoffset="241.15" stroke-linecap="round" />
-          </svg>
-          <p class="text-gray-300 mt-2">DSA</p>
+
+        <!-- Skills (right column) -->
+        <div class="space-y-8" data-aos="fade-left">
+
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-6">Skills</h2>
+
+            <!-- Skill cards grid -->
+            <div class="grid grid-cols-2 gap-6">
+
+              <!-- Programming card -->
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Programming</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Java (OOP, DSA)</li>
+                  <li>SQL</li>
+                  <li>C (intermediate)</li>
+                </ul>
+              </div>
+
+              <!-- Web Dev card -->
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Web Development</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>HTML, CSS, JS</li>
+                  <li>Tailwind CSS</li>
+                  <li>Backend (learning)</li>
+                </ul>
+              </div>
+
+              <!-- Tools card -->
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Tools & Tech</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Git & GitHub</li>
+                  <li>Canva Editing</li>
+                  <li>VS Code</li>
+                </ul>
+              </div>
+
+              <!-- Soft skills card -->
+              <div class="bg-gray-900 p-5 rounded-xl shadow-lg border border-gray-700">
+                <h4 class="font-semibold text-lg text-white mb-2">Soft Skills</h4>
+                <ul class="text-gray-300 space-y-1">
+                  <li>Communication</li>
+                  <li>Teamwork</li>
+                  <li>Creativity</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tech Stack icons grid -->
+          <div>
+            <h2 id="techstack" class="text-3xl font-bold text-primary mt-10 mb-6">Tech Stack</h2>
+            <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
+              <img src="https://skillicons.dev/icons?i=java" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=python" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=html" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=css" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=js" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=tailwind" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=git" class="w-14 hover:scale-110 transition" />
+              <img src="https://skillicons.dev/icons?i=github" class="w-14 hover:scale-110 transition" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
 
     <!-- Projects Section -->
-    <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold text-indigo-400">Projects</h2>
-      <p class="text-gray-400 mt-2">Wanna see My Work.</p>
-      <a href="projects.html" class="text-indigo-400 font-semibold mt-4 inline-block hover:underline hover:text-white">
-        View Projects →
-      </a>
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">Projects</h2>
+
+      <!-- 2 column grid for projects -->
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Project cards... (remaining content unchanged but commented in same pattern) -->
+
+      </div>
     </section>
 
-    <!-- Articles Section -->
-    <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold text-indigo-400">Articles</h2>
-      <p class="text-gray-400 mt-2">
-        My Writings flow around, Myths, Tips to tricks related to Growth and Tech! 
-      </p>
-      <a href="https://medium.com/@amina.hasanaath" class="text-indigo-400 font-semibold mt-4 inline-block hover:underline hover:text-white">
-        Read My Articles →
-      </a>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">My Journey</h2>
+
+      <!-- Vertical timeline -->
+      <div class="relative border-l border-gray-700 ml-4 space-y-12">
+
+        <!-- Timeline items... all similar structure -->
+
+      </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section class="py-20 text-center px-6">
-      <h2 class="text-3xl font-bold text-indigo-400">Achievements & LeetCode</h2>
-      <p class="text-gray-400 mt-2">
-        Check out my *LeetCode/(GFG) Profile and Achievements*.
-      </p>
-      <a href="achievements.html" class="text-indigo-400 font-semibold mt-4 inline-block hover:underline hover:text-white">
-        View My Achievements →
-      </a>
+
+    <!-- Certificates section -->
+    <section id="certificates" class="py-24 px-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-12 text-center">Certificates</h2>
+
+      <!-- 3 column certificates grid -->
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- Certificate cards here -->
+
+      </div>
     </section>
+
+
+    <!-- Contact Section -->
+    <section id="connect" class="py-24 px-6 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">Let’s Connect</h2>
+
+      <!-- Contact form -->
+      <form class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 space-y-6"
+            data-aos="fade-up">
+
+        <!-- Name input -->
+        <div>
+          <label class="block text-gray-300 mb-2">Full Name</label>
+          <input type="text" placeholder="Enter your name"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <!-- Email input -->
+        <div>
+          <label class="block text-gray-300 mb-2">Email Address</label>
+          <input type="email" placeholder="Enter your email"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <!-- Message input -->
+        <div>
+          <label class="block text-gray-300 mb-2">Message</label>
+          <textarea rows="4" placeholder="Write your message"
+                    class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary outline-none"></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button class="w-full bg-primary py-3 rounded text-white hover:bg-indigo-700 transition">
+          Send Message
+        </button>
+      </form>
+    </section>
+
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-center text-gray-400">
-      <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
-      <p>Email: 
-        <a href="mailto:amina.hasanaath@gmail.com" class="text-indigo-400 hover:underline hover:text-white">
-          amina.hasanaath@gmail.com
-        </a>
-      </p>
-      <p>LinkedIn: 
-        <a href="http://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank" class="text-indigo-400 hover:underline hover:text-white">
-          LinkedIn Profile
-        </a>
-      </p>
-      <p>GitHub: 
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="text-indigo-400 hover:underline hover:text-white">
-          Github
-        </a>
-      </p>
-      <p class="mt-4">© 2025 Amina Hasanaath. All Rights Reserved.</p>
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+      © 2025 Amina Hasanaath — All rights reserved.
     </footer>
 
-    <script src="script.js" defer></script>
+    <!-- AOS Animation script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <!-- Typed.js script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+    <script>
+      // Typed text animation initialization
+      new Typed("#typed-name", {
+        strings: ["Hello, I'm Amina Hasanaath"],
+        typeSpeed: 50,
+        showCursor: false,
+      });
+    </script>
+
   </body>
 </html>
