@@ -432,8 +432,21 @@
     <script>
       AOS.init({ duration: 800, once: true });
     </script>
+    <button id="scrollTop" class="hidden fixed bottom-6 right-6 bg-indigo-600 p-3 rounded-full shadow-lg hover:bg-indigo-700 transition">
+  ↑
+</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+  });
+  scrollBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+</script>
+
   </body>
 </html>
+
 
 
 
