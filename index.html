@@ -449,13 +449,6 @@
   });
   scrollBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
 </script>
-<script>
-document.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth) * 10;
-  const y = (e.clientY / window.innerHeight) * 10;
-  document.querySelector(".minecraft-bg").style.transform = `translate(${x}px, ${y}px)`;
-});
-</script>
     <script>
 document.querySelectorAll('.floating').forEach(card => {
   card.addEventListener('mousemove', (e) => {
@@ -480,6 +473,7 @@ document.querySelectorAll('.floating').forEach(card => {
 
   </body>
 </html>
+
 
 
 
