@@ -87,10 +87,9 @@
   width: 100%;
   height: 100%;
 
-  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80')
+  background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=2000&q=80')
     no-repeat center center fixed;
   background-size: cover;
-
   z-index: -1;
 }
 
@@ -103,6 +102,9 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
 }
+
+
+
 
     </style>
   </head>
@@ -395,6 +397,8 @@
         </div>
       </div>
     </section>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-indigo-500 z-50"></div>
+
 
     <!-- Footer -->
     <footer id="connect" class="text-center text-gray-400 py-10">
@@ -432,8 +436,76 @@
     <script>
       AOS.init({ duration: 800, once: true });
     </script>
+    <button id="scrollTop" class="hidden fixed bottom-6 right-6 bg-indigo-600 p-3 rounded-full shadow-lg hover:bg-indigo-700 transition">
+  ↑
+</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+  });
+  scrollBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+</script>
+<script>
+document.querySelectorAll('.floating').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+  });
+});
+</script>
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 200) {
+      current = sec.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("text-accent");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("text-accent");
+    }
+  });
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+  let max = document.body.scrollHeight - window.innerHeight;
+  let percent = (window.scrollY / max) * 100;
+  document.getElementById("scroll-progress").style.width = percent + "%";
+});
+</script>
+
   </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
