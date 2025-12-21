@@ -6,105 +6,139 @@
     <title>Amina Hasanaath | Portfolio</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
-            colors: {
-              primary: "#6366f1",
-              accent: "#00f0ff",
-              dark: "#0f0f0f",
-            },
-          },
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          headline: ["Orbitron", "sans-serif"],  /* for all titles & animated text */
+          body: ["JetBrains Mono", "monospace"], /* for paragraph text */
         },
-      };
-    </script>
+        colors: {
+          primary: "#ffffff",    /* white for headlines & typed.js */
+          accent: "#8b5cf6",     /* bright purple for links/buttons */
+          secondary: "#a5b4fc",  /* soft purple for paragraphs */
+          tertiary: "#e0e7ff",   /* lighter text in overlays/cards */
+          dark: "#0f0f0f",       /* background fallback */
+        },
+      },
+    },
+  };
+</script>
+
 
     <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
     />
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
 
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        font-family: "Space Grotesk", sans-serif;
-        scroll-behavior: smooth;
-        background-color: transparent; /* UPDATED */
-        color: white;
-      }
+  /* -------------------- BODY & HTML -------------------- */
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace; /* body font */
+    scroll-behavior: smooth;
+    background-color: transparent;
+    color: #a5b4fc; /* soft purple for paragraphs */
+  }
 
-      ::-webkit-scrollbar-thumb {
-        background: #6366f1;
-        border-radius: 8px;
-      }
+  /* -------------------- SCROLLBAR -------------------- */
+  ::-webkit-scrollbar-thumb {
+    background: #8b5cf6; /* bright purple accent */
+    border-radius: 8px;
+  }
 
-      .gradient-text {
-        background: linear-gradient(90deg, #6366f1, #00f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+  /* -------------------- GRADIENT TEXT -------------------- */
+  .gradient-text {
+    background: linear-gradient(90deg, #ffffff, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-      .nav-link:hover {
-        text-decoration: underline;
-        text-decoration-color: #6366f1;
-        text-underline-offset: 4px;
-      }
+  /* -------------------- NAV LINKS -------------------- */
+  .nav-link {
+    color: #8b5cf6; /* bright purple for links */
+  }
+  .nav-link:hover {
+    color: #ffffff; /* white on hover */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 
-      .dino-card {
-        transition: transform 0.3s;
-      }
-      .dino-card:hover {
-        transform: translateY(-5px);
-      }
+  /* -------------------- CARDS -------------------- */
+  .dino-card {
+    transition: transform 0.3s;
+    background-color: rgba(15, 15, 15, 0.5); /* semi-transparent black */
+    color: #e0e7ff; /* card text color */
+  }
+  .dino-card:hover {
+    transform: translateY(-5px);
+  }
 
-      .timeline-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #6366f1;
-      }
+  /* -------------------- TIMELINE DOT -------------------- */
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #8b5cf6; /* bright purple */
+  }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-      }
-      .floating { animation: float 3s ease-in-out infinite; }
+  /* -------------------- FLOAT ANIMATION -------------------- */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+  .floating { animation: float 3s ease-in-out infinite; }
 
-.minecraft-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('—Pngtree—abstract purple light streaks on_19222857.jpg')
-    no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
-}
+  /* -------------------- BACKGROUND -------------------- */
+  .minecraft-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('—Pngtree—abstract purple light streaks on_19222857.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+  }
+  .minecraft-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* dark overlay for readability */
+  }
 
+  /* -------------------- HEADINGS -------------------- */
+  h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; /* headline font */
+    color: #ffffff; /* white for all headings */
+  }
 
+  /* -------------------- TYPED JS -------------------- */
+  #typed-name {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+  }
 
+  /* -------------------- LINKS & BUTTONS -------------------- */
+  a, .btn, .hover-text {
+    color: #8b5cf6;
+    transition: color 0.3s;
+  }
+  a:hover, .btn:hover, .hover-text:hover {
+    color: #ffffff;
+  }
 
-.minecraft-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.70);
-}
+  /* -------------------- TECH STACK TEXT -------------------- */
+  .text-green-400 { color: #8b5cf6; } /* percentages */
+  .text-gray-300 { color: #a5b4fc; }  /* soft purple for paragraph text */
+</style>
 
-
-
-
-
-    </style>
   </head>
 
   <body class="font-grotesk">
@@ -496,6 +530,7 @@ window.addEventListener("scroll", () => {
 
   </body>
 </html>
+
 
 
 
