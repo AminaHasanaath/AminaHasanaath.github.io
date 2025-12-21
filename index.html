@@ -32,96 +32,94 @@
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        font-family: 'JetBrains Mono', monospace;
-        scroll-behavior: smooth;
-        background-color: transparent;
-        color: #a5b4fc;
-      }
+   <style>
+  /* Base */
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrains Mono", monospace; /* Base body font */
+    scroll-behavior: smooth;
+    background-color: transparent;
+    color: white;
+  }
 
-      ::-webkit-scrollbar-thumb {
-        background: #8b5cf6;
-        border-radius: 8px;
-      }
+  /* Preserve Tailwind alignment */
+  h1, h2, h3 {
+    font-family: "Orbitron", sans-serif; /* Headline font */
+    color: #ffffff; /* White headings */
+    text-align: inherit; /* Preserve Tailwind text alignment */
+  }
 
-      .gradient-text {
-        background: linear-gradient(90deg, #ffffff, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+  p {
+    font-family: "JetBrains Mono", monospace; /* Paragraph font */
+    color: #a5b4fc; /* Soft purple for paragraphs */
+    text-align: inherit; /* Preserve Tailwind text alignment */
+  }
 
-      .nav-link {
-        color: #8b5cf6;
-      }
-      .nav-link:hover {
-        color: #ffffff;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-      }
+  /* Scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 8px;
+  }
 
-      .dino-card {
-        transition: transform 0.3s;
-        background-color: rgba(15, 15, 15, 0.5);
-        color: #e0e7ff;
-      }
-      .dino-card:hover {
-        transform: translateY(-5px);
-      }
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(90deg, #6366f1, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-      .timeline-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #8b5cf6;
-      }
+  /* Nav hover underline */
+  .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #6366f1;
+    text-underline-offset: 4px;
+  }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-      }
-      .floating { animation: float 3s ease-in-out infinite; }
+  /* Dino card hover */
+  .dino-card {
+    transition: transform 0.3s;
+  }
+  .dino-card:hover {
+    transform: translateY(-5px);
+  }
 
-      .minecraft-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('—Pngtree—abstract purple light streaks on_19222857.jpg') no-repeat center center fixed;
-        background-size: cover;
-        z-index: -1;
-      }
-      .minecraft-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.7);
-      }
+  /* Timeline dots */
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6366f1;
+  }
 
-      h1, h2, h3 {
-        font-family: 'Orbitron', sans-serif;
-        color: #ffffff;
-      }
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+  .floating { 
+    animation: float 3s ease-in-out infinite; 
+  }
 
-      #typed-name {
-        color: #ffffff;
-        font-family: 'Orbitron', sans-serif;
-      }
+  /* Minecraft background */
+  .minecraft-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('—Pngtree—abstract purple light streaks on_19222857.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+  }
+  .minecraft-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.70);
+  }
+</style>
 
-      a, .btn, .hover-text {
-        color: #8b5cf6;
-        transition: color 0.3s;
-      }
-      a:hover, .btn:hover, .hover-text:hover {
-        color: #ffffff;
-      }
-
-      .text-green-400 { color: #8b5cf6; }
-      .text-gray-300 { color: #a5b4fc; }
-    </style>
   </head>
 
   <body class="font-body">
@@ -499,3 +497,4 @@
 
   </body>
 </html>
+
