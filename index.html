@@ -6,73 +6,40 @@
     <title>Amina Hasanaath | Portfolio</title>
 
     <!-- Tailwind CSS -->
-   <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          headline: ["Orbitron", "sans-serif"], // for titles & animated text
-          body: ["JetBrains Mono", "monospace"] // for remaining text
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+            colors: {
+              primary: "#6366f1",
+              accent: "#00f0ff",
+              dark: "#0f0f0f",
+            },
+          },
         },
-        colors: {
-          primary: "#ffffff",       // headlines & animated text
-          accent: "#8b5cf6",        // bright purple for highlights
-          secondary: "#a5b4fc",     // light purple for body text
-          tertiary: "#e0e7ff",      // soft text for contrast
-          dark: "#0f0f0f",          // background fallback
-        },
-      },
-    },
-  };
-</script>
+      };
+    </script>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-     html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'JetBrains Mono', monospace; /* body font */
-  scroll-behavior: smooth;
-  background-color: transparent; 
-  color: #a5b4fc; /* soft purple for paragraphs */
-}
-
-/* Headlines / Titles */
-h1, h2, h3 {
-  font-family: 'Orbitron', sans-serif; /* headline font */
-  color: #ffffff; /* white for headings */
-}
-
-/* Animated text */
-#typed-name {
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Links / buttons / nav links */
-a, .nav-link {
-  color: #8b5cf6; /* bright purple accent */
-}
-a:hover, .nav-link:hover {
-  color: #ffffff; /* white on hover */
-}
-
-/* Cards and overlays */
-.dino-card, .bg-black/40, .bg-black/20 {
-  background-color: rgba(15, 15, 15, 0.5);
-  color: #e0e7ff; /* soft text inside overlays */
-}
-
-/* Tech Stack % text */
-.text-green-400 {
-  color: #8b5cf6; /* bright purple for percentages */
-}
-
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: "Space Grotesk", sans-serif;
+        scroll-behavior: smooth;
+        background-color: transparent; /* UPDATED */
+        color: white;
+      }
 
       ::-webkit-scrollbar-thumb {
         background: #6366f1;
@@ -140,7 +107,7 @@ a:hover, .nav-link:hover {
     </style>
   </head>
 
-  <body class="font-body">
+  <body class="font-grotesk">
     <div class="minecraft-bg"></div>
 
     <!-- Navbar -->
@@ -163,11 +130,11 @@ a:hover, .nav-link:hover {
         loading="lazy"
       />
       <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-       <h1 class="text-4xl md:text-5xl font-headline gradient-text mb-2">
-  <span id="typed-name"></span>
-</h1>
-        <p class="mt-4 text-secondary">|Smart & Creative | Frank & confident | I strive for purposeful life</p>
-        <p class="mt-4 text-secondary">To me, every problem has a solution, and if it doesn’t, then it was never a problem to begin with. I’m a die-hard problem solver even if the problem isn’t mine.</p>
+        <h1 class="text-4xl md:text-5xl font-grotesk gradient-text mb-2">
+          <span id="typed-name"></span>
+        </h1>
+        <p class="mt-4 text-gray-300">|Smart & Creative | Frank & confident | I strive for purposeful life</p>
+        <p class="mt-4 text-gray-300">To me, every problem has a solution, and if it doesn’t, then it was never a problem to begin with. I’m a die-hard problem solver even if the problem isn’t mine.</p>
         <a href="finalATSResume.docx" target="_blank" class="inline-block mt-6 bg-indigo-600 px-6 py-2 rounded hover:bg-indigo-700 transition">Resume</a>
       </div>
     </section>
@@ -177,23 +144,22 @@ a:hover, .nav-link:hover {
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-10" data-aos="fade-right">
           <div>
-           <h2 class="text-3xl font-bold font-headline mb-6">About Me</h2>
-<h3 class="text-white font-semibold font-headline text-lg mb-3">Origin & Passion</h3>
-
-            <p class="text-secondary leading-relaxed">I breathe technology and dream of Java Island. I believe in living a productive and purposeful life. My journey into Computer Technology began when I read the entire Java book and when I first saw the Windows iconic four-colored logo.</p>
+            <h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+             <h3 class="text-white font-semibold text-lg mb-3">Origin & Passion</h3>
+            <p class="text-gray-300 leading-relaxed">I breathe technology and dream of Java Island. I believe in living a productive and purposeful life. My journey into Computer Technology began when I read the entire Java book and when I first saw the Windows iconic four-colored logo.</p>
           </div>
            
 
           <div>
-            <h3 class="text-white font-semibold font-headline text-lg mb-3">Current Path & Projects</h3>
-            <p class="text-secondary leading-relaxed">Currently pursuing Computer Science with a specialization in AI Engineering, I’m building expertise in Backend Development and AI integration, crafting clean, scalable, and impactful systems. Alongside, I work on projects like <span class="text-indigo-400">Autonotify</span>, <span class="text-indigo-400">CLS (C)</span>, and <span class="text-indigo-400">Reflectra365</span>, showcasing my drive to merge systems with intelligent automation.</p>
+            <h3 class="text-white font-semibold text-lg mb-3">Current Path & Projects</h3>
+            <p class="text-gray-300 leading-relaxed">Currently pursuing Computer Science with a specialization in AI Engineering, I’m building expertise in Backend Development and AI integration, crafting clean, scalable, and impactful systems. Alongside, I work on projects like <span class="text-indigo-400">Autonotify</span>, <span class="text-indigo-400">CLS (C)</span>, and <span class="text-indigo-400">Reflectra365</span>, showcasing my drive to merge systems with intelligent automation.</p>
           </div>
             <div>
-          <h3 class="text-white font-semibold font-headline text-lg mb-3">Vision & Mindset</h3>
-            <p class="text-secondary leading-relaxed">I am also an open-source contributor and love collaborating with tech-driven minds. With countless ideas in motion, I see the rise of AI as fuel for my mission to turn concepts into real-world solutions, fast and effectively. No matter what, I never give up on anything I’m not good at—until I solve it.</p>
+            <h3 class="text-white font-semibold text-lg mb-3">Vision & Mindset</h3>
+            <p class="text-gray-300 leading-relaxed">I am also an open-source contributor and love collaborating with tech-driven minds. With countless ideas in motion, I see the rise of AI as fuel for my mission to turn concepts into real-world solutions, fast and effectively. No matter what, I never give up on anything I’m not good at—until I solve it.</p>
           </div>
           <div class="dino-card bg-black/40 p-5 rounded shadow-md text-center">
-            <p class="text-sm text-secondary mb-2">My favourite Dino Game</p>
+            <p class="text-sm text-gray-400 mb-2">My favourite Dino Game</p>
             <a href="https://chromedino.com/" target="_blank" class="text-indigo-400 hover:underline">Wanna try?</a>
           </div>
         </div>
@@ -201,42 +167,42 @@ a:hover, .nav-link:hover {
         <div class="space-y-10" data-aos="fade-left">
           <div class="grid grid-cols-2 gap-6">
             <div class="bg-black/40 p-6 rounded shadow hover:scale-105 transition">
-              <h3 class="text-white font-semibold font-headline text-lg mb-3">3+</h3>
-              <p class="text-secondary text-sm">Projects Completed</p>
+              <h3 class="text-2xl font-semibold text-white">3+</h3>
+              <p class="text-gray-400 text-sm">Projects Completed</p>
             </div>
             <div class="bg-black/40 p-6 rounded shadow hover:scale-105 transition">
-              <h3 class="text-white font-semibold font-headline text-lg mb-3">150+</h3>
-              <p class="text-secondary text-sm">Coding Questions</p>
+              <h3 class="text-2xl font-semibold text-white">150+</h3>
+              <p class="text-gray-400 text-sm">Coding Questions</p>
             </div>
           </div>
 
           <div>
-           <h3 class="text-white font-semibold font-headline text-lg mb-3">Skills</h3>
+            <h3 class="text-xl font-bold text-primary mb-5">Skills</h3>
 
             <div class="space-y-4">
               <div>
-                <p class="text-secondary text-sm mb-1">Prompting AI assistants</p>
+                <p class="text-gray-300 text-sm mb-1">Prompting AI assistants</p>
                 <div class="w-full bg-black/30 h-3 rounded">
                   <div class="bg-indigo-500 h-3 rounded w-[90%]"></div>
                 </div>
               </div>
 
               <div>
-                <p class="text-secondary text-sm mb-1">Working with Editors</p>
+                <p class="text-gray-300 text-sm mb-1">Working with Editors</p>
                 <div class="w-full bg-black/30 h-3 rounded">
                   <div class="bg-yellow-500 h-3 rounded w-[30%]"></div>
                 </div>
               </div>
 
               <div>
-                <p class="text-secondary text-sm mb-1">Java,Spring Boot & DB</p>
+                <p class="text-gray-300 text-sm mb-1">Java,Spring Boot & DB</p>
                 <div class="w-full bg-black/30 h-3 rounded">
                   <div class="bg-red-500 h-3 rounded w-[20%]"></div>
                 </div>
               </div>
 
               <div>
-                <p class="text-secondary text-sm mb-1">LLM Working</p>
+                <p class="text-gray-300 text-sm mb-1">LLM Working</p>
                 <div class="w-full bg-black/30 h-3 rounded">
                   <div class="bg-blue-400 h-3 rounded w-[10%]"></div>
                 </div>
@@ -254,8 +220,8 @@ a:hover, .nav-link:hover {
       <div class="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
         
         <div class="md:w-1/2 space-y-4">
-       <h3 class="text-white font-semibold font-headline text-lg mb-3">My Research Paper</h3>
-          <p class="text-secondary leading-relaxed">
+          <h3 class="text-2xl md:text-3xl font-bold gradient-text">My Research Paper</h3>
+          <p class="text-gray-300 leading-relaxed">
         <span class="font-semibold">A Historical Survey of Computing and Artificial Intelligence:</span> From Pre-1950s to 2025. Explore the evolution of computing and AI through decades of technological breakthroughs.
       </p>
           <a href="#" target="_blank" class="inline-block bg-indigo-600 px-5 py-2 rounded hover:bg-indigo-700 transition">
@@ -276,7 +242,7 @@ a:hover, .nav-link:hover {
     <!-- Tech Stack -->
     <section id="techstack" class="py-20 px-6 bg-black/40">
       <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
-       <h2 class="text-3xl font-bold font-headline mb-6">Tech Stack</h2>
+        <h2 class="text-3xl font-bold text-primary mb-10">Tech Stack</h2>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
 
@@ -288,7 +254,7 @@ a:hover, .nav-link:hover {
                 stroke-dasharray="251.2" stroke-dashoffset="25.12" stroke-linecap="round"/>
             </svg>
             <p class="text-sm text-green-400 mt-2">90%</p>
-            <p class="text-secondary mt-1 text-sm">C-Programming</p>
+            <p class="text-gray-300 mt-1 text-sm">C-Programming</p>
           </div>
 
           <!-- item 2 -->
@@ -299,7 +265,7 @@ a:hover, .nav-link:hover {
                 stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-linecap="round"/>
             </svg>
             <p class="text-sm text-green-400 mt-2">10%</p>
-            <p class="text-secondary mt-1 text-sm">AI Integration</p>
+            <p class="text-gray-300 mt-1 text-sm">AI Integration</p>
           </div>
 
           <!-- item 3 -->
@@ -310,7 +276,7 @@ a:hover, .nav-link:hover {
                 stroke-dasharray="251.2" stroke-dashoffset="200.96" stroke-linecap="round"/>
             </svg>
             <p class="text-sm text-green-400 mt-2">20%</p>
-            <p class="text-secondary mt-1 text-sm">Java Spring Boot</p>
+            <p class="text-gray-300 mt-1 text-sm">Java Spring Boot</p>
           </div>
 
           <!-- item 4 -->
@@ -321,7 +287,7 @@ a:hover, .nav-link:hover {
                 stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-linecap="round"/>
             </svg>
             <p class="text-sm text-green-400 mt-2">30%</p>
-            <p class="text-secondary mt-1 text-sm">DSA</p>
+            <p class="text-gray-300 mt-1 text-sm">DSA</p>
           </div>
 
         </div>
@@ -330,31 +296,31 @@ a:hover, .nav-link:hover {
 
     <!-- Projects -->
     <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold font-headline mb-6"data-aos="fade-up">Projects</h2>
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center" data-aos="fade-up">Projects</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
 
         <div class="p-6 rounded-lg shadow-lg border border-gray-700 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500 floating" data-aos="fade-right">
-          <h3 class="text-white font-semibold font-headline text-lg mb-3">Face Detection System</h3>
-          <p class="text-secondary text-sm">Detects Full lit faces in the images</p>
+          <h3 class="text-xl font-semibold text-white mb-2">Face Detection System</h3>
+          <p class="text-gray-400 text-sm">Detects Full lit faces in the images</p>
           <a href="#" class="mt-4 inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full animate-pulse hover:bg-indigo-700">DONE</a>
         </div>
 
         <div class="p-6 rounded-lg shadow-lg border border-gray-700 hover:scale-105 transition" data-aos="fade-left">
-          <h3 class="text-white font-semibold font-headline text-lg mb-3">Backend Client-Server</h3>
-          <p class="text-secondary text-sm">Interaction of SQL with API</p>
+          <h3 class="text-xl font-semibold text-white mb-2">Backend Client-Server</h3>
+          <p class="text-gray-400 text-sm">Interaction of SQL with API</p>
           <a href="#" class="mt-4 inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full animate-pulse hover:bg-indigo-700">COMING SOON</a>
         </div>
 
         <div class="p-6 rounded-lg shadow-lg border border-gray-700 hover:scale-105 hover:-translate-y-2 hover:border-indigo-500 floating transition" data-aos="fade-left">
-         <h3 class="text-white font-semibold font-headline text-lg mb-3">AutoNotify</h3>
-          <p class="text-secondary text-sm">I wish i could have something that could type for me?</p>
+          <h3 class="text-xl font-semibold text-white mb-2">AutoNotify</h3>
+          <p class="text-gray-400 text-sm">I wish i could have something that could type for me?</p>
           <a href="#" class="mt-4 inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full animate-pulse hover:bg-indigo-700">IN PROGRESS</a>
         </div>
 
         <div class="p-6 rounded-lg shadow-lg border border-gray-700 hover:scale-105 transition" data-aos="fade-left">
-          <h3 class="text-white font-semibold font-headline text-lg mb-3">?</h3>
-          <p class="text-secondary text-sm">More ideas coming soon!</p>
+          <h3 class="text-xl font-semibold text-white mb-2">?</h3>
+          <p class="text-gray-400 text-sm">More ideas coming soon!</p>
           <a href="#" class="mt-4 inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full animate-pulse hover:bg-indigo-700">COMING SOON</a>
         </div>
 
@@ -363,7 +329,7 @@ a:hover, .nav-link:hover {
 
     <!-- LeetCode -->
     <section id="leetcode" class="py-20 px-6 bg-black/40">
-      <h2 class="text-3xl font-bold font-headline mb-6"data-aos="fade-up">LeetCode Stats</h2>
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center" data-aos="fade-up">LeetCode Stats</h2>
 
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
 
@@ -386,23 +352,23 @@ a:hover, .nav-link:hover {
 
     <!-- Achievements -->
    <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-bold font-headline mb-6">Achievements</h2>
+  <h2 class="text-3xl font-bold text-primary mb-10 text-center">Achievements</h2>
 
   <div class="space-y-6 max-w-2xl mx-auto">
 
      <div class="flex items-start gap-4">
       <div class="timeline-dot mt-2"></div>
-      <p class="text-secondary">Won Hack Revolution NOV - 2025 powered by ACES</p>
+      <p class="text-gray-300">Won Hack Revolution NOV - 2025 powered by ACES</p>
     </div>
 
     <div class="flex items-start gap-4">
       <div class="timeline-dot mt-2"></div>
-      <p class="text-secondary">Volunteered CSI x ACES Hackathons JAN - 2025</p>
+      <p class="text-gray-300">Volunteered CSI x ACES Hackathons JAN - 2025</p>
     </div>
 
     <div class="flex items-start gap-4">
       <div class="timeline-dot mt-2"></div>
-      <p class="text-secondary">2 successful Open Source Contributions</p>
+      <p class="text-gray-300">2 successful Open Source Contributions</p>
     </div>
 
    
@@ -413,17 +379,17 @@ a:hover, .nav-link:hover {
 
     <!-- Timeline -->
     <section id="timeline" class="py-20 px-6 max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold font-headline mb-6">I keep exploring Science & Technology</h2>
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center">I keep exploring Science & Technology</h2>
       <div class="relative border-l-2 border-gray-700 ml-4">
         <div class="mb-10 ml-6 relative">
           <span class="timeline-dot absolute -left-7 top-1"></span>
-          <p class="text-secondary text-sm">
+          <p class="text-gray-300 text-sm">
             2025-11-24: Python was built after ABC.
           </p>
         </div>
         <div class="mb-10 ml-6 relative">
           <span class="timeline-dot absolute -left-7 top-1"></span>
-          <p class="text-secondary text-sm">
+          <p class="text-gray-300 text-sm">
             2025-11-20:CloudFare problem affected AI tools.
           </p>
         </div>
@@ -435,7 +401,7 @@ a:hover, .nav-link:hover {
     <!-- Footer -->
     <footer id="connect" class="text-center text-gray-400 py-10">
       <section class="text-center pb-10">
-        <p class="text-secondary">Let’s connect:</p>
+        <p class="text-gray-400">Let’s connect:</p>
         <div class="flex justify-center gap-6 mt-2 text-indigo-400">
           <a href="mailto:amina.hasanaath@gmail.com" target="_blank">Email</a>
           <a href="https://github.com/AminaHasanaath" target="_blank">GitHub</a>
@@ -448,7 +414,6 @@ a:hover, .nav-link:hover {
     <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-      
       var typed = new Typed("#typed-name", {
         strings: [
           "Amina Hasanaath",
@@ -531,4 +496,6 @@ window.addEventListener("scroll", () => {
 
   </body>
 </html>
+
+
 
