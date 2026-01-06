@@ -366,31 +366,66 @@
     </section>
 
     <!-- Achievements -->
-    <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-10 text-center">Achievements</h2>
+<section id="achievements" class="py-20 px-6 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-white mb-3 text-center">Achievements</h2>
+  <p class="text-center text-lavender/70 mb-12">
+    Milestones & contributions so far
+  </p>
 
-      <div class="space-y-6 max-w-2xl mx-auto">
+  <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
 
-         <div class="flex items-start gap-4">
-          <div class="timeline-dot mt-2"></div>
-          <p class="text-lavender">Won Hack Revolution NOV - 2025 powered by ACES</p>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="timeline-dot mt-2"></div>
-          <p class="text-lavender">Volunteered CSI x ACES Hackathons JAN - 2025</p>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="timeline-dot mt-2"></div>
-          <p class="text-lavender">2 successful Open Source Contributions</p>
-        </div>
-
+    <!-- Card 1 -->
+    <div
+      class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg"
+    >
+      <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">
+        🏆
       </div>
-    </section>
+      <h3 class="text-lg font-semibold text-white mb-1">
+        Hack Revolution Winner
+      </h3>
+      <p class="text-lavender text-sm mb-3">
+        Won Hack Revolution powered by ACES
+      </p>
+      <span class="text-xs text-lavender/60">Nov 2025</span>
+    </div>
 
-    <!-- Timeline -->
-    <section id="timeline" class="py-20 px-6 max-w-6xl mx-auto">
+    <!-- Card 2 -->
+    <div
+      class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg"
+    >
+      <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">
+        🤝
+      </div>
+      <h3 class="text-lg font-semibold text-white mb-1">
+        Hackathon Volunteer
+      </h3>
+      <p class="text-lavender text-sm mb-3">
+        Volunteered at CSI x ACES Hackathons
+      </p>
+      <span class="text-xs text-lavender/60">Jan 2025</span>
+    </div>
+
+    <!-- Card 3 -->
+    <div
+      class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg sm:col-span-2"
+    >
+      <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">
+        🌐
+      </div>
+      <h3 class="text-lg font-semibold text-white mb-1">
+        Open Source Contributor
+      </h3>
+      <p class="text-lavender text-sm mb-3">
+        Successfully contributed to open source projects
+      </p>
+      <span class="text-xs text-lavender/60">2 Contributions</span>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Timeline   <section id="timeline" class="py-20 px-6 max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-white mb-10 text-center">I keep exploring Science & Technology</h2>
       <div class="relative border-l-2 border-gray-700 ml-4">
         <div class="mb-10 ml-6 relative">
@@ -406,10 +441,9 @@
           </p>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white z-50"></div>
-
     <!-- Footer -->
     <footer id="connect" class="text-center py-10">
       <section class="text-center pb-10">
@@ -429,15 +463,15 @@
       var typed = new Typed("#typed-name", {
         strings: [
           "Amina Hasanaath",
-          "Tech Savvy",
-          "AI-Backend Developer",
+          "Tech Geek",
+          "Backend Developer",
           "There's no right way to do the right thing"
         ],
         typeSpeed: 100,
         backSpeed: 50,
         loop: false,
         showCursor: true,
-        cursorChar: '-'
+        cursorChar: '|'
       });
     </script>
 
@@ -514,6 +548,7 @@
 
   </body>
 </html>
+
 
 
 
