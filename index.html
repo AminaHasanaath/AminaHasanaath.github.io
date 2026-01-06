@@ -105,15 +105,43 @@
     <div class="minecraft-bg"></div>
 
     <!-- Navbar -->
-    <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#techstack" class="nav-link">Tech Stack</a>
-        <div class="flex items-center space-x-6">
-          <a href="tel:+919391201739">📞 +91-9391201739</a>
-          <a href="#connect">Let’s Connect</a>
-        </div>
-      </div>
-    </nav>
+  <!-- Navbar -->
+<nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <!-- Logo / Name -->
+    <a href="#hero" class="text-xl font-bold text-white hover:text-accent transition">Amina H.</a>
+
+    <!-- Menu Links -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#skills" class="nav-link text-white hover:text-accent transition">Skills</a>
+      <a href="#projects" class="nav-link text-white hover:text-accent transition">Projects</a>
+      <a href="#techstack" class="nav-link text-white hover:text-accent transition">Tech Stack</a>
+      <a href="#connect" class="nav-link text-white hover:text-accent transition">Connect</a>
+    </div>
+
+    <!-- Contact / Mobile -->
+    <div class="flex items-center space-x-4 md:space-x-6">
+      <a href="tel:+919391201739" class="text-white hover:text-accent transition">📞 +91-9391201739</a>
+      <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent focus:outline-none">
+        <!-- Hamburger Icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-md">
+    <div class="flex flex-col items-center space-y-4 py-4">
+      <a href="#skills" class="text-white hover:text-accent transition text-lg">Skills</a>
+      <a href="#projects" class="text-white hover:text-accent transition text-lg">Projects</a>
+      <a href="#techstack" class="text-white hover:text-accent transition text-lg">Tech Stack</a>
+      <a href="#connect" class="text-white hover:text-accent transition text-lg">Connect</a>
+    </div>
+  </div>
+</nav>
 
     <!-- Hero -->
     <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -667,6 +695,16 @@
 
     <!-- Scroll progress -->
     <script>
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+    
+    <script>
       window.addEventListener("scroll", () => {
         let max = document.body.scrollHeight - window.innerHeight;
         let percent = (window.scrollY / max) * 100;
@@ -676,6 +714,7 @@
 
   </body>
 </html>
+
 
 
 
