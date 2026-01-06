@@ -280,15 +280,19 @@
 <!-- Skills Overview -->
 <section id="techstack" class="py-20 px-6 max-w-6xl mx-auto">
 
-  <h2 class="text-3xl font-bold text-white mb-12 text-center">
+  <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide">
     Tech Stack
   </h2>
 
   <!-- Skill Doughnuts -->
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 place-items-center">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 place-items-center mb-14">
 
-    <!-- C-Programming -->
-    <div class="flex flex-col items-center gap-2">
+    <!-- Skill Card -->
+    <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4
+                flex flex-col items-center gap-3
+                hover:border-indigo-400/40 hover:shadow-[0_0_25px_-8px_rgba(99,102,241,0.6)]
+                transition-all duration-300">
+
       <div class="relative w-[72px] h-[72px]">
         <svg width="72" height="72" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
@@ -299,65 +303,81 @@
           90%
         </span>
       </div>
-      <p class="text-xs text-lavender">C Programming</p>
+
+      <p class="text-xs text-lavender tracking-wide">C Programming</p>
     </div>
 
-    <!-- AI Integration -->
-    <div class="flex flex-col items-center gap-2">
+    <!-- AI -->
+    <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4
+                flex flex-col items-center gap-3
+                hover:border-emerald-400/40 hover:shadow-[0_0_25px_-8px_rgba(16,185,129,0.6)]
+                transition-all duration-300">
+
       <div class="relative w-[72px] h-[72px]">
         <svg width="72" height="72" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-          <circle cx="50" cy="50" r="40" stroke="#6366f1" stroke-width="10" fill="none"
+          <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="10" fill="none"
             stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-linecap="round"/>
         </svg>
         <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">
           10%
         </span>
       </div>
-      <p class="text-xs text-lavender">AI Integration</p>
+
+      <p class="text-xs text-lavender tracking-wide">AI Integration</p>
     </div>
 
-    <!-- Java Spring Boot -->
-    <div class="flex flex-col items-center gap-2">
+    <!-- Spring Boot -->
+    <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4
+                flex flex-col items-center gap-3
+                hover:border-red-400/40 hover:shadow-[0_0_25px_-8px_rgba(239,68,68,0.6)]
+                transition-all duration-300">
+
       <div class="relative w-[72px] h-[72px]">
         <svg width="72" height="72" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-          <circle cx="50" cy="50" r="40" stroke="#6366f1" stroke-width="10" fill="none"
+          <circle cx="50" cy="50" r="40" stroke="#ef4444" stroke-width="10" fill="none"
             stroke-dasharray="251.2" stroke-dashoffset="200.96" stroke-linecap="round"/>
         </svg>
         <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">
           20%
         </span>
       </div>
-      <p class="text-xs text-lavender">Java Spring Boot</p>
+
+      <p class="text-xs text-lavender tracking-wide">Spring Boot</p>
     </div>
 
     <!-- DSA -->
-    <div class="flex flex-col items-center gap-2">
+    <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4
+                flex flex-col items-center gap-3
+                hover:border-amber-400/40 hover:shadow-[0_0_25px_-8px_rgba(245,158,11,0.6)]
+                transition-all duration-300">
+
       <div class="relative w-[72px] h-[72px]">
         <svg width="72" height="72" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-          <circle cx="50" cy="50" r="40" stroke="#6366f1" stroke-width="10" fill="none"
+          <circle cx="50" cy="50" r="40" stroke="#f59e0b" stroke-width="10" fill="none"
             stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-linecap="round"/>
         </svg>
         <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">
           30%
         </span>
       </div>
-      <p class="text-xs text-lavender">DSA</p>
+
+      <p class="text-xs text-lavender tracking-wide">DSA</p>
     </div>
 
   </div>
 
-  <!-- Logos -->
-  <div class="mt-12 space-y-6 text-center">
+  <!-- Tech Logos -->
+  <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 space-y-6 text-center">
 
     <div>
       <p class="text-xs uppercase tracking-widest text-lavender/60 mb-3">
         Backend & Databases
       </p>
       <img src="https://skillicons.dev/icons?i=java,spring,hibernate,mysql,fastapi"
-           class="mx-auto" height="55"/>
+           class="mx-auto opacity-90"/>
     </div>
 
     <div>
@@ -365,7 +385,7 @@
         Languages & AI
       </p>
       <img src="https://skillicons.dev/icons?i=python,c"
-           class="mx-auto" height="55"/>
+           class="mx-auto opacity-90"/>
     </div>
 
     <div>
@@ -373,7 +393,7 @@
         Tools & Workflow
       </p>
       <img src="https://skillicons.dev/icons?i=vscode,github,pycharm,html"
-           class="mx-auto" height="55"/>
+           class="mx-auto opacity-90"/>
     </div>
 
   </div>
@@ -619,6 +639,7 @@
 
   </body>
 </html>
+
 
 
 
