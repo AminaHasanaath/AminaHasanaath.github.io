@@ -40,7 +40,7 @@
         font-family: "Space Grotesk", sans-serif;
         scroll-behavior: smooth;
         background-color: transparent;
-        color: #c4b5fd; /* lavender body text */
+        color: #c4b5fd;
       }
 
       ::-webkit-scrollbar-thumb {
@@ -48,7 +48,6 @@
         border-radius: 8px;
       }
 
-      /* Hero moving text gradient updated to white-grey combo */
       .gradient-text {
         background: linear-gradient(90deg, #ffffff, #e5e5e5);
         -webkit-background-clip: text;
@@ -61,14 +60,9 @@
         text-underline-offset: 4px;
       }
 
-      .dino-card {
-        transition: transform 0.3s;
-      }
-      .dino-card:hover {
-        transform: translateY(-5px);
-      }
+      .dino-card { transition: transform 0.3s; }
+      .dino-card:hover { transform: translateY(-5px); }
 
-      /* Timeline dots black & white combo */
       .timeline-dot {
         width: 12px;
         height: 12px;
@@ -84,10 +78,7 @@
 
       .minecraft-bg {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: url('—Pngtree—abstract purple light streaks on_19222857.jpg') no-repeat center center fixed;
         background-size: cover;
         z-index: -1;
@@ -97,24 +88,15 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.70);
+        background: rgba(0,0,0,0.7);
       }
 
-      /* Tech stack circles black & white combo */
-      svg circle:first-child { stroke: #000000; } /* background circle black */
-      svg circle:last-child { stroke: #ffffff; } /* progress circle white */
+      svg circle:first-child { stroke: #000; }
+      svg circle:last-child { stroke: #fff; }
 
-      /* Skill bars *
-      .bg-indigo-500 { background-color: #ffffff !important; } 
-      .bg-yellow-500 { background-color: #e5e5e5 !important; }
-      .bg-red-500 { background-color: #ffffff !important; }
-      .bg-blue-400 { background-color: #e5e5e5 !important; }*/
-
-      /* Project cards buttons */
-      .bg-indigo-600 { background-color: #ffffff !important; }
+      .bg-indigo-600 { background-color: #fff !important; }
       .bg-indigo-600:hover { background-color: #e5e5e5 !important; }
 
-      /* Footer links */
       footer a { color: #e5e5e5; }
     </style>
   </head>
@@ -125,32 +107,32 @@
     <!-- Navbar -->
     <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-20">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="text-sm md:text-base">
-          <a href="#techstack" class="nav-link">Tech Stack</a>
-        </div>
+        <a href="#techstack" class="nav-link">Tech Stack</a>
         <div class="flex items-center space-x-6">
-          <a href="tel:+919391201739" class="hover:text-accent transition">📞 +91-9391201739</a>
-          <a href="#connect" class="hover:text-accent transition">Let’s Connect</a>
+          <a href="tel:+919391201739">📞 +91-9391201739</a>
+          <a href="#connect">Let’s Connect</a>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+    <!-- Hero -->
+    <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
       <img src="Screenshot 2025-12-21 162025.png"
-        class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover hover:scale-105 transition duration-300"
-        loading="lazy"
-      />
+           class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover"/>
       <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-grotesk gradient-text mb-2">
+        <h1 class="text-4xl md:text-5xl gradient-text mb-2">
           <span id="typed-name"></span>
         </h1>
         <p class="mt-4 text-gray-400">|Smart & Creative | Frank & confident | I strive for purposeful life</p>
-        <p class="mt-4 text-gray-400">To me, every problem has a solution, and if it doesn’t, then it was never a problem to begin with. I’m a die-hard problem solver even if the problem isn’t mine.</p>
-        <a href="finalATSResume.docx" target="_blank" class="inline-block mt-6 bg-white text-black px-6 py-2 rounded hover:bg-gray-300 transition">Resume</a>
+        <p class="mt-4 text-gray-400">
+          To me, every problem has a solution, and if it doesn’t, then it was never a problem to begin with.
+        </p>
+        <a href="finalATSResume.docx" target="_blank"
+           class="inline-block mt-6 bg-white text-black px-6 py-2 rounded hover:bg-gray-300">
+          Resume
+        </a>
       </div>
     </section>
-
     <!-- About -->
    <!-- About -->
 <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
@@ -537,17 +519,16 @@
     </section>-->
 
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white z-50"></div>
+ 
     <!-- Footer -->
     <footer id="connect" class="text-center py-10">
-      <section class="text-center pb-10">
-        <p class="text-lavender">Let’s connect:</p>
-        <div class="flex justify-center gap-6 mt-2 text-white">
-          <a href="mailto:amina.hasanaath@gmail.com" target="_blank">Email</a>
-          <a href="https://github.com/AminaHasanaath" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/amina-hasanaath-7033a1309" target="_blank">LinkedIn</a>
-        </div>
-      </section>
-      <p class="mt-4 text-lavender">© 2025 Amina Hasanaath. Mind your own Business.</p>
+      <p class="text-lavender">Let’s connect:</p>
+      <div class="flex justify-center gap-6 mt-2">
+        <a href="mailto:amina.hasanaath@gmail.com">Email</a>
+        <a href="https://github.com/AminaHasanaath">GitHub</a>
+        <a href="https://linkedin.com">LinkedIn</a>
+      </div>
+      <p class="mt-4 text-lavender">© 2025 Amina Hasanaath</p>
     </footer>
 
     <!-- Typed.js -->
@@ -641,12 +622,6 @@
 
   </body>
 </html>
-
-
-
-
-  
-
 
 
 
