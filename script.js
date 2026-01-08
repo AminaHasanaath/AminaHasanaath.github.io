@@ -98,4 +98,10 @@ document.addEventListener("click", (e) => {
     navPanel.classList.add("hidden");
   }
 });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    navPanel.classList.toggle("hidden");
+  }
+});
 
