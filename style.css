@@ -3,8 +3,12 @@ html, body {
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
   scroll-behavior: smooth;
-  background-color: transparent;
+  background: transparent;
   color: #c4b5fd;
+}
+
+body {
+  background: transparent !important;
 }
 
 body > *:not(.minecraft-bg) {
@@ -12,13 +16,15 @@ body > *:not(.minecraft-bg) {
   z-index: 1;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar-thumb {
   background: #6366f1;
   border-radius: 8px;
 }
 
+/* Text */
 .gradient-text {
-  background: linear-gradient(180deg, red, blue);
+  background: linear-gradient(180deg, red, blue); /* test gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -29,6 +35,7 @@ body > *:not(.minecraft-bg) {
   text-underline-offset: 4px;
 }
 
+/* Cards */
 .dino-card {
   transition: transform 0.3s;
 }
@@ -43,6 +50,7 @@ body > *:not(.minecraft-bg) {
   background-color: #ffffff;
 }
 
+/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-5px); }
@@ -53,45 +61,25 @@ body > *:not(.minecraft-bg) {
 }
 
 /* =============================
-   Background Container
+   SINGLE SOURCE BACKGROUND
 ============================= */
 .minecraft-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: #000;
+
+  background:
+    radial-gradient(600px circle at 15% 25%, rgba(99,102,241,0.18), transparent 45%),
+    radial-gradient(500px circle at 85% 70%, rgba(0,240,255,0.15), transparent 45%),
+    linear-gradient(180deg, purple, teal);
+
 }
 
-.minecraft-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-}
-
+/* SVG + footer */
 svg circle:first-child { stroke: #000; }
 svg circle:last-child { stroke: #fff; }
 
 footer a {
   color: #e5e5e5;
 }
-
-/* ==================================================
-   REFINED SINGLE-SOURCE BACKGROUND SYSTEM (FINAL)
-================================================== */
-
-.minecraft-bg {
-  background:
-    radial-gradient(600px circle at 15% 25%, rgba(99,102,241,0.18), transparent 45%),
-    radial-gradient(500px circle at 85% 70%, rgba(0,240,255,0.15), transparent 45%),
-    linear-gradient(180deg, #050507, #0a0a14, #050507);
-}
-
-.minecraft-bg::after {
-  background: transparent;
-}
-body {
-  background: transparent !important;
-}
-
