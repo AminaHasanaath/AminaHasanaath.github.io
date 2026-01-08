@@ -1,105 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amina Hasanaath | Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amina Hasanaath | Portfolio</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
-            colors: {
-              primary: "#6366f1",
-              accent: "#00f0ff",
-              dark: "#0f0f0f",
-              lavender: "#c4b5fd",
-              greyWhite: "#e5e5e5",
-            },
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+          colors: {
+            primary: "#6366f1",
+            accent: "#00f0ff",
+            dark: "#0f0f0f",
+            lavender: "#c4b5fd",
+            greyWhite: "#e5e5e5",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        font-family: "Space Grotesk", sans-serif;
-        scroll-behavior: smooth;
-        background-color: #000000;
-        color: #c4b5fd;
-      }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      ::-webkit-scrollbar-thumb {
-        background: #6366f1;
-        border-radius: 8px;
-      }
+<body class="font-grotesk">
 
-      .gradient-text {
-        background: linear-gradient(90deg, #ffffff, #e5e5e5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .nav-link:hover {
-        text-decoration: underline;
-        text-decoration-color: #ffffff;
-        text-underline-offset: 4px;
-      }
-
-      .dino-card { transition: transform 0.3s; }
-      .dino-card:hover { transform: translateY(-5px); }
-
-      .timeline-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #ffffff;
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-      }
-      .floating { animation: float 3s ease-in-out infinite; }
-
-      .minecraft-bg {
-        position: fixed;
-        inset: 0;
-        background: url('assets/images/your-bg-image.jpg') no-repeat center center fixed;
-        background-size: cover;
-        z-index: -1;
-      }
-
-      .minecraft-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.7);
-      }
-
-      svg circle:first-child { stroke: #000; }
-      svg circle:last-child { stroke: #fff; }
-
-      footer a { color: #e5e5e5; }
-    </style>
-  </head>
-
-  <body class="font-grotesk">
-    <div class="minecraft-bg"></div>
+  <div class="minecraft-bg"></div>
 
     <!-- Navbar -->
     <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
@@ -584,121 +521,17 @@
       <p class="mt-4 text-lavender">© 2025 Amina Hasanaath</p>
     </footer>
 
-    <!-- Typed.js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      var typed = new Typed("#typed-name", {
-        strings: [
-          "I'm Amina Hasanaath",
-          "A Tech Geek",
-          "Upcoming Backend Developer",
-          "believes, There's no right way to do the right thing"
-        ],
-        typeSpeed: 100,
-        backSpeed: 50,
-        loop: false,
-        showCursor: true,
-        cursorChar: '|'
-      });
-    </script>
+     <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true });
-    </script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Scroll to top -->
-    <button id="scrollTop" class="hidden fixed bottom-6 right-6 bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-300 transition">
-      ↑
-    </button>
-    <script>
-      const scrollBtn = document.getElementById("scrollTop");
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
-      });
-      scrollBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-    </script>
-
-    <!-- Floating cards tilt -->
-    <script>
-      document.querySelectorAll('.floating').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const rotateX = (y - centerY) / 20;
-          const rotateY = (centerX - x) / 20;
-
-          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = "rotateX(0) rotateY(0) scale(1)";
-        });
-      });
-    </script>
-
-    <!-- Navbar scroll highlight -->
-    <script>
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(sec => {
-          if (window.scrollY >= sec.offsetTop - 200) {
-            current = sec.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach(a => {
-          a.classList.remove("text-accent");
-          if (a.getAttribute("href") === "#" + current) {
-            a.classList.add("text-accent");
-          }
-        });
-      });
-    </script>
-
-    <!-- Scroll progress -->
-    
-
-<!-- Mobile menu toggle -->
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-
-<!-- Smooth scroll with offset for fixed navbar -->
-<script>
-  const OFFSET = 80; // height of navbar in pixels
-
-  document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        const targetPosition = target.offsetTop - OFFSET;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-      }
-      // Close mobile menu if open
-      menu.classList.add('hidden');
-    });
-  });
-</script>
-
-
+  <!-- External JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
