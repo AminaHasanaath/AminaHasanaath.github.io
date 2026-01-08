@@ -68,3 +68,4 @@ navToggle.addEventListener("click", () => {
     mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
   }
 });
+
