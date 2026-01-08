@@ -85,3 +85,17 @@ document.querySelectorAll("a.nav-link").forEach(link => {
     menu.classList.add("hidden");
   });
 });
+const navToggle = document.getElementById("navToggle");
+const navPanel = document.getElementById("navPanel");
+
+navToggle.addEventListener("click", () => {
+  navPanel.classList.toggle("hidden");
+});
+
+// Close palette when clicking outside
+document.addEventListener("click", (e) => {
+  if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) {
+    navPanel.classList.add("hidden");
+  }
+});
+
