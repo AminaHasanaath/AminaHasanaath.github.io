@@ -48,11 +48,11 @@ html, body {
 
 .minecraft-bg {
   position: fixed;
-  inset: 0;
-  background: url('assets/images/your-bg-image.jpg') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
+  inset: 0;       /* full screen */
+  z-index: -1;    /* send background behind everything */
+  pointer-events: none; /* let clicks pass through */
 }
+
 
 .minecraft-bg::after {
   content: "";
