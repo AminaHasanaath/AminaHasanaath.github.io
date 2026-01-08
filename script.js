@@ -1,29 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =====================================
-     Scroll To Top Arrow
-  ====================================== */
+  // Scroll To Top Arrow
   const scrollTopBtn = document.getElementById("scrollTopBtn");
-
   if (scrollTopBtn) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove("hidden");
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
+      scrollTopBtn.classList.toggle("hidden", window.scrollY <= 300);
     });
-
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
+    scrollTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
-  /* =====================================
-     Typed.js
-  ====================================== */
+  // Typed.js
   if (document.querySelector("#typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -40,74 +25,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =====================================
-     AOS
-  ====================================== */
+  // AOS
   if (typeof AOS !== "undefined") {
-    AOS.init({
-      duration: 900,
-      once: true
-    });
+    AOS.init({ duration: 900, once: true });
   }
 
-  /* =====================================
-     Scroll Progress Bar
-  ====================================== */
+  // Scroll Progress Bar
   const scrollProgress = document.getElementById("scroll-progress");
-
   if (scrollProgress) {
     window.addEventListener("scroll", () => {
       const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      scrollProgress.style.width = scrollPercent + "%";
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress.style.width = ((scrollTop / docHeight) * 100) + "%";
     });
   }
 
-  /* =====================================
-     Mobile Menu Toggle
-  ====================================== */
+  // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
   }
 
-  /* =====================================
-     Command Palette (Explore Button)
-  ====================================== */
+  // Command Palette (Explore Button)
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
-
   if (navToggle && navPanel) {
-
-    // Toggle command palette on click
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navPanel.classList.toggle("hidden");
-    });
-
-    // Prevent panel click from closing
-    navPanel.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-
-    // Close panel when clicking outside
-    document.addEventListener("click", () => {
-      navPanel.classList.add("hidden");
-    });
-
-    // Ctrl/Cmd + K shortcut
-    document.addEventListener("keydown", (e) => {
+    navToggle.addEventListener("click", e => { e.stopPropagation(); navPanel.classList.toggle("hidden"); });
+    navPanel.addEventListener("click", e => e.stopPropagation());
+    document.addEventListener("click", () => navPanel.classList.add("hidden"));
+    document.addEventListener("keydown", e => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         navPanel.classList.toggle("hidden");
       }
     });
   }
-
 });
