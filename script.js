@@ -1,30 +1,29 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-/* =====================================
-   Scroll To Top Arrow
-===================================== */
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+  /* =====================================
+     Scroll To Top Arrow
+  ====================================== */
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-if (scrollTopBtn) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.remove("hidden");
-    } else {
-      scrollTopBtn.classList.add("hidden");
-    }
-  });
-
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
     });
-  });
-}
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
 
   /* =====================================
      Typed.js
-  ===================================== */
+  ====================================== */
   if (document.querySelector("#typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -43,7 +42,7 @@ if (scrollTopBtn) {
 
   /* =====================================
      AOS
-  ===================================== */
+  ====================================== */
   if (typeof AOS !== "undefined") {
     AOS.init({
       duration: 900,
@@ -53,7 +52,7 @@ if (scrollTopBtn) {
 
   /* =====================================
      Scroll Progress Bar
-  ===================================== */
+  ====================================== */
   const scrollProgress = document.getElementById("scroll-progress");
 
   if (scrollProgress) {
@@ -68,7 +67,7 @@ if (scrollTopBtn) {
 
   /* =====================================
      Mobile Menu Toggle
-  ===================================== */
+  ====================================== */
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
@@ -80,25 +79,29 @@ if (scrollTopBtn) {
 
   /* =====================================
      Command Palette (Explore Button)
-  ===================================== */
+  ====================================== */
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
 
   if (navToggle && navPanel) {
 
+    // Toggle command palette on click
     navToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       navPanel.classList.toggle("hidden");
     });
 
+    // Prevent panel click from closing
     navPanel.addEventListener("click", (e) => {
       e.stopPropagation();
     });
 
+    // Close panel when clicking outside
     document.addEventListener("click", () => {
       navPanel.classList.add("hidden");
     });
 
+    // Ctrl/Cmd + K shortcut
     document.addEventListener("keydown", (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
