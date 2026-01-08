@@ -76,6 +76,7 @@ document.addEventListener("keydown", (e) => {
     navPanel.classList.toggle("hidden");
   }
 });
+
 // Scroll To Top Button
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
