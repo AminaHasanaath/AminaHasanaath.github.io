@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //the top arrow button function
+  const navToggle = document.getElementById("navToggle");
+const navPanel = document.getElementById("navPanel");
+
+navToggle.addEventListener("click", () => {
+  navPanel.classList.toggle("hidden");
+});
+
   // Explore Button Command Palette
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
