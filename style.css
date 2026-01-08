@@ -94,3 +94,9 @@ svg circle:last-child { stroke: #fff; }
 footer a {
   color: #e5e5e5;
 }
+#navToggle,
+#scrollTopBtn,
+#navPanel {
+  pointer-events: auto; /* ensures clickable */
+}
+
