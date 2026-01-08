@@ -155,3 +155,9 @@ footer a {
     right: 4vw;
   }
 }
+#typed-name {
+  background: linear-gradient(180deg, #c4b5fd, #9d7fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
