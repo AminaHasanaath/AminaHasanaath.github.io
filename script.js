@@ -54,15 +54,19 @@ const navToggle = document.getElementById("navToggle");
 const navPanel = document.getElementById("navPanel");
 
 // Toggle palette
-navToggle.addEventListener("click", () => {
+navToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); // 🔥 IMPORTANT
   navPanel.classList.toggle("hidden");
 });
 
+// Prevent clicks inside panel from closing it
+navPanel.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 // Close when clicking outside
-document.addEventListener("click", (e) => {
-  if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) {
-    navPanel.classList.add("hidden");
-  }
+document.addEventListener("click", () => {
+  navPanel.classList.add("hidden");
 });
 
 // Ctrl / Cmd + K shortcut
