@@ -106,27 +106,30 @@ footer a {
 }
 
 /* =============================
-   FIXED BUTTONS LAYOUT (SCROLL + EXPLORE)
+   FIXED BUTTONS LAYOUT (Opposite Sides)
 ============================= */
 #scrollTopBtn {
+  position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 20px;       /* left side */
   width: 48px;
   height: 48px;
   z-index: 10000;
 }
 
 #navToggle {
+  position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 20px;      /* right side */
   z-index: 10000;
-  min-width: 140px; /* ensures full text fits */
+  min-width: 140px;
   text-align: center;
 }
 
-/* Ensure the panel is above the button */
+/* Explore Panel above the Explore Button */
 #navPanel {
-  bottom: 80px; /* above Explore button */
+  position: fixed;
+  bottom: 80px;     /* pops above Explore button */
   right: 20px;
   width: 200px;
   z-index: 10001;
@@ -137,17 +140,17 @@ footer a {
 ============================= */
 @media (max-width: 640px) {
   #scrollTopBtn {
-    bottom: 16vw; /* moves up a bit on very small screens */
-    left: 4vw;
+    bottom: 16vw;
+    left: 4vw;       /* left side */
   }
 
   #navToggle {
-    bottom: 16vw; /* moves up similarly */
-    right: 4vw;
+    bottom: 16vw;
+    right: 4vw;      /* right side */
   }
 
   #navPanel {
-    bottom: 24vw; /* panel pops up above the button */
+    bottom: 24vw;
     right: 4vw;
   }
 }
