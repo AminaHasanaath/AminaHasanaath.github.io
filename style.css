@@ -104,20 +104,50 @@ body > *:not(.minecraft-bg) {
 footer a {
   color: #e5e5e5;
 }
+
+/* =============================
+   FIXED BUTTONS LAYOUT (SCROLL + EXPLORE)
+============================= */
+#scrollTopBtn {
+  bottom: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  z-index: 10000;
+}
+
+#navToggle {
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  min-width: 140px; /* ensures full text fits */
+  text-align: center;
+}
+
+/* Ensure the panel is above the button */
+#navPanel {
+  bottom: 80px; /* above Explore button */
+  right: 20px;
+  width: 200px;
+  z-index: 10001;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
 @media (max-width: 640px) {
   #scrollTopBtn {
-    bottom: 14vw; /* moves up a bit on very small screens */
+    bottom: 16vw; /* moves up a bit on very small screens */
     left: 4vw;
   }
 
   #navToggle {
-    bottom: 14vw; /* moves up similarly */
+    bottom: 16vw; /* moves up similarly */
     right: 4vw;
   }
 
   #navPanel {
-    bottom: 20vw; /* panel pops up above the button */
+    bottom: 24vw; /* panel pops up above the button */
     right: 4vw;
   }
 }
-
