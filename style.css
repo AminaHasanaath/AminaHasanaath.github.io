@@ -1,0 +1,69 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color: #c4b5fd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 8px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #e5e5e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  text-underline-offset: 4px;
+}
+
+.dino-card {
+  transition: transform 0.3s;
+}
+.dino-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.minecraft-bg {
+  position: fixed;
+  inset: 0;
+  background: url('assets/images/your-bg-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+.minecraft-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+svg circle:first-child { stroke: #000; }
+svg circle:last-child { stroke: #fff; }
+
+footer a {
+  color: #e5e5e5;
+}
