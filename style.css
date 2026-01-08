@@ -10,10 +10,6 @@ html, body {
   color: #c4b5fd;
 }
 
-body {
-  background: transparent !important;
-}
-
 body > *:not(.minecraft-bg) {
   position: relative;
   z-index: 1;
@@ -31,7 +27,7 @@ body > *:not(.minecraft-bg) {
    TEXT
 ============================= */
 .gradient-text {
-  background: linear-gradient(180deg, red, blue); /* test */
+  background: linear-gradient(180deg, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -72,7 +68,7 @@ body > *:not(.minecraft-bg) {
 }
 
 /* =============================
-   BACKGROUND (SINGLE SOURCE)
+   BACKGROUND
 ============================= */
 .minecraft-bg {
   position: fixed;
@@ -86,17 +82,25 @@ body > *:not(.minecraft-bg) {
 }
 
 /* =============================
-   MISC
+   SCROLL PROGRESS BAR
 ============================= */
-svg circle:first-child { stroke: #000; }
-svg circle:last-child { stroke: #fff; }
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+/* =============================
+   UI ELEMENTS
+============================= */
+#navToggle, #scrollTopBtn, #navPanel {
+  pointer-events: auto;
+}
 
 footer a {
   color: #e5e5e5;
 }
-#navToggle,
-#scrollTopBtn,
-#navPanel {
-  pointer-events: auto; /* ensures clickable */
-}
-
