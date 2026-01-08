@@ -104,3 +104,20 @@ body > *:not(.minecraft-bg) {
 footer a {
   color: #e5e5e5;
 }
+@media (max-width: 640px) {
+  #scrollTopBtn {
+    bottom: 14vw; /* moves up a bit on very small screens */
+    left: 4vw;
+  }
+
+  #navToggle {
+    bottom: 14vw; /* moves up similarly */
+    right: 4vw;
+  }
+
+  #navPanel {
+    bottom: 20vw; /* panel pops up above the button */
+    right: 4vw;
+  }
+}
+
