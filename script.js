@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll To Top Arrow
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  if (scrollTopBtn) {
-    window.addEventListener("scroll", () => {
-      scrollTopBtn.classList.toggle("hidden", window.scrollY <= 300);
-    });
-    scrollTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  }
-
   // Explore Button Command Palette
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
