@@ -91,3 +91,7 @@ footer a {
 .minecraft-bg::after {
   background: transparent;
 }
+body {
+  background: transparent !important;
+}
+
