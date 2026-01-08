@@ -24,21 +24,21 @@ window.addEventListener("scroll", () => {
 scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 /* Floating cards tilt */
-document.querySelectorAll(".floating").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+document.querySelectorAll('a.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    // ONLY prevent default for hash links
+    if (this.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
+    } else {
+      return; // allow normal page navigation
+    }
 
-    const rotateX = (y - rect.height / 2) / 20;
-    const rotateY = (rect.width / 2 - x) / 20;
-
-    card.style.transform =
-      `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      const targetPosition = target.offsetTop - 80;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
   });
 });
 
