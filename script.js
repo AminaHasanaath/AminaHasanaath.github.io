@@ -1,107 +1,74 @@
-/* Typed.js */
+/* =====================================
+   Typed.js
+===================================== */
 new Typed("#typed-name", {
   strings: [
     "I'm Amina Hasanaath",
-    "A Tech Geek",
-    "Upcoming Backend Developer",
-    "believes, There's no right way to do the right thing"
+    "AI + Backend System Engineer",
+    "Smart & Creative",
+    "I strive for a purposeful life"
   ],
-  typeSpeed: 100,
-  backSpeed: 50,
+  typeSpeed: 80,
+  backSpeed: 40,
   loop: false,
   showCursor: true,
-  cursorChar: '|'
+  cursorChar: "|"
 });
 
-/* AOS */
-AOS.init({ duration: 800, once: true });
-
-/* Scroll to top */
-const scrollBtn = document.getElementById("scrollTop");
-window.addEventListener("scroll", () => {
-  scrollBtn.classList.toggle("hidden", window.scrollY < 300);
-});
-scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-/* Floating cards tilt */
-document.querySelectorAll('a.nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    // ONLY prevent default for hash links
-    if (this.getAttribute('href').startsWith('#')) {
-      e.preventDefault();
-    } else {
-      return; // allow normal page navigation
-    }
-
-    const targetId = this.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      const targetPosition = target.offsetTop - 80;
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    }
-  });
+/* =====================================
+   AOS
+===================================== */
+AOS.init({
+  duration: 900,
+  once: true
 });
 
-/* Navbar active section highlight */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
+/* =====================================
+   Scroll Progress Bar
+===================================== */
+const scrollProgress = document.getElementById("scroll-progress");
 
 window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 200) {
-      current = sec.id;
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("text-accent");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("text-accent");
-    }
-  });
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = scrollPercent + "%";
 });
 
-/* Mobile menu toggle */
-const btn = document.getElementById("mobile-menu-btn");
-const menu = document.getElementById("mobile-menu");
+/* =====================================
+   Mobile Menu Toggle (KEEPING IT)
+===================================== */
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
 
-btn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-});
-
-/* Smooth scroll offset */
-const OFFSET = 80;
-document.querySelectorAll("a.nav-link").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const target = document.getElementById(link.getAttribute("href").slice(1));
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - OFFSET,
-        behavior: "smooth"
-      });
-    }
-    menu.classList.add("hidden");
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
   });
-});
+}
+
+/* =====================================
+   Floating Command Palette (OPTION 2)
+===================================== */
 const navToggle = document.getElementById("navToggle");
 const navPanel = document.getElementById("navPanel");
 
+// Toggle palette
 navToggle.addEventListener("click", () => {
   navPanel.classList.toggle("hidden");
 });
 
-// Close palette when clicking outside
+// Close when clicking outside
 document.addEventListener("click", (e) => {
   if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) {
     navPanel.classList.add("hidden");
   }
 });
+
+// Ctrl / Cmd + K shortcut
 document.addEventListener("keydown", (e) => {
-  if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
     e.preventDefault();
     navPanel.classList.toggle("hidden");
   }
 });
-
