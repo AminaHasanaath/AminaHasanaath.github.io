@@ -27,7 +27,6 @@ AOS.init({
    Scroll Progress Bar
 ===================================== */
 const scrollProgress = document.getElementById("scroll-progress");
-
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -36,11 +35,10 @@ window.addEventListener("scroll", () => {
 });
 
 /* =====================================
-   Mobile Menu Toggle (KEEPING IT)
+   Mobile Menu Toggle
 ===================================== */
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
-
 if (mobileMenuBtn) {
   mobileMenuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
@@ -48,26 +46,22 @@ if (mobileMenuBtn) {
 }
 
 /* =====================================
-   Floating Command Palette (OPTION 2)
+   Floating Command Palette
 ===================================== */
 const navToggle = document.getElementById("navToggle");
 const navPanel = document.getElementById("navPanel");
 
-// Toggle palette
+// Toggle palette on click
 navToggle.addEventListener("click", (e) => {
-  e.stopPropagation(); // 🔥 IMPORTANT
+  e.stopPropagation();
   navPanel.classList.toggle("hidden");
 });
 
 // Prevent clicks inside panel from closing it
-navPanel.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+navPanel.addEventListener("click", (e) => e.stopPropagation());
 
 // Close when clicking outside
-document.addEventListener("click", () => {
-  navPanel.classList.add("hidden");
-});
+document.addEventListener("click", () => navPanel.classList.add("hidden"));
 
 // Ctrl / Cmd + K shortcut
 document.addEventListener("keydown", (e) => {
@@ -77,18 +71,16 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Scroll To Top Button
+/* =====================================
+   Scroll To Top Button
+===================================== */
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollTopBtn.classList.remove("hidden");
-  } else {
-    scrollTopBtn.classList.add("hidden");
-  }
+  if (window.scrollY > 300) scrollTopBtn.classList.remove("hidden");
+  else scrollTopBtn.classList.add("hidden");
 });
 
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
