@@ -129,3 +129,21 @@ body > *:not(.minecraft-bg) {
 footer a {
   color: #e5e5e5;
 }
+/* =============================
+   GLOBAL BUTTON STYLE
+============================= */
+.btn-dark {
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.btn-dark:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #c4b5fd;
+  box-shadow: 0 0 18px rgba(196,181,253,0.45);
+  transform: translateY(-1px);
+}
+
