@@ -157,4 +157,27 @@ footer a {
   box-shadow: 0 0 18px rgba(196,181,253,0.45);
   transform: translateY(-1px);
 }
+/* =============================
+   GLOBAL TEXT COLOR (EXCEPT HERO)
+
+
+ 
+/* =============================
+Make everything white by default 
+============================= */
+body {
+  color: #ffffff;
+}
+
+/* EXCLUDE HERO SECTION */
+#hero,
+#hero * {
+  color: inherit;
+}
+
+/* Keep existing lavender texts where explicitly used */
+.text-lavender {
+  color: #c4b5fd !important;
+}
+
 
