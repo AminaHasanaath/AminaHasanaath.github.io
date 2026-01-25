@@ -1,1 +1,171 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amina Hasanaath | Research</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+          colors: {
+            primary: "#6366f1",
+            accent: "#00f0ff",
+            dark: "#0f0f0f",
+            lavender: "#c4b5fd",
+            greyWhite: "#e5e5e5",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Same CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="font-grotesk">
+
+  <div class="minecraft-bg"></div>
+
+  <!-- NAVBAR (same) -->
+  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold text-white hover:text-accent transition">
+        Portfolio
+      </a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="Project.html" class="nav-link text-white hover:text-accent transition">Projects</a>
+        <a href="Research.html" class="nav-link text-white hover:text-accent transition">Research</a>
+        <a href="index.html#connect" class="nav-link text-white hover:text-accent transition">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RESEARCH SECTION -->
+  <section class="pt-40 pb-24 px-6 max-w-6xl mx-auto">
+
+    <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center">
+      Research
+    </h1>
+
+    <div class="space-y-16">
+
+      <!-- Research Item 1 -->
+      <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+                  hover:shadow-[0_0_30px_-5px_rgba(196,181,253,0.5)]
+                  transition-all duration-300"
+           data-aos="fade-up">
+
+        <!-- LEFT : CONTENT -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white">
+            Face Detection Techniques in Controlled Environments
+          </h2>
+
+          <p class="text-white/80 text-sm leading-relaxed">
+            This research explores traditional computer vision approaches
+            for face detection using Haar Cascade classifiers, focusing on
+            accuracy under controlled lighting conditions.
+          </p>
+
+          <div class="text-sm">
+            <p class="text-white font-semibold mb-1">Use</p>
+            <p class="text-white/70">
+              Computer Vision Research, Academic Study, Algorithm Analysis
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT : IMAGE + BUTTON -->
+        <div class="space-y-4 text-center">
+          <img src="assets/research-face-detection.png"
+               alt="Research Preview"
+               class="rounded-xl mx-auto shadow-lg" />
+
+          <a href="#"
+             class="inline-block btn-dark px-6 py-2 rounded-lg text-sm">
+            View More →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Research Item 2 -->
+      <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.5)]
+                  transition-all duration-300"
+           data-aos="fade-up">
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white">
+            Backend Architecture & Client–Server Communication
+          </h2>
+
+          <p class="text-white/80 text-sm leading-relaxed">
+            A conceptual and practical study of backend systems,
+            focusing on client–server models, database interaction,
+            and API-driven communication.
+          </p>
+
+          <div class="text-sm">
+            <p class="text-white font-semibold mb-1">Use</p>
+            <p class="text-white/70">
+              Backend Design, DBMS Concepts, System Architecture
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-center">
+          <img src="assets/research-backend.png"
+               alt="Backend Research"
+               class="rounded-xl mx-auto shadow-lg" />
+
+          <a href="#"
+             class="inline-block btn-dark px-6 py-2 rounded-lg text-sm">
+            View More →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (same) -->
+  <footer class="py-16 px-6 border-t border-white/10">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <p class="text-sm text-white/60 tracking-widest uppercase">System Connection</p>
+      <p class="text-xl font-semibold text-white">Let’s build something purposeful.</p>
+
+      <div class="flex justify-center gap-8 pt-4 text-sm">
+        <a href="mailto:amina.hasanaath@gmail.com" class="footer-link">Email</a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="footer-link">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      </div>
+
+      <p class="pt-6 text-xs text-white/40">
+        © 2025 Amina Hasanaath — engineered with intent
+      </p>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- SAME JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
