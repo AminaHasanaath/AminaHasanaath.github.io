@@ -180,4 +180,51 @@ body {
   color: #c4b5fd !important;
 }
 
+/* =============================
+   HERO – FOCUS ZONE STYLE
+============================= */
+
+.hero-focus::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(196,181,253,0.18),
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: -1;
+}
+
+/* Image glow */
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(196,181,253,0.35),
+    transparent
+  );
+  opacity: 0.5;
+  filter: blur(18px);
+  z-index: -1;
+}
+
+/* Quote styling */
+.hero-quote {
+  color: #e5e5e5;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
 
