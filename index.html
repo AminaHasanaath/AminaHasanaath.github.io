@@ -3,61 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Section</title>
-  <!-- Tailwind CSS (assumed already in your project) -->
+  <title>Amina Hasanaath | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+          colors: {
+            primary: "#6366f1",
+            accent: "#00f0ff",
+            dark: "#0f0f0f",
+            lavender: "#c4b5fd",
+            greyWhite: "#e5e5e5",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-black text-white">
+<body class="font-grotesk">
 
-  <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-16 items-start">
+  <div class="minecraft-bg"></div>
 
-      <!-- LEFT COLUMN -->
-      <div class="space-y-10">
+  <!-- Navbar -->
+  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="#hero" class="text-xl font-bold text-white hover:text-accent transition">Portfolio</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#projects" class="nav-link text-white hover:text-accent transition">Projects</a>
+        <a href="#techstack" class="nav-link text-white hover:text-accent transition">Tech Stack</a>
+        <a href="#connect" class="nav-link text-white hover:text-accent transition">Connect</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="text-white hover:text-accent focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-md">
+      <div class="flex flex-col items-center space-y-4 py-4">
+        <a href="#projects"  class="text-white hover:text-accent transition text-lg">Projects</a>
+        <a href="#techstack" class="text-white hover:text-accent transition text-lg">Tech Stack</a>
+        <a href="#connect" class="text-white hover:text-accent transition text-lg">Connect</a>
+      </div>
+    </div>
+  </nav>
 
-        <!-- About Me -->
-        <div>
-          <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <img src="Screenshot 2025-12-21 162025.png"
+         class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover"/>
+    <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
+        <span id="typed-name"></span>
+      </h1>
+    <p class="mt-4 text-lavender"> 
+         <h2></h2>For me, <span class="text-lavender">Purpose, <span class="text-lavender">Clarity, and <span class="text-lavender">Programming define life.
+         </span></span></span></h2></p>
+      <div class="mt-6 flex gap-4 justify-center md:justify-start">
+       <a href="finalATSResume.docx" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">
+                    Resume
+              </a>
 
-          <p class="text-white text-sm leading-relaxed mb-4">
-            Computer Science undergraduate (AI specialization) with a strong
-            interest in backend engineering.
-          </p>
-
-          <p class="text-white text-sm leading-relaxed mb-4">
-            Experienced in Java programming, database systems, APIs, and machine
-            learning projects, with a focus on building clear, reliable, and
-            scalable systems.
-          </p>
-
-          <p class="text-white text-sm leading-relaxed">
-            Curiosity drives my learning; code turns it into meaningful solutions.
-          </p>
-        </div>
-
-        <!-- Origin & Passion -->
-        <div class="glass-dark rounded-2xl p-6">
-          <h3 class="text-white font-semibold mb-4">Origin & Passion</h3>
-
-          <p class="text-white text-sm leading-relaxed mb-4">
-            My journey into technology began with pure curiosity—from reading my
-            first Java book to being inspired by early computer interfaces—which
-            gradually evolved into discipline.
-          </p>
-
-          <p class="text-white text-sm leading-relaxed mb-4">
-            I am strengthening my backend and AI integration skills to build
-            systems that are meaningful, purpose-driven, and scalable through
-            projects such as Autonotify and Reflectra365.
-          </p>
-
-          <p class="text-white text-sm leading-relaxed">
-            I enjoy collaborating on technical problems, contributing to open
-            source, and turning curiosity into meaningful, real-world solutions
-            through code.
-          </p>
-        </div>
+        <a href="website.html"
+   class="btn-dark glow-btn px-6 py-2 rounded-lg">
+  View Website
+</a>
 
       </div>
+    </div>
+  </section>
+  <!-- About Section -->
+<section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-2 gap-16 items-start">
+
+    <!-- LEFT COLUMN: ABOUT CONTENT -->
+    <div class="space-y-10" data-aos="fade-right">
+
+      <!-- About Me -->
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+        <p class="mt-4 text-white">
+          I’m a <span class="text-lavender">clarity-driven programmer</span>: debugging runtime errors, wiring databases to servers through APIs, and enjoying it more than flashy UI animations.
+        </p>
+      </div>
+
+      <!-- Origin & Passion -->
+      <div class="glass-dark rounded-2xl p-6">
+        <h2 class="text-3xl font-bold text-white mb-6">Origin & Passion</h2>
+        
+        <p class="text-white text-sm leading-relaxed mb-4">
+          My journey into technology began with curiosity, from reading my first Java book to exploring early computer interfaces—which gradually evolved into a disciplined approach to learning and building.
+        </p>
+
+        <p class="text-white text-sm leading-relaxed mb-4">
+          I am currently strengthening my backend and AI integration skills to create systems that are meaningful, purpose-driven, and scalable. Some of my projects include <span class="text-white">Autonotify</span> and <span class="text-white">Reflectra365</span>.
+        </p>
+
+        <p class="text-white text-sm leading-relaxed">
+          I enjoy collaborating on technical challenges, contributing to open source, and turning curiosity into real-world solutions through code.
+        </p>
+      </div>
+
+    </div>
 
     <!-- RIGHT COLUMN: STATS + SKILLS -->
     <div class="space-y-12" data-aos="fade-left">
@@ -445,27 +508,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
