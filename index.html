@@ -64,16 +64,31 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-    <img src="Screenshot 2025-12-21 162025.png"
-         class="w-56 h-56 md:w-64 md:h-64 rounded-xl shadow-xl object-cover"/>
+  <section
+  id="hero"
+  class="pt-32 pb-20 px-6 max-w-6xl mx-auto
+         relative overflow-hidden flex flex-col md:flex-row
+         items-center gap-12 hero-focus">
+    <div class="hero-image-wrapper">
+  <img
+    src="Screenshot 2025-12-21 162025.png"
+    class="w-56 h-56 md:w-64 md:h-64 rounded-xl object-cover"
+  />
+</div>
+
     <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
       <h1 class="text-4xl md:text-5xl gradient-text mb-2">
         <span id="typed-name"></span>
       </h1>
-    <p class="mt-4 text-lavender"> 
-         <h2></h2>For me, <span class="text-lavender">Purpose, <span class="text-lavender">Clarity, and <span class="text-lavender">Programming define life.
-         </span></span></span></h2></p>
+   <p class="mt-6 text-lg hero-quote">
+  For me,
+  <span class="text-lavender">purpose</span>,
+  <span class="text-lavender">clarity</span>,
+  and
+  <span class="text-lavender">programming</span>
+  define life.
+</p>
+
       <div class="mt-6 flex gap-4 justify-center md:justify-start">
        <a href="finalATSResume.docx" target="_blank"
            class="btn-dark glow-btn px-6 py-2 rounded-lg">
@@ -508,3 +523,4 @@
 
 </body>
 </html>
+
