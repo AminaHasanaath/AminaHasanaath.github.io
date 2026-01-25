@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     new Typed("#typed-name", {
       strings: [
         "I'm Amina Hasanaath",
-        "AI + Backend System Engineer",
-        "Smart & Creative",
-        "I strive for a purposeful life",
+        "Persuing Bachelors of CS - Engineering",
+        "Clarity driven Programmer",
+        ,
       ],
       typeSpeed: 80,
       backSpeed: 40,
-      loop: false,
+      loop: true,
       showCursor: true,
       cursorChar: "|",
     });
