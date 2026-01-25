@@ -227,4 +227,32 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.7;
 }
+/* =============================
+   FOOTER – TERMINAL STYLE
+============================= */
+
+.footer-link {
+  position: relative;
+  color: #e5e5e5;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #c4b5fd;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #c4b5fd;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
 
