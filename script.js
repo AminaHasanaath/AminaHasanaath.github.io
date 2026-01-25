@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       typeSpeed: 80,
       backSpeed: 40,
-      loop: true,
+      loop: false,
       showCursor: true,
       cursorChar: "|",
     });
