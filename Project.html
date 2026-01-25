@@ -60,76 +60,128 @@
     <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center">
       Projects
     </h1>
+<div class="space-y-16">
 
-    <div class="grid md:grid-cols-2 gap-10">
+  <!-- Project 1 -->
+  <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+              hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+              transition-all duration-300"
+       data-aos="fade-up">
 
-      <!-- Project 1 -->
-      <div class="group glass-dark rounded-2xl p-6 shadow-lg
-                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                  hover:-translate-y-2 hover:scale-105 transition-all duration-300 floating"
-           data-aos="fade-up">
-        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-indigo-400">
-          Face Detection System
-        </h2>
-        <p class="text-white text-sm mb-4">
-          Detect full-lit faces using Java and Haar Cascade with accuracy.
-        </p>
-        <span class="inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full">
-          DONE
-        </span>
+    <!-- LEFT : CONTENT -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">
+        Face Detection System
+      </h2>
+
+      <p class="text-white/80 text-sm leading-relaxed">
+        A Java-based face detection system using Haar Cascade classifiers,
+        optimized for full-lit environments with accurate detection.
+      </p>
+
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Tech Stack</p>
+        <p class="text-white/70">Java, OpenCV, Haar Cascade</p>
       </div>
 
-      <!-- Project 2 -->
-      <div class="group glass-dark rounded-2xl p-6 shadow-lg
-                  hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
-                  hover:-translate-y-2 hover:scale-105 transition-all duration-300"
-           data-aos="fade-up">
-        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-emerald-400">
-          Backend Client-Server
-        </h2>
-        <p class="text-white text-sm mb-4">
-          SQL + API based client-server interaction system.
-        </p>
-        <span class="inline-block bg-emerald-600 text-white text-xs font-bold py-1 px-3 rounded-full">
-          COMING SOON
-        </span>
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Used For</p>
+        <p class="text-white/70">Computer Vision, Image Processing</p>
       </div>
-
-      <!-- Project 3 -->
-      <div class="group glass-dark rounded-2xl p-6 shadow-lg
-                  hover:shadow-[0_0_30px_-5px_rgba(239,68,68,0.6)]
-                  hover:-translate-y-2 hover:scale-105 transition-all duration-300 floating"
-           data-aos="fade-up">
-        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-red-400">
-          AutoNotify
-        </h2>
-        <p class="text-white text-sm mb-4">
-          Automation tool for repetitive text inputs & notifications.
-        </p>
-        <span class="inline-block bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-full">
-          IN PROGRESS
-        </span>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="group glass-dark rounded-2xl p-6 shadow-lg
-                  hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.6)]
-                  hover:-translate-y-2 hover:scale-105 transition-all duration-300"
-           data-aos="fade-up">
-        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-amber-400">
-          More coming
-        </h2>
-        <p class="text-white text-sm mb-4">
-          New ideas currently under exploration.
-        </p>
-        <span class="inline-block bg-amber-600 text-white text-xs font-bold py-1 px-3 rounded-full">
-          SOON
-        </span>
-      </div>
-
     </div>
-  </section>
 
+    <!-- RIGHT : IMAGE + BUTTON -->
+    <div class="space-y-4 text-center">
+      <img src="assets/face-detection.png"
+           alt="Face Detection Project"
+           class="rounded-xl mx-auto shadow-lg" />
+
+      <a href="https://github.com/AminaHasanaath"
+         target="_blank"
+         class="inline-block btn-dark px-6 py-2 rounded-lg text-sm">
+        View on GitHub →
+      </a>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+              hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
+              transition-all duration-300"
+       data-aos="fade-up">
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">
+        Backend Client–Server System
+      </h2>
+
+      <p class="text-white/80 text-sm leading-relaxed">
+        A backend-focused client–server architecture implementing
+        secure SQL database interaction via APIs.
+      </p>
+
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Tech Stack</p>
+        <p class="text-white/70">Java, SQL, REST API</p>
+      </div>
+
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Used For</p>
+        <p class="text-white/70">Backend Architecture, DBMS</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 text-center">
+      <img src="assets/backend-system.png"
+           alt="Backend Project"
+           class="rounded-xl mx-auto shadow-lg" />
+
+      <span class="inline-block bg-emerald-600 text-white text-xs font-bold py-1 px-4 rounded-full">
+        COMING SOON
+      </span>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+              hover:shadow-[0_0_30px_-5px_rgba(239,68,68,0.6)]
+              transition-all duration-300"
+       data-aos="fade-up">
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">
+        AutoNotify
+      </h2>
+
+      <p class="text-white/80 text-sm leading-relaxed">
+        Automation tool designed to handle repetitive text input
+        tasks and notification workflows.
+      </p>
+
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Tech Stack</p>
+        <p class="text-white/70">Java, Automation Scripts</p>
+      </div>
+
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-1">Used For</p>
+        <p class="text-white/70">Productivity Automation</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 text-center">
+      <img src="assets/autonotify.png"
+           alt="AutoNotify Project"
+           class="rounded-xl mx-auto shadow-lg" />
+
+      <span class="inline-block bg-red-600 text-white text-xs font-bold py-1 px-4 rounded-full">
+        IN PROGRESS
+      </span>
+    </div>
+  </div>
+
+</div>
+  </section>
   <!-- FOOTER (same) -->
   <footer class="py-16 px-6 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center space-y-6">
@@ -156,3 +208,4 @@
 
 </body>
 </html>
+
