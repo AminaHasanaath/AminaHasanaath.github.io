@@ -121,7 +121,180 @@
         <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
       </div>
 
-      <p class="pt-6 text-xs text-white/40">
+      <p class="pt-6 text-xs text-white/40"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amina Hasanaath | Research</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { grotesk: ["Space Grotesk", "sans-serif"] },
+          colors: {
+            primary: "#6366f1",
+            accent: "#00f0ff",
+            dark: "#0f0f0f",
+            lavender: "#c4b5fd",
+            greyWhite: "#e5e5e5",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-grotesk">
+
+  <div class="minecraft-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold text-white hover:text-accent transition">Portfolio</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html#techstack" class="nav-link text-white hover:text-accent transition">Tech Stack</a>
+        <a href="index.html#connect" class="nav-link text-white hover:text-accent transition">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Research Section -->
+  <section class="pt-40 pb-24 px-6 max-w-6xl mx-auto space-y-16">
+
+    <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center">Research Work</h1>
+
+    <!-- Research Paper 1 -->
+    <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                transition-all duration-300 floating"
+         data-aos="fade-up">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold text-white">Distributed Systems Study</h2>
+        <p class="text-white/80 text-sm leading-relaxed">
+          Detailed research on distributed system architectures, focusing on
+          consistency models, fault tolerance, and server-client synchronization.
+        </p>
+        <div class="text-sm">
+          <p class="text-white font-semibold mb-1">Key Concepts</p>
+          <p class="text-white/70">Consistency, Fault Tolerance, Scalability</p>
+        </div>
+      </div>
+      <div class="space-y-4 text-center">
+        <img src="assets/distributed-systems.png" alt="Distributed Systems" class="rounded-xl mx-auto shadow-lg" />
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="inline-block btn-dark px-6 py-2 rounded-lg text-sm">
+          View Paper →
+        </a>
+      </div>
+    </div>
+
+    <!-- Research Paper 2 -->
+    <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+                hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
+                transition-all duration-300"
+         data-aos="fade-up">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold text-white">AI in Backend Optimization</h2>
+        <p class="text-white/80 text-sm leading-relaxed">
+          Research on using AI models to optimize database queries and server
+          load distribution, improving performance in high-traffic environments.
+        </p>
+        <div class="text-sm">
+          <p class="text-white font-semibold mb-1">Tech Stack</p>
+          <p class="text-white/70">Python, Machine Learning, SQL</p>
+        </div>
+      </div>
+      <div class="space-y-4 text-center">
+        <img src="assets/ai-backend.png" alt="AI Backend Research" class="rounded-xl mx-auto shadow-lg" />
+        <span class="inline-block bg-emerald-600 text-white text-xs font-bold py-1 px-4 rounded-full">
+          COMING SOON
+        </span>
+      </div>
+    </div>
+
+    <!-- Research Paper 3 -->
+    <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+                hover:shadow-[0_0_30px_-5px_rgba(239,68,68,0.6)]
+                transition-all duration-300"
+         data-aos="fade-up">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold text-white">Cloud Security Practices</h2>
+        <p class="text-white/80 text-sm leading-relaxed">
+          An in-depth look at cloud security mechanisms, including encryption,
+          identity access management, and real-time monitoring techniques.
+        </p>
+        <div class="text-sm">
+          <p class="text-white font-semibold mb-1">Key Areas</p>
+          <p class="text-white/70">Encryption, IAM, Threat Detection</p>
+        </div>
+      </div>
+      <div class="space-y-4 text-center">
+        <img src="assets/cloud-security.png" alt="Cloud Security Research" class="rounded-xl mx-auto shadow-lg" />
+        <span class="inline-block bg-red-600 text-white text-xs font-bold py-1 px-4 rounded-full">
+          IN PROGRESS
+        </span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 px-6 border-t border-white/10">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <p class="text-sm text-white/60 tracking-widest uppercase">Research Lab</p>
+      <p class="text-xl font-semibold text-white">Exploring purposeful technology.</p>
+
+      <div class="flex justify-center gap-8 pt-4 text-sm">
+        <a href="mailto:amina.hasanaath@gmail.com" class="footer-link">Email</a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="footer-link">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      </div>
+
+      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg
+         flex items-center justify-center hover:scale-110 transition" aria-label="Scroll to top">↑</button>
+
+  <!-- Explore Button -->
+  <button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">Explore More</button>
+
+  <!-- Command Panel -->
+  <div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
+    <a href="Project.html" class="block text-white hover:text-accent transition">→ Projects</a>
+    <a href="Research.html" class="block text-white hover:text-accent transition">→ Research</a>
+    <a href="index.html#about" class="block text-white hover:text-accent transition">→ About</a>
+    <a href="index.html#achievements" class="block text-white hover:text-accent transition">→ Achievements</a>
+  </div>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+
         © 2025 Amina Hasanaath — engineered with intent
       </p>
     </div>
