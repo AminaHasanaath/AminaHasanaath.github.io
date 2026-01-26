@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
 
-    document.addEventListener("click", (e) => {
-      if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) {
-        navPanel.classList.add("hidden");
-      }
+    document.addEventListener("click", () => {
+      navPanel.classList.add("hidden");
     });
 
     document.addEventListener("keydown", (e) => {
@@ -25,6 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         navPanel.classList.toggle("hidden");
       }
+    });
+  }
+
+  /* =============================
+     CONTACT DROPDOWN (GLOBAL NAV)
+  ============================= */
+  const contactToggle = document.getElementById("contactToggle");
+  const contactPanel = document.getElementById("contactPanel");
+
+  if (contactToggle && contactPanel) {
+    contactToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      contactPanel.classList.toggle("hidden");
+    });
+
+    contactPanel.addEventListener("click", (e) => e.stopPropagation());
+
+    document.addEventListener("click", () => {
+      contactPanel.classList.add("hidden");
     });
   }
 
@@ -58,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================
-     TYPED.JS (FIXED)
+     TYPED.JS
   ============================= */
   if (document.querySelector("#typed-name") && typeof Typed !== "undefined") {
     new Typed("#typed-name", {
@@ -94,19 +111,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-const contactToggle = document.getElementById("contactToggle");
-const contactPanel = document.getElementById("contactPanel");
-
-if (contactToggle && contactPanel) {
-  contactToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    contactPanel.classList.toggle("hidden");
-  });
-
-  contactPanel.addEventListener("click", (e) => e.stopPropagation());
-
-  document.addEventListener("click", () => {
-    contactPanel.classList.add("hidden");
-  });
-}
