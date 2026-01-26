@@ -1,3 +1,109 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =============================
+     EXPLORE BUTTON / COMMAND PANEL
+  ============================= */
+  const navToggle = document.getElementById("navToggle");
+  const navPanel = document.getElementById("navPanel");
+
+  if (navToggle && navPanel) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navPanel.classList.toggle("hidden");
+    });
+
+    navPanel.addEventListener("click", (e) => e.stopPropagation());
+
+    document.addEventListener("click", () => {
+      navPanel.classList.add("hidden");
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        navPanel.classList.toggle("hidden");
+      }
+    });
+  }
+
+  /* =============================
+     SCROLL PROGRESS BAR
+  ============================= */
+  const scrollProgress = document.getElementById("scroll-progress");
+  if (scrollProgress) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const percent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = percent + "%";
+    });
+  }
+
+  /* =============================
+     SCROLL TO TOP BUTTON
+  ============================= */
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  /* =============================
+     TYPED.JS
+  ============================= */
+  if (document.querySelector("#typed-name") && typeof Typed !== "undefined") {
+    new Typed("#typed-name", {
+      strings: [
+        "I'm Amina Hasanaath",
+        "Persuing Bachelors of CS - Engineering",
+        "Clarity driven Programmer",
+        ,
+      ],
+      typeSpeed: 80,
+      backSpeed: 40,
+      loop: false,
+      showCursor: true,
+      cursorChar: "|",
+    });
+  }
+
+  /* =============================
+     AOS
+  ============================= */
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 900,
+      once: true,
+    });
+  }
+
+  /* =============================
+     MOBILE MENU
+  ============================= */
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+});
+this is the common js 
 /* =============================
    BASE
 ============================= */
@@ -7,7 +113,7 @@ html, body {
   font-family: "Space Grotesk", sans-serif;
   scroll-behavior: smooth;
   background: transparent;
-  color: #ffffff;
+  color: #c4b5fd;
 }
 
 body > *:not(.minecraft-bg) {
@@ -61,6 +167,7 @@ body > *:not(.minecraft-bg) {
   background: #000000;
 }
 
+/* SHINY OVERLAY (no color gradient) */
 .minecraft-bg::before {
   content: "";
   position: absolute;
@@ -69,16 +176,11 @@ body > *:not(.minecraft-bg) {
   box-shadow:
     inset 0 0 120px rgba(255,255,255,0.04),
     inset 0 0 300px rgba(255,255,255,0.02);
+  pointer-events: none;
 }
 
-/* =============================
-   GLASS CARD (MISSING FIX)
-============================= */
-.glass-dark {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
+
+
 
 /* =============================
    SCROLL PROGRESS BAR
@@ -94,7 +196,58 @@ body > *:not(.minecraft-bg) {
 }
 
 /* =============================
-   BUTTONS
+   FIXED BUTTONS (OPPOSITE SIDES)
+============================= */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  z-index: 10000;
+}
+
+#navToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  min-width: 140px;
+}
+
+#navPanel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 200px;
+  z-index: 10001;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 640px) {
+  #scrollTopBtn {
+    bottom: 16vw;
+    left: 4vw;
+  }
+
+  #navToggle {
+    bottom: 16vw;
+    right: 4vw;
+  }
+
+  #navPanel {
+    bottom: 24vw;
+    right: 4vw;
+  }
+}
+
+footer a {
+  color: #e5e5e5;
+}
+/* =============================
+   GLOBAL BUTTON STYLE
 ============================= */
 .btn-dark {
   background: rgba(0, 0, 0, 0.45);
@@ -110,17 +263,103 @@ body > *:not(.minecraft-bg) {
   box-shadow: 0 0 18px rgba(196,181,253,0.45);
   transform: translateY(-1px);
 }
-
 /* =============================
-   LAVENDER TEXT
+   GLOBAL TEXT COLOR (EXCEPT HERO)
+
+
+ 
+/* =============================
+Make everything white by default 
 ============================= */
+body {
+  color: #ffffff;
+}
+
+/* EXCLUDE HERO SECTION */
+#hero,
+#hero * {
+  color: inherit;
+}
+
+/* Keep existing lavender texts where explicitly used */
 .text-lavender {
   color: #c4b5fd !important;
 }
+
 /* =============================
-   CONTACT PANEL Z-INDEX
+   HERO – FOCUS ZONE STYLE
 ============================= */
-#contactPanel {
-  z-index: 10050;
+
+.hero-focus::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(196,181,253,0.18),
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: -1;
 }
 
+/* Image glow */
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(196,181,253,0.35),
+    transparent
+  );
+  opacity: 0.5;
+  filter: blur(18px);
+  z-index: -1;
+}
+
+/* Quote styling */
+.hero-quote {
+  color: #e5e5e5;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+/* =============================
+   FOOTER – TERMINAL STYLE
+============================= */
+
+.footer-link {
+  position: relative;
+  color: #e5e5e5;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #c4b5fd;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #c4b5fd;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+this is the css 
