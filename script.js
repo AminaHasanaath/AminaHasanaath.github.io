@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
 
-    document.addEventListener("click", () => {
-      navPanel.classList.add("hidden");
+    document.addEventListener("click", (e) => {
+      if (!navPanel.contains(e.target) && !navToggle.contains(e.target)) {
+        navPanel.classList.add("hidden");
+      }
     });
 
     document.addEventListener("keydown", (e) => {
@@ -47,31 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (scrollTopBtn) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        scrollTopBtn.classList.remove("hidden");
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
+      scrollTopBtn.classList.toggle("hidden", window.scrollY < 400);
     });
 
     scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
   /* =============================
-     TYPED.JS
+     TYPED.JS (FIXED)
   ============================= */
   if (document.querySelector("#typed-name") && typeof Typed !== "undefined") {
     new Typed("#typed-name", {
       strings: [
         "I'm Amina Hasanaath",
-        "Persuing Bachelors of CS - Engineering",
-        "Clarity driven Programmer",
-        ,
+        "Pursuing Bachelors of CS Engineering",
+        "Clarity driven Programmer"
       ],
       typeSpeed: 80,
       backSpeed: 40,
@@ -85,10 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
      AOS
   ============================= */
   if (typeof AOS !== "undefined") {
-    AOS.init({
-      duration: 900,
-      once: true,
-    });
+    AOS.init({ duration: 900, once: true });
   }
 
   /* =============================
