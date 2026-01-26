@@ -29,23 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      CONTACT DROPDOWN (GLOBAL NAV)
   ============================= */
-  const contactToggle = document.getElementById("contactToggle");
-  const contactPanel = document.getElementById("contactPanel");
+  const contactToggles = document.querySelectorAll(".contactToggle");
+const contactPanel = document.getElementById("contactPanel");
 
-  if (contactToggle && contactPanel) {
-    contactToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      contactPanel.classList.toggle("hidden");
-    });
-
-    contactPanel.addEventListener("click", (e) => e.stopPropagation());
-
-    document.addEventListener("click", () => {
-      contactPanel.classList.add("hidden");
-    });
-  }
-
-  /* =============================
+contactToggles.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    contactPanel.classList.toggle("hidden");
+  });
+});
+/* =============================
      SCROLL PROGRESS BAR
   ============================= */
   const scrollProgress = document.getElementById("scroll-progress");
