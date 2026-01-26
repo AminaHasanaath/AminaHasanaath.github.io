@@ -117,3 +117,10 @@ body > *:not(.minecraft-bg) {
 .text-lavender {
   color: #c4b5fd !important;
 }
+/* =============================
+   CONTACT PANEL Z-INDEX
+============================= */
+#contactPanel {
+  z-index: 10050;
+}
+
