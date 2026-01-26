@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =============================
@@ -27,18 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================
-     CONTACT DROPDOWN (GLOBAL NAV)
-  ============================= */
-  const contactToggles = document.querySelectorAll(".contactToggle");
-const contactPanel = document.getElementById("contactPanel");
-
-contactToggles.forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    contactPanel.classList.toggle("hidden");
-  });
-});
-/* =============================
      SCROLL PROGRESS BAR
   ============================= */
   const scrollProgress = document.getElementById("scroll-progress");
@@ -59,11 +48,18 @@ contactToggles.forEach(btn => {
 
   if (scrollTopBtn) {
     window.addEventListener("scroll", () => {
-      scrollTopBtn.classList.toggle("hidden", window.scrollY < 400);
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
     });
 
     scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
   }
 
@@ -74,8 +70,9 @@ contactToggles.forEach(btn => {
     new Typed("#typed-name", {
       strings: [
         "I'm Amina Hasanaath",
-        "Pursuing Bachelors of CS Engineering",
-        "Clarity driven Programmer"
+        "Persuing Bachelors of CS - Engineering",
+        "Clarity driven Programmer",
+        ,
       ],
       typeSpeed: 80,
       backSpeed: 40,
@@ -89,19 +86,21 @@ contactToggles.forEach(btn => {
      AOS
   ============================= */
   if (typeof AOS !== "undefined") {
-    AOS.init({ duration: 900, once: true });
+    AOS.init({
+      duration: 900,
+      once: true,
+    });
   }
 
   /* =============================
      MOBILE MENU
   ============================= */
- 
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-  contactPanel.classList.add("hidden");
-});
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
   }
+});
