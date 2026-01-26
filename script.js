@@ -94,3 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const contactToggle = document.getElementById("contactToggle");
+const contactPanel = document.getElementById("contactPanel");
+
+if (contactToggle && contactPanel) {
+  contactToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    contactPanel.classList.toggle("hidden");
+  });
+
+  contactPanel.addEventListener("click", (e) => e.stopPropagation());
+
+  document.addEventListener("click", () => {
+    contactPanel.classList.add("hidden");
+  });
+}
