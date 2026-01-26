@@ -1,5 +1,8 @@
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,40 +44,17 @@
   <div class="minecraft-bg"></div>
 
   <!-- NAVBAR (same) -->
-<nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    
-    <a href="index.html" class="text-xl font-bold text-white hover:text-accent transition">
-      Portfolio
-    </a>
-
-    <!-- Desktop -->
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="Project.html" class="nav-link text-white hover:text-accent transition">
-        Projects
+  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold text-white hover:text-accent transition">
+        Portfolio
       </a>
-
-      <button
-        id="contactToggle"
-        class="nav-link text-white hover:text-accent transition"
-        aria-label="Open contact menu"
-      >
-        Contact
-      </button>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html#techstack" class="nav-link text-white hover:text-accent transition">Tech Stack</a>
+        <a href="index.html#connect" class="nav-link text-white hover:text-accent transition">Connect</a>
+      </div>
     </div>
-
-    <!-- Mobile -->
-    <div class="md:hidden flex items-center gap-4">
-      <button
-        id="contactToggle"
-        class="text-white hover:text-accent transition"
-      >
-        Contact
-      </button>
-    </div>
-
-  </div>
-</nav>
+  </nav>
 
   <!-- PROJECTS ONLY -->
   <section class="pt-40 pb-24 px-6 max-w-6xl mx-auto">
@@ -247,6 +227,15 @@
   <!-- FOOTER (same) -->
   <footer class="py-16 px-6 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center space-y-6">
+      <p class="text-sm text-white/60 tracking-widest uppercase">System Connection</p>
+      <p class="text-xl font-semibold text-white">Let’s build something purposeful.</p>
+
+      <div class="flex justify-center gap-8 pt-4 text-sm">
+        <a href="mailto:amina.hasanaath@gmail.com" class="footer-link">Email</a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="footer-link">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      </div>
+
       <p class="pt-6 text-xs text-white/40">
         © 2025 Amina Hasanaath — engineered with intent
       </p>
@@ -258,33 +247,9 @@
 
   <!-- SAME JS -->
   <script src="script.js"></script>
-<div
-  id="contactPanel"
-  class="hidden fixed top-20 right-6 z-50 glass-dark rounded-2xl p-5 w-64"
->
-  <p class="text-sm text-white/60 mb-4">Get in touch</p>
-
-  <div class="space-y-3">
-    <a href="mailto:aminahasanaath@gmail.com" class="btn-dark flex gap-3 px-3 py-2 rounded">
-      📧 Email
-    </a>
-    <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" class="btn-dark flex gap-3 px-3 py-2 rounded">
-      💼 LinkedIn
-    </a>
-    <a href="https://github.com/YOUR_GITHUB" target="_blank" class="btn-dark flex gap-3 px-3 py-2 rounded">
-      🐙 GitHub
-    </a>
-    <a href="tel:+91XXXXXXXXXX" class="btn-dark flex gap-3 px-3 py-2 rounded">
-      📞 Call
-    </a>
-  </div>
-</div>
 
 </body>
 </html>
-
-
-
 
 
 
