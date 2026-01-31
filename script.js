@@ -98,6 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
       contactMenu.classList.add("hidden");
     });
   }
+    // Toggle connect dropdown
+  const connectBtn = document.getElementById('connectBtn');
+  const connectDropdown = document.getElementById('connectDropdown');
 
+  connectBtn.addEventListener('click', () => {
+    connectDropdown.classList.toggle('hidden');
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!connectBtn.contains(e.target) && !connectDropdown.contains(e.target)) {
+      connectDropdown.classList.add('hidden');
+    }
+  });
 });
 
