@@ -40,35 +40,24 @@
   <!-- Navbar-->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-semibold">
-        Portfolio<span class="text-purple-400">.</span>
-      </div>
+      <div class="text-xl font-semibold">Portfolio<span class="text-purple-400">.</span></div>
 
-      <!-- DESKTOP NAV -->
+      <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="hover:text-purple-400 transition">Home</a>
+        <a href="#hero" class="hover:text-purple-400 transition">Home</a>
         <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
         <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
 
-        <!-- CONTACT DROPDOWN -->
+        <!-- Contact Dropdown -->
         <div class="relative">
           <button id="contactBtn" class="flex items-center gap-1 hover:text-purple-400 transition">
             Contact <span class="text-xs">⌄</span>
           </button>
-
           <div id="contactMenu" class="hidden absolute right-0 mt-3 w-56 glass-dark rounded-xl p-4 border border-white/10 shadow-xl space-y-3">
-            <a href="tel:+919391201739" class="contact-item">
-              📞 <span class="text-sm">+91 93912 01739</span>
-            </a>
-            <a href="mailto:amina.hasanaath@gmail.com" class="contact-item">
-              ✉️ <span class="text-sm">Email</span>
-            </a>
-            <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item">
-              🐙 <span class="text-sm">GitHub</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="contact-item">
-              💼 <span class="text-sm">LinkedIn</span>
-            </a>
+            <a href="tel:+919391201739" class="flex items-center gap-3 hover:text-purple-400 transition">📞 <span class="text-sm">+91 93912 01739</span></a>
+            <a href="mailto:amina.hasanaath@gmail.com" class="flex items-center gap-3 hover:text-purple-400 transition">✉️ <span class="text-sm">Email</span></a>
+            <a href="https://github.com/AminaHasanaath" target="_blank" class="flex items-center gap-3 hover:text-purple-400 transition">🐙 <span class="text-sm">GitHub</span></a>
+            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 hover:text-purple-400 transition">💼 <span class="text-sm">LinkedIn</span></a>
           </div>
         </div>
       </div>
@@ -80,20 +69,9 @@
     <div class="hero-image-wrapper">
       <img src="Screenshot 2025-12-21 162025.png" class="w-56 h-56 md:w-64 md:h-64 rounded-xl object-cover" />
     </div>
-
     <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
-        <span id="typed-name"></span>
-      </h1>
-      <p class="mt-6 text-lg hero-quote">
-        For me,
-        <span class="text-lavender">purpose</span>,
-        <span class="text-lavender">clarity</span>,
-        and
-        <span class="text-lavender">programming</span>
-        define life.
-      </p>
-
+      <h1 class="text-4xl md:text-5xl gradient-text mb-2"><span id="typed-name"></span></h1>
+      <p class="mt-6 text-lg hero-quote">For me, <span class="text-lavender">purpose</span>, <span class="text-lavender">clarity</span>, and <span class="text-lavender">programming</span> define life.</p>
       <div class="mt-6 flex gap-4 justify-center md:justify-start">
         <a href="finalATSResume.docx" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
         <a href="website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Website</a>
@@ -104,32 +82,22 @@
   <!-- About Section -->
   <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-start">
-
       <!-- LEFT COLUMN -->
       <div class="space-y-10" data-aos="fade-right">
         <div>
           <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
-          <p class="mt-4 text-white">
-            I’m a <span class="text-lavender">clarity-driven programmer</span>: debugging runtime errors, wiring databases to servers through APIs, and enjoying it more than flashy UI animations.
-          </p>
+          <p class="mt-4 text-white">I’m a <span class="text-lavender">clarity-driven programmer</span>: debugging runtime errors, wiring databases to servers through APIs, and enjoying it more than flashy UI animations.</p>
         </div>
-
         <div class="glass-dark rounded-2xl p-6">
           <h2 class="text-3xl font-bold text-white mb-6">Origin & Passion</h2>
-          <p class="text-white text-sm leading-relaxed mb-4">
-            My journey into technology began with curiosity, from reading my first Java book to exploring early computer interfaces—which gradually evolved into a disciplined approach to learning and building.
-          </p>
-          <p class="text-white text-sm leading-relaxed mb-4">
-            I am currently strengthening my backend and AI integration skills to create systems that are meaningful, purpose-driven, and scalable. Some of my projects include <span class="text-white">Autonotify</span> and <span class="text-white">Reflectra365</span>.
-          </p>
-          <p class="text-white text-sm leading-relaxed">
-            I enjoy collaborating on technical challenges, contributing to open source, and turning curiosity into real-world solutions through code.
-          </p>
+          <p class="text-white text-sm leading-relaxed mb-4">My journey into technology began with curiosity, from reading my first Java book to exploring early computer interfaces—which gradually evolved into a disciplined approach to learning and building.</p>
+          <p class="text-white text-sm leading-relaxed mb-4">I am currently strengthening my backend and AI integration skills to create systems that are meaningful, purpose-driven, and scalable. Some of my projects include <span class="text-white">Autonotify</span> and <span class="text-white">Reflectra365</span>.</p>
+          <p class="text-white text-sm leading-relaxed">I enjoy collaborating on technical challenges, contributing to open source, and turning curiosity into real-world solutions through code.</p>
         </div>
       </div>
-
       <!-- RIGHT COLUMN -->
       <div class="space-y-12" data-aos="fade-left">
+        <!-- Stats Cards -->
         <div class="grid grid-cols-2 gap-6">
           <div class="glass-dark rounded-2xl p-6 text-center hover:-translate-y-1 transition">
             <h3 class="text-3xl font-bold text-white">3+</h3>
@@ -140,111 +108,117 @@
             <p class="text-white text-sm">Coding Problems</p>
           </div>
         </div>
-
+        <!-- Skills -->
         <div>
           <h3 class="text-xl font-bold text-white mb-6">Core Skills</h3>
           <div class="space-y-5">
             <div>
               <p class="text-white text-sm mb-1">Prompting AI Assistance</p>
-              <div class="w-full bg-white/10 h-2 rounded-full">
-                <div class="bg-lavender h-2 rounded-full w-[85%]"></div>
-              </div>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[85%]"></div></div>
             </div>
             <div>
-              <p class="text-white text-sm mb-1">Java Backend Developement</p>
-              <div class="w-full bg-white/10 h-2 rounded-full">
-                <div class="bg-lavender h-2 rounded-full w-[60%]"></div>
-              </div>
+              <p class="text-white text-sm mb-1">Java Backend Development</p>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[60%]"></div></div>
             </div>
             <div>
               <p class="text-white text-sm mb-1">Databases</p>
-              <div class="w-full bg-white/10 h-2 rounded-full">
-                <div class="bg-lavender h-2 rounded-full w-[70%]"></div>
-              </div>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[70%]"></div></div>
             </div>
             <div>
               <p class="text-white text-sm mb-1">LLM & AI Systems</p>
-              <div class="w-full bg-white/10 h-2 rounded-full">
-                <div class="bg-lavender h-2 rounded-full w-[30%]"></div>
-              </div>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[30%]"></div></div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Tech Stack -->
-  <section id="techstack" class="py-20 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide">Tech Stack</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 place-items-center mb-14">
-      <!-- Programming -->
-      <div class="group glass-dark rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-blue-500/40 hover:shadow-[0_0_25px_-8px_rgba(30,144,255,0.6)] transition-all duration-300 floating">
-        <div class="relative w-[72px] h-[72px]">
-          <svg width="72" height="72" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-            <circle cx="50" cy="50" r="40" stroke="#1E90FF" stroke-width="10" fill="none"
-              stroke-dasharray="251.2" stroke-dashoffset="25.12" stroke-linecap="round"/>
-          </svg>
-          <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">90%</span>
-        </div>
-        <p class="text-xs text-white tracking-wide">Programming</p>
+  <!-- Research Section -->
+  <section id="research" class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
+      <div class="md:w-1/2 space-y-4 glass-dark rounded-2xl p-6">
+        <h3 class="text-2xl md:text-3xl font-bold text-white">My Research Paper</h3>
+        <p class="text-white text-sm">
+          <span class="font-semibold">A Historical Survey of Computing and Artificial Intelligence:</span> From Pre-1950s to 2025. Explore the evolution of computing and AI through decades of technological breakthroughs.
+        </p>
+        <a href="research.html" class="btn-dark glow-btn px-6 py-2 rounded-lg mt-4 inline-block">View Paper</a>
       </div>
-
-      <!-- AI Integration -->
-      <div class="group glass-dark rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-emerald-400/40 hover:shadow-[0_0_25px_-8px_rgba(16,185,129,0.6)] transition-all duration-300 floating">
-        <div class="relative w-[72px] h-[72px]">
-          <svg width="72" height="72" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-            <circle cx="50" cy="50" r="40" stroke="#10B981" stroke-width="10" fill="none"
-              stroke-dasharray="251.2" stroke-dashoffset="226.08" stroke-linecap="round"/>
-          </svg>
-          <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">10%</span>
-        </div>
-        <p class="text-xs text-white tracking-wide">AI Integration</p>
-      </div>
-
-      <!-- Spring Boot -->
-      <div class="group glass-dark rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-red-400/40 hover:shadow-[0_0_25px_-8px_rgba(239,68,68,0.6)] transition-all duration-300 floating">
-        <div class="relative w-[72px] h-[72px]">
-          <svg width="72" height="72" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-            <circle cx="50" cy="50" r="40" stroke="#EF4444" stroke-width="10" fill="none"
-              stroke-dasharray="251.2" stroke-dashoffset="200.96" stroke-linecap="round"/>
-          </svg>
-          <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">20%</span>
-        </div>
-        <p class="text-xs text-white tracking-wide">Spring Boot</p>
-      </div>
-
-      <!-- DSA -->
-      <div class="group glass-dark rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-amber-400/40 hover:shadow-[0_0_25px_-8px_rgba(245,158,11,0.6)] transition-all duration-300 floating">
-        <div class="relative w-[72px] h-[72px]">
-          <svg width="72" height="72" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#1f2937" stroke-width="10" fill="none"/>
-            <circle cx="50" cy="50" r="40" stroke="#F59E0B" stroke-width="10" fill="none"
-              stroke-dasharray="251.2" stroke-dashoffset="175.84" stroke-linecap="round"/>
-          </svg>
-          <span class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">30%</span>
-        </div>
-        <p class="text-xs text-white tracking-wide">DSA</p>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://www.imghost.online/ib/BwWNbFF7uKSIIAi_1759603975.jpg" class="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"/>
       </div>
     </div>
+  </section>
 
-    <!-- Tech Logos -->
-    <div class="glass-dark rounded-2xl p-8 space-y-6 text-center">
-      <div>
-        <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Backend & Databases</p>
-        <img src="https://skillicons.dev/icons?i=java,spring,hibernate,mysql,fastapi" class="mx-auto opacity-90"/>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide" data-aos="fade-up">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Project Cards -->
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 floating" data-aos="fade-right">
+        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-indigo-400 transition-colors">Face Detection System</h2>
+        <p class="text-white text-sm mb-4">Detect full-lit faces using Java and cascade with accuracy.</p>
+        <a href="#" class="inline-block bg-indigo-600 text-white text-xs font-bold py-1 px-3 rounded-full hover:bg-indigo-500 transition-all duration-200">DONE</a>
       </div>
-      <div>
-        <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Languages & AI</p>
-        <img src="https://skillicons.dev/icons?i=python,c" class="mx-auto opacity-90"/>
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)] hover:-translate-y-2 hover:scale-105 transition-all duration-300" data-aos="fade-left">
+        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors">Backend Client-Server</h2>
+        <p class="text-white text-sm mb-4">Interaction of SQL with API for smooth data flow.</p>
+        <a href="#" class="inline-block bg-emerald-600 text-white text-xs font-bold py-1 px-3 rounded-full hover:bg-emerald-500 transition-all duration-200">COMING SOON</a>
       </div>
-      <div>
-        <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Tools & Workflow</p>
-        <img src="https://skillicons.dev/icons?i=vscode,github,pycharm,html" class="mx-auto opacity-90"/>
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg hover:shadow-[0_0_30px_-5px_rgba(239,68,68,0.6)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 floating" data-aos="fade-left">
+        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-red-400 transition-colors">AutoNotify</h2>
+        <p class="text-white text-sm mb-4">A tool that helps automate text inputs and notifications.</p>
+        <a href="#" class="inline-block bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-full hover:bg-red-500 transition-all duration-200">IN PROGRESS</a>
+      </div>
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.6)] hover:-translate-y-2 hover:scale-105 transition-all duration-300" data-aos="fade-left">
+        <h2 class="text-xl font-semibold text-white mb-2 group-hover:text-amber-400 transition-colors">?</h2>
+        <p class="text-white text-sm mb-4">More ideas coming soon!</p>
+        <a href="#" class="inline-block bg-amber-600 text-white text-xs font-bold py-1 px-3 rounded-full hover:bg-amber-500 transition-all duration-200">COMING SOON</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LeetCode Section -->
+  <section id="leetcode" class="py-20 px-6 max-w-6xl mx-auto glass-dark rounded-2xl">
+    <h2 class="text-3xl font-bold text-white mb-10 text-center" data-aos="fade-up">LeetCode Stats</h2>
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+      <div class="grid grid-cols-2 md:grid-cols-2 gap-6 text-center w-full md:w-1/2">
+        <div class="p-4 rounded bg-black/20 text-white">Streaks: <span id="lc-streak">0</span></div>
+        <div class="p-4 rounded bg-black/20 text-white">Solved: <span id="lc-solved">0</span></div>
+        <div class="p-4 rounded bg-black/20 text-white">Badges: <span id="lc-badges">0</span></div>
+        <div class="p-4 rounded bg-black/20 text-white">Rank: <span id="lc-rank">0</span></div>
+      </div>
+      <div class="flex justify-center w-full md:w-1/2">
+        <img src="https://leetcard.jacoblin.cool/leetyamina?theme=nord&font=David%20Libre&ext=contest" class="rounded-lg shadow-lg max-w-full h-auto"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto glass-dark rounded-2xl">
+    <h2 class="text-3xl font-bold text-white mb-3 text-center">Achievements</h2>
+    <p class="text-center text-lavender/70 mb-12">Milestones & contributions so far</p>
+    <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+      <!-- Card 1 -->
+      <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">🏆</div>
+        <h3 class="text-lg font-semibold text-white mb-1">Hack Revolution Winner</h3>
+        <p class="text-white text-sm mb-3">Won Hack Revolution powered by ACES</p>
+        <span class="text-xs text-white/60">Nov 2025</span>
+      </div>
+      <!-- Card 2 -->
+      <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">🤝</div>
+        <h3 class="text-lg font-semibold text-white mb-1">Hackathon Volunteer</h3>
+        <p class="text-white text-sm mb-3">Volunteered at CSI x ACES Hackathons</p>
+        <span class="text-xs text-white/60">Jan 2025</span>
+      </div>
+      <!-- Card 3 -->
+      <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/50 hover:shadow-lg sm:col-span-2">
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-lavender/20 mb-4">🌐</div>
+        <h3 class="text-lg font-semibold text-white mb-1">Open Source Contributor</h3>
+        <p class="text-white text-sm mb-3">Successfully contributed to open source projects</p>
+        <span class="text-xs text-white/60">2 Contributions</span>
       </div>
     </div>
   </section>
@@ -252,23 +226,21 @@
   <!-- Footer -->
   <footer id="connect" class="relative py-16 px-6 mt-24 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="pt-6 text-xs text-white/40">
-        © 2025 Amina Hasanaath — engineered with intent
-      </p>
+      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
     </div>
   </footer>
 
-  <!-- Scroll Progress -->
-  <div id="scroll-progress"></div>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
 
-  <!-- Scroll to Top -->
-  <button id="scrollTopBtn" class="hidden btn-dark w-12 h-12">↑</button>
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition" aria-label="Scroll to top">↑</button>
 
   <!-- Explore Button -->
-  <button id="navToggle" class="btn-dark px-6 py-3 rounded-full">Explore More</button>
+  <button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">Explore More</button>
 
-  <!-- Explore Panel -->
-  <div id="navPanel" class="hidden bg-black border border-white rounded-xl p-5 w-48 space-y-4">
+  <!-- Command Palette Panel -->
+  <div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
     <a href="Project.html" class="block text-white hover:text-accent transition">→ Projects</a>
     <a href="Research.html" class="block text-white hover:text-accent transition">→ Research</a>
     <a href="#about" class="block text-white hover:text-accent transition">→ About</a>
