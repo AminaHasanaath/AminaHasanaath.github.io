@@ -114,3 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({ duration: 900, once: true });
   }
 });
+if (typeof lucide !== "undefined") {
+  lucide.createIcons();
+}
+
