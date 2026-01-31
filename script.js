@@ -83,34 +83,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================
-     CONTACT DROPDOWN
+     CONTACT & CONNECT DROPDOWNS
   ============================= */
   const contactBtn = document.getElementById("contactBtn");
   const contactMenu = document.getElementById("contactMenu");
+  const connectBtn = document.getElementById('connectBtn');
+  const connectDropdown = document.getElementById('connectDropdown');
 
   if (contactBtn && contactMenu) {
     contactBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       contactMenu.classList.toggle("hidden");
     });
+  }
 
-    document.addEventListener("click", () => {
-      contactMenu.classList.add("hidden");
+  if (connectBtn && connectDropdown) {
+    connectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      connectDropdown.classList.toggle('hidden');
     });
   }
-    // Toggle connect dropdown
-  const connectBtn = document.getElementById('connectBtn');
-  const connectDropdown = document.getElementById('connectDropdown');
 
-  connectBtn.addEventListener('click', () => {
-    connectDropdown.classList.toggle('hidden');
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    if (contactMenu) contactMenu.classList.add('hidden');
+    if (connectDropdown) connectDropdown.classList.add('hidden');
   });
 
-  // Close dropdown when clicking outside
-  window.addEventListener('click', (e) => {
-    if (!connectBtn.contains(e.target) && !connectDropdown.contains(e.target)) {
-      connectDropdown.classList.add('hidden');
-    }
-  });
 });
-
