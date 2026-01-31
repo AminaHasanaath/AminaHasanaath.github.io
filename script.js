@@ -87,36 +87,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =============================
      CONTACT & CONNECT DROPDOWNS
-  ============================= */
-  const contactBtn = document.getElementById("contactBtn");
-  const contactMenu = document.getElementById("contactMenu");
-  const connectBtn = document.getElementById('connectBtn');
-  const connectDropdown = document.getElementById('connectDropdown');
+  ============================= *//* =============================
+   CONTACT & CONNECT DROPDOWNS
+============================= */
+const contactBtn = document.getElementById("contactBtn");
+const contactMenu = document.getElementById("contactMenu");
 
-  if (contactBtn && contactMenu) {
-    contactBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      contactMenu.classList.toggle("hidden");
-    });
-
-    // Allow clicks inside dropdown links
-    contactMenu.addEventListener("click", (e) => e.stopPropagation());
-  }
-
-  if (connectBtn && connectDropdown) {
-    connectBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      connectDropdown.classList.toggle('hidden');
-    });
-
-    // Allow clicks inside dropdown links
-    connectDropdown.addEventListener('click', (e) => e.stopPropagation());
-  }
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', () => {
-    if (contactMenu) contactMenu.classList.add('hidden');
-    if (connectDropdown) connectDropdown.classList.add('hidden');
+if (contactBtn && contactMenu) {
+  contactBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    contactMenu.classList.toggle("hidden");
   });
 
-});
+  // Prevent closing when clicking inside dropdown
+  contactMenu.addEventListener("click", (e) => e.stopPropagation());
+  
+  // Close dropdown when clicking outside, but allow links to work
+  document.addEventListener("click", (e) => {
+    if (!contactMenu.classList.contains('hidden') && !e.target.closest('#contactMenu a')) {
+      contactMenu.classList.add('hidden');
+    }
+  });
+}
