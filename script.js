@@ -7,12 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navPanel = document.getElementById("navPanel");
 
   /* =============================
-     CONTACT DROPDOWN
-  ============================= */
-  const contactBtn = document.getElementById("contactBtn");
-  const contactMenu = document.getElementById("contactMenu");
-
-  /* =============================
      CONNECT DROPDOWN
   ============================= */
   const connectBtn = document.getElementById("connectBtn");
@@ -21,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔒 Helper: close all dropdowns
   const closeAll = () => {
     if (navPanel) navPanel.classList.add("hidden");
-    if (contactMenu) contactMenu.classList.add("hidden");
     if (connectDropdown) connectDropdown.classList.add("hidden");
   };
 
@@ -34,17 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
-  }
-
-  /* ===== CONTACT ===== */
-  if (contactBtn && contactMenu) {
-    contactBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      contactMenu.classList.toggle("hidden");
-    });
-
-    contactMenu.addEventListener("click", (e) => e.stopPropagation());
   }
 
   /* ===== CONNECT ===== */
@@ -114,7 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({ duration: 900, once: true });
   }
 });
+
+// =============================
+// LUCIDE ICONS INIT
+// =============================
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
 }
-
