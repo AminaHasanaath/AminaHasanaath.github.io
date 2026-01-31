@@ -85,29 +85,23 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      CONTACT & CONNECT DROPDOWNS
   ============================= */
-  const contactBtn = document.getElementById("contactBtn");
-  const contactMenu = document.getElementById("contactMenu");
-  const connectBtn = document.getElementById('connectBtn');
-  const connectDropdown = document.getElementById('connectDropdown');
+ const contactBtn = document.getElementById("contactBtn");
+const contactMenu = document.getElementById("contactMenu");
 
-  if (contactBtn && contactMenu) {
-    contactBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      contactMenu.classList.toggle("hidden");
-    });
-  }
-
-  if (connectBtn && connectDropdown) {
-    connectBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      connectDropdown.classList.toggle('hidden');
-    });
-  }
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', () => {
-    if (contactMenu) contactMenu.classList.add('hidden');
-    if (connectDropdown) connectDropdown.classList.add('hidden');
+if (contactBtn && contactMenu) {
+  // Toggle dropdown when button clicked
+  contactBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // keep this
+    contactMenu.classList.toggle("hidden");
   });
 
+  // Stop clicks inside menu from closing it
+  contactMenu.addEventListener("click", (e) => {
+    e.stopPropagation(); // THIS ALLOWS <a> LINKS TO WORK
+  });
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", () => {
+  if (contactMenu) contactMenu.classList.add("hidden");
 });
