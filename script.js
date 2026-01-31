@@ -12,12 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
       navPanel.classList.toggle("hidden");
     });
 
+    // Stop clicks inside navPanel from closing it
     navPanel.addEventListener("click", (e) => e.stopPropagation());
 
+    // Close panel when clicking outside
     document.addEventListener("click", () => {
       navPanel.classList.add("hidden");
     });
 
+    // Open/close panel with Ctrl+K or Cmd+K
     document.addEventListener("keydown", (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
@@ -85,23 +88,35 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      CONTACT & CONNECT DROPDOWNS
   ============================= */
- const contactBtn = document.getElementById("contactBtn");
-const contactMenu = document.getElementById("contactMenu");
+  const contactBtn = document.getElementById("contactBtn");
+  const contactMenu = document.getElementById("contactMenu");
+  const connectBtn = document.getElementById('connectBtn');
+  const connectDropdown = document.getElementById('connectDropdown');
 
-if (contactBtn && contactMenu) {
-  // Toggle dropdown when button clicked
-  contactBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // keep this
-    contactMenu.classList.toggle("hidden");
+  if (contactBtn && contactMenu) {
+    contactBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      contactMenu.classList.toggle("hidden");
+    });
+
+    // Allow clicks inside dropdown links
+    contactMenu.addEventListener("click", (e) => e.stopPropagation());
+  }
+
+  if (connectBtn && connectDropdown) {
+    connectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      connectDropdown.classList.toggle('hidden');
+    });
+
+    // Allow clicks inside dropdown links
+    connectDropdown.addEventListener('click', (e) => e.stopPropagation());
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    if (contactMenu) contactMenu.classList.add('hidden');
+    if (connectDropdown) connectDropdown.classList.add('hidden');
   });
 
-  // Stop clicks inside menu from closing it
-  contactMenu.addEventListener("click", (e) => {
-    e.stopPropagation(); // THIS ALLOWS <a> LINKS TO WORK
-  });
-}
-
-// Close dropdown when clicking outside
-document.addEventListener("click", () => {
-  if (contactMenu) contactMenu.classList.add("hidden");
 });
