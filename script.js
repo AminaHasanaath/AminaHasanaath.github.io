@@ -3,28 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      EXPLORE BUTTON / COMMAND PANEL
   ============================= */
-  const navToggle = document.getElementById("navToggle");
-  const navPanel = document.getElementById("navPanel");
+ /* =============================
+   EXPLORE BUTTON / COMMAND PANEL
+============================= */
+const navToggle = document.getElementById("navToggle");
+const navPanel = document.getElementById("navPanel");
 
-  if (navToggle && navPanel) {
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
+if (navToggle && navPanel) {
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const isOpen = !navPanel.classList.contains("hidden");
+
+    // Always close first
+    navPanel.classList.add("hidden");
+
+    // Then open only if it was closed
+    if (!isOpen) {
+      navPanel.classList.remove("hidden");
+    }
+  });
+
+  // Clicking inside panel should NOT close it
+  navPanel.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Click anywhere outside → close
+  document.addEventListener("click", () => {
+    navPanel.classList.add("hidden");
+  });
+
+  // Ctrl + K shortcut
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
       navPanel.classList.toggle("hidden");
-    });
+    }
+  });
+}
 
-    navPanel.addEventListener("click", (e) => e.stopPropagation());
-
-    document.addEventListener("click", () => {
-      navPanel.classList.add("hidden");
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        navPanel.classList.toggle("hidden");
-      }
-    });
-  }
 
   /* =============================
      SCROLL PROGRESS BAR
