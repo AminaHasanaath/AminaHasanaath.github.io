@@ -58,7 +58,36 @@
       <div class="flex flex-col items-center space-y-4 py-4">
         <a href="#projects"  class="text-white hover:text-accent transition text-lg">Projects</a>
         <a href="#techstack" class="text-white hover:text-accent transition text-lg">Tech Stack</a>
-        <a href="#connect" class="text-white hover:text-accent transition text-lg">Connect</a>
+      
+        <div class="relative group">
+  <button
+    id="contactToggle"
+    class="nav-link text-white hover:text-accent transition flex items-center gap-1"
+  >
+    Contact
+    <span class="text-xs">⌄</span>
+  </button>
+
+  <!-- Dropdown -->
+  <div
+    id="contactDropdown"
+    class="hidden absolute right-0 mt-4 w-56 glass-dark rounded-xl p-4
+           shadow-xl border border-white/10 space-y-3 z-50"
+  >
+    <a href="tel:+919391201739" class="contact-item">
+      📞 <span>+91 93912 01739</span>
+    </a>
+    <a href="mailto:amina.hasanaath@gmail.com" class="contact-item">
+      ✉️ <span>Email</span>
+    </a>
+    <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item">
+      🐙 <span>GitHub</span>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="contact-item">
+      💼 <span>LinkedIn</span>
+    </a>
+  </div>
+</div>
       </div>
     </div>
   </nav>
@@ -548,4 +577,5 @@
 
 </body>
 </html>
+
 
