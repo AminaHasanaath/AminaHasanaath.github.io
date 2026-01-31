@@ -105,20 +105,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /* =============================
-   CONTACT DROPDOWN
-============================= */
-
+     CONTACT DROPDOWN (FIXED)
+  ============================= */
   const contactBtn = document.getElementById("contactBtn");
   const contactMenu = document.getElementById("contactMenu");
 
   if (contactBtn && contactMenu) {
+
     contactBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       contactMenu.classList.toggle("hidden");
     });
 
+    // allow clicks inside dropdown (links clickable)
+    contactMenu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    // close when clicking outside
     document.addEventListener("click", () => {
       contactMenu.classList.add("hidden");
     });
   }
 
+});
