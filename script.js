@@ -1,94 +1,25 @@
+/* =============================
+   TYPED.JS NAME ANIMATION
+============================= */
 document.addEventListener("DOMContentLoaded", () => {
+  const typed = new Typed("#typed-name", {
+    strings: ["Amina Hasanaath"],
+    typeSpeed: 100,
+    backSpeed: 50,
+    loop: true,
+  });
+});
 
-  /* =============================
-     EXPLORE BUTTON / COMMAND PANEL
-  ============================= */
-  const navToggle = document.getElementById("navToggle");
-  const navPanel = document.getElementById("navPanel");
+/* =============================
+   AOS INIT
+============================= */
+AOS.init({
+  duration: 1000,
+  once: true,
+});
 
-  if (navToggle && navPanel) {
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navPanel.classList.toggle("hidden");
-    });
-
-    // Stop clicks inside navPanel from closing it
-    navPanel.addEventListener("click", (e) => e.stopPropagation());
-
-    // Close panel when clicking outside
-    document.addEventListener("click", () => {
-      navPanel.classList.add("hidden");
-    });
-
-    // Open/close panel with Ctrl+K or Cmd+K
-    document.addEventListener("keydown", (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        navPanel.classList.toggle("hidden");
-      }
-    });
-  }
-
-  /* =============================
-     SCROLL PROGRESS BAR
-  ============================= */
-  const scrollProgress = document.getElementById("scroll-progress");
-  if (scrollProgress) {
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const percent = (scrollTop / docHeight) * 100;
-      scrollProgress.style.width = percent + "%";
-    });
-  }
-
-  /* =============================
-     SCROLL TO TOP BUTTON
-  ============================= */
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  if (scrollTopBtn) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        scrollTopBtn.classList.remove("hidden");
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
-    });
-
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  /* =============================
-     TYPED.JS
-  ============================= */
-  if (document.querySelector("#typed-name") && typeof Typed !== "undefined") {
-    new Typed("#typed-name", {
-      strings: [
-        "I'm Amina Hasanaath",
-        "Pursuing Bachelors of CS - Engineering",
-        "Clarity-driven Programmer"
-      ],
-      typeSpeed: 80,
-      backSpeed: 40,
-      loop: false,
-      showCursor: true,
-      cursorChar: "|",
-    });
-  }
-
-  /* =============================
-     AOS
-  ============================= */
-  if (typeof AOS !== "undefined") {
-    AOS.init({ duration: 900, once: true });
-  }
-
-  /* =============================
-     CONTACT & CONNECT DROPDOWNS
-  ============================= *//* =============================
-   CONTACT & CONNECT DROPDOWNS
+/* =============================
+   CONTACT DROPDOWN
 ============================= */
 const contactBtn = document.getElementById("contactBtn");
 const contactMenu = document.getElementById("contactMenu");
@@ -101,11 +32,64 @@ if (contactBtn && contactMenu) {
 
   // Prevent closing when clicking inside dropdown
   contactMenu.addEventListener("click", (e) => e.stopPropagation());
-  
-  // Close dropdown when clicking outside, but allow links to work
+
+  // Close dropdown when clicking outside
   document.addEventListener("click", (e) => {
-    if (!contactMenu.classList.contains('hidden') && !e.target.closest('#contactMenu a')) {
-      contactMenu.classList.add('hidden');
+    if (!contactMenu.classList.contains("hidden") && !e.target.closest("#contactMenu a")) {
+      contactMenu.classList.add("hidden");
     }
   });
 }
+
+/* =============================
+   SCROLL TO TOP BUTTON
+============================= */
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  // Toggle visibility
+  if (window.scrollY > 300) scrollTopBtn.classList.remove("hidden");
+  else scrollTopBtn.classList.add("hidden");
+
+  // Scroll progress bar
+  const scrollProgress = document.getElementById("scroll-progress");
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = scrollPercent + "%";
+});
+
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+/* =============================
+   NAV PANEL / EXPLORE BUTTON
+============================= */
+const navToggle = document.getElementById("navToggle");
+const navPanel = document.getElementById("navPanel");
+
+if (navToggle && navPanel) {
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navPanel.classList.toggle("hidden");
+  });
+
+  navPanel.addEventListener("click", (e) => e.stopPropagation());
+
+  document.addEventListener("click", () => {
+    if (!navPanel.classList.contains("hidden")) navPanel.classList.add("hidden");
+  });
+}
+
+/* =============================
+   OPTIONAL: OPEN EXTERNAL LINKS IN NEW TAB
+============================= */
+const externalLinks = document.querySelectorAll("#contactMenu a[target='_blank']");
+externalLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    // Ensures proper behavior even if JS tries to toggle
+    window.open(link.href, "_blank");
+  });
+});
