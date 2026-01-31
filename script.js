@@ -97,9 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// =============================
-// LUCIDE ICONS INIT
-// =============================
+/* =============================
+   LUCIDE ICONS INIT
+============================= */
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
 }
