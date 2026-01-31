@@ -186,6 +186,7 @@ body > *:not(.minecraft-bg) {
 .footer-link:hover::after { width: 100%; }
 
 /* Contact icons */
+/* Contact icons */
 .contact-item {
   display: flex;
   align-items: center;
@@ -204,10 +205,10 @@ body > *:not(.minecraft-bg) {
   transform: translateY(-2px);
 }
 
-.contact-item lucide-phone,
-.contact-item lucide-mail,
-.contact-item lucide-github,
-.contact-item lucide-linkedin {
+/* Lucide SVG icons inside contact-item */
+.contact-item svg {
+  width: 20px;
+  height: 20px;
   stroke-width: 2;
 }
 
