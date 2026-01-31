@@ -107,17 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
 /* =============================
    CONTACT DROPDOWN
 ============================= */
-const contactToggle = document.getElementById("contactToggle");
-const contactDropdown = document.getElementById("contactDropdown");
 
-if (contactToggle && contactDropdown) {
-  contactToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    contactDropdown.classList.toggle("hidden");
-  });
+  const contactBtn = document.getElementById("contactBtn");
+  const contactMenu = document.getElementById("contactMenu");
 
-  document.addEventListener("click", () => {
-    contactDropdown.classList.add("hidden");
-  });
-}
+  if (contactBtn && contactMenu) {
+    contactBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      contactMenu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", () => {
+      contactMenu.classList.add("hidden");
+    });
+  }
 
