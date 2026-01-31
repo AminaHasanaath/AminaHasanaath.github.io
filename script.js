@@ -1,9 +1,9 @@
-/* =============================
+]/* =============================
    TYPED.JS NAME ANIMATION
 ============================= */
 document.addEventListener("DOMContentLoaded", () => {
   const typed = new Typed("#typed-name", {
-    strings: ["Amina Hasanaath"],
+    strings: ["Amina Hasanaath", "Persuing CS Engineering","Clarity Driven Programmer"],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true,
