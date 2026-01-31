@@ -104,3 +104,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+/* =============================
+   CONTACT DROPDOWN
+============================= */
+const contactToggle = document.getElementById("contactToggle");
+const contactDropdown = document.getElementById("contactDropdown");
+
+if (contactToggle && contactDropdown) {
+  contactToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    contactDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", () => {
+    contactDropdown.classList.add("hidden");
+  });
+}
+
