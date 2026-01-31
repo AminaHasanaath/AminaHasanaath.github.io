@@ -6,59 +6,62 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
 
-  if (navToggle && navPanel) {
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navPanel.classList.toggle("hidden");
-    });
-
-    navPanel.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  }
-
   /* =============================
      CONTACT DROPDOWN
   ============================= */
   const contactBtn = document.getElementById("contactBtn");
   const contactMenu = document.getElementById("contactMenu");
 
-  if (contactBtn && contactMenu) {
-    contactBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      contactMenu.classList.toggle("hidden");
-    });
-
-    contactMenu.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  }
-
   /* =============================
-     CONNECT DROPDOWN (IF EXISTS)
+     CONNECT DROPDOWN
   ============================= */
   const connectBtn = document.getElementById("connectBtn");
   const connectDropdown = document.getElementById("connectDropdown");
 
-  if (connectBtn && connectDropdown) {
-    connectBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      connectDropdown.classList.toggle("hidden");
-    });
-
-    connectDropdown.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  }
-
-  /* =============================
-     CLOSE ON OUTSIDE CLICK (ONLY ONCE)
-  ============================= */
-  document.addEventListener("click", () => {
+  // 🔒 Helper: close all dropdowns
+  const closeAll = () => {
     if (navPanel) navPanel.classList.add("hidden");
     if (contactMenu) contactMenu.classList.add("hidden");
     if (connectDropdown) connectDropdown.classList.add("hidden");
-  });
+  };
+
+  /* ===== EXPLORE ===== */
+  if (navToggle && navPanel) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll();
+      navPanel.classList.toggle("hidden");
+    });
+
+    navPanel.addEventListener("click", (e) => e.stopPropagation());
+  }
+
+  /* ===== CONTACT ===== */
+  if (contactBtn && contactMenu) {
+    contactBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll();
+      contactMenu.classList.toggle("hidden");
+    });
+
+    contactMenu.addEventListener("click", (e) => e.stopPropagation());
+  }
+
+  /* ===== CONNECT ===== */
+  if (connectBtn && connectDropdown) {
+    connectBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll();
+      connectDropdown.classList.toggle("hidden");
+    });
+
+    connectDropdown.addEventListener("click", (e) => e.stopPropagation());
+  }
+
+  /* =============================
+     CLOSE ON OUTSIDE CLICK
+  ============================= */
+  document.addEventListener("click", closeAll);
 
   /* =============================
      SCROLL PROGRESS
