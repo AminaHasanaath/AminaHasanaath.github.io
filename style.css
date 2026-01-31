@@ -198,4 +198,50 @@ body > *:not(.minecraft-bg) {
   background: rgba(255,255,255,0.08);
   color: #c4b5fd;
 }
+/* =============================
+   ACHIEVEMENTS TIMELINE
+============================= */
+.timeline {
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(196,181,253,0.2),
+    rgba(196,181,253,0.6),
+    rgba(196,181,253,0.2)
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 6px;
+  top: 1.2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #c4b5fd;
+  box-shadow: 0 0 12px rgba(196,181,253,0.8);
+}
+
+/* Mobile polish */
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+}
+
 
