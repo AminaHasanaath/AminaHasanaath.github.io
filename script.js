@@ -1,95 +1,113 @@
-]/* =============================
-   TYPED.JS NAME ANIMATION
-============================= */
 document.addEventListener("DOMContentLoaded", () => {
-  const typed = new Typed("#typed-name", {
-    strings: ["Amina Hasanaath", "Persuing CS Engineering","Clarity Driven Programmer"],
-    typeSpeed: 100,
-    backSpeed: 50,
-    loop: true,
-  });
-});
 
-/* =============================
-   AOS INIT
-============================= */
-AOS.init({
-  duration: 1000,
-  once: true,
-});
+  /* =============================
+     EXPLORE BUTTON / COMMAND PANEL
+  ============================= */
+  const navToggle = document.getElementById("navToggle");
+  const navPanel = document.getElementById("navPanel");
 
-/* =============================
-   CONTACT DROPDOWN
-============================= */
-const contactBtn = document.getElementById("contactBtn");
-const contactMenu = document.getElementById("contactMenu");
+  if (navToggle && navPanel) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navPanel.classList.toggle("hidden");
+    });
 
-if (contactBtn && contactMenu) {
-  contactBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    contactMenu.classList.toggle("hidden");
-  });
+    navPanel.addEventListener("click", (e) => e.stopPropagation());
 
-  // Prevent closing when clicking inside dropdown
-  contactMenu.addEventListener("click", (e) => e.stopPropagation());
+    document.addEventListener("click", () => {
+      navPanel.classList.add("hidden");
+    });
 
-  // Close dropdown when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!contactMenu.classList.contains("hidden") && !e.target.closest("#contactMenu a")) {
-      contactMenu.classList.add("hidden");
-    }
-  });
-}
+    document.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        navPanel.classList.toggle("hidden");
+      }
+    });
+  }
 
-/* =============================
-   SCROLL TO TOP BUTTON
-============================= */
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-window.addEventListener("scroll", () => {
-  // Toggle visibility
-  if (window.scrollY > 300) scrollTopBtn.classList.remove("hidden");
-  else scrollTopBtn.classList.add("hidden");
-
-  // Scroll progress bar
+  /* =============================
+     SCROLL PROGRESS BAR
+  ============================= */
   const scrollProgress = document.getElementById("scroll-progress");
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = scrollPercent + "%";
-});
+  if (scrollProgress) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = percent + "%";
+    });
+  }
 
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  /* =============================
+     SCROLL TO TOP BUTTON
+  ============================= */
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* =============================
+     TYPED.JS
+  ============================= */
+  if (document.querySelector("#typed-name") && typeof Typed !== "undefined") {
+    new Typed("#typed-name", {
+      strings: [
+        "I'm Amina Hasanaath",
+        "Pursuing Bachelors of CS - Engineering",
+        "Clarity-driven Programmer"
+      ],
+      typeSpeed: 80,
+      backSpeed: 40,
+      loop: false,
+      showCursor: true,
+      cursorChar: "|",
+    });
+  }
+
+  /* =============================
+     AOS
+  ============================= */
+  if (typeof AOS !== "undefined") {
+    AOS.init({ duration: 900, once: true });
+  }
+
+  /* =============================
+     CONTACT & CONNECT DROPDOWNS
+  ============================= */
+  const contactBtn = document.getElementById("contactBtn");
+  const contactMenu = document.getElementById("contactMenu");
+  const connectBtn = document.getElementById('connectBtn');
+  const connectDropdown = document.getElementById('connectDropdown');
+
+  if (contactBtn && contactMenu) {
+    contactBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      contactMenu.classList.toggle("hidden");
+    });
+  }
+
+  if (connectBtn && connectDropdown) {
+    connectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      connectDropdown.classList.toggle('hidden');
+    });
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    if (contactMenu) contactMenu.classList.add('hidden');
+    if (connectDropdown) connectDropdown.classList.add('hidden');
   });
-}
 
-/* =============================
-   NAV PANEL / EXPLORE BUTTON
-============================= */
-const navToggle = document.getElementById("navToggle");
-const navPanel = document.getElementById("navPanel");
-
-if (navToggle && navPanel) {
-  navToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    navPanel.classList.toggle("hidden");
-  });
-
-  navPanel.addEventListener("click", (e) => e.stopPropagation());
-
-  document.addEventListener("click", () => {
-    if (!navPanel.classList.contains("hidden")) navPanel.classList.add("hidden");
-  });
-}
-
-/* =============================
-   OPTIONAL: OPEN EXTERNAL LINKS IN NEW TAB
-============================= */
-const externalLinks = document.querySelectorAll("#contactMenu a[target='_blank']");
-externalLinks.forEach(link => {
-  link.addEventListener("click", (e) => {
-    // Ensures proper behavior even if JS tries to toggle
-    window.open(link.href, "_blank");
-  });
 });
