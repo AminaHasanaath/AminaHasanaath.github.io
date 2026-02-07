@@ -289,9 +289,6 @@ body > *:not(.minecraft-bg) {
 /* =============================
    MOBILE NAV FIX
 ============================= */
-/* =============================
-   MOBILE NAV FIX
-============================= */
 #mobileNav {
   position: fixed;
   top: 0;
@@ -307,10 +304,9 @@ body > *:not(.minecraft-bg) {
   gap: 1.5rem;
   z-index: 10002;
   overflow-y: auto;
-  
-  /* REMOVE display: none */
-}
 
+  display: none; /* <-- keep hidden by default */
+}
 
 #mobileNav a {
   color: #ffffff;
@@ -320,4 +316,44 @@ body > *:not(.minecraft-bg) {
 
 #mobileNav a:hover {
   color: #c4b5fd;
+}
+
+/* =============================
+   NAV TOGGLES VISIBILITY
+============================= */
+/* Hide toggle buttons by default (desktop view) */
+#navToggle,
+#mobileNavToggle {
+  display: none;
+}
+
+/* Show toggle buttons only on mobile (screen ≤ 640px) */
+@media (max-width: 640px) {
+  #navToggle,
+  #mobileNavToggle {
+    display: inline-flex; /* show them */
+    position: fixed;
+    z-index: 10000;
+  }
+
+  /* Position the "Explore More" button */
+  #navToggle {
+    bottom: 16vw;  /* distance from bottom */
+    right: 4vw;    /* distance from right */
+    min-width: 140px;
+  }
+
+  /* Position the hamburger button */
+  #mobileNavToggle {
+    top: 4vw;      /* distance from top */
+    right: 4vw;    /* distance from right */
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Position the Explore Panel (navPanel) */
+  #navPanel {
+    bottom: 24vw;
+    right: 4vw;
+  }
 }
