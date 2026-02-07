@@ -103,4 +103,23 @@ document.addEventListener("DOMContentLoaded", () => {
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
 }
+// MOBILE NAV TOGGLE
+const mobileNavToggle = document.getElementById("mobileNavToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+if (mobileNavToggle && mobileNav) {
+  mobileNavToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileNav.classList.toggle("hidden");
+  });
+
+  mobileNav.addEventListener("click", (e) => e.stopPropagation());
+}
+
+// Close mobile nav on outside click
+document.addEventListener("click", () => {
+  if (!mobileNav.classList.contains("hidden")) {
+    mobileNav.classList.add("hidden");
+  }
+});
 
