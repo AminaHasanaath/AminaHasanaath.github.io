@@ -12,10 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const connectBtn = document.getElementById("connectBtn");
   const connectDropdown = document.getElementById("connectDropdown");
 
-  // 🔒 Helper: close all dropdowns
+  /* =============================
+     MOBILE NAV
+  ============================= */
+  const mobileNavToggle = document.getElementById("mobileNavToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
+  // 🔒 Helper: close all dropdowns/menus
   const closeAll = () => {
     if (navPanel) navPanel.classList.add("hidden");
     if (connectDropdown) connectDropdown.classList.add("hidden");
+    if (mobileNav) mobileNav.classList.add("hidden");
   };
 
   /* ===== EXPLORE ===== */
@@ -25,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAll();
       navPanel.classList.toggle("hidden");
     });
-
     navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
 
@@ -36,8 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAll();
       connectDropdown.classList.toggle("hidden");
     });
-
     connectDropdown.addEventListener("click", (e) => e.stopPropagation());
+  }
+
+  /* ===== MOBILE NAV ===== */
+  if (mobileNavToggle && mobileNav) {
+    mobileNavToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll();
+      mobileNav.classList.toggle("hidden");
+    });
+    mobileNav.addEventListener("click", (e) => e.stopPropagation());
   }
 
   /* =============================
@@ -103,23 +118,3 @@ document.addEventListener("DOMContentLoaded", () => {
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
 }
-// MOBILE NAV TOGGLE
-const mobileNavToggle = document.getElementById("mobileNavToggle");
-const mobileNav = document.getElementById("mobileNav");
-
-if (mobileNavToggle && mobileNav) {
-  mobileNavToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileNav.classList.toggle("hidden");
-  });
-
-  mobileNav.addEventListener("click", (e) => e.stopPropagation());
-}
-
-// Close mobile nav on outside click
-document.addEventListener("click", () => {
-  if (!mobileNav.classList.contains("hidden")) {
-    mobileNav.classList.add("hidden");
-  }
-});
-
