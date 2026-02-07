@@ -97,28 +97,39 @@ body > *:not(.minecraft-bg) {
   z-index: 10000;
 }
 
-#navToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10000;
-  min-width: 140px;
-}
-
-#navPanel {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 200px;
-  z-index: 10001;
-}
-
 /* =============================
-   RESPONSIVE
+   NAV TOGGLES VISIBILITY
 ============================= */
+/* Hide toggles by default (desktop) */
+#navToggle,
+#mobileNavToggle {
+  display: none;
+}
+
+/* Show toggles only on mobile (<= 640px) */
 @media (max-width: 640px) {
   #scrollTopBtn { bottom: 16vw; left: 4vw; }
-  #navToggle { bottom: 16vw; right: 4vw; }
+
+  #navToggle,
+  #mobileNavToggle {
+    display: inline-flex;
+    position: fixed;
+    z-index: 10000;
+  }
+
+  #navToggle {
+    bottom: 16vw;
+    right: 4vw;
+    min-width: 140px;
+  }
+
+  #mobileNavToggle {
+    top: 4vw;
+    right: 4vw;
+    width: 48px;
+    height: 48px;
+  }
+
   #navPanel { bottom: 24vw; right: 4vw; }
 }
 
@@ -205,7 +216,6 @@ body > *:not(.minecraft-bg) {
 .footer-link:hover::after { width: 100%; }
 
 /* Contact icons */
-/* Contact icons */
 .contact-item {
   display: flex;
   align-items: center;
@@ -224,7 +234,6 @@ body > *:not(.minecraft-bg) {
   transform: translateY(-2px);
 }
 
-/* Lucide SVG icons inside contact-item */
 .contact-item svg {
   width: 20px;
   height: 20px;
@@ -307,6 +316,3 @@ body > *:not(.minecraft-bg) {
 #mobileNav a:hover {
   color: #c4b5fd;
 }
-
-
-
