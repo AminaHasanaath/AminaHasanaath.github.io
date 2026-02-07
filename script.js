@@ -1,105 +1,142 @@
+/* ================================
+   INITIAL LOAD
+================================ */
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =============================
-     EXPLORE BUTTON / COMMAND PANEL
-  ============================= */
-  const navToggle = document.getElementById("navToggle");
-  const navPanel = document.getElementById("navPanel");
-
-  /* =============================
-     CONNECT DROPDOWN
-  ============================= */
-  const connectBtn = document.getElementById("connectBtn");
-  const connectDropdown = document.getElementById("connectDropdown");
-
-  // 🔒 Helper: close all dropdowns
-  const closeAll = () => {
-    if (navPanel) navPanel.classList.add("hidden");
-    if (connectDropdown) connectDropdown.classList.add("hidden");
-  };
-
-  /* ===== EXPLORE ===== */
-  if (navToggle && navPanel) {
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      navPanel.classList.toggle("hidden");
-    });
-
-    navPanel.addEventListener("click", (e) => e.stopPropagation());
+  /* Lucide Icons */
+  if (window.lucide) {
+    lucide.createIcons();
   }
 
-  /* ===== CONNECT ===== */
-  if (connectBtn && connectDropdown) {
-    connectBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      connectDropdown.classList.toggle("hidden");
-    });
+  /* AOS */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 120
+  });
 
-    connectDropdown.addEventListener("click", (e) => e.stopPropagation());
-  }
+  /* Typed.js */
+  new Typed("#typed-name", {
+    strings: ["Amina Hasanaath", "Backend Developer", "Clarity-driven Programmer"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    backDelay: 1200,
+    loop: true,
+    smartBackspace: true
+  });
 
-  /* =============================
-     CLOSE ON OUTSIDE CLICK
-  ============================= */
-  document.addEventListener("click", closeAll);
-
-  /* =============================
-     SCROLL PROGRESS
-  ============================= */
-  const scrollProgress = document.getElementById("scroll-progress");
-  if (scrollProgress) {
-    window.addEventListener("scroll", () => {
-      const percent =
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-      scrollProgress.style.width = percent + "%";
-    });
-  }
-
-  /* =============================
-     SCROLL TO TOP
-  ============================= */
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  if (scrollTopBtn) {
-    window.addEventListener("scroll", () => {
-      scrollTopBtn.classList.toggle("hidden", window.scrollY < 400);
-    });
-
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  /* =============================
-     TYPED.JS
-  ============================= */
-  if (typeof Typed !== "undefined") {
-    new Typed("#typed-name", {
-      strings: [
-        "I'm Amina Hasanaath",
-        "Pursuing Bachelors of CS - Engineering",
-        "Clarity-driven Programmer",
-      ],
-      typeSpeed: 80,
-      backSpeed: 40,
-      loop: false,
-    });
-  }
-
-  /* =============================
-     AOS
-  ============================= */
-  if (typeof AOS !== "undefined") {
-    AOS.init({ duration: 900, once: true });
-  }
+  initScrollEffects();
+  initNavPanel();
+  initLeetCodeCounters();
 });
 
-/* =============================
-   LUCIDE ICONS INIT
-============================= */
-if (typeof lucide !== "undefined") {
-  lucide.createIcons();
+
+/* ================================
+   SCROLL EFFECTS (SMOOTH + OPTIMIZED)
+================================ */
+function initScrollEffects() {
+  const progressBar = document.getElementById("scroll-progress");
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+
+        progressBar.style.width = `${progress}%`;
+
+        if (scrollTop > 400) {
+          scrollBtn.classList.remove("hidden");
+        } else {
+          scrollBtn.classList.add("hidden");
+        }
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
+
+/* ================================
+   COMMAND PALETTE / EXPLORE BUTTON
+================================ */
+function initNavPanel() {
+  const toggleBtn = document.getElementById("navToggle");
+  const panel = document.getElementById("navPanel");
+
+  toggleBtn.addEventListener("click", () => {
+    panel.classList.toggle("hidden");
+    panel.classList.toggle("scale-95");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+      panel.classList.add("hidden");
+    }
+  });
+}
+
+
+/* ================================
+   LEETCODE COUNTERS (SMOOTH ANIMATED)
+================================ */
+function animateCounter(el, target, duration = 1200) {
+  let start = 0;
+  let startTime = null;
+
+  function update(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(easeOut * target);
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+function initLeetCodeCounters() {
+  const counters = [
+    { id: "lc-streak", value: 85 },
+    { id: "lc-solved", value: 150 },
+    { id: "lc-badges", value: 6 },
+    { id: "lc-rank", value: 120000 }
+  ];
+
+  const section = document.getElementById("leetcode");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        counters.forEach(item => {
+          const el = document.getElementById(item.id);
+          if (el && el.textContent === "0") {
+            animateCounter(el, item.value);
+          }
+        });
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(section);
 }
