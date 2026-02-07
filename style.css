@@ -130,14 +130,29 @@ body > *:not(.minecraft-bg) {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: all 0.25s ease;
+  cursor: pointer;
 }
 
+/* Hover */
 .btn-dark:hover {
   background: rgba(0, 0, 0, 0.7);
   border-color: #c4b5fd;
   box-shadow: 0 0 18px rgba(196,181,253,0.45);
   transform: translateY(-1px);
+}
+/* Active / Click glow */
+.btn-dark:active {
+  box-shadow:
+    0 0 10px rgba(196,181,253,0.4),
+    0 0 30px rgba(196,181,253,0.6);
+  transform: scale(0.96);
+}
+
+/* Remove default focus ring */
+.btn-dark:focus {
+  outline: none;
 }
 
 /* =============================
