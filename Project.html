@@ -6,8 +6,6 @@
   <title>Amina Hasanaath | Projects</title>
 
   <!-- Tailwind CSS -->
-
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,6 +23,7 @@
       },
     };
   </script>
+
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -36,14 +35,16 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
-
-
 </head>
+
 <body class="font-grotesk">
+
+  <!-- Typed.js safety element -->
+  <span id="typed-name" class="hidden"></span>
 
   <div class="minecraft-bg"></div>
 
-  <!-- Navbar (same as index.html) -->
+  <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-xl font-semibold">Portfolio<span class="text-purple-400">.</span></div>
@@ -52,18 +53,10 @@
         <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
         <a href="index.html#skills" class="hover:text-purple-400 transition">Skills</a>
         <div class="flex items-center gap-3">
-          <a href="tel:+919391201739" class="contact-item" title="Call Me">
-            <i data-lucide="phone"></i>
-          </a>
-          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item" title="Email Me">
-            <i data-lucide="mail"></i>
-          </a>
-          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item" title="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" class="contact-item" title="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
+          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -71,7 +64,10 @@
 
   <!-- Projects Section -->
   <section id="projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide" data-aos="fade-up">Projects</h2>
+    <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide" data-aos="fade-up">
+      Projects
+    </h2>
+
     <div class="grid gap-12">
 
       <!-- Project 1 -->
@@ -81,18 +77,20 @@
           <p class="text-white text-sm">Detect full-lit faces using Java and cascade with accuracy.</p>
           <div class="flex gap-4 mt-2">
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="java" class="text-lg"></i> Java
+              <i data-lucide="code"></i> Java
             </div>
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="database" class="text-lg"></i> SQL
+              <i data-lucide="database"></i> SQL
             </div>
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="cpu" class="text-lg"></i> OpenCV
+              <i data-lucide="cpu"></i> OpenCV
             </div>
           </div>
         </div>
         <div class="md:w-1/4 flex justify-end">
-          <a href="https://github.com/AminaHasanaath/FaceDetectionSystem" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">View Repo</a>
+          <a href="https://github.com/AminaHasanaath/FaceDetectionSystem" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+            View Repo
+          </a>
         </div>
       </div>
 
@@ -103,18 +101,20 @@
           <p class="text-white text-sm">Interaction of SQL with API for smooth data flow.</p>
           <div class="flex gap-4 mt-2">
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="java" class="text-lg"></i> Java
+              <i data-lucide="code"></i> Java
             </div>
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="database" class="text-lg"></i> SQL
+              <i data-lucide="database"></i> SQL
             </div>
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="server" class="text-lg"></i> Spring Boot
+              <i data-lucide="server"></i> Spring Boot
             </div>
           </div>
         </div>
         <div class="md:w-1/4 flex justify-end">
-          <a href="https://github.com/AminaHasanaath/BackendClientServer" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">View Repo</a>
+          <a href="https://github.com/AminaHasanaath/BackendClientServer" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+            View Repo
+          </a>
         </div>
       </div>
 
@@ -125,45 +125,46 @@
           <p class="text-white text-sm">A tool that helps automate text inputs and notifications.</p>
           <div class="flex gap-4 mt-2">
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="java" class="text-lg"></i> Java
+              <i data-lucide="code"></i> Java
             </div>
             <div class="flex items-center gap-2 text-white">
-              <i data-lucide="cpu" class="text-lg"></i> Automation
+              <i data-lucide="cpu"></i> Automation
             </div>
           </div>
         </div>
         <div class="md:w-1/4 flex justify-end">
-          <a href="https://github.com/AminaHasanaath/AutoNotify" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">View Repo</a>
+          <a href="https://github.com/AminaHasanaath/AutoNotify" target="_blank" class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+            View Repo
+          </a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer id="connect" class="relative py-16 px-6 mt-24 border-t border-white/10">
+  <!-- Footer -->
+  <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center">
       <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
     </div>
   </footer>
 
-  <!-- Scroll Progress & Explore Button (same as index.html) -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
-  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition">↑</button>
-  <button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">Explore More</button>
-  <div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
-    <a href="project.html" class="block text-white hover:text-accent transition">→ Projects</a>
-    <a href="research.html" class="block text-white hover:text-accent transition">→ Research</a>
-    <a href="index.html#about" class="block text-white hover:text-accent transition">→ About</a>
-    <a href="index.html#achievements" class="block text-white hover:text-accent transition">→ Achievements</a>
+  <!-- Floating UI -->
+  <div id="scroll-progress"></div>
+  <button id="scrollTopBtn" class="hidden btn-dark w-12 h-12 rounded-full">↑</button>
+  <button id="navToggle" class="btn-dark px-6 py-3 rounded-full">Explore More</button>
+
+  <div id="navPanel" class="hidden bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
+    <a href="project.html" class="block text-white hover:text-accent">→ Projects</a>
+    <a href="research.html" class="block text-white hover:text-accent">→ Research</a>
+    <a href="index.html#about" class="block text-white hover:text-accent">→ About</a>
+    <a href="index.html#achievements" class="block text-white hover:text-accent">→ Achievements</a>
   </div>
 
-  <!-- Typed.js & AOS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
-  <script>if(typeof lucide!=="undefined"){lucide.createIcons();}</script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
-
-
