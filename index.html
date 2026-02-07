@@ -39,41 +39,53 @@
 
   <div class="minecraft-bg"></div>
   <!-- Navbar-->
-  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
+<nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
 
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#hero" class="hover:text-purple-400 transition">Home</a>
-        <a href="Project.html" class="hover:text-purple-400 transition">More Projects</a>
-        <!-- Contact Dropdown -->
-        <!-- Contact Icons (No dropdown) -->
-<!-- Contact Icons in Navbar -->
-   <div class="flex items-center gap-3">
-          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-       <!-- LeetCode Icon -->
-      <a
-        href="https://leetcode.com/u/hasanaath/"
-        target="_blank"
-        class="contact-item"
-        title="LeetCode"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-          alt="LeetCode"
-          class="w-5 h-5 invert"
-        />
-      </a>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#hero" class="hover:text-purple-400 transition">Home</a>
+      <a href="Project.html" class="hover:text-purple-400 transition">More Projects</a>
 
-      <a href="https://linkedin.com" target="_blank" class="contact-item">
-        <i data-lucide="linkedin"></i>
-      </a>
-        </div>
+      <!-- Contact Icons -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+        <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+      </div>
     </div>
-  </div>  
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden flex items-center">
+      <button id="mobileNavToggle" class="text-white focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 flex flex-col items-start p-6 gap-4 border-t border-white/10">
+    <a href="#hero" class="text-white hover:text-accent transition w-full">Home</a>
+    <a href="Project.html" class="text-white hover:text-accent transition w-full">More Projects</a>
+    <a href="Research.html" class="text-white hover:text-accent transition w-full">Research</a>
+    <a href="#about" class="text-white hover:text-accent transition w-full">About</a>
+    <a href="#achievements" class="text-white hover:text-accent transition w-full">Achievements</a>
+
+    <div class="flex items-center gap-3 mt-2">
+      <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+      <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+      <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+      <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+    </div>
+  </div>
 </nav>
 
   <!-- Hero Section -->
@@ -453,6 +465,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
