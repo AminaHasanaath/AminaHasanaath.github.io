@@ -277,6 +277,36 @@ body > *:not(.minecraft-bg) {
   }
 }
 
+/* =============================
+   MOBILE NAV FIX
+============================= */
+#mobileNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  max-width: 280px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10002;
+  overflow-y: auto;
+}
+
+#mobileNav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#mobileNav a:hover {
+  color: #c4b5fd;
+}
 
 
 
