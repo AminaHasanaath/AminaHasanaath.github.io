@@ -12,28 +12,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const connectBtn = document.getElementById("connectBtn");
   const connectDropdown = document.getElementById("connectDropdown");
 
-  /* =============================
-     MOBILE NAV
-  ============================= */
-  const mobileNavToggle = document.getElementById("mobileNavToggle");
-  const mobileNav = document.getElementById("mobileNav");
+ // MOBILE NAV TOGGLE
+const mobileNavToggle = document.getElementById("mobileNavToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-  // 🔒 Helper: close all dropdowns/menus
-  const closeAll = () => {
-    if (navPanel) navPanel.classList.add("hidden");
-    if (connectDropdown) connectDropdown.classList.add("hidden");
-    if (mobileNav) mobileNav.classList.add("hidden");
-  };
+if (mobileNavToggle && mobileNav) {
+  mobileNavToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileNav.classList.toggle("hidden");
+  });
 
-  /* ===== EXPLORE ===== */
-  if (navToggle && navPanel) {
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-      navPanel.classList.toggle("hidden");
-    });
-    navPanel.addEventListener("click", (e) => e.stopPropagation());
+  mobileNav.addEventListener("click", (e) => e.stopPropagation());
+}
+
+// Close mobile nav on outside click
+document.addEventListener("click", (e) => {
+  if (mobileNav && !mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== mobileNavToggle) {
+    mobileNav.classList.add("hidden");
   }
+});
+
 
   /* ===== CONNECT ===== */
   if (connectBtn && connectDropdown) {
