@@ -88,65 +88,57 @@
 
     <!-- Project Card -->
     <div
-      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-             transition-all duration-300"
-      data-aos="fade-up"
-    >
+  class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+         hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+         transition-all duration-300"
+  data-aos="fade-up"
+>
 
-      <!-- LEFT CONTENT -->
-      <div class="md:w-3/4 space-y-4">
+  <!-- LEFT -->
+  <div class="md:w-3/4 space-y-3">
 
-        <h3 class="text-2xl font-semibold text-white group-hover:text-lavender transition">
-          Face Detection System
-        </h3>
+    <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+      👁️ Java Face Detector
+    </h3>
 
-        <!-- Short Description -->
-        <p class="text-white text-sm leading-relaxed">
-          A Java-based computer vision project that detects full-lit human faces
-          using Haar Cascade classifiers. The system focuses on accuracy,
-          performance, and clean preprocessing for reliable detection.
-        </p>
+    <p class="text-white/80 text-sm leading-relaxed">
+      Detects human faces in images using OpenCV and a Haar Cascade model.
+    </p>
 
-        <!-- Extra Detail -->
-        <p class="text-white/70 text-xs">
-          Focus areas: Image preprocessing, classifier tuning, edge-case handling
-        </p>
+    <!-- Tech Stack -->
+    <div class="flex flex-wrap gap-3 pt-2">
 
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap gap-3 pt-3">
+      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
+                   bg-white/10 text-white border border-white/10">
+        <i data-lucide="code"></i> Java
+      </span>
 
-          <span class="flex items-center gap-2 px-3 py-1 rounded-full text-xs
-                       bg-white/10 text-white border border-white/10">
-            <i data-lucide="code"></i> Java
-          </span>
+      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
+                   bg-white/10 text-white border border-white/10">
+        <i data-lucide="cpu"></i> OpenCV
+      </span>
 
-          <span class="flex items-center gap-2 px-3 py-1 rounded-full text-xs
-                       bg-white/10 text-white border border-white/10">
-            <i data-lucide="cpu"></i> OpenCV
-          </span>
-
-          <span class="flex items-center gap-2 px-3 py-1 rounded-full text-xs
-                       bg-white/10 text-white border border-white/10">
-            <i data-lucide="database"></i> SQL
-          </span>
-
-        </div>
-      </div>
-
-      <!-- RIGHT ACTION -->
-      <div class="md:w-1/4 flex md:items-end md:justify-end">
-        <a
-          href="https://github.com/AminaHasanaath/FaceDetectProject"
-          target="_blank"
-          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
-        >
-          <i data-lucide="github"></i>
-          View Repo
-        </a>
-      </div>
+      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
+                   bg-white/10 text-white border border-white/10">
+        <i data-lucide="github"></i> GitHub
+      </span>
 
     </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="md:w-1/4 flex md:justify-end md:items-end">
+    <a
+      href="https://github.com/AminaHasanaath/FaceDetectionSystem"
+      target="_blank"
+      class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
+    >
+      View Repo →
+    </a>
+  </div>
+
+</div>
 
   </div>
 </section>
@@ -177,6 +169,7 @@
   <script>lucide.createIcons();</script>
 </body>
 </html>
+
 
 
 
