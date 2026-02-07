@@ -37,36 +37,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     connectDropdown.addEventListener("click", (e) => e.stopPropagation());
   }
+document.addEventListener("DOMContentLoaded", () => {
 
-const mobileNavToggle = document.getElementById("mobileNavToggle");
-const mobileNav = document.getElementById("mobileNav");
+  const mobileNavToggle = document.getElementById("mobileNavToggle");
+  const mobileNav = document.getElementById("mobileNav");
 
-if (mobileNavToggle && mobileNav) {
-  mobileNavToggle.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent document click
-    mobileNav.classList.toggle("hidden");
-    mobileNavToggle.setAttribute("aria-expanded", !mobileNav.classList.contains("hidden"));
-  });
+  if (mobileNavToggle && mobileNav) {
+    // Toggle mobile menu on hamburger click
+    mobileNavToggle.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent document click
+      mobileNav.classList.toggle("hidden");
+      mobileNavToggle.setAttribute("aria-expanded", !mobileNav.classList.contains("hidden"));
+    });
 
-  // Clicking inside mobile nav should NOT close it
-  mobileNav.addEventListener("click", (e) => e.stopPropagation());
+    // Clicking outside closes the mobile menu
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.classList.contains("hidden") && !mobileNavToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.add("hidden");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+      }
+    });
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!mobileNav.classList.contains("hidden") && !mobileNavToggle.contains(e.target)) {
-      mobileNav.classList.add("hidden");
-      mobileNavToggle.setAttribute("aria-expanded", "false");
-    }
-  });
+    // Optional: close menu on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !mobileNav.classList.contains("hidden")) {
+        mobileNav.classList.add("hidden");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+      }
+    });
 
-  // Optional: close menu on ESC key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !mobileNav.classList.contains("hidden")) {
-      mobileNav.classList.add("hidden");
-      mobileNavToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-}
+    // Allow links to work AND close menu after clicking a link
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+});
+
 
 
   /* =============================
