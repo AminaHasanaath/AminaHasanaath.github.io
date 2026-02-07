@@ -38,29 +38,28 @@ document.addEventListener("DOMContentLoaded", () => {
     connectDropdown.addEventListener("click", (e) => e.stopPropagation());
   }
 
-  /* =============================
-     MOBILE NAV TOGGLE
-  ============================= */
-  const mobileNavToggle = document.getElementById("mobileNavToggle");
-  const mobileNav = document.getElementById("mobileNav");
+const mobileNavToggle = document.getElementById("mobileNavToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-  if (mobileNavToggle && mobileNav) {
-    // Toggle mobile menu
-    mobileNavToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      mobileNav.classList.toggle("hidden");
-    });
+if (mobileNavToggle && mobileNav) {
+  // Toggle mobile menu
+  mobileNavToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileNav.classList.toggle("hidden");
+    mobileNavToggle.setAttribute("aria-expanded", !mobileNav.classList.contains("hidden"));
+  });
 
-    // Prevent clicks inside menu from closing it
-    mobileNav.addEventListener("click", (e) => e.stopPropagation());
+  // Prevent clicks inside menu from closing it
+  mobileNav.addEventListener("click", (e) => e.stopPropagation());
 
-    // Close mobile menu on outside click
-    document.addEventListener("click", (e) => {
-      if (!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== mobileNavToggle) {
-        mobileNav.classList.add("hidden");
-      }
-    });
-  }
+  // Close mobile menu on outside click
+  document.addEventListener("click", () => {
+    if (!mobileNav.classList.contains("hidden")) {
+      mobileNav.classList.add("hidden");
+      mobileNavToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
   /* =============================
      SCROLL PROGRESS
