@@ -289,6 +289,9 @@ body > *:not(.minecraft-bg) {
 /* =============================
    MOBILE NAV FIX
 ============================= */
+/* =============================
+   MOBILE NAV FIX
+============================= */
 #mobileNav {
   position: fixed;
   top: 0;
@@ -305,8 +308,9 @@ body > *:not(.minecraft-bg) {
   z-index: 10002;
   overflow-y: auto;
   
-  display: none; /* <-- hide by default, JS will toggle display */
+  /* REMOVE display: none */
 }
+
 
 #mobileNav a {
   color: #ffffff;
