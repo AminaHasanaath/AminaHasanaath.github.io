@@ -87,7 +87,7 @@
   <div class="space-y-12">
 
     <!-- Project Card -->
-    <div
+ <div
   class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
          hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
          transition-all duration-300"
@@ -95,15 +95,25 @@
 >
 
   <!-- LEFT -->
-  <div class="md:w-3/4 space-y-3">
+  <div class="md:w-3/4 space-y-4">
 
+    <!-- Headline (unchanged) -->
     <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-      👁️ Java Face Detector
+       Java Face Detector
     </h3>
 
-    <p class="text-white/80 text-sm leading-relaxed">
-      Detects human faces in images using OpenCV and a Haar Cascade model.
+    <!-- One-line description -->
+    <p class="text-white/80 text-sm">
+      A mini computer vision project that detects human faces in images and highlights them automatically.
     </p>
+
+    <!-- Working (single bullets, clean) -->
+    <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+      <li>Image reading & processing using OpenCV in Java</li>
+      <li>Face detection via Haar Cascade model</li>
+      <li>Bounding box rendering around detected faces</li>
+      <li>Output image saved with detected regions</li>
+    </ul>
 
     <!-- Tech Stack -->
     <div class="flex flex-wrap gap-3 pt-2">
@@ -120,7 +130,12 @@
 
       <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
                    bg-white/10 text-white border border-white/10">
-        <i data-lucide="github"></i> GitHub
+        <i data-lucide="scan-face"></i> Haar Cascade
+      </span>
+
+      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
+                   bg-white/10 text-white border border-white/10">
+        <i data-lucide="monitor"></i> IntelliJ IDEA
       </span>
 
     </div>
@@ -137,6 +152,8 @@
       View Repo →
     </a>
   </div>
+
+</div>
 
 </div>
 
@@ -169,6 +186,7 @@
   <script>lucide.createIcons();</script>
 </body>
 </html>
+
 
 
 
