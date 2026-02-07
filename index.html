@@ -59,14 +59,16 @@
         <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
       </div>
     </div>
+    
+   <!-- Mobile Hamburger -->
+<div class="md:hidden flex items-center">
+  <button id="mobileNavToggle" class="text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+    </svg>
+  </button>
+</div>
 
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden flex items-center">
-      <button id="mobileNavToggle" class="text-white focus:outline-none">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-  </div>
 
   <!-- Mobile Menu -->
   <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 flex flex-col items-start p-6 gap-4 border-t border-white/10">
@@ -462,6 +464,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
