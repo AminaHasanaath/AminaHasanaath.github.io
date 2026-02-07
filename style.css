@@ -300,11 +300,12 @@ body > *:not(.minecraft-bg) {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 2rem;
-  display: flex;
   flex-direction: column;
   gap: 1.5rem;
   z-index: 10002;
   overflow-y: auto;
+  
+  display: none; /* <-- hide by default, JS will toggle display */
 }
 
 #mobileNav a {
