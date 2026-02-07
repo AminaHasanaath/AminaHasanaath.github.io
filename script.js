@@ -66,9 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Allow links to work AND close menu after clicking a link
+    // Make links clickable and close menu after clicking
     mobileNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
+        // Step 1: allow link to work normally
+        // Step 3: close the mobile menu
         mobileNav.classList.add("hidden");
         mobileNavToggle.setAttribute("aria-expanded", "false");
       });
