@@ -24,122 +24,138 @@
     };
   </script>
 
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- Lucide -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="font-grotesk text-white">
+<body class="font-grotesk">
 
   <!-- Typed.js safety -->
   <span id="typed-name" class="hidden"></span>
 
-  <!-- Background -->
   <div class="minecraft-bg"></div>
 
-  <!-- Navbar -->
+  <!-- Navbar (IDENTICAL TO PROJECTS) -->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="index.html" class="text-xl font-bold hover:text-accent transition">
-        Portfolio<span class="text-purple-400">.</span>
-      </a>
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="index.html#techstack" class="hover:text-accent transition">Tech Stack</a>
-        <a href="index.html#connect" class="hover:text-accent transition">Connect</a>
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-semibold">
+        Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html#hero" class="hover:text-purple-400 transition">Home</a>
+        <div class="flex items-center gap-3">
+          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Research Section -->
-  <section class="pt-40 pb-24 px-6 max-w-6xl mx-auto space-y-16">
-
-    <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center" data-aos="fade-up">
+  <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-14 text-center tracking-wide" data-aos="fade-up">
       Research
-    </h1>
+    </h2>
 
-    <!-- Research Card -->
-    <div
-      class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
-             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-             transition-all duration-300 floating"
-      data-aos="fade-up"
-    >
-      <div class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">Distributed Systems Study</h2>
-        <p class="text-white/80 text-sm leading-relaxed">
-          Detailed research on distributed system architectures, focusing on
-          consistency models, fault tolerance, and server-client synchronization.
-        </p>
-        <div class="text-sm">
-          <p class="text-white font-semibold mb-1">Key Concepts</p>
-          <p class="text-white/70">Consistency, Fault Tolerance, Scalability</p>
+    <div class="grid gap-12">
+
+      <!-- Research 1 -->
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-center gap-6
+                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                  transition-all duration-300 floating"
+           data-aos="fade-up">
+
+        <div class="md:w-3/4 space-y-3">
+          <h3 class="text-xl font-semibold text-white">
+            Historical Survey of Computing & AI
+          </h3>
+
+          <p class="text-white text-sm">
+            A deep research paper covering the evolution of computing systems and
+            artificial intelligence from pre-1950s foundations to modern AI (2025).
+          </p>
+
+          <div class="flex gap-4 mt-2 text-sm">
+            <span class="text-white/80">AI History</span>
+            <span class="text-white/80">Computing</span>
+            <span class="text-white/80">Systems</span>
+          </div>
+        </div>
+
+        <div class="md:w-1/4 flex justify-end">
+          <a href="research.html"
+             class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+            View Paper
+          </a>
         </div>
       </div>
 
-      <div class="space-y-4 text-center">
-        <img
-          src="assets/distributed-systems.png"
-          alt="Distributed Systems"
-          class="rounded-xl mx-auto shadow-lg"
-        />
-        <a
-          href="https://github.com/AminaHasanaath"
-          target="_blank"
-          class="inline-block btn-dark px-6 py-2 rounded-lg text-sm"
-        >
-          View Paper →
-        </a>
-      </div>
-    </div>
+      <!-- Research 2 -->
+      <div class="group glass-dark rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-center gap-6
+                  hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
+                  transition-all duration-300 floating"
+           data-aos="fade-up">
 
+        <div class="md:w-3/4 space-y-3">
+          <h3 class="text-xl font-semibold text-white">
+            Distributed Systems Study
+          </h3>
+
+          <p class="text-white text-sm">
+            Analysis of distributed architectures focusing on consistency models,
+            fault tolerance, scalability, and client-server synchronization.
+          </p>
+
+          <div class="flex gap-4 mt-2 text-sm">
+            <span class="text-white/80">Consistency</span>
+            <span class="text-white/80">Fault Tolerance</span>
+            <span class="text-white/80">Scalability</span>
+          </div>
+        </div>
+
+        <div class="md:w-1/4 flex justify-end">
+          <a href="https://github.com/AminaHasanaath"
+             target="_blank"
+             class="btn-dark px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="relative py-16 px-6 border-t border-white/10">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
-      <p class="text-sm text-white/60 tracking-widest uppercase">Research Lab</p>
-      <p class="text-xl font-semibold">Exploring purposeful technology.</p>
-
-      <div class="flex justify-center gap-8 pt-4 text-sm">
-        <a href="mailto:amina.hasanaath@gmail.com" class="footer-link">Email</a>
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="footer-link">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
-      </div>
-
+  <!-- Footer (IDENTICAL) -->
+  <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
+    <div class="max-w-4xl mx-auto text-center">
       <p class="pt-6 text-xs text-white/40">
         © 2025 Amina Hasanaath — engineered with intent
       </p>
     </div>
   </footer>
 
-  <!-- Scroll / Explore -->
+  <!-- Floating UI (IDENTICAL) -->
   <div id="scroll-progress"></div>
+  <button id="scrollTopBtn" class="hidden btn-dark w-12 h-12 rounded-full">↑</button>
+  <button id="navToggle" class="btn-dark px-6 py-3 rounded-full">Explore More</button>
 
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg
-           flex items-center justify-center hover:scale-110 transition">
-    ↑
-  </button>
-
-  <button id="navToggle"
-    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">
-    Explore More
-  </button>
-
-  <div id="navPanel"
-    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
-    <a href="project.html" class="block hover:text-accent transition">→ Projects</a>
-    <a href="research.html" class="block hover:text-accent transition">→ Research</a>
-    <a href="index.html#about" class="block hover:text-accent transition">→ About</a>
-    <a href="index.html#achievements" class="block hover:text-accent transition">→ Achievements</a>
+  <div id="navPanel" class="hidden bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
+    <a href="project.html" class="block text-white hover:text-accent">→ Projects</a>
+    <a href="research.html" class="block text-white hover:text-accent">→ Research</a>
+    <a href="index.html#about" class="block text-white hover:text-accent">→ About</a>
+    <a href="index.html#achievements" class="block text-white hover:text-accent">→ Achievements</a>
   </div>
 
   <!-- Scripts -->
