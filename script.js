@@ -42,24 +42,32 @@ const mobileNavToggle = document.getElementById("mobileNavToggle");
 const mobileNav = document.getElementById("mobileNav");
 
 if (mobileNavToggle && mobileNav) {
-  // Toggle mobile menu
   mobileNavToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // prevent document click
     mobileNav.classList.toggle("hidden");
     mobileNavToggle.setAttribute("aria-expanded", !mobileNav.classList.contains("hidden"));
   });
 
-  // Prevent clicks inside menu from closing it
+  // Clicking inside mobile nav should NOT close it
   mobileNav.addEventListener("click", (e) => e.stopPropagation());
 
-  // Close mobile menu on outside click
-  document.addEventListener("click", () => {
-    if (!mobileNav.classList.contains("hidden")) {
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!mobileNav.classList.contains("hidden") && !mobileNavToggle.contains(e.target)) {
+      mobileNav.classList.add("hidden");
+      mobileNavToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Optional: close menu on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileNav.classList.contains("hidden")) {
       mobileNav.classList.add("hidden");
       mobileNavToggle.setAttribute("aria-expanded", "false");
     }
   });
 }
+
 
   /* =============================
      SCROLL PROGRESS
