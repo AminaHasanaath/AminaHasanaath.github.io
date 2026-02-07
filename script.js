@@ -12,26 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const connectBtn = document.getElementById("connectBtn");
   const connectDropdown = document.getElementById("connectDropdown");
 
- // MOBILE NAV TOGGLE
-const mobileNavToggle = document.getElementById("mobileNavToggle");
-const mobileNav = document.getElementById("mobileNav");
+  // 🔒 Helper: close all dropdowns
+  const closeAll = () => {
+    if (navPanel) navPanel.classList.add("hidden");
+    if (connectDropdown) connectDropdown.classList.add("hidden");
+  };
 
-if (mobileNavToggle && mobileNav) {
-  mobileNavToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileNav.classList.toggle("hidden");
-  });
-
-  mobileNav.addEventListener("click", (e) => e.stopPropagation());
-}
-
-// Close mobile nav on outside click
-document.addEventListener("click", (e) => {
-  if (mobileNav && !mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== mobileNavToggle) {
-    mobileNav.classList.add("hidden");
+  /* ===== EXPLORE ===== */
+  if (navToggle && navPanel) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll();
+      navPanel.classList.toggle("hidden");
+    });
+    navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
-});
-
 
   /* ===== CONNECT ===== */
   if (connectBtn && connectDropdown) {
@@ -43,20 +38,29 @@ document.addEventListener("click", (e) => {
     connectDropdown.addEventListener("click", (e) => e.stopPropagation());
   }
 
-  /* ===== MOBILE NAV ===== */
+  /* =============================
+     MOBILE NAV TOGGLE
+  ============================= */
+  const mobileNavToggle = document.getElementById("mobileNavToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
   if (mobileNavToggle && mobileNav) {
+    // Toggle mobile menu
     mobileNavToggle.addEventListener("click", (e) => {
       e.stopPropagation();
-      closeAll();
       mobileNav.classList.toggle("hidden");
     });
-    mobileNav.addEventListener("click", (e) => e.stopPropagation());
-  }
 
-  /* =============================
-     CLOSE ON OUTSIDE CLICK
-  ============================= */
-  document.addEventListener("click", closeAll);
+    // Prevent clicks inside menu from closing it
+    mobileNav.addEventListener("click", (e) => e.stopPropagation());
+
+    // Close mobile menu on outside click
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== mobileNavToggle) {
+        mobileNav.classList.add("hidden");
+      }
+    });
+  }
 
   /* =============================
      SCROLL PROGRESS
