@@ -24,37 +24,54 @@
     };
   </script>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-grotesk bg-dark text-white">
+
+<body class="font-grotesk text-white">
+
+  <!-- Typed.js safety -->
+  <span id="typed-name" class="hidden"></span>
+
+  <!-- Background -->
+  <div class="minecraft-bg"></div>
 
   <!-- Navbar -->
-  <nav class="bg-transparent backdrop-blur-sm border-b border-gray-700 p-4 fixed top-0 w-full z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-white hover:text-accent transition">Portfolio</a>
+  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-xl font-bold hover:text-accent transition">
+        Portfolio<span class="text-purple-400">.</span>
+      </a>
       <div class="hidden md:flex items-center space-x-8">
-        <a href="index.html#techstack" class="text-white hover:text-accent transition">Tech Stack</a>
-        <a href="index.html#connect" class="text-white hover:text-accent transition">Connect</a>
+        <a href="index.html#techstack" class="hover:text-accent transition">Tech Stack</a>
+        <a href="index.html#connect" class="hover:text-accent transition">Connect</a>
       </div>
     </div>
   </nav>
 
-  <!-- Research Section Only -->
+  <!-- Research Section -->
   <section class="pt-40 pb-24 px-6 max-w-6xl mx-auto space-y-16">
 
-    <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center">Research</h1>
+    <h1 class="text-4xl md:text-5xl gradient-text mb-16 text-center" data-aos="fade-up">
+      Research
+    </h1>
 
-    <!-- Example Research Card (from your index.html) -->
-    <div class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
-                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                transition-all duration-300 floating"
-         data-aos="fade-up">
+    <!-- Research Card -->
+    <div
+      class="glass-dark rounded-2xl p-8 grid md:grid-cols-2 gap-10 items-center
+             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+             transition-all duration-300 floating"
+      data-aos="fade-up"
+    >
       <div class="space-y-4">
         <h2 class="text-2xl font-semibold text-white">Distributed Systems Study</h2>
         <p class="text-white/80 text-sm leading-relaxed">
@@ -66,23 +83,30 @@
           <p class="text-white/70">Consistency, Fault Tolerance, Scalability</p>
         </div>
       </div>
+
       <div class="space-y-4 text-center">
-        <img src="assets/distributed-systems.png" alt="Distributed Systems" class="rounded-xl mx-auto shadow-lg" />
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="inline-block btn-dark px-6 py-2 rounded-lg text-sm">
+        <img
+          src="assets/distributed-systems.png"
+          alt="Distributed Systems"
+          class="rounded-xl mx-auto shadow-lg"
+        />
+        <a
+          href="https://github.com/AminaHasanaath"
+          target="_blank"
+          class="inline-block btn-dark px-6 py-2 rounded-lg text-sm"
+        >
           View Paper →
         </a>
       </div>
     </div>
 
-    <!-- Add other research cards here exactly like index.html if needed -->
-
   </section>
 
   <!-- Footer -->
-  <footer class="py-16 px-6 border-t border-white/10">
+  <footer class="relative py-16 px-6 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <p class="text-sm text-white/60 tracking-widest uppercase">Research Lab</p>
-      <p class="text-xl font-semibold text-white">Exploring purposeful technology.</p>
+      <p class="text-xl font-semibold">Exploring purposeful technology.</p>
 
       <div class="flex justify-center gap-8 pt-4 text-sm">
         <a href="mailto:amina.hasanaath@gmail.com" class="footer-link">Email</a>
@@ -90,27 +114,38 @@
         <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
       </div>
 
-      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
+      <p class="pt-6 text-xs text-white/40">
+        © 2025 Amina Hasanaath — engineered with intent
+      </p>
     </div>
   </footer>
 
-  <!-- Scroll To Top Button -->
-  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg
-         flex items-center justify-center hover:scale-110 transition" aria-label="Scroll to top">↑</button>
+  <!-- Scroll / Explore -->
+  <div id="scroll-progress"></div>
 
-  <!-- Explore Button -->
-  <button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">Explore More</button>
+  <button id="scrollTopBtn"
+    class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg
+           flex items-center justify-center hover:scale-110 transition">
+    ↑
+  </button>
 
-  <!-- Command Panel -->
-  <div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
-    <a href="Project.html" class="block text-white hover:text-accent transition">→ Projects</a>
-    <a href="Research.html" class="block text-white hover:text-accent transition">→ Research</a>
-    <a href="index.html#about" class="block text-white hover:text-accent transition">→ About</a>
-    <a href="index.html#achievements" class="block text-white hover:text-accent transition">→ Achievements</a>
+  <button id="navToggle"
+    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">
+    Explore More
+  </button>
+
+  <div id="navPanel"
+    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
+    <a href="project.html" class="block hover:text-accent transition">→ Projects</a>
+    <a href="research.html" class="block hover:text-accent transition">→ Research</a>
+    <a href="index.html#about" class="block hover:text-accent transition">→ About</a>
+    <a href="index.html#achievements" class="block hover:text-accent transition">→ Achievements</a>
   </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+
 </body>
 </html>
