@@ -37,15 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     connectDropdown.addEventListener("click", (e) => e.stopPropagation());
   }
-document.addEventListener("DOMContentLoaded", () => {
 
+  /* ===== MOBILE NAV ===== */
   const mobileNavToggle = document.getElementById("mobileNavToggle");
   const mobileNav = document.getElementById("mobileNav");
 
   if (mobileNavToggle && mobileNav) {
     // Toggle mobile menu on hamburger click
     mobileNavToggle.addEventListener("click", (e) => {
-      e.stopPropagation(); // prevent document click
+      e.stopPropagation();
       mobileNav.classList.toggle("hidden");
       mobileNavToggle.setAttribute("aria-expanded", !mobileNav.classList.contains("hidden"));
     });
@@ -74,10 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-});
-
-
 
   /* =============================
      SCROLL PROGRESS
@@ -129,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof AOS !== "undefined") {
     AOS.init({ duration: 900, once: true });
   }
+
 });
 
 /* =============================
