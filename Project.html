@@ -86,76 +86,158 @@
 <section id="projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
   <div class="space-y-12">
 
-    <!-- Project Card -->
- <div
-  class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-         hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-         transition-all duration-300"
-  data-aos="fade-up"
->
+    <!-- Project Card 1: Java Face Detector -->
+    <div
+      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+             transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <!-- LEFT -->
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+          Java Face Detector
+        </h3>
+        <p class="text-white/80 text-sm">
+          A mini computer vision project that detects human faces in images and highlights them automatically.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Image reading & processing using OpenCV in Java</li>
+          <li>Face detection via Haar Cascade model</li>
+          <li>Bounding box rendering around detected faces</li>
+          <li>Output image saved with detected regions</li>
+        </ul>
 
-  <!-- LEFT -->
-  <div class="md:w-3/4 space-y-4">
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="code"></i> Java
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="cpu"></i> OpenCV
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="scan-face"></i> Haar Cascade
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="monitor"></i> IntelliJ IDEA
+          </span>
+        </div>
+      </div>
 
-    <!-- Headline (unchanged) -->
-    <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-       Java Face Detector
-    </h3>
-
-    <!-- One-line description -->
-    <p class="text-white/80 text-sm">
-      A mini computer vision project that detects human faces in images and highlights them automatically.
-    </p>
-
-    <!-- Working (single bullets, clean) -->
-    <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-      <li>Image reading & processing using OpenCV in Java</li>
-      <li>Face detection via Haar Cascade model</li>
-      <li>Bounding box rendering around detected faces</li>
-      <li>Output image saved with detected regions</li>
-    </ul>
-
-    <!-- Tech Stack -->
-    <div class="flex flex-wrap gap-3 pt-2">
-
-      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
-                   bg-white/10 text-white border border-white/10">
-        <i data-lucide="code"></i> Java
-      </span>
-
-      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
-                   bg-white/10 text-white border border-white/10">
-        <i data-lucide="cpu"></i> OpenCV
-      </span>
-
-      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
-                   bg-white/10 text-white border border-white/10">
-        <i data-lucide="scan-face"></i> Haar Cascade
-      </span>
-
-      <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full
-                   bg-white/10 text-white border border-white/10">
-        <i data-lucide="monitor"></i> IntelliJ IDEA
-      </span>
-
+      <!-- RIGHT -->
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a
+          href="https://github.com/AminaHasanaath/FaceDetectionSystem"
+          target="_blank"
+          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
+        >
+          View Repo →
+        </a>
+      </div>
     </div>
 
-  </div>
-
-  <!-- RIGHT -->
-  <div class="md:w-1/4 flex md:justify-end md:items-end">
-    <a
-      href="https://github.com/AminaHasanaath/FaceDetectionSystem"
-      target="_blank"
-      class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
+    <!-- Project Card 2: PingMe - AutoNotify -->
+    <div
+      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+             transition-all duration-300"
+      data-aos="fade-up"
     >
-      View Repo →
-    </a>
-  </div>
+      <!-- LEFT -->
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+          PingMe - AutoNotify
+        </h3>
+        <p class="text-white/80 text-sm">
+          Quick-access messaging assistant using Android notification tiles. Send messages via WhatsApp, SMS, or Telegram in under 3 taps.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Tap AutoNotify tile in Quick Settings</li>
+          <li>Select message, platform, and contact</li>
+          <li>Message dispatched in &lt;5 seconds</li>
+          <li>Smart UX with local data and optional AI expansion</li>
+        </ul>
 
-</div>
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="smartphone"></i> Android
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="zap"></i> Kotlin
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="message-square"></i> AutoNotify Tile
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="database"></i> Room DB
+          </span>
+        </div>
+      </div>
 
-</div>
+      <!-- RIGHT -->
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a
+          href="https://github.com/AminaHasanaath/AutoNotify"
+          target="_blank"
+          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
+        >
+          View Repo →
+        </a>
+      </div>
+    </div>
+
+    <!-- Project Card 3: Weather App -->
+    <div
+      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+             transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <!-- LEFT -->
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+          🌦️ Weather App
+        </h3>
+        <p class="text-white/80 text-sm">
+          Full-stack weather application with FastAPI backend, Jinja2 frontend, and OpenWeatherMap API for real-time city weather data.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Enter any city to get real-time weather</li>
+          <li>Displays temperature, humidity, and conditions</li>
+          <li>Backend in FastAPI & Python</li>
+          <li>Frontend using HTML, Bootstrap & Jinja2 templates</li>
+        </ul>
+
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="server"></i> FastAPI
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="python"></i> Python
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="file-text"></i> Jinja2
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
+            <i data-lucide="cloud-rain"></i> OpenWeatherMap API
+          </span>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a
+          href="https://github.com/your-username/weather-app"
+          target="_blank"
+          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
+        >
+          View Repo →
+        </a>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -186,6 +268,7 @@
   <script>lucide.createIcons();</script>
 </body>
 </html>
+
 
 
 
