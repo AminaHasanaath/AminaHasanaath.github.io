@@ -2,15 +2,14 @@ async function loadComponent(id, path) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  try {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error("Component load failed");
-    el.innerHTML = await res.text();
+  const res = await fetch(path);
+  el.innerHTML = await res.text();
 
-    if (window.lucide) lucide.createIcons();
-  } catch (err) {
-    console.error(`Error loading ${path}`, err);
-  }
+  // Lucide icons
+  if (window.lucide) lucide.createIcons();
+
+  // 🔥 Notify that navbar/footer is ready
+  document.dispatchEvent(new Event("componentsLoaded"));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
