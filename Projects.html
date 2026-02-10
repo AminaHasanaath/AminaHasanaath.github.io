@@ -33,162 +33,264 @@
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <!-- =============================
+       CSS (inlined)
+  ============================== -->
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
+      background: transparent; color: #ffffff;
+    }
+    body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
 
+    .minecraft-bg {
+      position: fixed; inset: 0;
+      z-index: 0; pointer-events: none;
+      background: #000000;
+    }
+    .minecraft-bg::before {
+      content:"";
+      position:absolute; inset:0;
+      background: rgba(255,255,255,0.03);
+      box-shadow:
+        inset 0 0 120px rgba(255,255,255,0.04),
+        inset 0 0 300px rgba(255,255,255,0.02);
+      pointer-events:none;
+    }
+
+    .btn-dark {
+      background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      transition: all 0.25s ease; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      line-height:1.2;
+    }
+    .btn-dark:hover {
+      background: rgba(0,0,0,0.7);
+      border-color:#c4b5fd;
+      box-shadow:0 0 18px rgba(196,181,253,0.45);
+      transform: translateY(-1px);
+    }
+    .btn-dark:active {
+      box-shadow: 0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6);
+      transform: scale(0.96);
+    }
+
+    .tech-pill {
+      display:inline-flex; align-items:center; gap:0.25rem;
+      background: rgba(196,181,253,0.1); color:#c4b5fd;
+      font-size:0.75rem; font-weight:500;
+      padding:0.25rem 0.5rem; border-radius:6px;
+    }
+
+    .glass-dark {
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(12px);
+    }
+
+    .group:hover .group-hover\:text-lavender { color:#c4b5fd; }
+
+    .floating { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+
+    #scroll-progress {
+      position: fixed; top:0; left:0; height:3px; width:0%;
+      background-color:#ffffff; z-index:9999;
+    }
+    #scrollTopBtn {
+      position: fixed; bottom:20px; left:20px;
+      width:48px; height:48px; z-index:10000; display:flex;
+      align-items:center; justify-content:center;
+    }
+
+    /* Navbar + Mobile Nav */
+    #navToggle, #mobileNavToggle { display:none; }
+    @media(max-width:640px){ #navToggle,#mobileNavToggle{display:inline-flex;} }
+
+  </style>
+</head>
 <body class="font-grotesk">
 
-  <!-- Safety element -->
+  <!-- Safety element for Typed.js -->
   <span id="typed-name" class="hidden"></span>
 
   <div class="minecraft-bg"></div>
 
-  <!-- Navbar injected -->
-  <div id="navbar"></div>
+  <!-- =============================
+       NAVBAR
+  ============================== -->
+  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-semibold">
+        Amina Hasanaath | Projects<span class="text-purple-400">.</span>
+      </div>
 
-  <!-- ================= PROJECTS ================= -->
-  <section id="Projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-    <div class="space-y-12">
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="hover:text-purple-400 transition">Home</a>
+        <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
+        <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
 
-      <!-- Project 1 -->
-      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                  transition-all duration-300"
-           data-aos="fade-up">
-
-        <div class="md:w-3/4 space-y-4">
-          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-            Java Face Detector
-          </h3>
-
-          <p class="text-white/80 text-sm">
-            A mini computer vision project that detects human faces in images and highlights them automatically.
-          </p>
-
-          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-            <li>Image processing using OpenCV (Java)</li>
-            <li>Face detection via Haar Cascade</li>
-            <li>Bounding box rendering</li>
-            <li>Processed image output</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 pt-2">
-            <span class="tech-pill"><i data-lucide="code"></i> Java</span>
-            <span class="tech-pill"><i data-lucide="cpu"></i> OpenCV</span>
-            <span class="tech-pill"><i data-lucide="scan-face"></i> Haar Cascade</span>
-            <span class="tech-pill"><i data-lucide="monitor"></i> IntelliJ</span>
-          </div>
-        </div>
-
-        <div class="md:w-1/4 flex md:justify-end md:items-end">
-          <a href="https://github.com/AminaHasanaath/FaceDetectionSystem"
-             target="_blank"
-             class="btn-dark glow-btn px-6 py-2 rounded-lg">
-            View Repo →
-          </a>
+        <div class="flex items-center gap-3">
+          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                  transition-all duration-300"
-           data-aos="fade-up">
-
-        <div class="md:w-3/4 space-y-4">
-          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-            PingMe – AutoNotify
-          </h3>
-
-          <p class="text-white/80 text-sm">
-            Android quick-access messaging assistant using notification tiles.
-          </p>
-
-          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-            <li>Quick Settings AutoNotify tile</li>
-            <li>WhatsApp, SMS & Telegram support</li>
-            <li>Ultra-fast dispatch</li>
-            <li>Scalable UX architecture</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 pt-2">
-            <span class="tech-pill"><i data-lucide="smartphone"></i> Android</span>
-            <span class="tech-pill"><i data-lucide="zap"></i> Kotlin</span>
-            <span class="tech-pill"><i data-lucide="message-square"></i> AutoNotify</span>
-            <span class="tech-pill"><i data-lucide="database"></i> Room DB</span>
-          </div>
-        </div>
-
-        <div class="md:w-1/4 flex md:justify-end md:items-end">
-          <a href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project"
-             target="_blank"
-             class="btn-dark glow-btn px-6 py-2 rounded-lg">
-            View Repo →
-          </a>
-        </div>
+      <div class="md:hidden">
+        <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
       </div>
-
-      <!-- Project 3 -->
-      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                  transition-all duration-300"
-           data-aos="fade-up">
-
-        <div class="md:w-3/4 space-y-4">
-          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-            🌦️ Weather App
-          </h3>
-
-          <p class="text-white/80 text-sm">
-            Full-stack weather app using FastAPI & OpenWeatherMap API.
-          </p>
-
-          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-            <li>Live city-based weather</li>
-            <li>FastAPI backend</li>
-            <li>Jinja2 frontend</li>
-            <li>API-driven architecture</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 pt-2">
-            <span class="tech-pill"><i data-lucide="server"></i> FastAPI</span>
-            <span class="tech-pill"><i data-lucide="python"></i> Python</span>
-            <span class="tech-pill"><i data-lucide="file-text"></i> Jinja2</span>
-            <span class="tech-pill"><i data-lucide="cloud-rain"></i> OpenWeather</span>
-          </div>
-        </div>
-
-        <div class="md:w-1/4 flex md:justify-end md:items-end">
-          <a href="https://github.com/AminaHasanaath/WeatherProject"
-             target="_blank"
-             class="btn-dark glow-btn px-6 py-2 rounded-lg">
-            View Repo →
-          </a>
-        </div>
-      </div>
-
     </div>
+
+    <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
+      <a href="index.html">Home</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Research.html">Research</a>
+    </div>
+  </nav>
+
+  <!-- =============================
+       PROJECTS SECTION
+  ============================== -->
+  <section id="Projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto space-y-12">
+    
+    <!-- Project Cards -->
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
+         data-aos="fade-up">
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">Java Face Detector</h3>
+        <p class="text-white/80 text-sm">
+          A mini computer vision project that detects human faces in images and highlights them automatically.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Image processing using OpenCV (Java)</li>
+          <li>Face detection via Haar Cascade</li>
+          <li>Bounding box rendering</li>
+          <li>Processed image output</li>
+        </ul>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tech-pill"><i data-lucide="code"></i> Java</span>
+          <span class="tech-pill"><i data-lucide="cpu"></i> OpenCV</span>
+          <span class="tech-pill"><i data-lucide="scan-face"></i> Haar Cascade</span>
+          <span class="tech-pill"><i data-lucide="monitor"></i> IntelliJ</span>
+        </div>
+      </div>
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a href="https://github.com/AminaHasanaath/FaceDetectionSystem" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+      </div>
+    </div>
+
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
+         data-aos="fade-up">
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">PingMe – AutoNotify</h3>
+        <p class="text-white/80 text-sm">
+          Android quick-access messaging assistant using notification tiles.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Quick Settings AutoNotify tile</li>
+          <li>WhatsApp, SMS & Telegram support</li>
+          <li>Ultra-fast dispatch</li>
+          <li>Scalable UX architecture</li>
+        </ul>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tech-pill"><i data-lucide="smartphone"></i> Android</span>
+          <span class="tech-pill"><i data-lucide="zap"></i> Kotlin</span>
+          <span class="tech-pill"><i data-lucide="message-square"></i> AutoNotify</span>
+          <span class="tech-pill"><i data-lucide="database"></i> Room DB</span>
+        </div>
+      </div>
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+      </div>
+    </div>
+
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
+         data-aos="fade-up">
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">🌦️ Weather App</h3>
+        <p class="text-white/80 text-sm">
+          Full-stack weather app using FastAPI & OpenWeatherMap API.
+        </p>
+        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+          <li>Live city-based weather</li>
+          <li>FastAPI backend</li>
+          <li>Jinja2 frontend</li>
+          <li>API-driven architecture</li>
+        </ul>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tech-pill"><i data-lucide="server"></i> FastAPI</span>
+          <span class="tech-pill"><i data-lucide="python"></i> Python</span>
+          <span class="tech-pill"><i data-lucide="file-text"></i> Jinja2</span>
+          <span class="tech-pill"><i data-lucide="cloud-rain"></i> OpenWeather</span>
+        </div>
+      </div>
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a href="https://github.com/AminaHasanaath/WeatherProject" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+      </div>
+    </div>
+
   </section>
 
-  <!-- Footer injected -->
-  <div id="footer"></div>
+  <!-- =============================
+       FOOTER
+  ============================== -->
+  <footer class="relative py-16 px-6 mt-24 border-t border-white/10 text-center">
+    <p class="pt-6 text-xs text-white/40">
+      © 2025 Amina Hasanaath — engineered with intent
+    </p>
+  </footer>
 
-  <!-- Floating UI -->
-  <div id="scroll-progress"></div>
-  <button id="scrollTopBtn" class="hidden btn-dark w-12 h-12 rounded-full">↑</button>
+  <!-- Scroll UI -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
+  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-  <script src="js/components.js"></script>
-  <script src="js/script.js"></script>
-
   <script>
-    // Ensure icons are created after components load
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById("mobileNavToggle");
+    const mobileNav = document.getElementById("mobileNav");
+    mobileToggle.addEventListener("click", e => {
+      e.stopPropagation();
+      mobileNav.classList.toggle("hidden");
+      document.body.style.overflow = mobileNav.classList.contains("hidden") ? "auto" : "hidden";
+    });
+    document.addEventListener("click", e => {
+      if(!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target!==mobileToggle){
+        mobileNav.classList.add("hidden"); document.body.style.overflow="auto";
+      }
+    });
+
+    // Scroll progress
+    const progress = document.getElementById("scroll-progress");
+    window.addEventListener("scroll", () => {
+      const percent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      progress.style.width = percent + "%";
+    });
+
+    // Scroll top
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => { scrollBtn.classList.toggle("hidden", window.scrollY < 400); });
+    scrollBtn.addEventListener("click", () => { window.scrollTo({ top:0, behavior:'smooth' }); });
+
+    // Typed.js placeholder
+    new Typed("#typed-name", { strings: ["Amina Hasanaath"], typeSpeed:50, backSpeed:25, loop:false });
+
+    // AOS
+    AOS.init({ duration:900, once:true });
+
+    // Lucide icons
     lucide.createIcons();
-    AOS.init({ once: true });
   </script>
 </body>
 </html>
