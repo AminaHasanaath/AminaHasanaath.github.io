@@ -33,21 +33,24 @@
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+  <!-- =============================
+       CSS (inlined)
+  ============================== -->
   <style>
     html, body {
-      margin:0; padding:0;
-      font-family:"Space Grotesk",sans-serif;
-      scroll-behavior:smooth;
-      background:transparent; color:#fff;
+      margin: 0; padding: 0;
+      font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
+      background: transparent; color: #ffffff;
     }
-    body>*:not(.minecraft-bg){position:relative;z-index:1;}
+    body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
 
     .minecraft-bg {
-      position:fixed; inset:0;
-      z-index:0; pointer-events:none;
-      background:#000;
+      position: fixed; inset: 0;
+      z-index: 0; pointer-events: none;
+      background: #000000;
     }
-    .minecraft-bg::before{
+    .minecraft-bg::before {
       content:"";
       position:absolute; inset:0;
       background: rgba(255,255,255,0.03);
@@ -57,58 +60,56 @@
       pointer-events:none;
     }
 
-    .btn-dark{
+    .btn-dark {
       background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
       backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
       transition: all 0.25s ease; cursor:pointer;
-      display:flex; align-items:center; justify-content:center; line-height:1.2;
+      display:flex; align-items:center; justify-content:center;
+      line-height:1.2;
     }
-    .btn-dark:hover{
+    .btn-dark:hover {
       background: rgba(0,0,0,0.7);
       border-color:#c4b5fd;
       box-shadow:0 0 18px rgba(196,181,253,0.45);
-      transform:translateY(-1px);
+      transform: translateY(-1px);
     }
-    .btn-dark:active{
-      box-shadow:0 0 10px rgba(196,181,253,0.4),0 0 30px rgba(196,181,253,0.6);
-      transform:scale(0.96);
+    .btn-dark:active {
+      box-shadow: 0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6);
+      transform: scale(0.96);
     }
 
-    .glass-dark{
-      background: rgba(0,0,0,0.45); backdrop-filter: blur(12px);
-    }
-    .floating { animation: float 3s ease-in-out infinite; }
-    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+    .glass-dark { background: rgba(0,0,0,0.45); backdrop-filter: blur(12px); }
 
     .group:hover .group-hover\:text-lavender { color:#c4b5fd; }
 
-    .tech-pill{
-      display:inline-flex; align-items:center; gap:0.25rem;
-      background: rgba(196,181,253,0.1); color:#c4b5fd;
-      font-size:0.75rem; font-weight:500;
-      padding:0.25rem 0.5rem; border-radius:6px;
-    }
+    .floating { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
 
-    #scroll-progress{
-      position:fixed; top:0; left:0; height:3px; width:0%;
-      background-color:#fff; z-index:9999;
+    #scroll-progress {
+      position: fixed; top:0; left:0; height:3px; width:0%;
+      background-color:#ffffff; z-index:9999;
     }
-    #scrollTopBtn{
-      position:fixed; bottom:20px; left:20px;
+    #scrollTopBtn {
+      position: fixed; bottom:20px; left:20px;
       width:48px; height:48px; z-index:10000; display:flex;
       align-items:center; justify-content:center;
     }
 
-    #navToggle{ display:none; }
-    @media(max-width:640px){#navToggle{display:inline-flex;}}
+    /* Navbar + Mobile Nav */
+    #navToggle { display:none; }
+    @media(max-width:640px){ #navToggle{display:inline-flex;} }
   </style>
 </head>
-
 <body class="font-grotesk">
+
+  <!-- Safety element for Typed.js -->
   <span id="typed-name" class="hidden"></span>
+
   <div class="minecraft-bg"></div>
 
-  <!-- Navbar -->
+  <!-- =============================
+       NAVBAR
+  ============================== -->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-xl font-semibold">
@@ -118,23 +119,25 @@
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="hover:text-purple-400 transition">Home</a>
         <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
+        <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
 
         <div class="flex items-center gap-3">
-          <a href="tel:+919391201739"><i data-lucide="phone"></i></a>
-          <a href="mailto:amina.hasanaath@gmail.com"><i data-lucide="mail"></i></a>
-          <a href="https://github.com/AminaHasanaath" target="_blank"><i data-lucide="github"></i></a>
-          <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
+          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
         </div>
       </div>
 
       <div class="md:hidden">
-        <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
+        <button id="navToggle"><i data-lucide="menu"></i></button>
       </div>
     </div>
 
     <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
       <a href="index.html">Home</a>
       <a href="Projects.html">Projects</a>
+      <a href="Research.html">Research</a>
     </div>
   </nav>
 
@@ -142,38 +145,63 @@
        RESEARCH SECTION
   ============================== -->
   <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto space-y-12">
-    <!-- Card 1 -->
-    <div class="group glass-dark rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-center gap-6 hover:shadow-[0_0_40px_-5px_rgba(99,102,241,0.6)] transition-all duration-300 floating" data-aos="fade-up">
-      <div class="md:w-3/4 space-y-3">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">Historical Survey of Computing & AI</h3>
-        <p class="text-white/80 text-sm">A deep research paper covering the evolution of computing systems and artificial intelligence from pre-1950s foundations to modern AI (2025).</p>
-        <div class="flex gap-4 mt-2 text-xs text-white/60 uppercase tracking-wider">
-          <span>AI History</span><span>Computing</span><span>Systems</span>
+
+    <!-- Research Card 1 -->
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                transition-all duration-300" data-aos="fade-up">
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+          Historical Survey of Computing & AI
+        </h3>
+        <p class="text-white/80 text-sm">
+          A deep research paper covering the evolution of computing systems and artificial intelligence
+          from pre-1950s foundations to modern AI (2025).
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tech-pill">AI History</span>
+          <span class="tech-pill">Computing</span>
+          <span class="tech-pill">Systems</span>
         </div>
       </div>
-      <div class="md:w-1/4 flex justify-end">
-        <a href="https://www.researchgate.net/publication/396132556_A_Historical_Survey_of_Computing_and_Artificial_Intelligence_From_Pre-1950s_to_2025" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg mt-4 inline-block">VIEW PAPER</a>
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a href="https://www.researchgate.net/publication/396132556_A_Historical_Survey_of_Computing_and_Artificial_Intelligence_From_Pre-1950s_to_2025" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">
+          VIEW PAPER →
+        </a>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="group glass-dark rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-center gap-6 hover:shadow-[0_0_40px_-5px_rgba(16,185,129,0.6)] transition-all duration-300 floating" data-aos="fade-up">
-      <div class="md:w-3/4 space-y-3">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">Cloud Computing Study</h3>
-        <p class="text-white/80 text-sm">A work-in-progress research exploring how cloud computing works.</p>
-        <div class="flex gap-4 mt-2 text-xs text-white/60 uppercase tracking-wider">
-          <span>Cloud</span><span>Computing</span><span>Deployment</span>
+    <!-- Research Card 2 -->
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
+                transition-all duration-300" data-aos="fade-up">
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+          Cloud Computing Study
+        </h3>
+        <p class="text-white/80 text-sm">
+          A work-in-progress research exploring how cloud computing works.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tech-pill">Cloud</span>
+          <span class="tech-pill">Computing</span>
+          <span class="tech-pill">Deployment</span>
         </div>
       </div>
-      <div class="md:w-1/4 flex justify-end">
-        <a href="#" class="btn-dark glow-btn px-6 py-2 rounded-lg mt-4 inline-block">IN PROGRESS</a>
+      <div class="md:w-1/4 flex md:justify-end md:items-end">
+        <a href="#" class="btn-dark glow-btn px-6 py-2 rounded-lg">IN PROGRESS</a>
       </div>
     </div>
+
   </section>
 
-  <!-- Footer -->
+  <!-- =============================
+       FOOTER
+  ============================== -->
   <footer class="relative py-16 px-6 mt-24 border-t border-white/10 text-center">
-    <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
+    <p class="pt-6 text-xs text-white/40">
+      © 2025 Amina Hasanaath — engineered with intent
+    </p>
   </footer>
 
   <!-- Scroll UI -->
@@ -184,39 +212,52 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    // Mobile nav toggle
-    const mobileNavToggle = document.getElementById("mobileNavToggle");
-    const mobileNavEl = document.getElementById("mobileNav");
-    mobileNavToggle.addEventListener("click", e => {
+    // =============================
+    // MOBILE NAV
+    // =============================
+    const navToggle = document.getElementById("navToggle");
+    const mobileNav = document.getElementById("mobileNav");
+    navToggle.addEventListener("click", e => {
       e.stopPropagation();
-      mobileNavEl.classList.toggle("hidden");
-      document.body.style.overflow = mobileNavEl.classList.contains("hidden") ? "auto" : "hidden";
+      mobileNav.classList.toggle("hidden");
+      document.body.style.overflow = mobileNav.classList.contains("hidden") ? "auto" : "hidden";
     });
     document.addEventListener("click", e => {
-      if(!mobileNavEl.classList.contains("hidden") && !mobileNavEl.contains(e.target) && e.target !== mobileNavToggle){
-        mobileNavEl.classList.add("hidden"); document.body.style.overflow="auto";
+      if(!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== navToggle){
+        mobileNav.classList.add("hidden");
+        document.body.style.overflow="auto";
       }
     });
 
-    // Scroll progress
+    // =============================
+    // SCROLL PROGRESS
+    // =============================
     const progress = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
       const percent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       progress.style.width = percent + "%";
     });
 
-    // Scroll top
+    // =============================
+    // SCROLL TO TOP
+    // =============================
     const scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => { scrollBtn.classList.toggle("hidden", window.scrollY < 400); });
-    scrollBtn.addEventListener("click", () => { window.scrollTo({ top:0, behavior:'smooth' }); });
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 400);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
 
-    // Typed.js placeholder
+    // =============================
+    // TYPED
+    // =============================
     new Typed("#typed-name", { strings: ["Amina Hasanaath"], typeSpeed:50, backSpeed:25, loop:false });
 
-    // AOS
+    // =============================
+    // AOS & Lucide
+    // =============================
     AOS.init({ duration:900, once:true });
-
-    // Lucide icons
     lucide.createIcons();
   </script>
 </body>
