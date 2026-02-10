@@ -28,39 +28,311 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- Custom CSS -->
+  <!-- =============================
+       CSS (inlined)
+  ============================== -->
   <style>
-    html, body { margin:0; padding:0; font-family:"Space Grotesk", sans-serif; scroll-behavior:smooth; background:#000; color:#fff;}
-    body > *:not(.minecraft-bg){position:relative; z-index:1;}
-    ::-webkit-scrollbar-thumb{background:#6366f1;border-radius:8px;}
-    .gradient-text{background:linear-gradient(180deg,#c4b5fd,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .floating{animation:float 3s ease-in-out infinite;}
-    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
-    .minecraft-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:#000;}
-    .minecraft-bg::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,0.03);box-shadow:inset 0 0 120px rgba(255,255,255,0.04), inset 0 0 300px rgba(255,255,255,0.02);}
-    .btn-dark{background:rgba(0,0,0,0.45);color:#fff;border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all 0.25s ease;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1.2;}
-    .btn-dark:hover{background:rgba(0,0,0,0.7);border-color:#c4b5fd;box-shadow:0 0 18px rgba(196,181,253,0.45);transform:translateY(-1px);}
-    .btn-dark:active{box-shadow:0 0 10px rgba(196,181,253,0.4),0 0 30px rgba(196,181,253,0.6);transform:scale(0.96);}
-    .btn-dark:focus{outline:none;}
-    .hero-focus::before{content:"";position:absolute;top:20%;left:50%;width:520px;height:520px;transform:translateX(-50%);background:radial-gradient(circle,rgba(196,181,253,0.18),transparent 70%);filter:blur(80px);z-index:-1;}
-    .hero-image-wrapper{position:relative;}
-    .hero-image-wrapper::after{content:"";position:absolute;inset:-10px;border-radius:18px;background:linear-gradient(135deg,rgba(196,181,253,0.35),transparent);opacity:0.5;filter:blur(18px);z-index:-1;}
-    #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background-color:#fff;z-index:9999;}
-    #scrollTopBtn{position:fixed;bottom:20px;left:20px;width:48px;height:48px;z-index:10000;display:flex;align-items:center;justify-content:center;}
-    #mobileNav{position:fixed;top:0;right:0;width:70vw;max-width:280px;height:100vh;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:2rem;flex-direction:column;gap:1.5rem;z-index:10002;overflow-y:auto;}
-    #mobileNav a{color:#fff;text-decoration:none;font-weight:500;}
-    #mobileNav a:hover{color:#c4b5fd;}
+    /* =============================
+       BASE
+    ============================= */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    body > *:not(.minecraft-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =============================
+       SCROLLBAR
+    ============================= */
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 8px;
+    }
+
+    /* =============================
+       TEXT
+    ============================= */
+    .gradient-text {
+      background: linear-gradient(180deg, #c4b5fd, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+      text-decoration-color: #ffffff;
+      text-underline-offset: 4px;
+    }
+
+    /* =============================
+       ANIMATIONS
+    ============================= */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* =============================
+       BACKGROUND
+    ============================= */
+    .minecraft-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: #000000;
+    }
+
+    .minecraft-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow:
+        inset 0 0 120px rgba(255,255,255,0.04),
+        inset 0 0 300px rgba(255,255,255,0.02);
+      pointer-events: none;
+    }
+
+    /* =============================
+       SCROLL PROGRESS BAR
+    ============================= */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background-color: #ffffff;
+      z-index: 9999;
+    }
+
+    /* =============================
+       FIXED BUTTONS
+    ============================= */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 48px;
+      height: 48px;
+      z-index: 10000;
+    }
+
+    /* =============================
+       NAV TOGGLES VISIBILITY
+    ============================= */
+    #navToggle,
+    #mobileNavToggle {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      #scrollTopBtn { bottom: 16vw; left: 4vw; }
+
+      #navToggle,
+      #mobileNavToggle {
+        display: inline-flex;
+        position: fixed;
+        z-index: 10000;
+      }
+
+      #navToggle {
+        bottom: 16vw;
+        right: 4vw;
+        min-width: 140px;
+      }
+
+      #mobileNavToggle {
+        top: 4vw;
+        right: 4vw;
+        width: 48px;
+        height: 48px;
+      }
+
+      #navPanel { bottom: 24vw; right: 4vw; }
+    }
+
+    /* =============================
+       GLOBAL BUTTON STYLE
+    ============================= */
+    .btn-dark {
+      background: rgba(0, 0, 0, 0.45);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.2;
+    }
+    .btn-dark:hover {
+      background: rgba(0, 0, 0, 0.7);
+      border-color: #c4b5fd;
+      box-shadow: 0 0 18px rgba(196,181,253,0.45);
+      transform: translateY(-1px);
+    }
+    .btn-dark:active {
+      box-shadow: 0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6);
+      transform: scale(0.96);
+    }
+    .btn-dark:focus { outline: none; }
+
+    /* =============================
+       HERO FOCUS ZONE
+    ============================= */
+    .hero-focus::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      width: 520px;
+      height: 520px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(196,181,253,0.18), transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+    }
+    .hero-image-wrapper { position: relative; }
+    .hero-image-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(196,181,253,0.35), transparent);
+      opacity: 0.5;
+      filter: blur(18px);
+      z-index: -1;
+    }
+
+    /* =============================
+       FOOTER & CONTACT DROPDOWN
+    ============================= */
+    .footer-link { position: relative; color: #e5e5e5; transition: color 0.3s ease; }
+    .footer-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 1px;
+      background: #c4b5fd;
+      transition: width 0.3s ease;
+    }
+    .footer-link:hover { color: #c4b5fd; }
+    .footer-link:hover::after { width: 100%; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .contact-item:hover {
+      background: rgba(196, 181, 253, 0.3);
+      color: #c4b5fd;
+      transform: translateY(-2px);
+    }
+    .contact-item svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2;
+    }
+
+    /* =============================
+       ACHIEVEMENTS TIMELINE
+    ============================= */
+    .timeline { padding-left: 2rem; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(196,181,253,0.2),
+        rgba(196,181,253,0.6),
+        rgba(196,181,253,0.2)
+      );
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 2.5rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 6px;
+      top: 1.2rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #c4b5fd;
+      box-shadow: 0 0 12px rgba(196,181,253,0.8);
+    }
+    @media (max-width: 640px) { .timeline { padding-left: 1.5rem; } }
+
+    /* =============================
+       MOBILE NAV FIX
+    ============================= */
+    #mobileNav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 70vw;
+      max-width: 280px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 2rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 10002;
+      overflow-y: auto;
+    }
+    #mobileNav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    #mobileNav a:hover { color: #c4b5fd; }
   </style>
 </head>
 
@@ -68,14 +340,20 @@
 
   <div class="minecraft-bg"></div>
 
-  <!-- NAVBAR -->
+  <!-- =============================
+       NAVBAR (inlined)
+  ============================== -->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
+      <div class="text-xl font-semibold">
+        Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+      </div>
+
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="hover:text-purple-400 transition">Home</a>
         <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
         <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
+
         <div class="flex items-center gap-3">
           <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
           <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
@@ -83,8 +361,12 @@
           <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
         </div>
       </div>
-      <div class="md:hidden"><button id="mobileNavToggle"><i data-lucide="menu"></i></button></div>
+
+      <div class="md:hidden">
+        <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
+      </div>
     </div>
+
     <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
       <a href="index.html">Home</a>
       <a href="Projects.html">Projects</a>
@@ -92,20 +374,44 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative hero-focus">
-    <img src="assets/images/PfpImage.jpeg" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-lavender/50 shadow-lg floating" alt="Amina Hasanaath" />
+  <!-- =============================
+       HERO
+  ============================== -->
+  <section id="hero"
+    class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+
+    <img
+      src="assets/images/PfpImage.jpeg"
+      class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover
+             border-4 border-lavender/50 shadow-lg"
+      alt="Amina Hasanaath"
+    />
+
     <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl gradient-text mb-2"><span id="typed-name">I'm Amina Hasanaath</span></h1>
-      <p class="mt-6 text-lg hero-quote">For me, <span class="text-lavender">purpose</span>, <span class="text-lavender">clarity</span>, and <span class="text-lavender">programming</span> define life.</p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-4">
-        <a href="Projects.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">Projects <i data-lucide="folder"></i></a>
-        <a href="Research.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">Research <i data-lucide="book-open"></i></a>
-      </div>
+      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
+        <span id="typed-name">I'm Amina Hasanaath</span>
+      </h1>
+
+      <p class="mt-6 text-lg hero-quote">
+        For me, <span class="text-lavender">purpose</span>,
+        <span class="text-lavender">clarity</span>, and
+        <span class="text-lavender">programming</span> define life.
+      </p>
+
       <div class="mt-6 flex gap-4 justify-center md:justify-start">
-        <a href="assets/docs/finalATSResume.pdf" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
-        <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-4 h-4 invert" alt="LeetCode" /> LeetCode</a>
-        <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Website</a>
+        <a href="assets/docs/finalATSResume.pdf" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
+
+        <a href="https://leetcode.com/u/hasanaath/" target="_blank"
+           class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+               class="w-4 h-4 invert" alt="LeetCode" />
+          LeetCode
+        </a>
+
+        <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">
+          View Website
+        </a>
       </div>
     </div>
   </section>
@@ -113,24 +419,57 @@
   <!-- About Section -->
   <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- LEFT COLUMN -->
       <div class="space-y-10" data-aos="fade-right">
-        <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
-        <p class="mt-4 text-white">I’m a <span class="text-lavender">clarity-driven programmer</span>: debugging runtime errors, wiring databases to servers through APIs, and enjoying it more than flashy UI animations.</p>
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+          <p class="mt-4 text-white">I’m a <span class="text-lavender">clarity-driven programmer</span>: debugging runtime errors, wiring databases to servers through APIs, and enjoying it more than flashy UI animations.</p>
+        </div>
+        <div class="glass-dark rounded-2xl p-6">
+          <h2 class="text-3xl font-bold text-white mb-6">Origin & Passion</h2>
+          <p class="text-white text-sm leading-relaxed mb-4">My journey into technology began with curiosity, from reading my first Java book to exploring early computer interfaces—which gradually evolved into a disciplined approach to learning and building.</p>
+          <p class="text-white text-sm leading-relaxed mb-4">I am currently strengthening my backend and AI integration skills to create systems that are meaningful, purpose-driven, and scalable. Some of my projects include <span class="text-white">Autonotify</span> and <span class="text-white">Reflectra365</span>.</p>
+          <p class="text-white text-sm leading-relaxed">I enjoy collaborating on technical challenges, contributing to open source, and turning curiosity into real-world solutions through code.</p>
+        </div>
       </div>
+      <!-- RIGHT COLUMN -->
       <div class="space-y-12" data-aos="fade-left">
-        <h3 class="text-xl font-bold text-white mb-6">Core Skills</h3>
-        <div class="space-y-5">
-          <div><p class="text-white text-sm mb-1">Prompting AI Assistance</p><div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[85%]"></div></div></div>
-          <div><p class="text-white text-sm mb-1">Java Backend Development</p><div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[60%]"></div></div></div>
-          <div><p class="text-white text-sm mb-1">Databases</p><div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[70%]"></div></div></div>
-          <div><p class="text-white text-sm mb-1">LLM & AI Systems</p><div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[30%]"></div></div></div>
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 gap-6">
+          <div class="glass-dark rounded-2xl p-6 text-center hover:-translate-y-1 transition">
+            <h3 class="text-3xl font-bold text-white">3+</h3>
+            <p class="text-white text-sm">Projects Built</p>
+          </div>
+          <div class="glass-dark rounded-2xl p-6 text-center hover:-translate-y-1 transition">
+            <h3 class="text-3xl font-bold text-white">150+</h3>
+            <p class="text-white text-sm">Coding Problems</p>
+          </div>
+        </div>
+        <!-- Skills -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-6">Core Skills</h3>
+          <div class="space-y-5">
+            <div>
+              <p class="text-white text-sm mb-1">Prompting AI Assistance</p>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[85%]"></div></div>
+            </div>
+            <div>
+              <p class="text-white text-sm mb-1">Java Backend Development</p>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[60%]"></div></div>
+            </div>
+            <div>
+              <p class="text-white text-sm mb-1">Databases</p>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[70%]"></div></div>
+            </div>
+            <div>
+              <p class="text-white text-sm mb-1">LLM & AI Systems</p>
+              <div class="w-full bg-white/10 h-2 rounded-full"><div class="bg-lavender h-2 rounded-full w-[30%]"></div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Tech Stack, LeetCode, Projects, Achievements sections as per your earlier code go here -->
-
 <!-- Tech Stack Section (Doughnuts) -->
 <section id="techstack" class="py-20 px-6 max-w-6xl mx-auto">
   <h2 class="text-3xl font-bold text-white mb-14 text-left tracking-wide">Tech Stack</h2>
@@ -385,70 +724,150 @@
 
   </div>
 </section>
-  <!-- Footer -->
+
+
+  <!-- =============================
+       FOOTER (inlined)
+  ============================== -->
   <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
+      <p class="pt-6 text-xs text-white/40">
+        © 2025 Amina Hasanaath — engineered with intent
+      </p>
     </div>
   </footer>
 
-  <!-- Scroll UI -->
+  <!-- =============================
+       SCROLL UI
+  ============================== -->
   <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
-  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
+  <button id="scrollTopBtn"
+    class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
+  <button id="navToggle"
+    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">
+    Explore More
+  </button>
+  <div id="navPanel"
+    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
+    <a href="Projects.html">→ More Projects</a>
+    <a href="Research.html">→ Research Work</a>
+    <a href="#about">→ About</a>
+    <a href="#achievements">→ Achievements</a>
+  </div>
 
-  <!-- JS -->
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- =============================
+       JS (inlined)
+  ============================== -->
   <script>
+    // =============================
+    // INIT MOBILE NAV FUNCTION
+    // =============================
     function initMobileNav() {
-      const toggle = document.getElementById("mobileNavToggle");
-      const nav = document.getElementById("mobileNav");
-      if(!toggle||!nav) return;
-      nav.classList.add("hidden");
-      toggle.addEventListener("click", e=>{
+      const mobileToggle = document.getElementById("mobileNavToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      if (!mobileToggle || !mobileNav) return;
+      mobileNav.classList.add("hidden");
+      mobileToggle.addEventListener("click", (e) => {
         e.stopPropagation();
-        nav.classList.toggle("hidden");
-        document.body.style.overflow = nav.classList.contains("hidden")?"auto":"hidden";
+        mobileNav.classList.toggle("hidden");
+        document.body.style.overflow =
+          mobileNav.classList.contains("hidden") ? "auto" : "hidden";
       });
-      document.addEventListener("click", e=>{
-        if(!nav.classList.contains("hidden")&&!nav.contains(e.target)&&!toggle.contains(e.target)){
-          nav.classList.add("hidden");
-          document.body.style.overflow="auto";
+      document.addEventListener("click", (e) => {
+        if (!mobileNav.classList.contains("hidden") &&
+            !mobileNav.contains(e.target) &&
+            !mobileToggle.contains(e.target)) {
+          mobileNav.classList.add("hidden");
+          document.body.style.overflow = "auto";
         }
       });
     }
-    function initScrollProgress(){
-      const p=document.getElementById("scroll-progress");
-      if(!p) return;
-      window.addEventListener("scroll",()=>{p.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";});
+
+    // =============================
+    // INIT EXPLORE PANEL
+    // =============================
+    function initExplorePanel() {
+      const navToggle = document.getElementById("navToggle");
+      const navPanel = document.getElementById("navPanel");
+      if (!navToggle || !navPanel) return;
+      navPanel.classList.add("hidden");
+      navToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navPanel.classList.toggle("hidden");
+      });
+      document.addEventListener("click", () => {
+        if (!navPanel.classList.contains("hidden")) navPanel.classList.add("hidden");
+      });
+      navPanel.addEventListener("click", (e) => e.stopPropagation());
     }
-    function initScrollTop(){
-      const btn=document.getElementById("scrollTopBtn");
-      if(!btn) return;
-      window.addEventListener("scroll",()=>{btn.classList.toggle("hidden",window.scrollY<400);});
-      btn.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+
+    // =============================
+    // SCROLL PROGRESS
+    // =============================
+    function initScrollProgress() {
+      const progress = document.getElementById("scroll-progress");
+      if (!progress) return;
+      window.addEventListener("scroll", () => {
+        const percent = (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        progress.style.width = percent + "%";
+      });
     }
-    function initTyped(){
-      if(!window.Typed) return;
-      new Typed("#typed-name",{strings:["I'm Amina Hasanaath","Computer Science Engineer","Clarity-driven Programmer"],typeSpeed:70,backSpeed:40,loop:false});
+
+    // =============================
+    // SCROLL TO TOP
+    // =============================
+    function initScrollTop() {
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      if (!scrollBtn) return;
+      window.addEventListener("scroll", () => {
+        scrollBtn.classList.toggle("hidden", window.scrollY < 400);
+      });
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
-    function initAOS(){if(window.AOS) AOS.init({duration:900,once:true});}
-    document.addEventListener("DOMContentLoaded",()=>{
-      initMobileNav();initScrollProgress();initScrollTop();initTyped();initAOS();
-      if(window.lucide) lucide.createIcons();
+
+    // =============================
+    // INIT TYPED
+    // =============================
+    function initTyped() {
+      const typedEl = document.getElementById("typed-name");
+      if (!typedEl || !window.Typed) return;
+      new Typed("#typed-name", {
+        strings: [
+          "I'm Amina Hasanaath",
+          "Computer Science Engineer",
+          "Clarity-driven Programmer",
+        ],
+        typeSpeed: 70,
+        backSpeed: 40,
+        loop: false,
+      });
+    }
+
+    // =============================
+    // INIT AOS
+    // =============================
+    function initAOS() { if (window.AOS) AOS.init({ duration: 900, once: true }); }
+
+    // =============================
+    // DOM CONTENT LOADED
+    // =============================
+    document.addEventListener("DOMContentLoaded", () => {
+      initMobileNav();
+      initExplorePanel();
+      initScrollProgress();
+      initScrollTop();
+      initTyped();
+      initAOS();
+      if (window.lucide) lucide.createIcons();
     });
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
