@@ -274,41 +274,6 @@
     }
 
     /* =============================
-       ACHIEVEMENTS TIMELINE
-    ============================= */
-    .timeline { padding-left: 2rem; }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 14px;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(196,181,253,0.2),
-        rgba(196,181,253,0.6),
-        rgba(196,181,253,0.2)
-      );
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding-left: 2.5rem;
-    }
-    .timeline-dot {
-      position: absolute;
-      left: 6px;
-      top: 1.2rem;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #c4b5fd;
-      box-shadow: 0 0 12px rgba(196,181,253,0.8);
-    }
-    @media (max-width: 640px) { .timeline { padding-left: 1.5rem; } }
-
-    /* =============================
        MOBILE NAV FIX
     ============================= */
     #mobileNav {
@@ -338,105 +303,89 @@
 
 <body class="font-grotesk">
 
-  <div class="minecraft-bg"></div>
+<div class="minecraft-bg"></div>
 
-  <!-- =============================
-       NAVBAR
-  ============================== -->
-  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-semibold">
-        Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
-      </div>
+<!-- =============================
+     NAVBAR
+============================== -->
+<nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-semibold">
+      Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+    </div>
 
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="hover:text-purple-400 transition">Home</a>
-        <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
-        <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="hover:text-purple-400 transition">Home</a>
+      <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
+      <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
 
-        <!-- Contact Icons (Desktop Only) -->
-        <div class="flex items-center gap-3">
-          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <div class="md:hidden">
-        <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
+      <div class="flex items-center gap-3">
+        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
       </div>
     </div>
 
-    <!-- Mobile Nav Panel -->
-    <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
-      <a href="index.html">Home</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Research.html">Research</a>
-      <!-- Contact icons removed for mobile -->
+    <div class="md:hidden">
+      <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
     </div>
-  </nav>
-
-  <!-- Explore More Button -->
-  <button id="navToggle"
-    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">
-    Explore
-  </button>
-
-  <div id="navPanel"
-    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
-    <a href="#about">→ About</a>
-    <a href="#achievements">→ Achievements</a>
   </div>
 
-  <!-- New Projects & Research Button at bottom -->
-  <a href="Projects.html" class="fixed bottom-6 left-6 z-[10000] btn-dark px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition">
-    Projects & Research <i data-lucide="arrow-up-right"></i>
-  </a>
+  <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
+    <a href="index.html">Home</a>
+    <a href="Projects.html">Projects</a>
+    <a href="Research.html">Research</a>
+  </div>
+</nav>
 
-  <!-- =============================
-       HERO
-  ============================== -->
-  <section id="hero"
-    class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<!-- =============================
+     HERO SECTION
+============================== -->
+<section id="hero" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative hero-focus">
 
-    <img
-      src="assets/images/PfpImage.jpeg"
-      class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover
-             border-4 border-lavender/50 shadow-lg"
-      alt="Amina Hasanaath"
-    />
+  <img
+    src="assets/images/PfpImage.jpeg"
+    class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-lavender/50 shadow-lg floating"
+    alt="Amina Hasanaath"
+  />
 
-    <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
-        <span id="typed-name">I'm Amina Hasanaath</span>
-      </h1>
+  <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
+    <h1 class="text-4xl md:text-5xl gradient-text mb-2">
+      <span id="typed-name">I'm Amina Hasanaath</span>
+    </h1>
 
-      <p class="mt-6 text-lg hero-quote">
-        For me, <span class="text-lavender">purpose</span>,
-        <span class="text-lavender">clarity</span>, and
-        <span class="text-lavender">programming</span> define life.
-      </p>
+    <p class="mt-6 text-lg hero-quote">
+      For me, <span class="text-lavender">purpose</span>,
+      <span class="text-lavender">clarity</span>, and
+      <span class="text-lavender">programming</span> define life.
+    </p>
 
-      <div class="mt-6 flex gap-4 justify-center md:justify-start">
-        <a href="assets/docs/finalATSResume.pdf" target="_blank"
-           class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
+    <!-- HERO BUTTONS -->
+    <div class="mt-6 flex flex-col sm:flex-row gap-4">
+      <a href="Projects.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">
+        Projects <i data-lucide="folder"></i>
+      </a>
 
-        <a href="https://leetcode.com/u/hasanaath/" target="_blank"
-           class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-               class="w-4 h-4 invert" alt="LeetCode" />
-          LeetCode
-        </a>
-
-        <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">
-          View Website
-        </a>
-      </div>
+      <a href="Research.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">
+        Research <i data-lucide="book-open"></i>
+      </a>
     </div>
-  </section>
+
+    <div class="mt-6 flex gap-4 justify-center md:justify-start">
+      <a href="assets/docs/finalATSResume.pdf" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
+
+      <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-4 h-4 invert" alt="LeetCode" />
+        LeetCode
+      </a>
+
+      <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">
+        View Website
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- About Section -->
   <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
@@ -759,107 +708,88 @@
     </div>
   </footer>
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- =============================
+     SCROLL UI
+============================== -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
+<button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
 
-  <!-- =============================
-       JS (inlined)
-  ============================== -->
-  <script>
-    // Mobile Nav
-    function initMobileNav() {
-      const mobileToggle = document.getElementById("mobileNavToggle");
-      const mobileNav = document.getElementById("mobileNav");
-      if (!mobileToggle || !mobileNav) return;
-      mobileNav.classList.add("hidden");
-      mobileToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        mobileNav.classList.toggle("hidden");
-        document.body.style.overflow =
-          mobileNav.classList.contains("hidden") ? "auto" : "hidden";
-      });
-      document.addEventListener("click", (e) => {
-        if (!mobileNav.classList.contains("hidden") &&
-            !mobileNav.contains(e.target) &&
-            !mobileToggle.contains(e.target)) {
-          mobileNav.classList.add("hidden");
-          document.body.style.overflow = "auto";
-        }
-      });
-    }
-
-    // Explore Panel
-    function initExplorePanel() {
-      const navToggle = document.getElementById("navToggle");
-      const navPanel = document.getElementById("navPanel");
-      if (!navToggle || !navPanel) return;
-      navPanel.classList.add("hidden");
-      navToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        navPanel.classList.toggle("hidden");
-      });
-      document.addEventListener("click", () => {
-        if (!navPanel.classList.contains("hidden")) navPanel.classList.add("hidden");
-      });
-      navPanel.addEventListener("click", (e) => e.stopPropagation());
-    }
-
-    // Scroll Progress
-    function initScrollProgress() {
-      const progress = document.getElementById("scroll-progress");
-      if (!progress) return;
-      window.addEventListener("scroll", () => {
-        const percent = (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        progress.style.width = percent + "%";
-      });
-    }
-
-    // Scroll to Top
-    function initScrollTop() {
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      if (!scrollBtn) return;
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("hidden", window.scrollY < 400);
-      });
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-
-    // Typed.js
-    function initTyped() {
-      const typedEl = document.getElementById("typed-name");
-      if (!typedEl || !window.Typed) return;
-      new Typed("#typed-name", {
-        strings: [
-          "I'm Amina Hasanaath",
-          "Computer Science Engineer",
-          "Clarity-driven Programmer",
-        ],
-        typeSpeed: 70,
-        backSpeed: 40,
-        loop: false,
-      });
-    }
-
-    // AOS
-    function initAOS() { if (window.AOS) AOS.init({ duration: 900, once: true }); }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      initMobileNav();
-      initExplorePanel();
-      initScrollProgress();
-      initScrollTop();
-      initTyped();
-      initAOS();
-      if (window.lucide) lucide.createIcons();
+<!-- =============================
+     JS (inlined)
+============================== -->
+<script>
+  function initMobileNav() {
+    const mobileToggle = document.getElementById("mobileNavToggle");
+    const mobileNav = document.getElementById("mobileNav");
+    if (!mobileToggle || !mobileNav) return;
+    mobileNav.classList.add("hidden");
+    mobileToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileNav.classList.toggle("hidden");
+      document.body.style.overflow =
+        mobileNav.classList.contains("hidden") ? "auto" : "hidden";
     });
-  </script>
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.classList.contains("hidden") &&
+          !mobileNav.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        mobileNav.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+    });
+  }
+
+  function initScrollProgress() {
+    const progress = document.getElementById("scroll-progress");
+    if (!progress) return;
+    window.addEventListener("scroll", () => {
+      const percent = (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      progress.style.width = percent + "%";
+    });
+  }
+
+  function initScrollTop() {
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    if (!scrollBtn) return;
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 400);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  function initTyped() {
+    const typedEl = document.getElementById("typed-name");
+    if (!typedEl || !window.Typed) return;
+    new Typed("#typed-name", {
+      strings: [
+        "I'm Amina Hasanaath",
+        "Computer Science Engineer",
+        "Clarity-driven Programmer",
+      ],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: false,
+    });
+  }
+
+  function initAOS() { if (window.AOS) AOS.init({ duration: 900, once: true }); }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initMobileNav();
+    initScrollProgress();
+    initScrollTop();
+    initTyped();
+    initAOS();
+    if (window.lucide) lucide.createIcons();
+  });
+</script>
 </body>
 </html>
+
+
 
 
 
