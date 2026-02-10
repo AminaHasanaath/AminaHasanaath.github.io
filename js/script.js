@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =============================
+   NAVBAR LOGIC (AFTER INJECT)
+============================= */
+function initNavbar() {
 
-  /* =============================
-     MOBILE NAV
-  ============================= */
+  /* ===== MOBILE NAV ===== */
   const mobileToggle = document.getElementById("mobileNavToggle");
   const mobileNav = document.getElementById("mobileNav");
 
@@ -26,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =============================
-     EXPLORE PANEL
-  ============================= */
+  /* ===== EXPLORE PANEL ===== */
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
 
@@ -46,10 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
+}
 
-  /* =============================
-     SCROLL PROGRESS
-  ============================= */
+/* =============================
+   GLOBAL PAGE UI
+============================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== SCROLL PROGRESS ===== */
   const progress = document.getElementById("scroll-progress");
   if (progress) {
     window.addEventListener("scroll", () => {
@@ -61,9 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =============================
-     SCROLL TO TOP
-  ============================= */
+  /* ===== SCROLL TO TOP ===== */
   const scrollBtn = document.getElementById("scrollTopBtn");
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
@@ -75,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =============================
-     TYPED.JS (SAFE)
-  ============================= */
+  /* ===== TYPED.JS ===== */
   if (window.Typed && document.getElementById("typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -91,11 +90,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =============================
-     AOS
-  ============================= */
-  if (window.AOS) {
-    AOS.init({ duration: 900, once: true });
-  }
-
-});
+  /* ===== AOS ===== *
