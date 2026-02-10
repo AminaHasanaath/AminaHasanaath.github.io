@@ -105,9 +105,8 @@
     }
 
     /* Navbar + Mobile Nav */
-    #navToggle, #mobileNavToggle { display:none; }
-    @media(max-width:640px){ #navToggle,#mobileNavToggle{display:inline-flex;} }
-
+    #navToggle { display:none; }
+    @media(max-width:640px){ #navToggle{display:inline-flex;} }
   </style>
 </head>
 <body class="font-grotesk">
@@ -126,9 +125,10 @@
         Amina Hasanaath | Projects<span class="text-purple-400">.</span>
       </div>
 
+      <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="hover:text-purple-400 transition">Home</a>
-        <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
+        <a href="Projects.html" class="text-purple-400 font-medium transition">Projects</a>
         <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
 
         <div class="flex items-center gap-3">
@@ -139,15 +139,23 @@
         </div>
       </div>
 
+      <!-- Mobile Toggle Button -->
       <div class="md:hidden">
-        <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
+        <button id="navToggle"><i data-lucide="menu"></i></button>
       </div>
     </div>
 
+    <!-- Mobile Nav Menu -->
     <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
       <a href="index.html">Home</a>
-      <a href="Projects.html">Projects</a>
+      <a href="Projects.html" class="text-purple-400 font-medium">Projects</a>
       <a href="Research.html">Research</a>
+      <div class="flex items-center gap-3 pt-4">
+        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+      </div>
     </div>
   </nav>
 
@@ -155,11 +163,8 @@
        PROJECTS SECTION
   ============================== -->
   <section id="Projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto space-y-12">
-    
     <!-- Project Cards -->
-    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
-         data-aos="fade-up">
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300" data-aos="fade-up">
       <div class="md:w-3/4 space-y-4">
         <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">Java Face Detector</h3>
         <p class="text-white/80 text-sm">
@@ -179,14 +184,11 @@
         </div>
       </div>
       <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a href="https://github.com/AminaHasanaath/FaceDetectionSystem" target="_blank"
-           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+        <a href="https://github.com/AminaHasanaath/FaceDetectionSystem" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
       </div>
     </div>
 
-    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
-         data-aos="fade-up">
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300" data-aos="fade-up">
       <div class="md:w-3/4 space-y-4">
         <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">PingMe – AutoNotify</h3>
         <p class="text-white/80 text-sm">
@@ -206,14 +208,11 @@
         </div>
       </div>
       <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project" target="_blank"
-           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+        <a href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
       </div>
     </div>
 
-    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300"
-         data-aos="fade-up">
+    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition-all duration-300" data-aos="fade-up">
       <div class="md:w-3/4 space-y-4">
         <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">🌦️ Weather App</h3>
         <p class="text-white/80 text-sm">
@@ -233,11 +232,9 @@
         </div>
       </div>
       <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a href="https://github.com/AminaHasanaath/WeatherProject" target="_blank"
-           class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
+        <a href="https://github.com/AminaHasanaath/WeatherProject" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Repo →</a>
       </div>
     </div>
-
   </section>
 
   <!-- =============================
@@ -258,15 +255,15 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     // Mobile nav toggle
-    const mobileToggle = document.getElementById("mobileNavToggle");
+    const navToggle = document.getElementById("navToggle");
     const mobileNav = document.getElementById("mobileNav");
-    mobileToggle.addEventListener("click", e => {
+    navToggle.addEventListener("click", e => {
       e.stopPropagation();
       mobileNav.classList.toggle("hidden");
       document.body.style.overflow = mobileNav.classList.contains("hidden") ? "auto" : "hidden";
     });
     document.addEventListener("click", e => {
-      if(!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target!==mobileToggle){
+      if(!mobileNav.classList.contains("hidden") && !mobileNav.contains(e.target) && e.target !== navToggle){
         mobileNav.classList.add("hidden"); document.body.style.overflow="auto";
       }
     });
