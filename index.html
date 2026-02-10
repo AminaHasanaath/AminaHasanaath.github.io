@@ -23,99 +23,116 @@
       },
     };
   </script>
-   <!-- Social media icons -->
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Font Awesome (moved to HEAD – was invalid earlier) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- External CSS (path fixed) -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="font-grotesk">
 
   <div class="minecraft-bg"></div>
-  <!-- Navbar-->
-<nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
 
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="hover:text-purple-400 transition">Home</a>
-      <a href="Project.html" class="hover:text-purple-400 transition">More Projects</a>
+  <!-- =============================
+       NAVBAR
+  ============================== -->
+  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-semibold">
+        Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+      </div>
 
-      <!-- Contact Icons -->
-      <div class="flex items-center gap-3">
-        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-        <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="hover:text-purple-400 transition">Home</a>
+        <a href="Projects.html" class="hover:text-purple-400 transition">More Projects</a>
+
+        <div class="flex items-center gap-3">
+          <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
+          <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
+          <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
+          <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                 class="w-5 h-5 invert" alt="LeetCode" />
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <button id="mobileNavToggle">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
       </div>
     </div>
-    
-   <!-- Mobile Hamburger -->
-<div class="md:hidden flex items-center">
-  <button id="mobileNavToggle" class="text-white focus:outline-none">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
-    </svg>
-  </button>
-</div>
 
+    <!-- Mobile Menu -->
+    <div id="mobileNav"
+         class="hidden bg-black/90 w-full fixed top-0 left-0 flex flex-col p-6 gap-4 pt-24 z-[10000]">
+      <a href="index.html">Home</a>
+      <a href="Projects.html">More Projects</a>
+    </div>
+  </nav>
 
-  <!-- Mobile Menu -->
-<!-- Mobile Menu -->
-<div id="mobileNav" class="hidden bg-black/90 w-full fixed top-0 left-0 flex flex-col items-start p-6 gap-4 pt-24 z-[10000]">
-  <a href="index.html" class="text-white hover:text-accent transition w-full">Home</a>
-  <a href="Project.html" class="text-white hover:text-accent transition w-full">More Projects</a>
+  <!-- =============================
+       HERO
+  ============================== -->
+  <section id="hero"
+    class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
 
-  <div class="flex items-center gap-3 mt-2">
-    <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-    <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-    <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-    <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
-    </a>
-    <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
-  </div>
-</div>
-</nav>
+    <img
+      src="assets/images/PfpImage.jpeg"
+      class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover
+             border-4 border-lavender/50 shadow-lg"
+      alt="Amina Hasanaath"
+    />
 
-  <!-- Hero Section -->
-  
-  <section id="hero" class="pt-32 pb-20 px-6 max-w-6xl mx-auto relative overflow-hidden flex flex-col md:flex-row items-center gap-12 hero-focus">
-   <div class="hero-image-wrapper">
-  <img src="PfpImage.jpeg"
-       class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover
-              border-4 border-lavender/50 shadow-lg"
-  />
-</div>
     <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl gradient-text mb-2"><span id="typed-name"></span></h1>
-      <p class="mt-6 text-lg hero-quote">For me, <span class="text-lavender">purpose</span>, <span class="text-lavender">clarity</span>, and <span class="text-lavender">programming</span> define life.</p>
+      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
+        <span id="typed-name">I'm Amina Hasanaath</span>
+      </h1>
+
+      <p class="mt-6 text-lg hero-quote">
+        For me, <span class="text-lavender">purpose</span>,
+        <span class="text-lavender">clarity</span>, and
+        <span class="text-lavender">programming</span> define life.
+      </p>
+
       <div class="mt-6 flex gap-4 justify-center md:justify-start">
-        <a href="finalATSResume.docx" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
-           <!-- LeetCode Button -->
-        <a
-          href="https://leetcode.com/u/hasanaath/"
-          target="_blank"
-          class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-            alt="LeetCode"
-            class="w-4 h-4 invert"
-          />
+        <a href="assets/docs/finalATSResume.pdf" target="_blank"
+           class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
+
+        <a href="https://leetcode.com/u/hasanaath/" target="_blank"
+           class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+               class="w-4 h-4 invert" alt="LeetCode" />
           LeetCode
         </a>
-        <a href="website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Website</a>
+
+        <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">
+          View Website
+        </a>
       </div>
     </div>
   </section>
@@ -349,7 +366,6 @@
 
 
 <!-- Achievements Section -->
-<!-- Achievements Section -->
 <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto glass-dark rounded-2xl">
   <h2 class="text-3xl font-bold text-white mb-3 text-left">
     Milestones & Contributions So Far
@@ -430,29 +446,43 @@
   </div>
 </section>
 
-
-  <!-- Footer -->
-  <footer id="connect" class="relative py-16 px-6 mt-24 border-t border-white/10">
+  <!-- =============================
+       FOOTER
+  ============================== -->
+  <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
+      <p class="pt-6 text-xs text-white/40">
+        © 2025 Amina Hasanaath — engineered with intent
+      </p>
     </div>
   </footer>
 
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
+  <!-- =============================
+       SCROLL UI (single instance – fixed)
+  ============================== -->
+  <div id="scroll-progress"
+       class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
 
-  <!-- Scroll To Top Button -->
-  <button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition" aria-label="Scroll to top">↑</button>
+  <button id="scrollTopBtn"
+    class="hidden fixed bottom-6 left-6 z-[10000]
+           btn-dark w-12 h-12 rounded-full flex items-center justify-center">
+    ↑
+  </button>
 
   <!-- Explore Button -->
-  <button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">Explore More</button>
+  <button id="navToggle"
+    class="fixed bottom-6 right-6 z-[10000]
+           btn-dark px-6 py-3 rounded-full">
+    Explore More
+  </button>
 
-  <!-- Command Palette Panel -->
-  <div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
-    <a href="Project.html" class="block text-white hover:text-accent transition">→ More Projects</a>
-    <a href="Research.html" class="block text-white hover:text-accent transition">→ Research Work</a>
-    <a href="#about" class="block text-white hover:text-accent transition">→ About</a>
-    <a href="#achievements" class="block text-white hover:text-accent transition">→ Achievements</a>
+  <div id="navPanel"
+    class="hidden fixed bottom-20 right-6 z-[10001]
+           bg-black border border-white rounded-xl p-5 w-48 space-y-4">
+    <a href="Projects.html">→ More Projects</a>
+    <a href="Research.html">→ Research Work</a>
+    <a href="#about">→ About</a>
+    <a href="#achievements">→ Achievements</a>
   </div>
 
   <!-- Typed.js -->
@@ -461,10 +491,17 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <!-- External JS -->
-  <script src="script.js"></script>
+  <!-- External JS (path fixed) -->
+  <script src="js/script.js"></script>
+
+  <script>
+    AOS.init({ once: true });
+    lucide.createIcons();
+  </script>
+
 </body>
 </html>
+
 
 
 
