@@ -236,7 +236,7 @@
 
     /* =============================
        FOOTER & CONTACT DROPDOWN
-    ============================= */
+    ============================== */
     .footer-link { position: relative; color: #e5e5e5; transition: color 0.3s ease; }
     .footer-link::after {
       content: "";
@@ -341,7 +341,7 @@
   <div class="minecraft-bg"></div>
 
   <!-- =============================
-       NAVBAR (inlined)
+       NAVBAR
   ============================== -->
   <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -349,11 +349,13 @@
         Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
       </div>
 
+      <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="hover:text-purple-400 transition">Home</a>
         <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
         <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
 
+        <!-- Contact Icons (Desktop Only) -->
         <div class="flex items-center gap-3">
           <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
           <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
@@ -362,17 +364,37 @@
         </div>
       </div>
 
+      <!-- Mobile Menu Toggle -->
       <div class="md:hidden">
         <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
       </div>
     </div>
 
+    <!-- Mobile Nav Panel -->
     <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
       <a href="index.html">Home</a>
       <a href="Projects.html">Projects</a>
       <a href="Research.html">Research</a>
+      <!-- Contact icons removed for mobile -->
     </div>
   </nav>
+
+  <!-- Explore More Button -->
+  <button id="navToggle"
+    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">
+    Explore
+  </button>
+
+  <div id="navPanel"
+    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
+    <a href="#about">→ About</a>
+    <a href="#achievements">→ Achievements</a>
+  </div>
+
+  <!-- New Projects & Research Button at bottom -->
+  <a href="Projects.html" class="fixed bottom-6 left-6 z-[10000] btn-dark px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition">
+    Projects & Research <i data-lucide="arrow-up-right"></i>
+  </a>
 
   <!-- =============================
        HERO
@@ -737,24 +759,6 @@
     </div>
   </footer>
 
-  <!-- =============================
-       SCROLL UI
-  ============================== -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
-  <button id="navToggle"
-    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">
-    Explore More
-  </button>
-  <div id="navPanel"
-    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
-    <a href="Projects.html">→ More Projects</a>
-    <a href="Research.html">→ Research Work</a>
-    <a href="#about">→ About</a>
-    <a href="#achievements">→ Achievements</a>
-  </div>
-
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <!-- AOS -->
@@ -764,9 +768,7 @@
        JS (inlined)
   ============================== -->
   <script>
-    // =============================
-    // INIT MOBILE NAV FUNCTION
-    // =============================
+    // Mobile Nav
     function initMobileNav() {
       const mobileToggle = document.getElementById("mobileNavToggle");
       const mobileNav = document.getElementById("mobileNav");
@@ -788,9 +790,7 @@
       });
     }
 
-    // =============================
-    // INIT EXPLORE PANEL
-    // =============================
+    // Explore Panel
     function initExplorePanel() {
       const navToggle = document.getElementById("navToggle");
       const navPanel = document.getElementById("navPanel");
@@ -806,9 +806,7 @@
       navPanel.addEventListener("click", (e) => e.stopPropagation());
     }
 
-    // =============================
-    // SCROLL PROGRESS
-    // =============================
+    // Scroll Progress
     function initScrollProgress() {
       const progress = document.getElementById("scroll-progress");
       if (!progress) return;
@@ -819,9 +817,7 @@
       });
     }
 
-    // =============================
-    // SCROLL TO TOP
-    // =============================
+    // Scroll to Top
     function initScrollTop() {
       const scrollBtn = document.getElementById("scrollTopBtn");
       if (!scrollBtn) return;
@@ -833,9 +829,7 @@
       });
     }
 
-    // =============================
-    // INIT TYPED
-    // =============================
+    // Typed.js
     function initTyped() {
       const typedEl = document.getElementById("typed-name");
       if (!typedEl || !window.Typed) return;
@@ -851,14 +845,9 @@
       });
     }
 
-    // =============================
-    // INIT AOS
-    // =============================
+    // AOS
     function initAOS() { if (window.AOS) AOS.init({ duration: 900, once: true }); }
 
-    // =============================
-    // DOM CONTENT LOADED
-    // =============================
     document.addEventListener("DOMContentLoaded", () => {
       initMobileNav();
       initExplorePanel();
@@ -871,22 +860,6 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
