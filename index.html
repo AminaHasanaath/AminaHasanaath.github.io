@@ -208,131 +208,41 @@
     .btn-dark:focus { outline: none; }
 
     /* =============================
-       HERO FOCUS ZONE
-    ============================= */
-    .hero-focus::before {
-      content: "";
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      width: 520px;
-      height: 520px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(196,181,253,0.18), transparent 70%);
-      filter: blur(80px);
-      z-index: -1;
-    }
-    .hero-image-wrapper { position: relative; }
-    .hero-image-wrapper::after {
-      content: "";
-      position: absolute;
-      inset: -10px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(196,181,253,0.35), transparent);
-      opacity: 0.5;
-      filter: blur(18px);
-      z-index: -1;
-    }
-
-    /* =============================
-       FOOTER & CONTACT DROPDOWN
-    ============================= */
-    .footer-link { position: relative; color: #e5e5e5; transition: color 0.3s ease; }
-    .footer-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 1px;
-      background: #c4b5fd;
-      transition: width 0.3s ease;
-    }
-    .footer-link:hover { color: #c4b5fd; }
-    .footer-link:hover::after { width: 100%; }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .contact-item:hover {
-      background: rgba(196, 181, 253, 0.3);
-      color: #c4b5fd;
-      transform: translateY(-2px);
-    }
-    .contact-item svg {
-      width: 20px;
-      height: 20px;
-      stroke-width: 2;
-    }
-
-    /* =============================
-       ACHIEVEMENTS TIMELINE
-    ============================= */
-    .timeline { padding-left: 2rem; }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 14px;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(196,181,253,0.2),
-        rgba(196,181,253,0.6),
-        rgba(196,181,253,0.2)
-      );
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding-left: 2.5rem;
-    }
-    .timeline-dot {
-      position: absolute;
-      left: 6px;
-      top: 1.2rem;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #c4b5fd;
-      box-shadow: 0 0 12px rgba(196,181,253,0.8);
-    }
-    @media (max-width: 640px) { .timeline { padding-left: 1.5rem; } }
-
-    /* =============================
        MOBILE NAV FIX
     ============================= */
-    #mobileNav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 70vw;
-      max-width: 280px;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 2rem;
-      flex-direction: column;
-      gap: 1.5rem;
-      z-index: 10002;
-      overflow-y: auto;
+    @media (max-width: 768px) {
+      #mobileNav {
+        display: flex !important;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70vw;
+        max-width: 280px;
+        height: 100vh;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(8px);
+        padding: 2rem;
+        z-index: 10002;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+      }
+
+      #mobileNav.show {
+        transform: translateX(0);
+      }
+
+      #mobileNav a {
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      #mobileNav a:hover {
+        color: #c4b5fd;
+      }
     }
-    #mobileNav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    #mobileNav a:hover { color: #c4b5fd; }
   </style>
 </head>
 
@@ -349,6 +259,7 @@
         Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
       </div>
 
+      <!-- DESKTOP NAV -->
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="hover:text-purple-400 transition">Home</a>
         <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
@@ -362,12 +273,14 @@
         </div>
       </div>
 
+      <!-- MOBILE TOGGLE -->
       <div class="md:hidden">
         <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
       </div>
     </div>
 
-    <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 p-6 space-y-4">
+    <!-- MOBILE NAV -->
+    <div id="mobileNav" class="hidden md:hidden">
       <a href="index.html">Home</a>
       <a href="Projects.html">Projects</a>
       <a href="Research.html">Research</a>
@@ -771,18 +684,18 @@
       const mobileToggle = document.getElementById("mobileNavToggle");
       const mobileNav = document.getElementById("mobileNav");
       if (!mobileToggle || !mobileNav) return;
-      mobileNav.classList.add("hidden");
+
       mobileToggle.addEventListener("click", (e) => {
         e.stopPropagation();
-        mobileNav.classList.toggle("hidden");
-        document.body.style.overflow =
-          mobileNav.classList.contains("hidden") ? "auto" : "hidden";
+        mobileNav.classList.toggle("show");
+        document.body.style.overflow = mobileNav.classList.contains("show") ? "hidden" : "auto";
       });
+
       document.addEventListener("click", (e) => {
-        if (!mobileNav.classList.contains("hidden") &&
+        if (mobileNav.classList.contains("show") &&
             !mobileNav.contains(e.target) &&
             !mobileToggle.contains(e.target)) {
-          mobileNav.classList.add("hidden");
+          mobileNav.classList.remove("show");
           document.body.style.overflow = "auto";
         }
       });
@@ -871,3 +784,4 @@
   </script>
 </body>
 </html>
+
