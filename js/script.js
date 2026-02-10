@@ -1,7 +1,7 @@
 /* =============================
-   NAVBAR LOGIC (GLOBAL)
+   NAVBAR LOGIC (AFTER INJECT)
 ============================= */
-window.initNavbar = function () {
+function initNavbar() {
 
   /* ===== MOBILE NAV ===== */
   const mobileToggle = document.getElementById("mobileNavToggle");
@@ -45,38 +45,38 @@ window.initNavbar = function () {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
-};
+}
 
 /* =============================
    GLOBAL PAGE UI
 ============================= */
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* SCROLL PROGRESS */
+  /* ===== SCROLL PROGRESS ===== */
   const progress = document.getElementById("scroll-progress");
   if (progress) {
     window.addEventListener("scroll", () => {
-      progress.style.width =
+      const percent =
         (window.scrollY /
-          (document.documentElement.scrollHeight - innerHeight)) *
-          100 +
-        "%";
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+      progress.style.width = percent + "%";
     });
   }
 
-  /* SCROLL TO TOP */
+  /* ===== SCROLL TO TOP ===== */
   const scrollBtn = document.getElementById("scrollTopBtn");
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
       scrollBtn.classList.toggle("hidden", window.scrollY < 400);
     });
 
-    scrollBtn.addEventListener("click", () =>
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    );
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 
-  /* TYPED */
+  /* ===== TYPED.JS ===== */
   if (window.Typed && document.getElementById("typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -90,5 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (window.AOS) AOS.init({ duration: 900, once: true });
+  /* ===== AOS ===== */
+  if (window.AOS) {
+    AOS.init({ duration: 900, once: true });
+  }
+});
+
+/* =============================
+   🔥 RUN NAVBAR AFTER LOAD
+============================= */
+document.addEventListener("componentsLoaded", () => {
+  initNavbar();
 });
