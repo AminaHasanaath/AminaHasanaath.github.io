@@ -24,7 +24,7 @@
     };
   </script>
 
-  <!-- Lucide icons -->
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Google Font -->
@@ -34,260 +34,160 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="font-grotesk">
 
-  <!-- Typed.js safety element -->
+  <!-- Safety element -->
   <span id="typed-name" class="hidden"></span>
 
   <div class="minecraft-bg"></div>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
+  <!-- Navbar injected -->
+  <div id="navbar"></div>
 
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#hero" class="hover:text-purple-400 transition">Home</a>
-      <a href="Research.html" class="hover:text-purple-400 transition">Research Work</a>
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+    <div class="space-y-12">
 
-      <!-- Contact Icons -->
-      <div class="flex items-center gap-3">
-        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-        <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
-      </div>
-    </div>
+      <!-- Project 1 -->
+      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                  transition-all duration-300"
+           data-aos="fade-up">
 
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden flex items-center">
-      <button id="mobileNavToggle" class="text-white focus:outline-none">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-  </div>
+        <div class="md:w-3/4 space-y-4">
+          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+            Java Face Detector
+          </h3>
 
-  <!-- Mobile Menu -->
-  <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full left-0 flex flex-col items-start p-6 gap-4 border-t border-white/10">
-    <a href="#hero" class="text-white hover:text-accent transition w-full">Home</a>
-    <a href="Research.html" class="text-white hover:text-accent transition w-full">Research</a>
+          <p class="text-white/80 text-sm">
+            A mini computer vision project that detects human faces in images and highlights them automatically.
+          </p>
 
-    <div class="flex items-center gap-3 mt-2">
-      <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-      <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-      <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-      <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="contact-item" title="LeetCode">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="w-5 h-5 invert"/>
-      </a>
-      <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
-    </div>
-  </div>
-</nav>
+          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+            <li>Image processing using OpenCV (Java)</li>
+            <li>Face detection via Haar Cascade</li>
+            <li>Bounding box rendering</li>
+            <li>Processed image output</li>
+          </ul>
 
- <!-- Projects Section -->
-<section id="projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-  <div class="space-y-12">
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="tech-pill"><i data-lucide="code"></i> Java</span>
+            <span class="tech-pill"><i data-lucide="cpu"></i> OpenCV</span>
+            <span class="tech-pill"><i data-lucide="scan-face"></i> Haar Cascade</span>
+            <span class="tech-pill"><i data-lucide="monitor"></i> IntelliJ</span>
+          </div>
+        </div>
 
-    <!-- Project Card 1: Java Face Detector -->
-    <div
-      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-             transition-all duration-300"
-      data-aos="fade-up"
-    >
-      <!-- LEFT -->
-      <div class="md:w-3/4 space-y-4">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-          Java Face Detector
-        </h3>
-        <p class="text-white/80 text-sm">
-          A mini computer vision project that detects human faces in images and highlights them automatically.
-        </p>
-        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-          <li>Image reading & processing using OpenCV in Java</li>
-          <li>Face detection via Haar Cascade model</li>
-          <li>Bounding box rendering around detected faces</li>
-          <li>Output image saved with detected regions</li>
-        </ul>
-
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="code"></i> Java
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="cpu"></i> OpenCV
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="scan-face"></i> Haar Cascade
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="monitor"></i> IntelliJ IDEA
-          </span>
+        <div class="md:w-1/4 flex md:justify-end md:items-end">
+          <a href="https://github.com/AminaHasanaath/FaceDetectionSystem"
+             target="_blank"
+             class="btn-dark glow-btn px-6 py-2 rounded-lg">
+            View Repo →
+          </a>
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a
-          href="https://github.com/AminaHasanaath/FaceDetectionSystem"
-          target="_blank"
-          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
-        >
-          View Repo →
-        </a>
-      </div>
-    </div>
+      <!-- Project 2 -->
+      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                  transition-all duration-300"
+           data-aos="fade-up">
 
-    <!-- Project Card 2: PingMe - AutoNotify -->
-    <div
-      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-             transition-all duration-300"
-      data-aos="fade-up"
-    >
-      <!-- LEFT -->
-      <div class="md:w-3/4 space-y-4">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-          PingMe - AutoNotify
-        </h3>
-        <p class="text-white/80 text-sm">
-          Quick-access messaging assistant using Android notification tiles. Send messages via WhatsApp, SMS, or Telegram in under 3 taps.
-        </p>
-        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-          <li>Tap AutoNotify tile in Quick Settings</li>
-          <li>Select message, platform, and contact</li>
-          <li>Message dispatched in &lt;5 seconds</li>
-          <li>Smart UX with local data and optional AI expansion</li>
-        </ul>
+        <div class="md:w-3/4 space-y-4">
+          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+            PingMe – AutoNotify
+          </h3>
 
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="smartphone"></i> Android
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="zap"></i> Kotlin
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="message-square"></i> AutoNotify Tile
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="database"></i> Room DB
-          </span>
+          <p class="text-white/80 text-sm">
+            Android quick-access messaging assistant using notification tiles.
+          </p>
+
+          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+            <li>Quick Settings AutoNotify tile</li>
+            <li>WhatsApp, SMS & Telegram support</li>
+            <li>Ultra-fast dispatch</li>
+            <li>Scalable UX architecture</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="tech-pill"><i data-lucide="smartphone"></i> Android</span>
+            <span class="tech-pill"><i data-lucide="zap"></i> Kotlin</span>
+            <span class="tech-pill"><i data-lucide="message-square"></i> AutoNotify</span>
+            <span class="tech-pill"><i data-lucide="database"></i> Room DB</span>
+          </div>
+        </div>
+
+        <div class="md:w-1/4 flex md:justify-end md:items-end">
+          <a href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project"
+             target="_blank"
+             class="btn-dark glow-btn px-6 py-2 rounded-lg">
+            View Repo →
+          </a>
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a
-          href="https://github.com/AminaHasanaath/PingMe-AutoNotify-_Project"
-          target="_blank"
-          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
-        >
-          View Repo →
-        </a>
-      </div>
-    </div>
+      <!-- Project 3 -->
+      <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
+                  hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
+                  transition-all duration-300"
+           data-aos="fade-up">
 
-    <!-- Project Card 3: Weather App -->
-    <div
-      class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-             hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-             transition-all duration-300"
-      data-aos="fade-up"
-    >
-      <!-- LEFT -->
-      <div class="md:w-3/4 space-y-4">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-          🌦️ Weather App
-        </h3>
-        <p class="text-white/80 text-sm">
-          Full-stack weather application with FastAPI backend, Jinja2 frontend, and OpenWeatherMap API for real-time city weather data.
-        </p>
-        <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
-          <li>Enter any city to get real-time weather</li>
-          <li>Displays temperature, humidity, and conditions</li>
-          <li>Backend in FastAPI & Python</li>
-          <li>Frontend using HTML, Bootstrap & Jinja2 templates</li>
-        </ul>
+        <div class="md:w-3/4 space-y-4">
+          <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
+            🌦️ Weather App
+          </h3>
 
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="server"></i> FastAPI
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="python"></i> Python
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="file-text"></i> Jinja2
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-white/10 text-white border border-white/10">
-            <i data-lucide="cloud-rain"></i> OpenWeatherMap API
-          </span>
+          <p class="text-white/80 text-sm">
+            Full-stack weather app using FastAPI & OpenWeatherMap API.
+          </p>
+
+          <ul class="space-y-1 text-sm text-white/70 list-disc list-inside">
+            <li>Live city-based weather</li>
+            <li>FastAPI backend</li>
+            <li>Jinja2 frontend</li>
+            <li>API-driven architecture</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="tech-pill"><i data-lucide="server"></i> FastAPI</span>
+            <span class="tech-pill"><i data-lucide="python"></i> Python</span>
+            <span class="tech-pill"><i data-lucide="file-text"></i> Jinja2</span>
+            <span class="tech-pill"><i data-lucide="cloud-rain"></i> OpenWeather</span>
+          </div>
+        </div>
+
+        <div class="md:w-1/4 flex md:justify-end md:items-end">
+          <a href="https://github.com/AminaHasanaath/WeatherProject"
+             target="_blank"
+             class="btn-dark glow-btn px-6 py-2 rounded-lg">
+            View Repo →
+          </a>
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a
-          href="https://github.com/AminaHasanaath/WeatherProject"
-          target="_blank"
-          class="btn-dark glow-btn px-6 py-2 rounded-lg inline-flex items-center gap-2"
-        >
-          View Repo →
-        </a>
-      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-  <!-- Footer -->
-  <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
-    </div>
-  </footer>
+  <!-- Footer injected -->
+  <div id="footer"></div>
 
   <!-- Floating UI -->
   <div id="scroll-progress"></div>
   <button id="scrollTopBtn" class="hidden btn-dark w-12 h-12 rounded-full">↑</button>
-  <button id="navToggle" class="btn-dark px-6 py-3 rounded-full">Explore More</button>
-
-  <div id="navPanel" class="hidden bg-black border border-white rounded-xl p-5 w-48 space-y-4 shadow-lg">
-    <a href="Research.html" class="block text-white hover:text-accent">→ Research Work</a>
-    <a href="index.html#about" class="block text-white hover:text-accent">→ About</a>
-    <a href="index.html#achievements" class="block text-white hover:text-accent">→ Achievements</a>
-  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
-  <script>lucide.createIcons();</script>
+
+  <script src="js/components.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    AOS.init({ once: true });
+    lucide.createIcons();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
