@@ -1,7 +1,7 @@
 /* =============================
-   NAVBAR LOGIC (AFTER INJECT)
+   NAVBAR LOGIC (GLOBAL)
 ============================= */
-function initNavbar() {
+window.initNavbar = function () {
 
   /* ===== MOBILE NAV ===== */
   const mobileToggle = document.getElementById("mobileNavToggle");
@@ -45,38 +45,38 @@ function initNavbar() {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
-}
+};
 
 /* =============================
    GLOBAL PAGE UI
 ============================= */
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== SCROLL PROGRESS ===== */
+  /* SCROLL PROGRESS */
   const progress = document.getElementById("scroll-progress");
   if (progress) {
     window.addEventListener("scroll", () => {
-      const percent =
+      progress.style.width =
         (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-      progress.style.width = percent + "%";
+          (document.documentElement.scrollHeight - innerHeight)) *
+          100 +
+        "%";
     });
   }
 
-  /* ===== SCROLL TO TOP ===== */
+  /* SCROLL TO TOP */
   const scrollBtn = document.getElementById("scrollTopBtn");
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
       scrollBtn.classList.toggle("hidden", window.scrollY < 400);
     });
 
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    scrollBtn.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
   }
 
-  /* ===== TYPED.JS ===== */
+  /* TYPED */
   if (window.Typed && document.getElementById("typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -90,4 +90,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== AOS ===== *
+  if (window.AOS) AOS.init({ duration: 900, once: true });
+});
