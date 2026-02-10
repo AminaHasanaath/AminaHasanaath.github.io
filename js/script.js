@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.getElementById("mobileNav");
 
   if (mobileToggle && mobileNav) {
+    // Ensure mobile nav is hidden initially
+    mobileNav.classList.add("hidden");
+
     mobileToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       mobileNav.classList.toggle("hidden");
@@ -33,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navPanel = document.getElementById("navPanel");
 
   if (navToggle && navPanel) {
+    navPanel.classList.add("hidden"); // Ensure hidden initially
+
     navToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       navPanel.classList.toggle("hidden");
@@ -78,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =============================
      TYPED.JS (SAFE)
   ============================= */
-  if (window.Typed && document.getElementById("typed-name")) {
+  const typedEl = document.getElementById("typed-name");
+  if (window.Typed && typedEl) {
     new Typed("#typed-name", {
       strings: [
         "I'm Amina Hasanaath",
@@ -99,4 +105,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
-yeh hai meri current js file
