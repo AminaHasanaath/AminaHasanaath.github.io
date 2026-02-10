@@ -304,9 +304,8 @@ body > *:not(.minecraft-bg) {
   gap: 1.5rem;
   z-index: 10002;
   overflow-y: auto;
-
-  display: none; /* <-- keep hidden by default */
 }
+
 
 #mobileNav a {
   color: #ffffff;
