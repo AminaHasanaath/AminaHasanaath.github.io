@@ -141,59 +141,79 @@
     </div>
   </nav>
 
-  <!-- =============================
-       RESEARCH SECTION
-  ============================== -->
-  <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto space-y-12">
+<!-- =============================
+     RESEARCH SECTION (Updated)
+============================== -->
+<section class="pt-32 pb-20 px-6 max-w-6xl mx-auto relative">
 
-    <!-- Research Card 1 -->
-    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)]
-                transition-all duration-300" data-aos="fade-up">
-      <div class="md:w-3/4 space-y-4">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-          Historical Survey of Computing & AI
-        </h3>
-        <p class="text-white/80 text-sm">
-          A deep research paper covering the evolution of computing systems and artificial intelligence
-          from pre-1950s foundations to modern AI (2025).
-        </p>
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="tech-pill">AI History</span>
-          <span class="tech-pill">Computing</span>
-          <span class="tech-pill">Systems</span>
+  <h2 class="text-3xl font-bold text-white mb-12 tracking-wide text-left" data-aos="fade-up">
+    Research & Publications
+  </h2>
+
+  <div class="space-y-16">
+
+    <!-- Card 1 -->
+    <div class="relative flex flex-col md:flex-row justify-between items-start group" data-aos="fade-up">
+      <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/30 z-10"></div>
+      
+      <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
+        <div class="glass-dark rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
+            📜
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-lavender transition">
+            Historical Survey of Computing & AI
+          </h3>
+          <p class="text-white/80 text-sm mb-3">
+            A deep research paper covering the evolution of computing systems and artificial intelligence
+            from pre-1950s foundations to modern AI (2025).
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">AI History</span>
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">Computing</span>
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">Systems</span>
+          </div>
+          <a href="https://www.researchgate.net/publication/396132556_A_Historical_Survey_of_Computing_and_Artificial_Intelligence_From_Pre-1950s_to_2025" 
+             target="_blank" 
+             class="btn-dark px-6 py-2 rounded-lg">
+             VIEW PAPER →
+          </a>
         </div>
-      </div>
-      <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a href="https://www.researchgate.net/publication/396132556_A_Historical_Survey_of_Computing_and_Artificial_Intelligence_From_Pre-1950s_to_2025" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">
-          VIEW PAPER →
-        </a>
       </div>
     </div>
 
-    <!-- Research Card 2 -->
-    <div class="group glass-dark rounded-2xl p-8 shadow-lg flex flex-col md:flex-row justify-between gap-8
-                hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.6)]
-                transition-all duration-300" data-aos="fade-up">
-      <div class="md:w-3/4 space-y-4">
-        <h3 class="text-xl font-semibold text-white group-hover:text-lavender transition">
-          Cloud Computing Study
-        </h3>
-        <p class="text-white/80 text-sm">
-          A work-in-progress research exploring how cloud computing works.
-        </p>
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="tech-pill">Cloud</span>
-          <span class="tech-pill">Computing</span>
-          <span class="tech-pill">Deployment</span>
+    <!-- Card 2 (Zig-Zag) -->
+    <div class="relative flex flex-col md:flex-row md:flex-row-reverse justify-between items-start group" data-aos="fade-up">
+      <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/30 z-10"></div>
+      
+      <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
+        <div class="glass-dark rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
+            ☁️
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-lavender transition">
+            Cloud Computing Study
+          </h3>
+          <p class="text-white/80 text-sm mb-3">
+            A work-in-progress research exploring how cloud computing works.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">Cloud</span>
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">Computing</span>
+            <span class="px-3 py-1 rounded-full text-xs bg-lavender/20 text-white">Deployment</span>
+          </div>
+          <span class="btn-dark px-6 py-2 rounded-lg cursor-default">IN PROGRESS</span>
         </div>
-      </div>
-      <div class="md:w-1/4 flex md:justify-end md:items-end">
-        <a href="#" class="btn-dark glow-btn px-6 py-2 rounded-lg">IN PROGRESS</a>
       </div>
     </div>
 
-  </section>
+  </div>
+
+  <!-- Timeline Line -->
+  <div class="absolute left-1/2 top-12 bottom-0 w-[2px] bg-lavender/20 -translate-x-1/2 hidden md:block"></div>
+
+</section>
+
 
   <!-- =============================
        FOOTER
