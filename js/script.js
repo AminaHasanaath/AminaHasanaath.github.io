@@ -1,9 +1,8 @@
-/* =============================
-   NAVBAR LOGIC (AFTER INJECT)
-============================= */
-function initNavbar() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== MOBILE NAV ===== */
+  /* =============================
+     MOBILE NAV
+  ============================= */
   const mobileToggle = document.getElementById("mobileNavToggle");
   const mobileNav = document.getElementById("mobileNav");
 
@@ -27,7 +26,9 @@ function initNavbar() {
     });
   }
 
-  /* ===== EXPLORE PANEL ===== */
+  /* =============================
+     EXPLORE PANEL
+  ============================= */
   const navToggle = document.getElementById("navToggle");
   const navPanel = document.getElementById("navPanel");
 
@@ -45,14 +46,10 @@ function initNavbar() {
 
     navPanel.addEventListener("click", (e) => e.stopPropagation());
   }
-}
 
-/* =============================
-   GLOBAL PAGE UI
-============================= */
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ===== SCROLL PROGRESS ===== */
+  /* =============================
+     SCROLL PROGRESS
+  ============================= */
   const progress = document.getElementById("scroll-progress");
   if (progress) {
     window.addEventListener("scroll", () => {
@@ -64,7 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== SCROLL TO TOP ===== */
+  /* =============================
+     SCROLL TO TOP
+  ============================= */
   const scrollBtn = document.getElementById("scrollTopBtn");
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
@@ -76,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== TYPED.JS ===== */
+  /* =============================
+     TYPED.JS (SAFE)
+  ============================= */
   if (window.Typed && document.getElementById("typed-name")) {
     new Typed("#typed-name", {
       strings: [
@@ -90,15 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== AOS ===== */
+  /* =============================
+     AOS
+  ============================= */
   if (window.AOS) {
     AOS.init({ duration: 900, once: true });
   }
-});
 
-/* =============================
-   🔥 RUN NAVBAR AFTER LOAD
-============================= */
-document.addEventListener("componentsLoaded", () => {
-  initNavbar();
 });
+yeh hai meri current js file
