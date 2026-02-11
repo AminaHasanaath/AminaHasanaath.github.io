@@ -73,6 +73,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      gap:8px;
     }
 
     .btn-dark:hover {
@@ -86,14 +87,17 @@
       background: rgba(196,181,253,0.1);
       color:#c4b5fd;
       font-size:0.75rem;
-      padding:0.25rem 0.6rem;
+      padding:0.35rem 0.7rem;
       border-radius:999px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:0.25s ease;
     }
 
-    .gradient-text {
-      background: linear-gradient(180deg,#c4b5fd,#6366f1);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+    .tech-pill:hover {
+      background: rgba(196,181,253,0.2);
+      box-shadow:0 0 12px rgba(196,181,253,0.4);
     }
 
     @media (max-width: 767px) {
@@ -109,7 +113,7 @@
 
 <div class="minecraft-bg"></div>
 
-<!-- ================= NAVBAR (SAME AS INDEX) ================= -->
+<!-- ================= NAVBAR ================= -->
 <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
   <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
 
@@ -120,7 +124,6 @@
     <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
       
       <div class="flex gap-6">
-        <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
         <a href="Website.html" class="hover:text-purple-400 transition">View Website</a>
       </div>
 
@@ -135,22 +138,12 @@
   </div>
 </nav>
 
-<!-- ================= PROJECT HERO ================= -->
-<section class="pt-32 pb-10 px-6 max-w-6xl mx-auto">
-  <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
-    Projects
-  </h1>
-  <p class="text-white/70 max-w-2xl">
-    Systems I’ve built focusing on backend logic, structured thinking,
-    and real-world technical implementation.
-  </p>
-</section>
-
 <!-- ================= PROJECTS SECTION ================= -->
-<section class="pb-24 px-6 max-w-6xl mx-auto space-y-12">
+<section class="pt-36 pb-24 px-6 max-w-6xl mx-auto space-y-12">
 
   <!-- Project Card -->
-  <div class="glass-dark rounded-2xl p-8 flex flex-col md:flex-row justify-between gap-8 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition">
+  <div class="glass-dark rounded-2xl p-8 flex flex-col md:flex-row justify-between gap-8 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition"
+       data-aos="fade-up">
 
     <div class="md:w-3/4 space-y-4">
       <h3 class="text-xl font-semibold text-lavender">
@@ -170,19 +163,43 @@
         <li>Processed image export</li>
       </ul>
 
-      <div class="flex flex-wrap gap-3 pt-2">
-        <span class="tech-pill">Java</span>
-        <span class="tech-pill">OpenCV</span>
-        <span class="tech-pill">Haar Cascade</span>
-        <span class="tech-pill">IntelliJ</span>
+      <!-- Technologies Used -->
+      <div class="pt-4 space-y-3">
+        <h4 class="text-sm font-semibold text-white/80 tracking-wide">
+          Technologies Used
+        </h4>
+
+        <div class="flex flex-wrap gap-3">
+          <div class="tech-pill">
+            <i data-lucide="coffee" class="w-4 h-4"></i>
+            Java
+          </div>
+
+          <div class="tech-pill">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            OpenCV
+          </div>
+
+          <div class="tech-pill">
+            <i data-lucide="scan" class="w-4 h-4"></i>
+            Haar Cascade
+          </div>
+
+          <div class="tech-pill">
+            <i data-lucide="code" class="w-4 h-4"></i>
+            IntelliJ IDEA
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div class="md:w-1/4 flex md:justify-end md:items-end">
       <a href="https://github.com/AminaHasanaath/FaceDetectProject"
          target="_blank"
          class="btn-dark px-6 py-2 rounded-lg">
-        View Repo →
+        <i data-lucide="github" class="w-4 h-4"></i>
+        View Repo
       </a>
     </div>
 
@@ -190,7 +207,7 @@
 
 </section>
 
-<!-- ================= FOOTER (SAME AS INDEX) ================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="py-16 px-6 border-t border-white/10 text-center text-xs text-white/40">
   © 2025 Amina Hasanaath — engineered with intent
 </footer>
