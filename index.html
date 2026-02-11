@@ -128,7 +128,9 @@
 
     <!-- MOBILE TOGGLE -->
     <div class="md:hidden">
-      <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
+    <button id="mobileNavToggle" type="button">
+  <i data-lucide="menu"></i>
+</button>
     </div>
   </div>
 </nav>
@@ -341,13 +343,6 @@
         Processes images, detects faces via Haar Cascade model,
         and renders bounding boxes on detected regions.
       </p>
-
- <!-- Font Awesome CDN -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
 <div class="flex flex-wrap gap-2 pt-1">
   <!-- Java icon -->
   <span class="px-3 py-1 text-xs rounded-full btn-dark" title="Java">
@@ -495,19 +490,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("mobileNavOverlay");
 
   if (toggle && overlay) {
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
+toggle.addEventListener("click", (e) => {
+  e.preventDefault();   // prevents page redirect
+  e.stopPropagation();  // prevents bubbling issues
 
-      // position overlay below button
-      const rect = toggle.getBoundingClientRect();
-      overlay.style.top = rect.bottom + 8 + "px";
-      overlay.style.right = window.innerWidth - rect.right + "px";
+  const rect = toggle.getBoundingClientRect();
+  overlay.style.top = rect.bottom + 8 + "px";
+  overlay.style.right = window.innerWidth - rect.right + "px";
 
-      overlay.classList.toggle("show");
-      document.body.style.overflow = overlay.classList.contains("show") ? "hidden" : "auto";
+  overlay.classList.toggle("show");
 
-      if (window.lucide) lucide.createIcons();
-    });
+  document.body.style.overflow =
+    overlay.classList.contains("show") ? "hidden" : "auto";
+
+  if (window.lucide) lucide.createIcons();
+});
+
 
     overlay.addEventListener("click", (e) => e.stopPropagation());
 
@@ -552,6 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
