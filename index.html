@@ -25,7 +25,7 @@
   </script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
 
   <!-- Font Awesome -->
   <link
@@ -43,98 +43,43 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: "Space Grotesk", sans-serif;
-      scroll-behavior: smooth;
-      background: transparent;
-      color: #ffffff;
-    }
-    body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
-
-    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 8px; }
-
-    .gradient-text {
-      background: linear-gradient(180deg, #c4b5fd, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .nav-link:hover { text-decoration: underline; text-decoration-color: #c4b5fd; text-underline-offset: 4px; }
-
-    @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px);} }
-    .floating { animation: float 3s ease-in-out infinite; }
-
-    .minecraft-bg {
-      position: fixed; inset:0; z-index:0; pointer-events:none; background:#000;
-    }
-    .minecraft-bg::before {
-      content:""; position:absolute; inset:0;
-      background: rgba(255,255,255,0.03);
-      box-shadow: inset 0 0 120px rgba(255,255,255,0.04),
-                  inset 0 0 300px rgba(255,255,255,0.02);
-      pointer-events:none;
-    }
-
-    #scroll-progress { position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999; }
-
-    #scrollTopBtn { position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000; }
-
-    #navToggle, #mobileNavToggle { display:none; }
-
+    /* ===== BASE ===== */
+    html, body { margin:0; padding:0; font-family:"Space Grotesk",sans-serif; scroll-behavior:smooth; background:#000; color:#fff; }
+    body>*:not(.minecraft-bg){position:relative; z-index:1;}
+    ::-webkit-scrollbar-thumb{background:#6366f1;border-radius:8px;}
+    .gradient-text{background:linear-gradient(180deg,#c4b5fd,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-link:hover{text-decoration:underline;text-underline-offset:4px;}
+    @keyframes float{0%,100%{transform:translateY(0px);}50%{transform:translateY(-6px);}}
+    .floating{animation:float 3s ease-in-out infinite;}
+    .minecraft-bg{position:fixed; inset:0; z-index:0; pointer-events:none; background:#000;}
+    .minecraft-bg::before{content:""; position:absolute; inset:0; background:rgba(255,255,255,0.03); box-shadow: inset 0 0 120px rgba(255,255,255,0.04), inset 0 0 300px rgba(255,255,255,0.02);}
+    #scroll-progress{position:fixed; top:0; left:0; height:3px; width:0%; background-color:#fff; z-index:9999;}
+    #scrollTopBtn{position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000; display:flex; align-items:center; justify-content:center;}
+    #navToggle,#mobileNavToggle{display:none;}
     @media (max-width:640px){
-      #scrollTopBtn { bottom:16vw; left:4vw; }
-      #navToggle, #mobileNavToggle { display:inline-flex; position:fixed; z-index:10000; }
-      #navToggle { bottom:16vw; right:4vw; min-width:140px; }
-      #mobileNavToggle { top:4vw; right:4vw; width:48px; height:48px; }
+      #scrollTopBtn{bottom:16vw; left:4vw;}
+      #navToggle,#mobileNavToggle{display:inline-flex; position:fixed; z-index:10000;}
+      #navToggle{bottom:16vw; right:4vw; min-width:140px;}
+      #mobileNavToggle{top:4vw; right:4vw; width:48px; height:48px;}
+      #navPanel{bottom:24vw; right:4vw;}
     }
-
-    .btn-dark {
-      background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;
-    }
-    .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
-    .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
+    .btn-dark{background:rgba(0,0,0,0.45);color:#fff;border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all 0.25s ease;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1.2;}
+    .btn-dark:hover{background:rgba(0,0,0,0.7);border-color:#c4b5fd;box-shadow:0 0 18px rgba(196,181,253,0.45);transform:translateY(-1px);}
+    .btn-dark:active{box-shadow:0 0 10px rgba(196,181,253,0.4),0 0 30px rgba(196,181,253,0.6);transform:scale(0.96);}
     .btn-dark:focus{outline:none;}
-
-    /* MOBILE NAV OVERLAY TOP-RIGHT */
-    #mobileNavOverlay {
-      position: fixed; top:0; right:0; z-index:50; background:black/95; backdrop-blur-md;
-      display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start; gap:6;
-      padding: 1rem; border-radius:0 0 0.75rem 0.75rem;
-      transform: translateY(-100%); opacity:0; transition: transform 0.4s ease, opacity 0.4s ease;
-      max-width: 220px;
-    }
-    #mobileNavOverlay.show { transform: translateY(0); opacity:1; }
-    #mobileNavOverlay a { opacity:0; transform: translateY(-20px); font-size:1rem; transition: all 0.4s ease; text-align:right; }
-    #mobileNavOverlay.show a { opacity:1; transform: translateY(0); transition-delay:0.1s; }
-
-    #mobileNavClose { font-size:2rem; color:white; cursor:pointer; align-self:flex-end; margin-bottom:0.5rem; }
-
-    @media (min-width:768px){
-      #achievements .space-y-12 > div:nth-child(even) { flex-direction: row-reverse; }
-      #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12 { text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start; }
-      #achievements .space-y-12 > div:nth-child(4) .md\:w-5\/12 { text-align:right; padding-right:1.5rem; padding-left:0; justify-content:flex-end; }
-    }
-
-    /* Hide timeline line on mobile */
-    @media (max-width: 767px) {
-      #achievements .absolute.left-1\/2.border-l {
-        display: none;
-      }
-      #achievements .space-y-12 > div {
-        flex-direction: column !important;
-      }
-      #achievements .space-y-12 > div .md\:w-5\/12 {
-        width: 100% !important;
-        text-align: left !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        justify-content: flex-start !important;
-      }
-    }
-
+    .hero-focus::before{content:""; position:absolute; top:20%; left:50%; width:520px; height:520px; transform:translateX(-50%); background:radial-gradient(circle,rgba(196,181,253,0.18),transparent 70%); filter:blur(80px); z-index:-1;}
+    .hero-image-wrapper{position:relative;}
+    .hero-image-wrapper::after{content:""; position:absolute; inset:-10px; border-radius:18px; background:linear-gradient(135deg,rgba(196,181,253,0.35),transparent); opacity:0.5; filter:blur(18px); z-index:-1;}
+    .footer-link{position:relative; color:#e5e5e5; transition:color 0.3s ease;}
+    .footer-link::after{content:""; position:absolute; left:0; bottom:-4px; width:0%; height:1px; background:#c4b5fd; transition:width 0.3s ease;}
+    .footer-link:hover{color:#c4b5fd;}
+    .footer-link:hover::after{width:100%;}
+    .contact-item{display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.08); transition:all 0.2s ease; cursor:pointer;}
+    .contact-item:hover{background:rgba(196,181,253,0.3); color:#c4b5fd; transform:translateY(-2px);}
+    .contact-item svg{width:20px; height:20px; stroke-width:2;}
+    #mobileNav{position:fixed; top:0; right:0; width:70vw; max-width:280px; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); padding:2rem; flex-direction:column; gap:1.5rem; z-index:10002; overflow-y:auto;}
+    #mobileNav a{color:#fff; text-decoration:none; font-weight:500;}
+    #mobileNav a:hover{color:#c4b5fd;}
   </style>
 </head>
 <body class="font-grotesk">
@@ -144,13 +89,25 @@
 <!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
+    <div class="text-xl font-semibold">
+      Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+    </div>
 
-    <!-- DESKTOP NAV -->
+    <!-- Desktop Nav -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="hover:text-purple-400 transition">Home</a>
-      <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
-      <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
+      <a href="index.html" class="hover:text-purple-400 transition flex items-center gap-1">
+        <i data-lucide="home"></i> Home
+      </a>
+      <a href="Projects.html" class="hover:text-purple-400 transition flex items-center gap-1">
+        <i data-lucide="folder"></i> Projects
+      </a>
+      <a href="Research.html" class="hover:text-purple-400 transition flex items-center gap-1">
+        <i data-lucide="book-open"></i> Research
+      </a>
+      <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="hover:text-purple-400 transition flex items-center gap-1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-5 h-5 invert" alt="LeetCode" /> LeetCode
+      </a>
+
       <div class="flex items-center gap-3">
         <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
         <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
@@ -159,69 +116,45 @@
       </div>
     </div>
 
-    <!-- MOBILE TOGGLE -->
+    <!-- Mobile Hamburger -->
     <div class="md:hidden">
       <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
     </div>
   </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobileNav" class="hidden md:hidden bg-black/90 w-full absolute top-full right-0 p-6 flex flex-col gap-4">
+    <a href="index.html" class="flex items-center gap-2"><i data-lucide="home"></i> Home</a>
+    <a href="Projects.html" class="flex items-center gap-2"><i data-lucide="folder"></i> Projects</a>
+    <a href="Research.html" class="flex items-center gap-2"><i data-lucide="book-open"></i> Research</a>
+    <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="flex items-center gap-2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-5 h-5 invert" alt="LeetCode" /> LeetCode
+    </a>
+  </div>
 </nav>
 
-<!-- MOBILE NAV OVERLAY -->
-<div id="mobileNavOverlay">
-  <button id="mobileNavClose">&times;</button>
-  <a href="index.html">Home</a>
-  <a href="Projects.html">Projects</a>
-  <a href="Research.html">Research</a>
-  <div class="flex gap-4 mt-4">
-    <a href="tel:+919391201739" class="text-white text-xl"><i data-lucide="phone"></i></a>
-    <a href="mailto:amina.hasanaath@gmail.com" class="text-white text-xl"><i data-lucide="mail"></i></a>
-    <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white text-xl"><i data-lucide="github"></i></a>
-    <a href="https://linkedin.com" target="_blank" class="text-white text-xl"><i data-lucide="linkedin"></i></a>
-  </div>
-</div>
-
-<!-- HERO, About, Tech Stack, LeetCode, Projects, Achievements sections unchanged, use your previous code -->
-  <!-- =============================
-       HERO
-  ============================== -->
-  <section id="hero"
-    class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-
-    <img
-      src="assets/images/PfpImage.jpeg"
-      class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover
-             border-4 border-lavender/50 shadow-lg"
-      alt="Amina Hasanaath"
-    />
-
-    <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl gradient-text mb-2">
-        <span id="typed-name">I'm Amina Hasanaath</span>
-      </h1>
-
-      <p class="mt-6 text-lg hero-quote">
-        For me, <span class="text-lavender">purpose</span>,
-        <span class="text-lavender">clarity</span>, and
-        <span class="text-lavender">programming</span> define life.
-      </p>
-
-      <div class="mt-6 flex gap-4 justify-center md:justify-start">
-        <a href="assets/docs/finalATSResume.pdf" target="_blank"
-           class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
-
-        <a href="https://leetcode.com/u/hasanaath/" target="_blank"
-           class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-               class="w-4 h-4 invert" alt="LeetCode" />
-          LeetCode
-        </a>
-
-        <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">
-          View Website
-        </a>
-      </div>
+<!-- HERO SECTION -->
+<section id="hero" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative hero-focus">
+  <img src="assets/images/PfpImage.jpeg" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-lavender/50 shadow-lg floating" alt="Amina Hasanaath"/>
+  <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
+    <h1 class="text-4xl md:text-5xl gradient-text mb-2"><span id="typed-name">I'm Amina Hasanaath</span></h1>
+    <p class="mt-6 text-lg hero-quote">
+      For me, <span class="text-lavender">purpose</span>, <span class="text-lavender">clarity</span>, and <span class="text-lavender">programming</span> define life.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-4">
+      <a href="Projects.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">Projects <i data-lucide="folder"></i></a>
+      <a href="Research.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">Research <i data-lucide="book-open"></i></a>
     </div>
-  </section>
+    <div class="mt-6 flex gap-4 justify-center md:justify-start">
+      <a href="assets/docs/finalATSResume.pdf" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
+      <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-4 h-4 invert" alt="LeetCode" /> LeetCode
+      </a>
+      <a href="Website.html" class="btn-dark glow-btn px-6 py-2 rounded-lg">View Website</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- About Section -->
   <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
@@ -538,7 +471,7 @@
 
 
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
   <div class="max-w-4xl mx-auto text-center">
     <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
@@ -560,98 +493,54 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <!-- AOS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- JS -->
 <script>
-  function initMobileNavOverlay() {
-    const toggle = document.getElementById("mobileNavToggle");
-    const overlay = document.getElementById("mobileNavOverlay");
-    const closeBtn = document.getElementById("mobileNavClose");
-    if (!toggle || !overlay || !closeBtn) return;
-
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      overlay.classList.add("show");
-      document.body.style.overflow = "hidden";
-      if (window.lucide) lucide.createIcons();
-    });
-
-    closeBtn.addEventListener("click", () => {
-      overlay.classList.remove("show");
-      document.body.style.overflow = "auto";
-    });
-
-    document.addEventListener("click", (e) => {
-      if (overlay.classList.contains("show") && !overlay.contains(e.target) && e.target !== toggle) {
-        overlay.classList.remove("show");
-        document.body.style.overflow = "auto";
-      }
-    });
-
-    overlay.addEventListener("click", (e) => e.stopPropagation());
-  }
-
-  function initExplorePanel() {
-    const navToggle = document.getElementById("navToggle");
-    const navPanel = document.getElementById("navPanel");
-    if (!navToggle || !navPanel) return;
-    navPanel.classList.add("hidden");
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navPanel.classList.toggle("hidden");
-    });
-    document.addEventListener("click", () => {
-      if (!navPanel.classList.contains("hidden")) navPanel.classList.add("hidden");
-    });
-    navPanel.addEventListener("click", (e) => e.stopPropagation());
-  }
-
-  function initScrollProgress() {
-    const progress = document.getElementById("scroll-progress");
-    if (!progress) return;
-    window.addEventListener("scroll", () => {
-      const percent = (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      progress.style.width = percent + "%";
-    });
-  }
-
-  function initScrollTop() {
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    if (!scrollBtn) return;
-    window.addEventListener("scroll", () => {
-      scrollBtn.classList.toggle("hidden", window.scrollY < 400);
-    });
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  function initTyped() {
-    const typedEl = document.getElementById("typed-name");
-    if (!typedEl || !window.Typed) return;
-    new Typed("#typed-name", {
-      strings: [
-        "I'm Amina Hasanaath",
-        "Computer Science Engineer",
-        "Clarity-driven Programmer",
-      ],
-      typeSpeed: 70,
-      backSpeed: 35,
-      backDelay: 1000,
-      loop: true,
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initMobileNavOverlay();
-    initExplorePanel();
-    initScrollProgress();
-    initScrollTop();
-    initTyped();
-    AOS.init({ duration: 900, once: true });
-    if (window.lucide) lucide.createIcons();
+function initMobileNav(){
+  const toggle=document.getElementById("mobileNavToggle");
+  const nav=document.getElementById("mobileNav");
+  if(!toggle||!nav) return;
+  nav.classList.add("hidden");
+  toggle.addEventListener("click",e=>{
+    e.stopPropagation();
+    nav.classList.toggle("hidden");
+    document.body.style.overflow=nav.classList.contains("hidden")?"auto":"hidden";
   });
+  document.addEventListener("click",e=>{
+    if(!nav.classList.contains("hidden")&&!nav.contains(e.target)&&!toggle.contains(e.target)){
+      nav.classList.add("hidden");
+      document.body.style.overflow="auto";
+    }
+  });
+}
+
+function initScrollProgress(){
+  const p=document.getElementById("scroll-progress");
+  if(!p) return;
+  window.addEventListener("scroll",()=>{p.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";});
+}
+
+function initScrollTop(){
+  const btn=document.getElementById("scrollTopBtn");
+  if(!btn) return;
+  window.addEventListener("scroll",()=>{btn.classList.toggle("hidden",window.scrollY<400);});
+  btn.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+}
+
+function initTyped(){
+  if(!window.Typed) return;
+  new Typed("#typed-name",{strings:["I'm Amina Hasanaath","Computer Science Engineer","Clarity-driven Programmer"],typeSpeed:70,backSpeed:40,loop:false});
+}
+
+function initAOS(){if(window.AOS) AOS.init({duration:900,once:true});}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  initMobileNav();initScrollProgress();initScrollTop();initTyped();initAOS();
+  if(window.lucide) lucide.createIcons();
+});
 </script>
 </body>
 </html>
+
 
 
