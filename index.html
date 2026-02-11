@@ -42,7 +42,7 @@
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<style>
+  <style>
   /* =============================
      BASE
   ============================= */
@@ -54,227 +54,103 @@
     background: transparent;
     color: #ffffff;
   }
+  body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
 
-  body > *:not(.minecraft-bg) {
-    position: relative;
-    z-index: 1;
-  }
+  /* SCROLLBAR */
+  ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 8px; }
 
-  /* =============================
-     SCROLLBAR
-  ============================= */
-  ::-webkit-scrollbar-thumb {
-    background: #6366f1;
-    border-radius: 8px;
-  }
-
-  /* =============================
-     TEXT
-  ============================= */
+  /* TEXT */
   .gradient-text {
     background: linear-gradient(180deg, #c4b5fd, #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
   .nav-link:hover {
     text-decoration: underline;
     text-decoration-color: #c4b5fd;
     text-underline-offset: 4px;
   }
 
-  /* =============================
-     ANIMATIONS
-  ============================= */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-  }
-  .floating {
-    animation: float 3s ease-in-out infinite;
-  }
+  /* ANIMATIONS */
+  @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px);} }
+  .floating { animation: float 3s ease-in-out infinite; }
 
-  /* =============================
-     BACKGROUND
-  ============================= */
+  /* BACKGROUND */
   .minecraft-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: #000000;
+    position: fixed; inset:0; z-index:0; pointer-events:none; background:#000;
   }
-
   .minecraft-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+    content:""; position:absolute; inset:0;
     background: rgba(255,255,255,0.03);
-    box-shadow:
-      inset 0 0 120px rgba(255,255,255,0.04),
-      inset 0 0 300px rgba(255,255,255,0.02);
-    pointer-events: none;
+    box-shadow: inset 0 0 120px rgba(255,255,255,0.04),
+                inset 0 0 300px rgba(255,255,255,0.02);
+    pointer-events:none;
   }
 
-  /* =============================
-     SCROLL PROGRESS BAR
-  ============================= */
-  #scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    background-color: #c4b5fd;
-    z-index: 9999;
+  /* SCROLL PROGRESS BAR */
+  #scroll-progress { position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999; }
+
+  /* FIXED BUTTONS */
+  #scrollTopBtn { position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000; }
+
+  /* NAV TOGGLES */
+  #navToggle { display:none; }
+  #mobileNavToggle { display:none; }
+
+  @media (max-width:640px){
+    #scrollTopBtn { bottom:16vw; left:4vw; }
+    #navToggle, #mobileNavToggle { display:inline-flex; position:fixed; z-index:10000; }
+    #navToggle { bottom:16vw; right:4vw; min-width:140px; }
+    #mobileNavToggle { top:4vw; right:4vw; width:48px; height:48px; }
   }
 
-  /* =============================
-     FIXED BUTTONS
-  ============================= */
-  #scrollTopBtn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 48px;
-    height: 48px;
-    z-index: 10000;
-  }
-
-  /* =============================
-     NAV TOGGLES VISIBILITY
-  ============================= */
-  #navToggle,
-  #mobileNavToggle {
-    display: none;
-  }
-
-  @media (max-width: 640px) {
-    #scrollTopBtn { bottom: 16vw; left: 4vw; }
-
-    #navToggle,
-    #mobileNavToggle {
-      display: inline-flex;
-      position: fixed;
-      z-index: 10000;
-    }
-
-    #navToggle {
-      bottom: 16vw;
-      right: 4vw;
-      min-width: 140px;
-    }
-
-    #mobileNavToggle {
-      top: 4vw;
-      right: 4vw;
-      width: 48px;
-      height: 48px;
-    }
-
-    #navPanel { bottom: 24vw; right: 4vw; }
-  }
-
-  /* =============================
-     GLOBAL BUTTON STYLE
-  ============================= */
+  /* GLOBAL BUTTON STYLE */
   .btn-dark {
-    background: rgba(0,0,0,0.45);
-    color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.25s ease;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.2;
+    background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;
   }
-  .btn-dark:hover {
-    background: rgba(0,0,0,0.7);
-    border-color: #c4b5fd;
-    box-shadow: 0 0 18px rgba(196,181,253,0.45);
-    transform: translateY(-1px);
-  }
-  .btn-dark:active {
-    box-shadow: 0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6);
-    transform: scale(0.96);
-  }
-  .btn-dark:focus { outline: none; }
+  .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
+  .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
+  .btn-dark:focus{outline:none;}
 
-  /* =============================
-     MOBILE NAV REFINED
-  ============================= */
-  #mobileNav {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 70vw;
-    max-width: 280px;
-    height: 100vh;
-    background: rgba(0,0,0,0.95);
-    backdrop-filter: blur(8px);
-    padding: 2rem;
-    z-index: 10002;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    overflow-y: auto;
+  /* MOBILE NAV OVERLAY */
+  #mobileNavOverlay {
+    position: fixed; inset:0; z-index:50; background:black/95; backdrop-blur-md;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10;
+    transform: translateY(-100%); opacity:0; transition: transform 0.4s ease, opacity 0.4s ease;
   }
-  #mobileNav.show { transform: translateX(0); }
+  #mobileNavOverlay.show { transform: translateY(0); opacity:1; }
+  #mobileNavOverlay a { opacity:0; transform: translateY(-20px); font-size:1.5rem; transition: all 0.4s ease; }
+  #mobileNavOverlay.show a { opacity:1; transform: translateY(0); transition-delay:0.1s; }
 
-  #mobileNav a {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  #mobileNav a:hover { color: #c4b5fd; }
+  /* Close Button */
+  #mobileNavClose { position:absolute; top:2rem; right:2rem; font-size:2.5rem; color:white; cursor:pointer; }
 
-  #mobileNav .mobile-contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(196,181,253,0.1);
-    transition: all 0.3s ease;
-  }
-  #mobileNav .mobile-contact:hover {
-    background: rgba(196,181,253,0.25);
-    box-shadow: 0 0 12px rgba(196,181,253,0.6), 0 0 20px rgba(196,181,253,0.4);
-    transform: translateY(-2px);
-  }
-  #mobileNav .mobile-contact i {
-    stroke: #c4b5fd;
-    stroke-width: 1.5;
+  /* ACHIEVEMENTS 4th CARD LEFT FIX */
+  @media (min-width:768px){
+    #achievements .space-y-12 > div:nth-child(even) { flex-direction: row-reverse; }
+    #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12 { text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start; }
+    #achievements .space-y-12 > div:nth-child(4) { flex-direction: row !important; }
+    #achievements .space-y-12 > div:nth-child(4) .md\:w-5\/12 { text-align:right; padding-right:1.5rem; padding-left:0; justify-content:flex-end; }
   }
 
-</style>
+  </style>
 </head>
 <body class="font-grotesk">
 
 <div class="minecraft-bg"></div>
 
-<!-- =============================
-     NAVBAR
-============================== -->
+<!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-semibold">
-      Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
-    </div>
+    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
 
     <!-- DESKTOP NAV -->
     <div class="hidden md:flex items-center gap-8">
       <a href="index.html" class="hover:text-purple-400 transition">Home</a>
       <a href="Projects.html" class="hover:text-purple-400 transition">Projects</a>
       <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
-
       <div class="flex items-center gap-3">
         <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
         <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
@@ -288,21 +164,22 @@
       <button id="mobileNavToggle"><i data-lucide="menu"></i></button>
     </div>
   </div>
-
-  <!-- MOBILE NAV -->
-  <div id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="Projects.html">Projects</a>
-    <a href="Research.html">Research</a>
-    <div class="border-t border-white/20 my-4"></div>
-    <div class="flex justify-around items-center mt-2">
-      <a href="tel:+919391201739" class="mobile-contact"><i data-lucide="phone"></i></a>
-      <a href="mailto:amina.hasanaath@gmail.com" class="mobile-contact"><i data-lucide="mail"></i></a>
-      <a href="https://github.com/AminaHasanaath" target="_blank" class="mobile-contact"><i data-lucide="github"></i></a>
-      <a href="https://linkedin.com" target="_blank" class="mobile-contact"><i data-lucide="linkedin"></i></a>
-    </div>
-  </div>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div id="mobileNavOverlay">
+  <button id="mobileNavClose">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Research.html">Research</a>
+  <div class="flex gap-6 mt-6">
+    <a href="tel:+919391201739" class="text-white text-2xl"><i data-lucide="phone"></i></a>
+    <a href="mailto:amina.hasanaath@gmail.com" class="text-white text-2xl"><i data-lucide="mail"></i></a>
+    <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white text-2xl"><i data-lucide="github"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="text-white text-2xl"><i data-lucide="linkedin"></i></a>
+  </div>
+</div>
+
   <!-- =============================
        HERO
   ============================== -->
@@ -686,80 +563,60 @@
 
 
 
-
-  <!-- =============================
-       FOOTER (inlined)
-  ============================== -->
-  <footer class="relative py-16 px-6 mt-24 border-t border-white/10">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="pt-6 text-xs text-white/40">
-        © 2025 Amina Hasanaath — engineered with intent
-      </p>
-    </div>
-  </footer>
-
-  <!-- =============================
-       SCROLL UI
-  ============================== -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
-  <button id="navToggle"
-    class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">
-    Explore More
-  </button>
-  <div id="navPanel"
-    class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
-    <a href="Projects.html">→ More Projects</a>
-    <a href="Research.html">→ Research Work</a>
-    <a href="#about">→ About</a>
-    <a href="#achievements">→ Achievements</a>
+<!-- FOOTER -->
+<footer class="relative py-16 px-6 mt-24 border-t border-white/10">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
   </div>
+</footer>
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- SCROLL UI -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
+<button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
+<button id="navToggle" class="fixed bottom-6 right-6 z-[10000] btn-dark px-6 py-3 rounded-full">Explore More</button>
+<div id="navPanel" class="hidden fixed bottom-20 right-6 z-[10001] bg-black border border-white rounded-xl p-5 w-48 space-y-4">
+  <a href="Projects.html">→ More Projects</a>
+  <a href="Research.html">→ Research Work</a>
+  <a href="#about">→ About</a>
+  <a href="#achievements">→ Achievements</a>
+</div>
 
-  <!-- =============================
-       JS (inlined)
-  ============================== -->
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
   // =============================
-  // INIT MOBILE NAV FUNCTION
+  // NEW MOBILE NAV OVERLAY
   // =============================
-  function initMobileNav() {
-    const mobileToggle = document.getElementById("mobileNavToggle");
-    const mobileNav = document.getElementById("mobileNav");
-    if (!mobileToggle || !mobileNav) return;
+  function initMobileNavOverlay() {
+    const toggle = document.getElementById("mobileNavToggle");
+    const overlay = document.getElementById("mobileNavOverlay");
+    const closeBtn = document.getElementById("mobileNavClose");
+    if (!toggle || !overlay || !closeBtn) return;
 
-    mobileToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      mobileNav.classList.toggle("show");
-      document.body.style.overflow = mobileNav.classList.contains("show") ? "hidden" : "auto";
-
-      // Toggle menu icon
-      mobileToggle.innerHTML = mobileNav.classList.contains("show")
-        ? '<i data-lucide="x"></i>'
-        : '<i data-lucide="menu"></i>';
+    toggle.addEventListener("click", () => {
+      overlay.classList.add("show");
+      document.body.style.overflow = "hidden";
       if (window.lucide) lucide.createIcons();
     });
 
-    // Click outside to close
-    document.addEventListener("click", (e) => {
-      if (mobileNav.classList.contains("show") &&
-          !mobileNav.contains(e.target) &&
-          !mobileToggle.contains(e.target)) {
-        mobileNav.classList.remove("show");
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("show");
+      document.body.style.overflow = "auto";
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove("show");
         document.body.style.overflow = "auto";
-        mobileToggle.innerHTML = '<i data-lucide="menu"></i>';
-        if (window.lucide) lucide.createIcons();
       }
     });
   }
 
   // =============================
-  // INIT OTHER FUNCTIONS (unchanged)
+  // OTHER FUNCTIONS
   // =============================
   function initExplorePanel() {
     const navToggle = document.getElementById("navToggle");
@@ -818,7 +675,7 @@
   // DOM CONTENT LOADED
   // =============================
   document.addEventListener("DOMContentLoaded", () => {
-    initMobileNav();
+    initMobileNavOverlay();
     initExplorePanel();
     initScrollProgress();
     initScrollTop();
