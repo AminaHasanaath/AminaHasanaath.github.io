@@ -26,19 +26,10 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -72,37 +63,46 @@
     .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
     .btn-dark:focus{outline:none;}
 
- /* MOBILE NAV OVERLAY TOP-RIGHT */
-#mobileNavOverlay {
-  position: fixed;
-  top: 4.5rem; /* <-- adjust this to push overlay below the toggle button */
-  right: 1rem; /* a little padding from right edge */
-  z-index: 50;
-  background: black/95;
-  backdrop-blur-md;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 6;
-  padding: 1rem;
-  border-radius: 0 0 0.75rem 0.75rem;
-  opacity: 0;
-  transform: translateY(-20px); /* slightly move it up initially for animation */
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  max-width: 220px;
-}
+    /* MOBILE NAV OVERLAY */
+    #mobileNavOverlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(0,0,0,0.95);
+      backdrop-blur: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      padding: 1rem;
+      border-radius: 0 0 0.75rem 0.75rem;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      max-width: 220px;
+    }
 
-#mobileNavOverlay.show {
-  transform: translateY(0); /* slide down into view */
-  opacity: 1;
-}
+    #mobileNavOverlay.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #mobileNavOverlay a {
+      opacity: 0;
+      transform: translateY(-20px);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-align: right;
+    }
+
+    #mobileNavOverlay.show a {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Remove mobile close X mark */
     #mobileNavClose { display:none; }
-
-    @media (min-width:768px){ #achievements .space-y-12 > div:nth-child(even){ flex-direction: row-reverse;} #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12{ text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start;} }
-    @media (max-width:767px){#achievements .absolute.left-1\/2.border-l{display:none;} #achievements .space-y-12 > div{flex-direction:column !important;} #achievements .space-y-12 > div .md\:w-5\/12{width:100% !important; text-align:left !important; padding-left:0 !important; padding-right:0 !important; justify-content:flex-start !important;}}
   </style>
 </head>
 <body class="font-grotesk">
@@ -119,10 +119,10 @@
       <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
       <a href="Website.html" class="hover:text-purple-400 transition">View Website</a>
       <div class="flex items-center gap-3">
-        <a href="tel:+919391201739" class="contact-item"><i data-lucide="phone"></i></a>
-        <a href="mailto:amina.hasanaath@gmail.com" class="contact-item"><i data-lucide="mail"></i></a>
-        <a href="https://github.com/AminaHasanaath" target="_blank" class="contact-item"><i data-lucide="github"></i></a>
-        <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i></a>
+        <a href="tel:+919391201739"><i data-lucide="phone"></i></a>
+        <a href="mailto:amina.hasanaath@gmail.com"><i data-lucide="mail"></i></a>
+        <a href="https://github.com/AminaHasanaath" target="_blank"><i data-lucide="github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
       </div>
     </div>
 
@@ -497,15 +497,22 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Nav
+  // Mobile Nav Toggle
   const toggle = document.getElementById("mobileNavToggle");
   const overlay = document.getElementById("mobileNavOverlay");
 
   if (toggle && overlay) {
     toggle.addEventListener("click", (e) => {
       e.stopPropagation();
+
+      // position overlay below button
+      const rect = toggle.getBoundingClientRect();
+      overlay.style.top = rect.bottom + 8 + "px";
+      overlay.style.right = window.innerWidth - rect.right + "px";
+
       overlay.classList.toggle("show");
       document.body.style.overflow = overlay.classList.contains("show") ? "hidden" : "auto";
+
       if (window.lucide) lucide.createIcons();
     });
 
@@ -549,10 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 });
 </script>
+
 </body>
 </html>
-
-
 
 
 
