@@ -43,98 +43,80 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
-  /* =============================
-     BASE
-  ============================= */
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: "Space Grotesk", sans-serif;
-    scroll-behavior: smooth;
-    background: transparent;
-    color: #ffffff;
-  }
-  body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
+      background: transparent;
+      color: #ffffff;
+    }
+    body > *:not(.minecraft-bg) { position: relative; z-index: 1; }
 
-  /* SCROLLBAR */
-  ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 8px; }
 
-  /* TEXT */
-  .gradient-text {
-    background: linear-gradient(180deg, #c4b5fd, #6366f1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .nav-link:hover {
-    text-decoration: underline;
-    text-decoration-color: #c4b5fd;
-    text-underline-offset: 4px;
-  }
+    .gradient-text {
+      background: linear-gradient(180deg, #c4b5fd, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-link:hover { text-decoration: underline; text-decoration-color: #c4b5fd; text-underline-offset: 4px; }
 
-  /* ANIMATIONS */
-  @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px);} }
-  .floating { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px);} }
+    .floating { animation: float 3s ease-in-out infinite; }
 
-  /* BACKGROUND */
-  .minecraft-bg {
-    position: fixed; inset:0; z-index:0; pointer-events:none; background:#000;
-  }
-  .minecraft-bg::before {
-    content:""; position:absolute; inset:0;
-    background: rgba(255,255,255,0.03);
-    box-shadow: inset 0 0 120px rgba(255,255,255,0.04),
-                inset 0 0 300px rgba(255,255,255,0.02);
-    pointer-events:none;
-  }
+    .minecraft-bg {
+      position: fixed; inset:0; z-index:0; pointer-events:none; background:#000;
+    }
+    .minecraft-bg::before {
+      content:""; position:absolute; inset:0;
+      background: rgba(255,255,255,0.03);
+      box-shadow: inset 0 0 120px rgba(255,255,255,0.04),
+                  inset 0 0 300px rgba(255,255,255,0.02);
+      pointer-events:none;
+    }
 
-  /* SCROLL PROGRESS BAR */
-  #scroll-progress { position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999; }
+    #scroll-progress { position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999; }
 
-  /* FIXED BUTTONS */
-  #scrollTopBtn { position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000; }
+    #scrollTopBtn { position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000; }
 
-  /* NAV TOGGLES */
-  #navToggle { display:none; }
-  #mobileNavToggle { display:none; }
+    #navToggle, #mobileNavToggle { display:none; }
 
-  @media (max-width:640px){
-    #scrollTopBtn { bottom:16vw; left:4vw; }
-    #navToggle, #mobileNavToggle { display:inline-flex; position:fixed; z-index:10000; }
-    #navToggle { bottom:16vw; right:4vw; min-width:140px; }
-    #mobileNavToggle { top:4vw; right:4vw; width:48px; height:48px; }
-  }
+    @media (max-width:640px){
+      #scrollTopBtn { bottom:16vw; left:4vw; }
+      #navToggle, #mobileNavToggle { display:inline-flex; position:fixed; z-index:10000; }
+      #navToggle { bottom:16vw; right:4vw; min-width:140px; }
+      #mobileNavToggle { top:4vw; right:4vw; width:48px; height:48px; }
+    }
 
-  /* GLOBAL BUTTON STYLE */
-  .btn-dark {
-    background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;
-  }
-  .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
-  .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
-  .btn-dark:focus{outline:none;}
+    .btn-dark {
+      background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;
+    }
+    .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
+    .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
+    .btn-dark:focus{outline:none;}
 
-  /* MOBILE NAV OVERLAY */
-  #mobileNavOverlay {
-    position: fixed; inset:0; z-index:50; background:black/95; backdrop-blur-md;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10;
-    transform: translateY(-100%); opacity:0; transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  #mobileNavOverlay.show { transform: translateY(0); opacity:1; }
-  #mobileNavOverlay a { opacity:0; transform: translateY(-20px); font-size:1.5rem; transition: all 0.4s ease; }
-  #mobileNavOverlay.show a { opacity:1; transform: translateY(0); transition-delay:0.1s; }
+    /* MOBILE NAV OVERLAY TOP-RIGHT */
+    #mobileNavOverlay {
+      position: fixed; top:0; right:0; z-index:50; background:black/95; backdrop-blur-md;
+      display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start; gap:6;
+      padding: 1rem; border-radius:0 0 0.75rem 0.75rem;
+      transform: translateY(-100%); opacity:0; transition: transform 0.4s ease, opacity 0.4s ease;
+      max-width: 220px;
+    }
+    #mobileNavOverlay.show { transform: translateY(0); opacity:1; }
+    #mobileNavOverlay a { opacity:0; transform: translateY(-20px); font-size:1rem; transition: all 0.4s ease; text-align:right; }
+    #mobileNavOverlay.show a { opacity:1; transform: translateY(0); transition-delay:0.1s; }
 
-  /* Close Button */
-  #mobileNavClose { position:absolute; top:2rem; right:2rem; font-size:2.5rem; color:white; cursor:pointer; }
+    #mobileNavClose { font-size:2rem; color:white; cursor:pointer; align-self:flex-end; margin-bottom:0.5rem; }
 
-  /* ACHIEVEMENTS 4th CARD LEFT FIX */
-  @media (min-width:768px){
-    #achievements .space-y-12 > div:nth-child(even) { flex-direction: row-reverse; }
-    #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12 { text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start; }
-    #achievements .space-y-12 > div:nth-child(4) { flex-direction: row !important; }
-    #achievements .space-y-12 > div:nth-child(4) .md\:w-5\/12 { text-align:right; padding-right:1.5rem; padding-left:0; justify-content:flex-end; }
-  }
-
+    @media (min-width:768px){
+      #achievements .space-y-12 > div:nth-child(even) { flex-direction: row-reverse; }
+      #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12 { text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start; }
+      #achievements .space-y-12 > div:nth-child(4) .md\:w-5\/12 { text-align:right; padding-right:1.5rem; padding-left:0; justify-content:flex-end; }
+    }
   </style>
 </head>
 <body class="font-grotesk">
@@ -172,13 +154,16 @@
   <a href="index.html">Home</a>
   <a href="Projects.html">Projects</a>
   <a href="Research.html">Research</a>
-  <div class="flex gap-6 mt-6">
-    <a href="tel:+919391201739" class="text-white text-2xl"><i data-lucide="phone"></i></a>
-    <a href="mailto:amina.hasanaath@gmail.com" class="text-white text-2xl"><i data-lucide="mail"></i></a>
-    <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white text-2xl"><i data-lucide="github"></i></a>
-    <a href="https://linkedin.com" target="_blank" class="text-white text-2xl"><i data-lucide="linkedin"></i></a>
+  <div class="flex gap-4 mt-4">
+    <a href="tel:+919391201739" class="text-white text-xl"><i data-lucide="phone"></i></a>
+    <a href="mailto:amina.hasanaath@gmail.com" class="text-white text-xl"><i data-lucide="mail"></i></a>
+    <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white text-xl"><i data-lucide="github"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="text-white text-xl"><i data-lucide="linkedin"></i></a>
   </div>
 </div>
+
+<!-- HERO, About, Tech Stack, LeetCode, Projects Sections unchanged -->
+
 
   <!-- =============================
        HERO
@@ -451,14 +436,14 @@
 
 
 <!-- Achievements Section -->
+
+<!-- Achievements Section -->
 <section id="achievements" class="py-20 px-6 max-w-6xl mx-auto">
   <h2 class="text-3xl font-bold text-white mb-12 text-left tracking-wide" data-aos="fade-up">
     Milestones & Contributions So Far
   </h2>
 
   <div class="relative max-w-5xl mx-auto">
-
-    <!-- Vertical Timeline Line -->
     <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l border-lavender/30"></div>
 
     <!-- Timeline Items -->
@@ -469,34 +454,22 @@
         <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
         <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
-              🏆
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Hack Revolution – November 2025 (3rd Place)
-            </h3>
-            <p class="text-white text-sm mb-3">
-              Secured 3rd place by developing a machine learning model to predict long-term stock trends under Urban Tech & Smart Cities theme.
-            </p>
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🏆</div>
+            <h3 class="text-lg font-semibold text-white mb-1">Hack Revolution – November 2025 (3rd Place)</h3>
+            <p class="text-white text-sm mb-3">Secured 3rd place by developing a machine learning model to predict long-term stock trends under Urban Tech & Smart Cities theme.</p>
             <span class="text-xs text-white/60">Nov 2025</span>
           </div>
         </div>
       </div>
 
       <!-- Item 2 -->
-      <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group even:flex-row-reverse" data-aos="fade-up">
+      <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
         <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
         <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
-              🤝
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Hackathon Volunteer
-            </h3>
-            <p class="text-white text-sm mb-3">
-              Volunteered at CSI × ACES Hackathons on 5th Jan 2025, gaining hands-on experience in event coordination, team management, and leadership.
-            </p>
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🤝</div>
+            <h3 class="text-lg font-semibold text-white mb-1">Hackathon Volunteer</h3>
+            <p class="text-white text-sm mb-3">Volunteered at CSI × ACES Hackathons on 5th Jan 2025, gaining hands-on experience in event coordination, team management, and leadership.</p>
             <span class="text-xs text-white/60">Jan 2025</span>
           </div>
         </div>
@@ -507,43 +480,29 @@
         <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
         <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
-              🌐
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Open Source Contributor
-            </h3>
-            <p class="text-white text-sm mb-3">
-              Contributed to open-source repos by implementing binary sort algorithm in Kotlin and fixing syntax errors. Gained hands-on collaboration experience.
-            </p>
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🌐</div>
+            <h3 class="text-lg font-semibold text-white mb-1">Open Source Contributor</h3>
+            <p class="text-white text-sm mb-3">Contributed to open-source repos by implementing binary sort algorithm in Kotlin and fixing syntax errors. Gained hands-on collaboration experience.</p>
             <span class="text-xs text-white/60">2 Contributions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
+        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
+        <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
+          <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">📄</div>
+            <h3 class="text-lg font-semibold text-white mb-1">Historical Survey of Computing & AI</h3>
+            <p class="text-white text-sm mb-3">Authored a research paper analyzing the evolution of computing systems and AI, covering major milestones from pre-1950s to modern machine learning frameworks. Presented findings to peers and faculty, highlighting technological transformations and future trends.</p>
+            <span class="text-xs text-white/60">Research Paper – 2025</span>
           </div>
         </div>
       </div>
 
     </div>
   </div>
-  <!-- Item 4: Research Paper -->
-<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group even:flex-row-reverse" data-aos="fade-up">
-  <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
-  <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
-    <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
-      <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">
-        📄
-      </div>
-      <h3 class="text-lg font-semibold text-white mb-1">
-        Historical Survey of Computing & AI
-      </h3>
-      <p class="text-white text-sm mb-3">
-        Authored a research paper analyzing the evolution of computing systems and AI, covering major milestones from pre-1950s to modern machine learning frameworks. Presented findings to peers and faculty, highlighting technological transformations and future trends.
-      </p>
-      <span class="text-xs text-white/60">Research Paper – 2025</span>
-      <div class="mt-3">
-      </div>
-    </div>
-  </div>
-</div>
-
 </section>
 
 <style>
@@ -586,10 +545,9 @@
 <!-- AOS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  // =============================
-  // NEW MOBILE NAV OVERLAY
-  // =============================
   function initMobileNavOverlay() {
     const toggle = document.getElementById("mobileNavToggle");
     const overlay = document.getElementById("mobileNavOverlay");
@@ -615,9 +573,6 @@
     });
   }
 
-  // =============================
-  // OTHER FUNCTIONS
-  // =============================
   function initExplorePanel() {
     const navToggle = document.getElementById("navToggle");
     const navPanel = document.getElementById("navPanel");
@@ -664,29 +619,25 @@
         "Clarity-driven Programmer",
       ],
       typeSpeed: 70,
-      backSpeed: 40,
-      loop: false,
+      backSpeed: 35,
+      backDelay: 1000,
+      loop: true,
     });
   }
 
-  function initAOS() { if (window.AOS) AOS.init({ duration: 900, once: true }); }
-
-  // =============================
-  // DOM CONTENT LOADED
-  // =============================
   document.addEventListener("DOMContentLoaded", () => {
     initMobileNavOverlay();
     initExplorePanel();
     initScrollProgress();
     initScrollTop();
     initTyped();
-    initAOS();
+    AOS.init({ duration: 900, once: true });
     if (window.lucide) lucide.createIcons();
   });
 </script>
-
 </body>
 </html>
+
 
 
 
