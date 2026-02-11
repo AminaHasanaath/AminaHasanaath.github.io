@@ -117,6 +117,24 @@
       #achievements .space-y-12 > div:nth-child(even) .md\:w-5\/12 { text-align:left; padding-left:1.5rem; padding-right:0; justify-content:flex-start; }
       #achievements .space-y-12 > div:nth-child(4) .md\:w-5\/12 { text-align:right; padding-right:1.5rem; padding-left:0; justify-content:flex-end; }
     }
+
+    /* Hide timeline line on mobile */
+    @media (max-width: 767px) {
+      #achievements .absolute.left-1\/2.border-l {
+        display: none;
+      }
+      #achievements .space-y-12 > div {
+        flex-direction: column !important;
+      }
+      #achievements .space-y-12 > div .md\:w-5\/12 {
+        width: 100% !important;
+        text-align: left !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        justify-content: flex-start !important;
+      }
+    }
+
   </style>
 </head>
 <body class="font-grotesk">
@@ -162,9 +180,7 @@
   </div>
 </div>
 
-<!-- HERO, About, Tech Stack, LeetCode, Projects Sections unchanged -->
-
-
+<!-- HERO, About, Tech Stack, LeetCode, Projects, Achievements sections unchanged, use your previous code -->
   <!-- =============================
        HERO
   ============================== -->
@@ -544,9 +560,6 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <!-- AOS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   function initMobileNavOverlay() {
     const toggle = document.getElementById("mobileNavToggle");
@@ -554,7 +567,8 @@
     const closeBtn = document.getElementById("mobileNavClose");
     if (!toggle || !overlay || !closeBtn) return;
 
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       overlay.classList.add("show");
       document.body.style.overflow = "hidden";
       if (window.lucide) lucide.createIcons();
@@ -565,12 +579,14 @@
       document.body.style.overflow = "auto";
     });
 
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) {
+    document.addEventListener("click", (e) => {
+      if (overlay.classList.contains("show") && !overlay.contains(e.target) && e.target !== toggle) {
         overlay.classList.remove("show");
         document.body.style.overflow = "auto";
       }
     });
+
+    overlay.addEventListener("click", (e) => e.stopPropagation());
   }
 
   function initExplorePanel() {
@@ -637,8 +653,5 @@
 </script>
 </body>
 </html>
-
-
-
 
 
