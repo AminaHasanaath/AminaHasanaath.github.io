@@ -49,60 +49,10 @@
     #scroll-progress {position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999;}
     #scrollTopBtn {position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000;}
 
-    #navToggle, #mobileNavToggle {display:none;}
-
-    @media (max-width:640px){
-      #scrollTopBtn { bottom:16vw; left:4vw; }
-      #navToggle, #mobileNavToggle { display:inline-flex; position:fixed; z-index:10000; }
-      #navToggle { bottom:16vw; right:4vw; min-width:140px; }
-      #mobileNavToggle { top:4vw; right:4vw; width:48px; height:48px; }
-    }
-
     .btn-dark { background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;}
     .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
     .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
     .btn-dark:focus{outline:none;}
-
-    /* MOBILE NAV OVERLAY */
-    #mobileNavOverlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 50;
-      background: rgba(0,0,0,0.95);
-      backdrop-blur: blur(12px);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      padding: 1rem;
-      border-radius: 0 0 0.75rem 0.75rem;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      max-width: 220px;
-    }
-
-    #mobileNavOverlay.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    #mobileNavOverlay a {
-      opacity: 0;
-      transform: translateY(-20px);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      text-align: right;
-    }
-
-    #mobileNavOverlay.show a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Remove mobile close X mark */
-    #mobileNavClose { display:none; }
   </style>
 </head>
 <body class="font-grotesk">
@@ -125,27 +75,9 @@
         <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
       </div>
     </div>
-
-    <!-- MOBILE TOGGLE -->
-    <div class="md:hidden">
-    <button id="mobileNavToggle" type="button">
-  <i data-lucide="menu"></i>
-</button>
-    </div>
   </div>
 </nav>
 
-<!-- MOBILE NAV OVERLAY -->
-<div id="mobileNavOverlay">
-  <a href="Research.html">Research</a>
-  <a href="Website.html">View Website</a>
-  <div class="flex gap-4 mt-4">
-    <a href="tel:+919391201739" class="text-white text-xl"><i data-lucide="phone"></i></a>
-    <a href="mailto:amina.hasanaath@gmail.com" class="text-white text-xl"><i data-lucide="mail"></i></a>
-    <a href="https://github.com/AminaHasanaath" target="_blank" class="text-white text-xl"><i data-lucide="github"></i></a>
-    <a href="https://linkedin.com" target="_blank" class="text-white text-xl"><i data-lucide="linkedin"></i></a>
-  </div>
-</div>
 
 <!-- HERO & other sections remain the same as original -->
 <!-- HERO -->
@@ -485,42 +417,6 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Nav Toggle
-  const toggle = document.getElementById("mobileNavToggle");
-  const overlay = document.getElementById("mobileNavOverlay");
-
-  if (toggle && overlay) {
-toggle.addEventListener("click", (e) => {
-  e.preventDefault();   // prevents page redirect
-  e.stopPropagation();  // prevents bubbling issues
-
-  const rect = toggle.getBoundingClientRect();
-  overlay.style.top = rect.bottom + 8 + "px";
-  overlay.style.right = window.innerWidth - rect.right + "px";
-
-  overlay.classList.toggle("show");
-
-  document.body.style.overflow =
-    overlay.classList.contains("show") ? "hidden" : "auto";
-
-  if (window.lucide) lucide.createIcons();
-});
-
-
-    overlay.addEventListener("click", (e) => e.stopPropagation());
-document.addEventListener("click", (e) => {
-  if (
-    overlay.classList.contains("show") &&
-    !overlay.contains(e.target) &&
-    !toggle.contains(e.target)   // FIXED LINE
-  ) {
-    overlay.classList.remove("show");
-    document.body.style.overflow = "auto";
-  }
-});
-
-  }
-
   // Typed.js
   if (window.Typed)
     new Typed("#typed-name", {
@@ -554,6 +450,7 @@ document.addEventListener("click", (e) => {
 
 </body>
 </html>
+
 
 
 
