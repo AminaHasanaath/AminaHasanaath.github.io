@@ -72,11 +72,31 @@
     .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
     .btn-dark:focus{outline:none;}
 
-    /* MOBILE NAV OVERLAY TOP-RIGHT */
-    #mobileNavOverlay { position: fixed; top:0; right:0; z-index:50; background:black/95; backdrop-blur-md; display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start; gap:6; padding: 1rem; border-radius:0 0 0.75rem 0.75rem; transform: translateY(-100%); opacity:0; transition: transform 0.4s ease, opacity 0.4s ease; max-width: 220px;}
-    #mobileNavOverlay.show { transform: translateY(0); opacity:1; }
-    #mobileNavOverlay a { opacity:0; transform: translateY(-20px); font-size:1rem; transition: all 0.4s ease; text-align:right; }
-    #mobileNavOverlay.show a { opacity:1; transform: translateY(0); transition-delay:0.1s; }
+ /* MOBILE NAV OVERLAY TOP-RIGHT */
+#mobileNavOverlay {
+  position: fixed;
+  top: 4.5rem; /* <-- adjust this to push overlay below the toggle button */
+  right: 1rem; /* a little padding from right edge */
+  z-index: 50;
+  background: black/95;
+  backdrop-blur-md;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 6;
+  padding: 1rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  opacity: 0;
+  transform: translateY(-20px); /* slightly move it up initially for animation */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  max-width: 220px;
+}
+
+#mobileNavOverlay.show {
+  transform: translateY(0); /* slide down into view */
+  opacity: 1;
+}
 
     /* Remove mobile close X mark */
     #mobileNavClose { display:none; }
@@ -531,6 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
