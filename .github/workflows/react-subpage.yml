@@ -1,0 +1,27 @@
+name: Build React Subpage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: Website/apps/web
+        run: npm install
+
+      - name: Build React App
+        working-directory: Website/apps/web
+        run: npm run build
