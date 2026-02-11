@@ -131,17 +131,15 @@
   <div data-aos="fade-left" class="max-w-xl text-center md:text-left">
     <h1 class="text-4xl md:text-5xl gradient-text mb-2"><span id="typed-name">I'm Amina Hasanaath</span></h1>
     <p class="mt-6 text-lg hero-quote">For me, <span class="text-lavender">purpose</span>, <span class="text-lavender">clarity</span>, and <span class="text-lavender">programming</span> define life.</p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-4">
-        </div>
     <div class="mt-6 flex gap-4 justify-center md:justify-start">
       <a href="assets/docs/finalATSResume.pdf" target="_blank" class="btn-dark glow-btn px-6 py-2 rounded-lg">Resume</a>
       <a href="https://leetcode.com/u/hasanaath/" target="_blank" class="btn-dark px-6 py-2 rounded-lg flex items-center gap-2"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="w-4 h-4 invert" alt="LeetCode" /> LeetCode</a>
       <a href="Projects.html" class="btn-dark px-6 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition">Projects <i data-lucide="folder"></i></a>
-    
     </div>
   </div>
 </section>
 
+<!-- ABOUT, TECH STACK, LeetCode, Projects, Achievements remain unchanged -->
 <!-- About Section (original) -->
 <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
   <div class="grid md:grid-cols-2 gap-16 items-start">
@@ -476,26 +474,64 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <!-- AOS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile Nav
   const toggle = document.getElementById("mobileNavToggle");
   const overlay = document.getElementById("mobileNavOverlay");
-  if(toggle && overlay){
-    toggle.addEventListener("click", ()=>{overlay.classList.add("show"); document.body.style.overflow="hidden"; if(window.lucide) lucide.createIcons();});
-    document.addEventListener("click",(e)=>{if(overlay.classList.contains("show") && !overlay.contains(e.target) && e.target!==toggle){overlay.classList.remove("show"); document.body.style.overflow="auto";}});
-    overlay.addEventListener("click",(e)=>e.stopPropagation());
+
+  if (toggle && overlay) {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      overlay.classList.toggle("show");
+      document.body.style.overflow = overlay.classList.contains("show") ? "hidden" : "auto";
+      if (window.lucide) lucide.createIcons();
+    });
+
+    overlay.addEventListener("click", (e) => e.stopPropagation());
+
+    document.addEventListener("click", (e) => {
+      if (overlay.classList.contains("show") && !overlay.contains(e.target) && e.target !== toggle) {
+        overlay.classList.remove("show");
+        document.body.style.overflow = "auto";
+      }
+    });
   }
 
   // Typed.js
-  if(window.Typed) new Typed("#typed-name",{strings:["I'm Amina Hasanaath","Computer Science Engineer","Clarity-driven Programmer"],typeSpeed:70,backSpeed:35,backDelay:1000,loop:true});
+  if (window.Typed)
+    new Typed("#typed-name", {
+      strings: ["I'm Amina Hasanaath", "Computer Science Engineer", "Clarity-driven Programmer"],
+      typeSpeed: 70,
+      backSpeed: 35,
+      backDelay: 1000,
+      loop: true,
+    });
 
-  AOS.init({duration:900,once:true});
-  if(window.lucide) lucide.createIcons();
+  // AOS
+  AOS.init({ duration: 900, once: true });
+
+  // Lucide Icons
+  if (window.lucide) lucide.createIcons();
+
+  // Scroll Top Button + Progress
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) scrollBtn.classList.remove("hidden");
+    else scrollBtn.classList.add("hidden");
+
+    const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / winHeight) * 100;
+    document.getElementById("scroll-progress").style.width = scrolled + "%";
+  });
+
+  scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 });
 </script>
 </body>
 </html>
+
 
 
 
