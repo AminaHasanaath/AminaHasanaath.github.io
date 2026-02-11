@@ -49,36 +49,64 @@
     #scroll-progress {position:fixed; top:0; left:0; height:3px; width:0%; background-color:#c4b5fd; z-index:9999;}
     #scrollTopBtn {position:fixed; bottom:20px; left:20px; width:48px; height:48px; z-index:10000;}
 
-    .btn-dark { background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;}
+    .btn-dark { background: rgba(0,0,0,0.45); color:#fff; border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(8px); transition: all 0.25s ease; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1.2;}
     .btn-dark:hover { background: rgba(0,0,0,0.7); border-color:#c4b5fd; box-shadow:0 0 18px rgba(196,181,253,0.45); transform:translateY(-1px);}
-    .btn-dark:active { box-shadow:0 0 10px rgba(196,181,253,0.4), 0 0 30px rgba(196,181,253,0.6); transform:scale(0.96);}
-    .btn-dark:focus{outline:none;}
+
+    /* =============================
+       MOBILE FIXES
+    ============================= */
+    @media (max-width: 767px) {
+
+      /* Navbar stacked */
+      nav .max-w-6xl {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      /* Timeline alignment */
+      #achievements .space-y-12 > div {
+        padding-left: 3rem;
+      }
+
+      #achievements .md\:w-5\/12 {
+        width: 100%;
+        text-align: left !important;
+        padding: 0 !important;
+        justify-content: flex-start !important;
+      }
+    }
   </style>
 </head>
+
 <body class="font-grotesk">
 
 <div class="minecraft-bg"></div>
 
 <!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-semibold">Amina Hasanaath | Portfolio<span class="text-purple-400">.</span></div>
+  <div class="max-w-6xl mx-auto px-6 py-4 flex md:justify-between md:items-center items-center">
 
-    <!-- DESKTOP NAV -->
-    <div class="hidden md:flex items-center gap-8">
-      <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
-      <a href="Website.html" class="hover:text-purple-400 transition">View Website</a>
-      <div class="flex items-center gap-3">
+    <div class="text-xl font-semibold text-center md:text-left">
+      Amina Hasanaath | Portfolio<span class="text-purple-400">.</span>
+    </div>
+
+    <!-- STACKED MOBILE NAV -->
+    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mt-4 md:mt-0">
+      <div class="flex gap-6">
+        <a href="Research.html" class="hover:text-purple-400 transition">Research</a>
+        <a href="Website.html" class="hover:text-purple-400 transition">View Website</a>
+      </div>
+
+      <div class="flex items-center gap-4">
         <a href="tel:+919391201739"><i data-lucide="phone"></i></a>
         <a href="mailto:amina.hasanaath@gmail.com"><i data-lucide="mail"></i></a>
         <a href="https://github.com/AminaHasanaath" target="_blank"><i data-lucide="github"></i></a>
         <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
       </div>
     </div>
+
   </div>
 </nav>
-
-
 <!-- HERO & other sections remain the same as original -->
 <!-- HERO -->
 <section id="hero" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative hero-focus">
@@ -323,15 +351,17 @@
   </h2>
 
   <div class="relative max-w-5xl mx-auto">
-    <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l border-lavender/30"></div>
+<div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 h-full border-l border-lavender/30"></div>
+
+
 
     <!-- Timeline Items -->
     <div class="space-y-12">
 
       <!-- Item 1 -->
       <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
-        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
-        <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
+      <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
+  <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
             <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🏆</div>
             <h3 class="text-lg font-semibold text-white mb-1">Hack Revolution – November 2025 (3rd Place)</h3>
@@ -343,8 +373,8 @@
 
       <!-- Item 2 -->
       <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
-        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
-        <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
+      <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
+    <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
             <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🤝</div>
             <h3 class="text-lg font-semibold text-white mb-1">Hackathon Volunteer</h3>
@@ -356,8 +386,8 @@
 
       <!-- Item 3 -->
       <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
-        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
-        <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
+     <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
+   <div class="md:w-5/12 md:text-right md:pr-6 flex justify-end">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
             <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">🌐</div>
             <h3 class="text-lg font-semibold text-white mb-1">Open Source Contributor</h3>
@@ -369,8 +399,8 @@
 
       <!-- Item 4 -->
       <div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center group" data-aos="fade-up">
-        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
-        <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
+      <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 -translate-y-2 w-5 h-5 rounded-full bg-lavender border-2 border-white/40 z-10"></div>
+   <div class="md:w-5/12 md:text-left md:pl-6 flex justify-start">
           <div class="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(196,181,253,0.35)]">
             <div class="w-12 h-12 flex items-center justify-center rounded-full bg-lavender/20 mb-4 text-lg">📄</div>
             <h3 class="text-lg font-semibold text-white mb-1">Historical Survey of Computing & AI</h3>
@@ -399,25 +429,18 @@
   }
 </style>
 
-<!-- FOOTER -->
-<footer class="relative py-16 px-6 mt-24 border-t border-white/10">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="pt-6 text-xs text-white/40">© 2025 Amina Hasanaath — engineered with intent</p>
-  </div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-16 px-6 border-t border-white/10 text-center text-xs text-white/40">
+  © 2025 Amina Hasanaath — engineered with intent
 </footer>
 
-<!-- SCROLL UI -->
-<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white w-0 z-[9999]"></div>
-<button id="scrollTopBtn" class="hidden fixed bottom-6 left-6 z-[10000] btn-dark w-12 h-12 flex items-center justify-center">↑</button>
-
-<!-- Typed.js -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<!-- AOS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Typed.js
   if (window.Typed)
     new Typed("#typed-name", {
       strings: ["I'm Amina Hasanaath", "Computer Science Engineer", "Clarity-driven Programmer"],
@@ -427,35 +450,11 @@ document.addEventListener("DOMContentLoaded", () => {
       loop: true,
     });
 
-  // AOS
-  AOS.init({ duration: 900, once: true });
-
-  // Lucide Icons
   if (window.lucide) lucide.createIcons();
-
-  // Scroll Top Button + Progress
-  const scrollBtn = document.getElementById("scrollTopBtn");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) scrollBtn.classList.remove("hidden");
-    else scrollBtn.classList.add("hidden");
-
-    const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.scrollY / winHeight) * 100;
-    document.getElementById("scroll-progress").style.width = scrolled + "%";
-  });
-
-  scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
